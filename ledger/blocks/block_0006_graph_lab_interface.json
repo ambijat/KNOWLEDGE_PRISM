@@ -1,0 +1,22 @@
+{
+  "block_no": 6,
+  "block_id": "block_0006_graph_lab_interface",
+  "title": "Neo4j-style Knowledge Prism graph lab interface revision",
+  "ts": "2026-07-07T03:06:51.642173+00:00",
+  "session_id": "codex-session-2026-07-07",
+  "actor": "codex",
+  "inputs": [
+    "index.html prototype feedback",
+    "project ontology nodes and evidence-grade metaphor"
+  ],
+  "operations": [
+    "replaced static cube dashboard with canvas force-directed graph simulation",
+    "added draggable nodes, relationship edges, graph filters, node inspection, idea stack, synthesis modes, and JSON export",
+    "made evidence grade visible through node glow and graph state metrics"
+  ],
+  "outputs": [
+    "index.html"
+  ],
+  "prev_hash": "1d64532a6d6811b7392c87129bf1722cc143314ed15f5bdf26cb3937ba4c955c",
+  "block_hash": "1e29d8bd9ca4763192450a69b034de7dc762a775739b033bd0e3c3b95929c059"
+}

@@ -1,0 +1,27 @@
+{
+  "block_no": 4,
+  "block_id": "block_0004_bridge_batch_access",
+  "title": "Bridge verification batch access mapping and pilot selection",
+  "ts": "2026-07-07T02:48:24.190779+00:00",
+  "session_id": "codex-session-2026-07-07",
+  "actor": "codex",
+  "inputs": [
+    "data/verification/BRIDGE_CONCEPTS_VERIFICATION_QUEUE.csv",
+    "data/processed/MASTER_CORPUS_REGISTER_PRELIMINARY.csv",
+    "mounted SOLEMON source paths"
+  ],
+  "operations": [
+    "joined 392 bridge-concept rows to master corpus filenames",
+    "checked source-file accessibility for mapped paths",
+    "selected deterministic load-bearing 20-item verification pilot",
+    "generated batch manifest, access report, pilot checklist, and compatibility first-50 checklist"
+  ],
+  "outputs": [
+    "data/verification/BRIDGE_BATCH_MANIFEST.csv",
+    "outputs/reports/BRIDGE_QUEUE_ACCESS_REPORT.md",
+    "outputs/reports/BRIDGE_VERIFICATION_PILOT_20.md",
+    "outputs/reports/BRIDGE_VERIFICATION_SAMPLE_50.md"
+  ],
+  "prev_hash": "387092a9dfba7836d44741992c96ca32aeb2d53ca4f5e08f6cd697a3c9b6bb4a",
+  "block_hash": "7b098963d15dcc0eaef6e941586af81c62e52e8717cceffd1c23e47d34fd9768"
+}

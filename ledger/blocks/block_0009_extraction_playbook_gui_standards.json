@@ -1,0 +1,25 @@
+{
+  "block_no": 9,
+  "block_id": "block_0009_extraction_playbook_gui_standards",
+  "title": "Methodological extraction playbook and GUI standards refinement",
+  "ts": "2026-07-07T03:43:42.538561+00:00",
+  "session_id": "codex-session-2026-07-07",
+  "actor": "codex",
+  "inputs": [
+    "pasted tweet text supplied by user",
+    "index.html graph lab",
+    "Knowledge Prism evidence discipline"
+  ],
+  "operations": [
+    "extracted a safe methodological pattern: preserve frontier reasoning as standards, notes, capped goals, and reusable project memory",
+    "rejected external/model/pricing claims as outside project ontology and not project evidence",
+    "created docs/PROJECT_EXTRACTION_PLAYBOOK.md",
+    "added GUI Standards panel and learning-note export to index.html"
+  ],
+  "outputs": [
+    "docs/PROJECT_EXTRACTION_PLAYBOOK.md",
+    "index.html"
+  ],
+  "prev_hash": "f7f1f6569b77e5b024c6cc220aac607aeaca00237b011b7a18ce0d7d891f6197",
+  "block_hash": "7a3f303107929a87bba8ec604a08049fadfdd694a5e24f93e4b82f77d5fda7ca"
+}

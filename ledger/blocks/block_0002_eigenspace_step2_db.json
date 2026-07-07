@@ -1,0 +1,30 @@
+{
+  "block_no": 2,
+  "block_id": "block_0002_eigenspace_step2_db",
+  "title": "Eigenspace analysis, Step-2 literature loop, and Proof-of-Provenance DB",
+  "ts": "2026-07-07T02:03:53.581059+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude",
+  "inputs": [
+    "Google Scholar publications (47)",
+    "OpenAlex",
+    "arXiv",
+    "all inherited registers"
+  ],
+  "operations": [
+    "publication eigenspace: NMF on weighted 47x45 matrix -> 5 latent axes",
+    "weighted A\u00d7B intersection seam (136)",
+    "Step-2 looping literature pull -> 86 papers (47 seed/27 loop/12 frontier)",
+    "consolidated all sources into knowledge_prism.db",
+    "installed hash-chained provenance ledger"
+  ],
+  "outputs": [
+    "eigenspace.png",
+    "intersection_seam.csv",
+    "step2_corpus.csv",
+    "step2_methodology.md",
+    "knowledge_prism.db"
+  ],
+  "prev_hash": "2404e8264563800775e3bfafaef4ba55fe789b42721c29ebf998e2dca15edb64",
+  "block_hash": "e3637f930e6a47687f32101eff0ef9f573dc92b4a43d220c60a71fcfacfe14e6"
+}

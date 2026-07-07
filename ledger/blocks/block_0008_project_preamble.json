@@ -1,0 +1,25 @@
+{
+  "block_no": 8,
+  "block_id": "block_0008_project_preamble",
+  "title": "Visitor-facing preamble for the whole Knowledge Prism project",
+  "ts": "2026-07-07T03:40:14.535814+00:00",
+  "session_id": "codex-session-2026-07-07",
+  "actor": "codex",
+  "inputs": [
+    "project brief",
+    "pipeline",
+    "action plan",
+    "graph lab interface",
+    "GUI brochure"
+  ],
+  "operations": [
+    "created a root preamble that introduces Knowledge Prism as a museum-like research workshop",
+    "summarised the whole project idea, layers, attributes, red-line rule, visitor route, and learning goals",
+    "positioned the project for newcomers before they enter technical files or the graph lab"
+  ],
+  "outputs": [
+    "PREAMBLE.md"
+  ],
+  "prev_hash": "63f22d26b8f5089f3d9cdf3c3e6cf8be1b5c8de27381c96079b47fbb5b7a1d95",
+  "block_hash": "f7f1f6569b77e5b024c6cc220aac607aeaca00237b011b7a18ce0d7d891f6197"
+}

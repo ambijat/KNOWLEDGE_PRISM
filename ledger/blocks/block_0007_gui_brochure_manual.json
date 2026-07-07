@@ -1,0 +1,22 @@
+{
+  "block_no": 7,
+  "block_id": "block_0007_gui_brochure_manual",
+  "title": "Knowledge Prism graph lab brochure and driver manual",
+  "ts": "2026-07-07T03:33:40.641009+00:00",
+  "session_id": "codex-session-2026-07-07",
+  "actor": "codex",
+  "inputs": [
+    "index.html graph lab interface",
+    "sandbox task guidance"
+  ],
+  "operations": [
+    "created a human-readable brochure explaining the reasoning behind the graph lab interface",
+    "documented controls, evidence grades, sandbox routes, and the modern-car driving metaphor",
+    "framed the page as a disciplined imagination workbench rather than a final ontology"
+  ],
+  "outputs": [
+    "docs/KNOWLEDGE_PRISM_GUI_BROCHURE.md"
+  ],
+  "prev_hash": "1e29d8bd9ca4763192450a69b034de7dc762a775739b033bd0e3c3b95929c059",
+  "block_hash": "63f22d26b8f5089f3d9cdf3c3e6cf8be1b5c8de27381c96079b47fbb5b7a1d95"
+}

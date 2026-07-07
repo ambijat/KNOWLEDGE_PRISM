@@ -1,0 +1,30 @@
+{
+  "block_no": 12,
+  "block_id": "block_0012_boot_action_log_ritual",
+  "title": "Mandatory boot and action-log ritual for future agent shifts",
+  "ts": "2026-07-07T04:13:05.309340+00:00",
+  "session_id": "codex-session-2026-07-07",
+  "actor": "codex",
+  "inputs": [
+    "RESTORE.md",
+    "docs/protocol/AGENT_TRANSPARENCY_PROTOCOL.md",
+    "scripts/04_log_agent_action.py",
+    "db/prism.py"
+  ],
+  "operations": [
+    "added scripts/05_start_agent_shift.py to run boot, verify action log, verify ledger, append a start record, and re-verify action log",
+    "updated RESTORE.md to require the start ritual before future edits or verification work",
+    "updated AGENT_TRANSPARENCY_PROTOCOL.md with mandatory shift-start ritual",
+    "updated README.md with the required future agent shift command",
+    "tested the ritual with task-id boot-action-log-ritual"
+  ],
+  "outputs": [
+    "scripts/05_start_agent_shift.py",
+    "RESTORE.md",
+    "docs/protocol/AGENT_TRANSPARENCY_PROTOCOL.md",
+    "README.md",
+    "logs/agent_actions.jsonl"
+  ],
+  "prev_hash": "9c2a98b40cd8aa8164c214f2f6450e596fe6041c4b5caf2a63845e533ce2c1af",
+  "block_hash": "53ed6b9ab5951de95d5c9d97a3f69ecde9c7a7c97eed5b1850c6069d67e44c72"
+}

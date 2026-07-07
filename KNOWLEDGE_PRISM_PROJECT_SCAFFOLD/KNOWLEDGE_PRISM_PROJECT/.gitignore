@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs and caches
+logs/*.log
+.cache/
+
+# Large local-only files; keep manifests instead of committing all books
+*.pdf
+*.djvu
+*.epub
+*.mobi
+*.zip
+*.tar
+*.tar.gz
+
+# Keep this package's data CSVs versionable for now
+!data/**/*.csv
+!outputs/maps/*.png
+
+# OS/editor
+.DS_Store
+.vscode/

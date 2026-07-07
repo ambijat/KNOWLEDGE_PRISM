@@ -1,0 +1,14 @@
+{
+  "rows": 35861,
+  "duplicates": 7259,
+  "classes": {
+    "Noise": 432,
+    "Peripheral": 839,
+    "Core": 11453,
+    "Unknown": 23137
+  },
+  "evidence": {
+    "metadata_only": 23267,
+    "metadata_manifest": 12594
+  }
+}

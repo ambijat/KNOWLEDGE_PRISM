@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs and caches
+logs/*.log
+logs/*.jsonl
+.cache/
+
+# Runtime databases
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# Local secrets and private runtime dumps
+secrets/
+.env
+.env.*
+*apikey*
+*api_key*
+*secret*
+*token*
+*password*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Large local-only files; keep manifests instead of committing all books
+*.pdf
+*.djvu
+*.epub
+*.mobi
+*.zip
+*.tar
+*.tar.gz
+
+# Keep this package's data CSVs versionable for now
+!data/**/*.csv
+!outputs/maps/*.png
+
+# OS/editor
+.DS_Store
+.vscode/

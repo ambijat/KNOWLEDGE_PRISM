@@ -1,0 +1,30 @@
+{
+  "block_no": 0,
+  "block_id": "block_0000_genesis_recon",
+  "title": "Genesis: Claude Science reconnaissance & two-layer domain mapping",
+  "ts": "2026-07-05T00:00:00+00:00",
+  "session_id": "prior-claude-session",
+  "actor": "claude",
+  "inputs": [
+    "Zotero library",
+    "Recoll index",
+    "SOLEMON drive"
+  ],
+  "operations": [
+    "zotero inventory (1841)",
+    "recoll manifest (12594)",
+    "solemon crawl (35178)",
+    "bridge concept extraction (392)",
+    "two-layer domain definition"
+  ],
+  "outputs": [
+    "zotero_inventory.csv",
+    "recoll_corpus_manifest.csv",
+    "solemon_crawl.csv",
+    "bridge_concepts.csv",
+    "domain_definition_v2.md",
+    "domain_map.png"
+  ],
+  "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "block_hash": "1b7f455bb38e46cedd7208e64852dcd4d099d4b78e9cbf3761fa54012a7e6355"
+}

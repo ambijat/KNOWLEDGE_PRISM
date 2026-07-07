@@ -1,0 +1,26 @@
+{
+  "block_no": 10,
+  "block_id": "block_0010_agent_transparency_protocol",
+  "title": "Agent transparency protocol and hash-linked action log",
+  "ts": "2026-07-07T04:04:19.272069+00:00",
+  "session_id": "codex-session-2026-07-07",
+  "actor": "codex",
+  "inputs": [
+    "user request for blockchain-like transparent project logging",
+    "existing proof-of-provenance ledger",
+    "RESTORE.md"
+  ],
+  "operations": [
+    "defined a protocol requiring visible intent, bounded scope, evidence grade, hidden-IO declaration, and append-only action records",
+    "added scripts/04_log_agent_action.py for granular hash-linked action logging",
+    "created the first action record in logs/agent_actions.jsonl",
+    "verified both the action log and the milestone provenance chain"
+  ],
+  "outputs": [
+    "docs/protocol/AGENT_TRANSPARENCY_PROTOCOL.md",
+    "scripts/04_log_agent_action.py",
+    "logs/agent_actions.jsonl"
+  ],
+  "prev_hash": "7a3f303107929a87bba8ec604a08049fadfdd694a5e24f93e4b82f77d5fda7ca",
+  "block_hash": "9cb1b5065429fd2489ed4fcf6cedfdc27df7e7f702ad7e0db163b88d8b52c556"
+}

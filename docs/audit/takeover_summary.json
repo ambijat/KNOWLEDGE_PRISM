@@ -1,0 +1,21 @@
+{
+  "zotero_rows": 1841,
+  "recoll_manifest_rows": 12594,
+  "solemon_crawl_rows": 35178,
+  "master_document_rows_after_path_union": 35861,
+  "duplicate_candidate_rows": 7259,
+  "duplicate_groups": 3347,
+  "preliminary_class_counts": {
+    "Unknown": 23137,
+    "Core": 11453,
+    "Peripheral": 839,
+    "Noise": 432
+  },
+  "evidence_grade_counts": {
+    "metadata_only": 23267,
+    "metadata_manifest": 12594
+  },
+  "bridge_concepts_rows": 392,
+  "deepread_folder_rows": 13,
+  "recoll_subject_folder_rows": 502
+}

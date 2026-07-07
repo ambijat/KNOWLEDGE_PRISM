@@ -1,0 +1,137 @@
+layerA,layerB,weight
+regional security complex,classical geopolitics,5.421
+Afghanistan,classical geopolitics,4.891
+Central Asia,classical geopolitics,4.7940000000000005
+Afghanistan,critical geopolitics,3.764
+Afghanistan,state-building,3.459
+energy security,classical geopolitics,3.424
+Afghanistan,securitisation theory,2.907
+India,classical geopolitics,2.805
+South Asia,critical geopolitics,2.768
+China,classical geopolitics,2.506
+South Asia,classical geopolitics,2.479
+regional security complex,state-building,2.412
+energy security,critical geopolitics,2.26
+Russia,classical geopolitics,2.259
+South Asia,simulacrum/geoeconomics,2.033
+regional security complex,realism/neorealism,2.002
+energy security,realism/neorealism,1.946
+BRI/Silk Road,simulacrum/geoeconomics,1.883
+Afghanistan,realism/neorealism,1.849
+South Asia,state-building,1.823
+regional security complex,critical geopolitics,1.787
+connectivity/infrastructure,simulacrum/geoeconomics,1.754
+energy security,state-building,1.749
+India,realism/neorealism,1.682
+India,state-building,1.588
+Afghanistan,geopolitical constructivism,1.428
+regional security complex,simulacrum/geoeconomics,1.411
+Central Asia,simulacrum/geoeconomics,1.367
+Central Asia,critical geopolitics,1.3470000000000002
+ethnic politics,critical geopolitics,1.329
+Russia,critical geopolitics,1.285
+BRI/Silk Road,classical geopolitics,1.28
+Heartland,classical geopolitics,1.279
+South Asia,securitisation theory,1.241
+Pakistan/Af-Pak,classical geopolitics,1.238
+Pakistan/Af-Pak,securitisation theory,1.238
+BRI/Silk Road,critical geopolitics,1.223
+Eurasia,classical geopolitics,1.214
+India,critical geopolitics,1.154
+environment,critical geopolitics,1.147
+environment,securitisation theory,1.147
+South Asia,realism/neorealism,1.051
+energy security,securitisation theory,0.945
+Afghanistan,ethnogeopolitics,0.916
+connectivity/infrastructure,critical geopolitics,0.915
+connectivity/infrastructure,semiotics,0.915
+ethnic politics,securitisation theory,0.915
+regional security complex,geopolitical constructivism,0.8999999999999999
+ethnic politics,state-building,0.8859999999999999
+Central Asia,state-building,0.874
+Heartland,critical geopolitics,0.757
+Heartland,ontology,0.757
+Russia,ontology,0.757
+Pakistan/Af-Pak,realism/neorealism,0.74
+China,state-building,0.739
+regional security complex,securitisation theory,0.71
+India,simulacrum/geoeconomics,0.707
+Russia,simulacrum/geoeconomics,0.707
+energy corridors/pipelines,classical geopolitics,0.707
+energy corridors/pipelines,simulacrum/geoeconomics,0.707
+energy security,simulacrum/geoeconomics,0.707
+connectivity/infrastructure,state-building,0.6950000000000001
+Afghanistan,simulacrum/geoeconomics,0.66
+Afghanistan,Uzbekistan,0.645
+Central Asia,Uzbekistan,0.645
+South Asia,Uzbekistan,0.645
+borders/Durand Line,Uzbekistan,0.645
+borders/Durand Line,classical geopolitics,0.645
+regional security complex,Uzbekistan,0.645
+South Asia,geopolitical constructivism,0.637
+environment,geopolitical constructivism,0.616
+Pakistan/Af-Pak,critical geopolitics,0.528
+Pakistan/Af-Pak,geopolitical constructivism,0.528
+Russia,geopolitical constructivism,0.528
+Russia,securitisation theory,0.528
+Central Asia,geopolitical constructivism,0.522
+Eurasia,geopolitical constructivism,0.522
+Heartland,geopolitical constructivism,0.522
+regional security complex,ethnogeopolitics,0.502
+India,regional development,0.499
+energy security,regional development,0.499
+China,realism/neorealism,0.487
+Central Asia,realism/neorealism,0.479
+energy corridors/pipelines,realism/neorealism,0.479
+Afghanistan,geoeconomic constructivism,0.472
+Afghanistan,great powers,0.472
+BRI/Silk Road,geopolitical constructivism,0.472
+BRI/Silk Road,semiotics,0.472
+BRI/Silk Road,state-building,0.472
+Central Asia,geoeconomic constructivism,0.472
+SCO,classical geopolitics,0.472
+South Asia,geoeconomic constructivism,0.472
+Taliban,classical geopolitics,0.472
+Taliban,geopolitical constructivism,0.472
+Taliban,great powers,0.472
+Taliban,realism/neorealism,0.472
+connectivity/infrastructure,geoeconomic constructivism,0.472
+connectivity/infrastructure,geopolitical constructivism,0.472
+energy corridors/pipelines,geoeconomic constructivism,0.472
+regional security complex,geoeconomic constructivism,0.472
+regional security complex,great powers,0.472
+Afghanistan,GIS/spatial analysis,0.443
+Afghanistan,Tibet,0.443
+Afghanistan,identity politics,0.443
+Afghanistan,semiotics,0.443
+Central Asia,GIS/spatial analysis,0.443
+Central Asia,Tibet,0.443
+Central Asia,identity politics,0.443
+Central Asia,securitisation theory,0.443
+Central Asia,semiotics,0.443
+South Asia,GIS/spatial analysis,0.443
+connectivity/infrastructure,Tibet,0.443
+connectivity/infrastructure,classical geopolitics,0.443
+energy corridors/pipelines,GIS/spatial analysis,0.443
+energy security,GIS/spatial analysis,0.443
+ethnic politics,identity politics,0.443
+regional security complex,GIS/spatial analysis,0.443
+India,geopolitical constructivism,0.428
+Pakistan/Af-Pak,state-building,0.414
+energy security,Asia,0.414
+energy security,geopolitical constructivism,0.414
+ethnic politics,ethnogeopolitics,0.414
+India,strategic competition,0.396
+regional security complex,strategic competition,0.396
+Afghanistan,sustainability,0.341
+South Asia,sustainability,0.341
+regional security complex,sustainability,0.341
+Afghanistan,Durand Line,0.326
+Pakistan/Af-Pak,Durand Line,0.326
+India,subaltern/critical theory,0.282
+South Asia,subaltern/critical theory,0.282
+energy security,subaltern/critical theory,0.282
+Russia,state-building,0.267
+South Asia,globalization,0.209
+South Asia,systems theory,0.209
+India,ethnogeopolitics,0.15

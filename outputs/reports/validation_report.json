@@ -1,0 +1,48 @@
+{
+  "root": ".",
+  "missing": [],
+  "summary": {
+    "README.md": {
+      "size_bytes": 2847
+    },
+    "PROJECT_STATUS.md": {
+      "size_bytes": 1640
+    },
+    "ROADMAP.md": {
+      "size_bytes": 1678
+    },
+    "docs/protocol/REVISED_PROJECT_PROTOCOL.md": {
+      "size_bytes": 6502
+    },
+    "docs/protocol/MASTER_CORPUS_SCHEMA.md": {
+      "size_bytes": 5411
+    },
+    "docs/domain/CORRECTED_DOMAIN_BOUNDARY.md": {
+      "size_bytes": 5953
+    },
+    "data/raw/zotero/zotero_inventory.csv": {
+      "rows": 1841,
+      "size_bytes": 218374
+    },
+    "data/raw/recoll/recoll_corpus_manifest.csv": {
+      "rows": 12594,
+      "size_bytes": 2312647
+    },
+    "data/raw/solemon/solemon_crawl.csv": {
+      "rows": 35178,
+      "size_bytes": 3704651
+    },
+    "data/raw/claude_artifacts/bridge_concepts.csv": {
+      "rows": 392,
+      "size_bytes": 196323
+    },
+    "data/processed/MASTER_CORPUS_REGISTER_PRELIMINARY.csv": {
+      "rows": 35861,
+      "size_bytes": 16522830
+    },
+    "data/verification/BRIDGE_CONCEPTS_VERIFICATION_QUEUE.csv": {
+      "rows": 392,
+      "size_bytes": 232448
+    }
+  }
+}

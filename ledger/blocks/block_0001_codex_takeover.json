@@ -1,0 +1,29 @@
+{
+  "block_no": 1,
+  "block_id": "block_0001_codex_takeover",
+  "title": "Codex takeover: evidence-graded master register & verification regime",
+  "ts": "2026-07-06T13:03:30+00:00",
+  "session_id": "codex-session",
+  "actor": "codex",
+  "inputs": [
+    "Claude reconnaissance artifacts"
+  ],
+  "operations": [
+    "path-union master register (35861)",
+    "dedupe (3347 groups, 7259 dup rows)",
+    "preliminary class: 11453 Core / 839 Peripheral / 432 Noise / 23137 Unknown",
+    "evidence grading: 23267 metadata_only / 12594 metadata_manifest",
+    "bridge concepts flagged hypothesis_only",
+    "revised protocol + corrected domain boundary"
+  ],
+  "outputs": [
+    "MASTER_CORPUS_REGISTER_PRELIMINARY.csv",
+    "ZOTERO_REGISTER_PRELIMINARY.csv",
+    "BRIDGE_CONCEPTS_VERIFICATION_QUEUE.csv",
+    "REVISED_PROJECT_PROTOCOL.md",
+    "CORRECTED_DOMAIN_BOUNDARY.md",
+    "takeover_summary.json"
+  ],
+  "prev_hash": "1b7f455bb38e46cedd7208e64852dcd4d099d4b78e9cbf3761fa54012a7e6355",
+  "block_hash": "2404e8264563800775e3bfafaef4ba55fe789b42721c29ebf998e2dca15edb64"
+}

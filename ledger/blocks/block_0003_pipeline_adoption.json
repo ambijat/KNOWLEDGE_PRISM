@@ -1,0 +1,23 @@
+{
+  "block_no": 3,
+  "block_id": "block_0003_pipeline_adoption",
+  "title": "Adopt the 8-stage governing pipeline and grade every stage honestly",
+  "ts": "2026-07-07T02:13:05.807836+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude",
+  "inputs": [
+    "user methodological assessment (reconnaissance vs ontology)",
+    "current ledger state"
+  ],
+  "operations": [
+    "formalized 8-stage pipeline: Reconnaissance\u2192Master Register\u2192Evidence Ledger\u2192Verification Queue\u2192Core Corpus\u2192Ontology\u2192OpenAlex Enrichment\u2192Codex Handover",
+    "graded each stage's true status + evidence gate",
+    "reclassified reconnaissance as metadata_only (not mature ontology)",
+    "identified Verification Queue (392 bridge books) as the next executable stage"
+  ],
+  "outputs": [
+    "PIPELINE.md"
+  ],
+  "prev_hash": "e3637f930e6a47687f32101eff0ef9f573dc92b4a43d220c60a71fcfacfe14e6",
+  "block_hash": "387092a9dfba7836d44741992c96ca32aeb2d53ca4f5e08f6cd697a3c9b6bb4a"
+}

@@ -1,0 +1,23 @@
+{
+  "block_no": 5,
+  "block_id": "block_0005_index_prism_workbench",
+  "title": "Human-facing Knowledge Prism index interface prototype",
+  "ts": "2026-07-07T02:58:51.320612+00:00",
+  "session_id": "codex-session-2026-07-07",
+  "actor": "codex",
+  "inputs": [
+    "ACTION_PLAN.md",
+    "PIPELINE.md",
+    "current ontology axes and evidence-grade rules"
+  ],
+  "operations": [
+    "conceptualized a standalone index.html workbench for assembling evidence-graded knowledge pieces",
+    "implemented a prism/cube interface with piece library, lenses, idea stack, synthesis modes, local persistence, and JSON export",
+    "kept metadata-vs-evidence warnings visible in the interface"
+  ],
+  "outputs": [
+    "index.html"
+  ],
+  "prev_hash": "7b098963d15dcc0eaef6e941586af81c62e52e8717cceffd1c23e47d34fd9768",
+  "block_hash": "1d64532a6d6811b7392c87129bf1722cc143314ed15f5bdf26cb3937ba4c955c"
+}

@@ -1,0 +1,32 @@
+{
+  "block_no": 11,
+  "block_id": "block_0011_security_leakage_audit",
+  "title": "Security leakage audit and immediate plugs",
+  "ts": "2026-07-07T04:08:14.001369+00:00",
+  "session_id": "codex-session-2026-07-07",
+  "actor": "codex",
+  "inputs": [
+    "docs/protocol/AGENT_TRANSPARENCY_PROTOCOL.md",
+    "index.html",
+    "project file tree",
+    "local secret-file metadata"
+  ],
+  "operations": [
+    "audited credential-like files, browser IO, zip artifact names, preview serving, file permissions, ignore rules, action log, and provenance chain",
+    "stopped the broad project-root HTTP preview server",
+    "tightened secrets directory and file permissions to owner-only",
+    "added secret patterns to .gitignore",
+    "added scripts/06_serve_gui.py to serve only index.html on localhost by default",
+    "documented findings and residual risk in outputs/reports/SECURITY_LEAKAGE_AUDIT.md",
+    "updated README.md with safe GUI preview rule"
+  ],
+  "outputs": [
+    "outputs/reports/SECURITY_LEAKAGE_AUDIT.md",
+    ".gitignore",
+    "README.md",
+    "scripts/06_serve_gui.py",
+    "logs/agent_actions.jsonl"
+  ],
+  "prev_hash": "9cb1b5065429fd2489ed4fcf6cedfdc27df7e7f702ad7e0db163b88d8b52c556",
+  "block_hash": "9c2a98b40cd8aa8164c214f2f6450e596fe6041c4b5caf2a63845e533ce2c1af"
+}

@@ -1,0 +1,150 @@
+{
+  "created": "2026-07-06 13:03:30",
+  "files": [
+    {
+      "path": ".gitignore",
+      "size_bytes": 321,
+      "sha256": "9f1d9e11b8fb75ab85cf2b943a9f811135539668bc23bbc8ec634919f4dbe41b"
+    },
+    {
+      "path": "INSTALL_IN_TARGET_FOLDER.sh",
+      "size_bytes": 416,
+      "sha256": "2cb6098eb82b3119ab8f56f5e3019612c09f71a00710517559a9afb9defcd0d1"
+    },
+    {
+      "path": "PROJECT_STATUS.md",
+      "size_bytes": 1640,
+      "sha256": "f60d6978430b95f1cd1c7287650da4c430e541cc530916ea29136d04f707d33d"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 2304,
+      "sha256": "dfc8bf82cd9586ac8893591aca7fed61187f138d4f5c7f6596c9452bf28cbf9c"
+    },
+    {
+      "path": "ROADMAP.md",
+      "size_bytes": 1678,
+      "sha256": "eea779f7c7b569b3f877585273bd6f41b18b78dc25305e2d29512416c2c73a63"
+    },
+    {
+      "path": "codex/CODEX_BATON_PROMPT.md",
+      "size_bytes": 2191,
+      "sha256": "929c1cba41ad7d7dfd934d423c23ca0c7905db235dcf5e555610c9dd47ac9155"
+    },
+    {
+      "path": "data/processed/MASTER_CORPUS_REGISTER_PRELIMINARY.csv",
+      "size_bytes": 16810266,
+      "sha256": "7eea84d895f243b40e433f73af944daf80231cb16defa05edb33b7b3699f2a89"
+    },
+    {
+      "path": "data/processed/ZOTERO_REGISTER_PRELIMINARY.csv",
+      "size_bytes": 379634,
+      "sha256": "03760395e0f46d4f305199b30589e753eb1ad37fc9d09852992f21a6ddd6df50"
+    },
+    {
+      "path": "data/raw/claude_artifacts/bridge_concepts.csv",
+      "size_bytes": 196323,
+      "sha256": "a274fb9c7fe30c0bfb5cc16c86be0e83a1ae186768cd007a712ede70d94926cc"
+    },
+    {
+      "path": "data/raw/claude_artifacts/deepread_folders.csv",
+      "size_bytes": 1305,
+      "sha256": "3aa8526f397d50ae8ed23f379f401b8445dbfef19ce0933aa28ce1a2abc2a785"
+    },
+    {
+      "path": "data/raw/claude_artifacts/domain_definition.md",
+      "size_bytes": 6654,
+      "sha256": "67cadfca729589480c95e21148ca6f5765f7468f94f84660d52c0c1665630b3f"
+    },
+    {
+      "path": "data/raw/recoll/recoll_corpus_manifest.csv",
+      "size_bytes": 2413947,
+      "sha256": "f5ea8cf84f6fc041242453e27cd2175a80bcc11baa77471c411218d6fddd005e"
+    },
+    {
+      "path": "data/raw/recoll/recoll_subject_folders.csv",
+      "size_bytes": 14550,
+      "sha256": "56598bf77d0d2931870509a840768007108e5137f26734d53ca0d76e1562303f"
+    },
+    {
+      "path": "data/raw/solemon/solemon_crawl.csv",
+      "size_bytes": 3986075,
+      "sha256": "fda55c05d299f787c2f2e6d3063a85da633a9c8296324a3349c130de7f543222"
+    },
+    {
+      "path": "data/raw/zotero/zotero_inventory.csv",
+      "size_bytes": 218374,
+      "sha256": "4da06fa992d7e99d0ccb11b1a627af2a0d4437edc2dee913b45a125c968883b8"
+    },
+    {
+      "path": "data/verification/BRIDGE_CONCEPTS_VERIFICATION_QUEUE.csv",
+      "size_bytes": 232448,
+      "sha256": "5bb34bcf4ca9a3700eb2d464f00e41debd5456da6b9ea60137f037308ab624a7"
+    },
+    {
+      "path": "docs/audit/DESIGN_SCEPTICISM_AND_CORRECTION_MEMO.md",
+      "size_bytes": 1224,
+      "sha256": "892e192b92915f4c8ae9bf4ecb5b0966912380670d39f595609fe7b1d5370a4c"
+    },
+    {
+      "path": "docs/audit/takeover_summary.json",
+      "size_bytes": 512,
+      "sha256": "4d557cbd5edb0fb61fd6d227ffa118d29fe1b78af322ec3bc6f2c4a11b586afe"
+    },
+    {
+      "path": "docs/domain/CORRECTED_DOMAIN_BOUNDARY.md",
+      "size_bytes": 5953,
+      "sha256": "271d2ed517916d075f602fd598dc0c7b3c7e5bd8122fba44faad64f9a8eae709"
+    },
+    {
+      "path": "docs/domain/KNOWLEDGE_PRISM_PROJECT_BRIEF.md",
+      "size_bytes": 1182,
+      "sha256": "f3d0b6e99f7633b0d5781bc552a384c6c456e899bcf5aed0082f53cafc80026e"
+    },
+    {
+      "path": "docs/handover/CODEX_BATON_PROMPT.md",
+      "size_bytes": 2191,
+      "sha256": "929c1cba41ad7d7dfd934d423c23ca0c7905db235dcf5e555610c9dd47ac9155"
+    },
+    {
+      "path": "docs/protocol/MASTER_CORPUS_SCHEMA.md",
+      "size_bytes": 5411,
+      "sha256": "b633afac9756615cce5added6652e19dd9072b4058ed59803cf0e0f131cbc394"
+    },
+    {
+      "path": "docs/protocol/REVISED_PROJECT_PROTOCOL.md",
+      "size_bytes": 6502,
+      "sha256": "dd492e4f5a58be97c28b6eafb98f0471aacc675bcfcd4de3ccd9041470812fb5"
+    },
+    {
+      "path": "outputs/maps/corpus_domain_map.png",
+      "size_bytes": 130691,
+      "sha256": "473d58fb047b3ea15e8e0cae30375b102bdfb001482e8e941a81dc1b3cf1c2e7"
+    },
+    {
+      "path": "outputs/maps/domain_map.png",
+      "size_bytes": 190741,
+      "sha256": "f69ed4d04900940b368add079ea6b8a91e317b59bbd347fa6ee7fa61593075c2"
+    },
+    {
+      "path": "scripts/00_validate_project.py",
+      "size_bytes": 1490,
+      "sha256": "90f65258d75b4d2ab532a7b510e7c8ee4fc8e8a2b26c992f9eee432e317e5af5"
+    },
+    {
+      "path": "scripts/01_build_master_register.py",
+      "size_bytes": 5775,
+      "sha256": "f059f204b627e1e104f2fcf77f2b6bdc69464dc088ae836801206a6c60fa97a4"
+    },
+    {
+      "path": "scripts/02_generate_bridge_verification_sample.py",
+      "size_bytes": 1563,
+      "sha256": "c956aaa77ab12467a3dd6fb8db8dd4fe56620b1a80999526a0536f5b3e2e5c3e"
+    },
+    {
+      "path": "scripts/03_report_status.py",
+      "size_bytes": 1671,
+      "sha256": "c55d319477a57df17850a2f2a4bca10628ff32a3f9a263044e2b4824001188e0"
+    }
+  ]
+}
