@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Ratzel and Demography",
+    "file": "ratzel_and_demography.pdf",
+    "thesis_verdict": "PARTIAL",
+    "confidence": 0.55,
+    "quote_validation_status": "not_validated",
+    "disposition": "review_required",
+    "evidence_grade": "hypothesis_only_not_scholarly_evidence",
+    "layer_tag": "Layer_B_method_theory_core",
+    "functional_ir_role": "POTENTIAL: a genealogy of political geography and geopolitical reasoning — how territory, state expansion, demographic imagination and spatial power (Ratzel's Lebensraum lineage) entered IR/geopolitical thought.",
+    "interaction_illuminated": "empire-frontier; state-space",
+    "ontology_use": "If firmed up, it explains the intellectual origins of the territorial-expansion and organic-state ideas that classical geopolitics (an eigenaxis) rests on. Evidence is currently weak (PARTIAL, 0.55, quote failed verbatim) → deeper sampling with a validated argument quote before admission to the theory-method layer.",
+    "limitation_or_caution": "Functional promise is visible, but the evidence remains review-required; deeper sampling is needed before ontology use.",
+    "next_action": "Deeper re-sample needed; validated argument quote required.",
+    "reason": "User ruling: Ratzel relevant to political geography/geopolitics (Layer B, possibly AB) but verdict PARTIAL, conf 0.55, quote validation FAILED. Do not exclude, do not promote. Action: deeper re-sample with stronger targeted chapter/concept probe; require validated argument quote."
+  },
+  {
+    "title": "Russia and the Mongols: Slavs and the Steppe in Medieval and Early Modern Russia",
+    "file": "Russia and the Mongols Slavs and the steppe in medieval and early modern Russia.pdf",
+    "thesis_verdict": "PARTIAL",
+    "confidence": 0.55,
+    "quote_validation_status": "verified",
+    "disposition": "review_required",
+    "evidence_grade": "hypothesis_only_not_scholarly_evidence",
+    "layer_tag": "Layer_A_empirical_core",
+    "functional_ir_role": "POTENTIAL: historical-Eurasian context — the steppe/Mongol imprint on Russian state formation and the empire-frontier dynamic of inner Eurasia.",
+    "interaction_illuminated": "empire-frontier; region-security",
+    "ontology_use": "Could supply the deep-historical layer explaining Russia's frontier posture toward Central Asia. But at 0.55 (PARTIAL) we cannot yet say whether it functions as core Eurasian explanation or merely background → deeper re-sample to decide core vs peripheral vs background.",
+    "limitation_or_caution": "Functional promise is visible, but the evidence remains review-required; deeper sampling is needed before ontology use.",
+    "next_action": "Deeper re-sample needed; decide core vs peripheral vs historical background.",
+    "reason": "User ruling: may be Layer A historical-Eurasian context or Peripheral_context, but conf only 0.55. Do not promote. Action: deeper re-sample before deciding core vs peripheral vs historical background."
+  },
+  {
+    "title": "Advaita Vedanta and International Relations",
+    "file": "abiword_job__2_job_287.pdf",
+    "thesis_verdict": "UNREADABLE",
+    "confidence": 0.0,
+    "quote_validation_status": "not_applicable",
+    "disposition": "excluded_unreadable",
+    "evidence_grade": "metadata_only",
+    "layer_tag": "Unreadable_or_unassessable",
+    "functional_ir_role": "UNDETERMINED: title suggests a bridge between Advaita Vedanta and IR — potentially a non-Western ontology / knowledge-construction contribution (the user's own 'ontological understanding' strand).",
+    "interaction_illuminated": "knowledge-production",
+    "ontology_use": "If the extraction is recovered, it may function as an indigenous-ontology lens on IR knowledge structures — squarely the project's meta-interest. Currently unreadable → OCR/manual inspection before any functional claim is trusted.",
+    "limitation_or_caution": "Functional role is only a candidate because the text is unreadable; OCR or manual inspection is required.",
+    "next_action": "OCR or manual inspection required before any relevance judgement.",
+    "reason": "User ruling: unreadability != irrelevance. If title accurate, may be Layer B/bridge material. Park as unreadable pending reOCR_or_manual_inspection_required. Do not exclude as noise unless later inspection confirms irrelevance."
+  }
+]

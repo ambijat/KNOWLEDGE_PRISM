@@ -1,0 +1,31 @@
+{
+  "block_no": 15,
+  "block_id": "block_0015_six_row_dispositions",
+  "title": "Apply two-axis dispositions to 6 reviewed pilot rows (user-supervised); add Peripheral_context vocab + layer_tag",
+  "ts": "2026-07-07T13:53:27.972055+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude",
+  "inputs": [
+    "PILOT_REVIEW_TABLE.csv (98e5d8e9)",
+    "user ruling pasted-text-2026-07-07 (b1a23a9c)",
+    "BRIDGE_PILOT_VERDICTS.csv"
+  ],
+  "operations": [
+    "Confirmed Histology (#14) claim_supported_but_project_irrelevant as decided_by=human",
+    "Added Peripheral_context to disposition_taxonomy (added_block 15)",
+    "Added layer_tag column to verdict_disposition + seeded full vocabulary in build_prism_db.py",
+    "#5 -> core_candidate (Layer_B_method_theory_core)",
+    "#12 -> claim_supported_but_project_irrelevant",
+    "#16 -> Peripheral_context",
+    "#7 -> review_required (re-sample; quote failed)",
+    "#13 -> review_required (re-sample)",
+    "#18 -> excluded_unreadable (reOCR/manual pending)"
+  ],
+  "outputs": [
+    "verdict_disposition: 8 rows total",
+    "disposition_taxonomy: 6 vocab values",
+    "NO promotion performed; 10 core_candidates remain promotion-eligible only"
+  ],
+  "prev_hash": "14863284f2316b18bf55f2efc9e8c97e0de7fe5875045e3637c2adb7947f7534",
+  "block_hash": "86a2cd3bc768dc25a2c2118dffa28cf2aa42e3873f887a1e4a4bd7f302781ac2"
+}

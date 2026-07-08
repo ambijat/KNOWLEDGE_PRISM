@@ -1,0 +1,562 @@
+[
+  {
+    "block_no": 0,
+    "block_id": "block_0000_genesis_recon",
+    "title": "Genesis: Claude Science reconnaissance & two-layer domain mapping",
+    "ts": "2026-07-05T00:00:00+00:00",
+    "actor": "claude",
+    "action_type": "ledger_block",
+    "inputs": [
+      "Zotero library",
+      "Recoll index",
+      "SOLEMON drive"
+    ],
+    "operations": [
+      "zotero inventory (1841)",
+      "recoll manifest (12594)",
+      "solemon crawl (35178)",
+      "bridge concept extraction (392)",
+      "two-layer domain definition"
+    ],
+    "artifacts_produced": [
+      "zotero_inventory.csv",
+      "recoll_corpus_manifest.csv",
+      "solemon_crawl.csv",
+      "bridge_concepts.csv",
+      "domain_definition_v2.md",
+      "domain_map.png"
+    ],
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "block_hash": "1b7f455bb38e46cedd7208e64852dcd4d099d4b78e9cbf3761fa54012a7e6355",
+    "source_file": "block_0000_genesis_recon.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 1,
+    "block_id": "block_0001_codex_takeover",
+    "title": "Codex takeover: evidence-graded master register & verification regime",
+    "ts": "2026-07-06T13:03:30+00:00",
+    "actor": "codex",
+    "action_type": "ledger_block",
+    "inputs": [
+      "Claude reconnaissance artifacts"
+    ],
+    "operations": [
+      "path-union master register (35861)",
+      "dedupe (3347 groups, 7259 dup rows)",
+      "preliminary class: 11453 Core / 839 Peripheral / 432 Noise / 23137 Unknown",
+      "evidence grading: 23267 metadata_only / 12594 metadata_manifest",
+      "bridge concepts flagged hypothesis_only",
+      "revised protocol + corrected domain boundary"
+    ],
+    "artifacts_produced": [
+      "MASTER_CORPUS_REGISTER_PRELIMINARY.csv",
+      "ZOTERO_REGISTER_PRELIMINARY.csv",
+      "BRIDGE_CONCEPTS_VERIFICATION_QUEUE.csv",
+      "REVISED_PROJECT_PROTOCOL.md",
+      "CORRECTED_DOMAIN_BOUNDARY.md",
+      "takeover_summary.json"
+    ],
+    "prev_hash": "1b7f455bb38e46cedd7208e64852dcd4d099d4b78e9cbf3761fa54012a7e6355",
+    "block_hash": "2404e8264563800775e3bfafaef4ba55fe789b42721c29ebf998e2dca15edb64",
+    "source_file": "block_0001_codex_takeover.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 2,
+    "block_id": "block_0002_eigenspace_step2_db",
+    "title": "Eigenspace analysis, Step-2 literature loop, and Proof-of-Provenance DB",
+    "ts": "2026-07-07T02:03:53.581059+00:00",
+    "actor": "claude",
+    "action_type": "ledger_block",
+    "inputs": [
+      "Google Scholar publications (47)",
+      "OpenAlex",
+      "arXiv",
+      "all inherited registers"
+    ],
+    "operations": [
+      "publication eigenspace: NMF on weighted 47x45 matrix -> 5 latent axes",
+      "weighted A×B intersection seam (136)",
+      "Step-2 looping literature pull -> 86 papers (47 seed/27 loop/12 frontier)",
+      "consolidated all sources into knowledge_prism.db",
+      "installed hash-chained provenance ledger"
+    ],
+    "artifacts_produced": [
+      "eigenspace.png",
+      "intersection_seam.csv",
+      "step2_corpus.csv",
+      "step2_methodology.md",
+      "knowledge_prism.db"
+    ],
+    "prev_hash": "2404e8264563800775e3bfafaef4ba55fe789b42721c29ebf998e2dca15edb64",
+    "block_hash": "e3637f930e6a47687f32101eff0ef9f573dc92b4a43d220c60a71fcfacfe14e6",
+    "source_file": "block_0002_eigenspace_step2_db.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 3,
+    "block_id": "block_0003_pipeline_adoption",
+    "title": "Adopt the 8-stage governing pipeline and grade every stage honestly",
+    "ts": "2026-07-07T02:13:05.807836+00:00",
+    "actor": "claude",
+    "action_type": "ledger_block",
+    "inputs": [
+      "user methodological assessment (reconnaissance vs ontology)",
+      "current ledger state"
+    ],
+    "operations": [
+      "formalized 8-stage pipeline: Reconnaissance→Master Register→Evidence Ledger→Verification Queue→Core Corpus→Ontology→OpenAlex Enrichment→Codex Handover",
+      "graded each stage's true status + evidence gate",
+      "reclassified reconnaissance as metadata_only (not mature ontology)",
+      "identified Verification Queue (392 bridge books) as the next executable stage"
+    ],
+    "artifacts_produced": [
+      "PIPELINE.md"
+    ],
+    "prev_hash": "e3637f930e6a47687f32101eff0ef9f573dc92b4a43d220c60a71fcfacfe14e6",
+    "block_hash": "387092a9dfba7836d44741992c96ca32aeb2d53ca4f5e08f6cd697a3c9b6bb4a",
+    "source_file": "block_0003_pipeline_adoption.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 4,
+    "block_id": "block_0004_bridge_batch_access",
+    "title": "Bridge verification batch access mapping and pilot selection",
+    "ts": "2026-07-07T02:48:24.190779+00:00",
+    "actor": "codex",
+    "action_type": "ledger_block",
+    "inputs": [
+      "data/verification/BRIDGE_CONCEPTS_VERIFICATION_QUEUE.csv",
+      "data/processed/MASTER_CORPUS_REGISTER_PRELIMINARY.csv",
+      "mounted SOLEMON source paths"
+    ],
+    "operations": [
+      "joined 392 bridge-concept rows to master corpus filenames",
+      "checked source-file accessibility for mapped paths",
+      "selected deterministic load-bearing 20-item verification pilot",
+      "generated batch manifest, access report, pilot checklist, and compatibility first-50 checklist"
+    ],
+    "artifacts_produced": [
+      "data/verification/BRIDGE_BATCH_MANIFEST.csv",
+      "outputs/reports/BRIDGE_QUEUE_ACCESS_REPORT.md",
+      "outputs/reports/BRIDGE_VERIFICATION_PILOT_20.md",
+      "outputs/reports/BRIDGE_VERIFICATION_SAMPLE_50.md"
+    ],
+    "prev_hash": "387092a9dfba7836d44741992c96ca32aeb2d53ca4f5e08f6cd697a3c9b6bb4a",
+    "block_hash": "7b098963d15dcc0eaef6e941586af81c62e52e8717cceffd1c23e47d34fd9768",
+    "source_file": "block_0004_bridge_batch_access.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 5,
+    "block_id": "block_0005_index_prism_workbench",
+    "title": "Human-facing Knowledge Prism index interface prototype",
+    "ts": "2026-07-07T02:58:51.320612+00:00",
+    "actor": "codex",
+    "action_type": "ledger_block",
+    "inputs": [
+      "ACTION_PLAN.md",
+      "PIPELINE.md",
+      "current ontology axes and evidence-grade rules"
+    ],
+    "operations": [
+      "conceptualized a standalone index.html workbench for assembling evidence-graded knowledge pieces",
+      "implemented a prism/cube interface with piece library, lenses, idea stack, synthesis modes, local persistence, and JSON export",
+      "kept metadata-vs-evidence warnings visible in the interface"
+    ],
+    "artifacts_produced": [
+      "index.html"
+    ],
+    "prev_hash": "7b098963d15dcc0eaef6e941586af81c62e52e8717cceffd1c23e47d34fd9768",
+    "block_hash": "1d64532a6d6811b7392c87129bf1722cc143314ed15f5bdf26cb3937ba4c955c",
+    "source_file": "block_0005_index_prism_workbench.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 6,
+    "block_id": "block_0006_graph_lab_interface",
+    "title": "Neo4j-style Knowledge Prism graph lab interface revision",
+    "ts": "2026-07-07T03:06:51.642173+00:00",
+    "actor": "codex",
+    "action_type": "ledger_block",
+    "inputs": [
+      "index.html prototype feedback",
+      "project ontology nodes and evidence-grade metaphor"
+    ],
+    "operations": [
+      "replaced static cube dashboard with canvas force-directed graph simulation",
+      "added draggable nodes, relationship edges, graph filters, node inspection, idea stack, synthesis modes, and JSON export",
+      "made evidence grade visible through node glow and graph state metrics"
+    ],
+    "artifacts_produced": [
+      "index.html"
+    ],
+    "prev_hash": "1d64532a6d6811b7392c87129bf1722cc143314ed15f5bdf26cb3937ba4c955c",
+    "block_hash": "1e29d8bd9ca4763192450a69b034de7dc762a775739b033bd0e3c3b95929c059",
+    "source_file": "block_0006_graph_lab_interface.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 7,
+    "block_id": "block_0007_gui_brochure_manual",
+    "title": "Knowledge Prism graph lab brochure and driver manual",
+    "ts": "2026-07-07T03:33:40.641009+00:00",
+    "actor": "codex",
+    "action_type": "ledger_block",
+    "inputs": [
+      "index.html graph lab interface",
+      "sandbox task guidance"
+    ],
+    "operations": [
+      "created a human-readable brochure explaining the reasoning behind the graph lab interface",
+      "documented controls, evidence grades, sandbox routes, and the modern-car driving metaphor",
+      "framed the page as a disciplined imagination workbench rather than a final ontology"
+    ],
+    "artifacts_produced": [
+      "docs/KNOWLEDGE_PRISM_GUI_BROCHURE.md"
+    ],
+    "prev_hash": "1e29d8bd9ca4763192450a69b034de7dc762a775739b033bd0e3c3b95929c059",
+    "block_hash": "63f22d26b8f5089f3d9cdf3c3e6cf8be1b5c8de27381c96079b47fbb5b7a1d95",
+    "source_file": "block_0007_gui_brochure_manual.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 8,
+    "block_id": "block_0008_project_preamble",
+    "title": "Visitor-facing preamble for the whole Knowledge Prism project",
+    "ts": "2026-07-07T03:40:14.535814+00:00",
+    "actor": "codex",
+    "action_type": "ledger_block",
+    "inputs": [
+      "project brief",
+      "pipeline",
+      "action plan",
+      "graph lab interface",
+      "GUI brochure"
+    ],
+    "operations": [
+      "created a root preamble that introduces Knowledge Prism as a museum-like research workshop",
+      "summarised the whole project idea, layers, attributes, red-line rule, visitor route, and learning goals",
+      "positioned the project for newcomers before they enter technical files or the graph lab"
+    ],
+    "artifacts_produced": [
+      "PREAMBLE.md"
+    ],
+    "prev_hash": "63f22d26b8f5089f3d9cdf3c3e6cf8be1b5c8de27381c96079b47fbb5b7a1d95",
+    "block_hash": "f7f1f6569b77e5b024c6cc220aac607aeaca00237b011b7a18ce0d7d891f6197",
+    "source_file": "block_0008_project_preamble.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 9,
+    "block_id": "block_0009_extraction_playbook_gui_standards",
+    "title": "Methodological extraction playbook and GUI standards refinement",
+    "ts": "2026-07-07T03:43:42.538561+00:00",
+    "actor": "codex",
+    "action_type": "ledger_block",
+    "inputs": [
+      "pasted tweet text supplied by user",
+      "index.html graph lab",
+      "Knowledge Prism evidence discipline"
+    ],
+    "operations": [
+      "extracted a safe methodological pattern: preserve frontier reasoning as standards, notes, capped goals, and reusable project memory",
+      "rejected external/model/pricing claims as outside project ontology and not project evidence",
+      "created docs/PROJECT_EXTRACTION_PLAYBOOK.md",
+      "added GUI Standards panel and learning-note export to index.html"
+    ],
+    "artifacts_produced": [
+      "docs/PROJECT_EXTRACTION_PLAYBOOK.md",
+      "index.html"
+    ],
+    "prev_hash": "f7f1f6569b77e5b024c6cc220aac607aeaca00237b011b7a18ce0d7d891f6197",
+    "block_hash": "7a3f303107929a87bba8ec604a08049fadfdd694a5e24f93e4b82f77d5fda7ca",
+    "source_file": "block_0009_extraction_playbook_gui_standards.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 10,
+    "block_id": "block_0010_agent_transparency_protocol",
+    "title": "Agent transparency protocol and hash-linked action log",
+    "ts": "2026-07-07T04:04:19.272069+00:00",
+    "actor": "codex",
+    "action_type": "ledger_block",
+    "inputs": [
+      "user request for blockchain-like transparent project logging",
+      "existing proof-of-provenance ledger",
+      "RESTORE.md"
+    ],
+    "operations": [
+      "defined a protocol requiring visible intent, bounded scope, evidence grade, hidden-IO declaration, and append-only action records",
+      "added scripts/04_log_agent_action.py for granular hash-linked action logging",
+      "created the first action record in logs/agent_actions.jsonl",
+      "verified both the action log and the milestone provenance chain"
+    ],
+    "artifacts_produced": [
+      "docs/protocol/AGENT_TRANSPARENCY_PROTOCOL.md",
+      "scripts/04_log_agent_action.py",
+      "logs/agent_actions.jsonl"
+    ],
+    "prev_hash": "7a3f303107929a87bba8ec604a08049fadfdd694a5e24f93e4b82f77d5fda7ca",
+    "block_hash": "9cb1b5065429fd2489ed4fcf6cedfdc27df7e7f702ad7e0db163b88d8b52c556",
+    "source_file": "block_0010_agent_transparency_protocol.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 11,
+    "block_id": "block_0011_security_leakage_audit",
+    "title": "Security leakage audit and immediate plugs",
+    "ts": "2026-07-07T04:08:14.001369+00:00",
+    "actor": "codex",
+    "action_type": "ledger_block",
+    "inputs": [
+      "docs/protocol/AGENT_TRANSPARENCY_PROTOCOL.md",
+      "index.html",
+      "project file tree",
+      "[sensitive reference redacted]"
+    ],
+    "operations": [
+      "audited credential-like files, browser IO, zip artifact names, preview serving, file permissions, ignore rules, action log, and provenance chain",
+      "stopped the broad project-root HTTP preview server",
+      "[sensitive reference redacted]",
+      "[sensitive reference redacted]",
+      "added scripts/06_serve_gui.py to serve only index.html on localhost by default",
+      "documented findings and residual risk in outputs/reports/SECURITY_LEAKAGE_AUDIT.md",
+      "updated README.md with safe GUI preview rule"
+    ],
+    "artifacts_produced": [
+      "outputs/reports/SECURITY_LEAKAGE_AUDIT.md",
+      ".gitignore",
+      "README.md",
+      "scripts/06_serve_gui.py",
+      "logs/agent_actions.jsonl"
+    ],
+    "prev_hash": "9cb1b5065429fd2489ed4fcf6cedfdc27df7e7f702ad7e0db163b88d8b52c556",
+    "block_hash": "9c2a98b40cd8aa8164c214f2f6450e596fe6041c4b5caf2a63845e533ce2c1af",
+    "source_file": "block_0011_security_leakage_audit.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 12,
+    "block_id": "block_0012_boot_action_log_ritual",
+    "title": "Mandatory boot and action-log ritual for future agent shifts",
+    "ts": "2026-07-07T04:13:05.309340+00:00",
+    "actor": "codex",
+    "action_type": "ledger_block",
+    "inputs": [
+      "RESTORE.md",
+      "docs/protocol/AGENT_TRANSPARENCY_PROTOCOL.md",
+      "scripts/04_log_agent_action.py",
+      "db/prism.py"
+    ],
+    "operations": [
+      "added scripts/05_start_agent_shift.py to run boot, verify action log, verify ledger, append a start record, and re-verify action log",
+      "updated RESTORE.md to require the start ritual before future edits or verification work",
+      "updated AGENT_TRANSPARENCY_PROTOCOL.md with mandatory shift-start ritual",
+      "updated README.md with the required future agent shift command",
+      "tested the ritual with task-id boot-action-log-ritual"
+    ],
+    "artifacts_produced": [
+      "scripts/05_start_agent_shift.py",
+      "RESTORE.md",
+      "docs/protocol/AGENT_TRANSPARENCY_PROTOCOL.md",
+      "README.md",
+      "logs/agent_actions.jsonl"
+    ],
+    "prev_hash": "9c2a98b40cd8aa8164c214f2f6450e596fe6041c4b5caf2a63845e533ce2c1af",
+    "block_hash": "53ed6b9ab5951de95d5c9d97a3f69ecde9c7a7c97eed5b1850c6069d67e44c72",
+    "source_file": "block_0012_boot_action_log_ritual.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 13,
+    "block_id": "block_rubric_v2_pilot_run",
+    "title": "Rubric v2 approval + stratified 18-book sampling pilot (verdicts provisional, nothing promoted)",
+    "ts": "2026-07-07T13:30:47.363469+00:00",
+    "actor": "claude",
+    "action_type": "ledger_block",
+    "inputs": [
+      "VERIFICATION_RUBRIC.md v2 (supervisor-approved)",
+      "db/_staging/pilot_list_proposal.csv (18 rows, supervisor-approved)",
+      "bridge_concepts.thesis + concepts",
+      "18 source PDFs on SOLEMON"
+    ],
+    "operations": [
+      "recorded supervisor approval of rubric v2 (0.75 gate, three tracks, reasoning model, CONTRADICTED=human, argument-vs-term evidence)",
+      "resolved all 18 pilot rows to accessible PDFs; extracted bounded slices (front-matter+TOC+intro; theory/mixed extra ~2000-word chapter; per-concept probes)",
+      "ran reasoning-model (claude-sonnet-5) three-track verdicts; programmatically re-validated every quote verbatim against slice",
+      "caught+fixed a pipeline bug (blank thesis in first run) by backfilling thesis from bridge_concepts before re-run",
+      "verdict distribution: {'claim_sampled_supported': 14, 'claim_sampled_partial': 2, 'flagged_contradicted': 1, 'blocked_unreadable': 1}",
+      "NO claim status advanced, NO ontology promotion, NO evidence-grade change — verdicts are proposals for human review"
+    ],
+    "artifacts_produced": [
+      "outputs/reports/BRIDGE_PILOT_RESULTS.md",
+      "outputs/reports/BRIDGE_PILOT_VERDICTS.csv",
+      "outputs/reports/BRIDGE_PILOT_VERDICTS.json"
+    ],
+    "prev_hash": "53ed6b9ab5951de95d5c9d97a3f69ecde9c7a7c97eed5b1850c6069d67e44c72",
+    "block_hash": "7ff28b393486daae0d25344a0f58045edd75e846f1ae260071b16b5c8b6fc7bc",
+    "source_file": "block_rubric_v2_pilot_run.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 14,
+    "block_id": "block_disposition_taxonomy_two_axis",
+    "title": "Two-axis disposition taxonomy: separate thesis-accuracy from corpus-membership; add claim_supported_but_project_irrelevant + misfile/noise",
+    "ts": "2026-07-07T13:43:32.577801+00:00",
+    "actor": "claude",
+    "action_type": "ledger_block",
+    "inputs": [
+      "USER instruction: accept CONTRADICTED for Practical Exam Format but record as misfile/noise, not substantive contradiction",
+      "USER instruction: create category claim_supported_but_project_irrelevant — supported thesis but out-of-domain, excluded as noise",
+      "pilot verdicts (block 13)"
+    ],
+    "operations": [
+      "added persistent tables verdict_disposition + disposition_taxonomy to db/build_prism_db.py (survive derived rebuilds)",
+      "established two-axis model: AXIS1 thesis verdict (accuracy) is independent of AXIS2 corpus membership (belonging)",
+      "seeded controlled vocabulary: core_candidate, claim_supported_but_project_irrelevant, excluded_misfile_noise, excluded_unreadable, review_required",
+      "recorded Practical Exam Format -> excluded_misfile_noise (human_review): CONTRADICTED verdict stands but reason is administrative misfile, NOT refuted scholarship",
+      "recorded Histology atlas -> claim_supported_but_project_irrelevant (AI, pending user confirm): thesis accurate, book out-of-domain",
+      "NO core-corpus promotion performed; excluded rows are marked, not deleted from master_corpus"
+    ],
+    "artifacts_produced": [
+      "db/build_prism_db.py (schema +2 tables)",
+      "verdict_disposition (2 rows)",
+      "disposition_taxonomy (5 rows)"
+    ],
+    "prev_hash": "7ff28b393486daae0d25344a0f58045edd75e846f1ae260071b16b5c8b6fc7bc",
+    "block_hash": "14863284f2316b18bf55f2efc9e8c97e0de7fe5875045e3637c2adb7947f7534",
+    "source_file": "block_disposition_taxonomy_two_axis.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 15,
+    "block_id": "block_0015_six_row_dispositions",
+    "title": "Apply two-axis dispositions to 6 reviewed pilot rows (user-supervised); add Peripheral_context vocab + layer_tag",
+    "ts": "2026-07-07T13:53:27.972055+00:00",
+    "actor": "claude",
+    "action_type": "ledger_block",
+    "inputs": [
+      "PILOT_REVIEW_TABLE.csv (98e5d8e9)",
+      "user ruling pasted-text-2026-07-07 (b1a23a9c)",
+      "BRIDGE_PILOT_VERDICTS.csv"
+    ],
+    "operations": [
+      "Confirmed Histology (#14) claim_supported_but_project_irrelevant as decided_by=human",
+      "Added Peripheral_context to disposition_taxonomy (added_block 15)",
+      "Added layer_tag column to verdict_disposition + seeded full vocabulary in build_prism_db.py",
+      "#5 -> core_candidate (Layer_B_method_theory_core)",
+      "#12 -> claim_supported_but_project_irrelevant",
+      "#16 -> Peripheral_context",
+      "#7 -> review_required (re-sample; quote failed)",
+      "#13 -> review_required (re-sample)",
+      "#18 -> excluded_unreadable (reOCR/manual pending)"
+    ],
+    "artifacts_produced": [
+      "verdict_disposition: 8 rows total",
+      "disposition_taxonomy: 6 vocab values",
+      "NO promotion performed; 10 core_candidates remain promotion-eligible only"
+    ],
+    "prev_hash": "14863284f2316b18bf55f2efc9e8c97e0de7fe5875045e3637c2adb7947f7534",
+    "block_hash": "86a2cd3bc768dc25a2c2118dffa28cf2aa42e3873f887a1e4a4bd7f302781ac2",
+    "source_file": "block_0015_six_row_dispositions.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 16,
+    "block_id": "block_0016_sample_level_promotion_11",
+    "title": "SAMPLE-LEVEL promotion of 11 core_candidate rows to sampled_text_supported_core_candidate — NOT final ontology-core, NOT scaling",
+    "ts": "2026-07-07T13:57:51.791225+00:00",
+    "actor": "claude",
+    "action_type": "ledger_block",
+    "inputs": [
+      "block 15 dispositions",
+      "user sign-off pasted-text-2026-07-07T13-56-22 (b646ffae)",
+      "BRIDGE_PILOT_VERDICTS.csv"
+    ],
+    "operations": [
+      "Promoted rows #1 to sampled_text_supported_core_candidate",
+      "Promoted rows #2 to sampled_text_supported_core_candidate",
+      "Promoted rows #3 to sampled_text_supported_core_candidate",
+      "Promoted rows #4 to sampled_text_supported_core_candidate",
+      "Promoted rows #5 to sampled_text_supported_core_candidate",
+      "Promoted rows #6 to sampled_text_supported_core_candidate",
+      "Promoted rows #8 to sampled_text_supported_core_candidate",
+      "Promoted rows #9 to sampled_text_supported_core_candidate",
+      "Promoted rows #10 to sampled_text_supported_core_candidate",
+      "Promoted rows #11 to sampled_text_supported_core_candidate",
+      "Promoted rows #15 to sampled_text_supported_core_candidate",
+      "Added evidence_grade column to verdict_disposition (seeded in build_prism_db.py)",
+      "Registered 11 evidence-ledger claims scope=corpus.evidence_grade status=accepted",
+      "#5 retains layer_tag Layer_B_method_theory_core",
+      "EXPLICIT: this is sample-level promotion only; NOT concept_verified, NOT ontology_core; no scaling to remaining ~370 bridge rows"
+    ],
+    "artifacts_produced": [
+      "11 verdict_disposition rows at grade sampled_text_supported_core_candidate",
+      "11 accepted claims KP-CLAIM",
+      "7 rows unchanged (2 review_required,1 unreadable,1 peripheral,2 project_irrelevant,1 misfile)"
+    ],
+    "prev_hash": "86a2cd3bc768dc25a2c2118dffa28cf2aa42e3873f887a1e4a4bd7f302781ac2",
+    "block_hash": "e88e46dfb1c5c0da2af82d767250be61465d3c28675f823dd15ce26932b7d57a",
+    "source_file": "block_0016_sample_level_promotion_11.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 17,
+    "block_id": "block_0017_shift_close_handover",
+    "title": "SHIFT CLOSE — Claude session handover: pilot complete, 11 rows at sampled_text_supported_core_candidate, 3 rows queued (re-sample/OCR), no scaling, no ontology-core",
+    "ts": "2026-07-07T14:04:01.003533+00:00",
+    "actor": "claude",
+    "action_type": "ledger_block",
+    "inputs": [
+      "blocks 13-16",
+      "logs/agent_actions.jsonl (9 records)",
+      "SHIFT_HANDOVER.md sha256=ee4c8381c1603ed0"
+    ],
+    "operations": [
+      "Compiled full session ledger: blocks 13-16, claims KP-CLAIM-000021..000032, 18 pilot dispositions",
+      "Recorded scripts/schema touched: build_prism_db.py (v2, +3 schema additions), VERIFICATION_RUBRIC.md (v3)",
+      "Verified persistence: verdict_disposition/disposition_taxonomy/evidence_grade survive derived rebuild",
+      "Wrote SHIFT_HANDOVER.md with resume instructions and next-shift queue"
+    ],
+    "artifacts_produced": [
+      "SHIFT_HANDOVER.md sha256=ee4c8381c1603ed0c97bfc59eef4135b0cdf8d53aa71b697e6d2c379aeab404d",
+      "Chain: blocks 0-17 sealed",
+      "Next-shift queue: re-sample #7 Ratzel + #13 Russia/Mongols; OCR #18; await sign-off for concept_verified + ~370-row scale"
+    ],
+    "prev_hash": "e88e46dfb1c5c0da2af82d767250be61465d3c28675f823dd15ce26932b7d57a",
+    "block_hash": "6ba581549c76f6e1216c4ed8c0dc8f979608bdc924a6d469ea2eba53870bd866",
+    "source_file": "block_0017_shift_close_handover.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 18,
+    "block_id": "block_0018_functional_ir_turn",
+    "title": "FUNCTIONAL TURN — subordinate ledger to interpretation: add FUNCTIONAL_IR_INTERPRETATION_PROTOCOL + functional_role table + functional readings of 14 live rows. No promotion/scaling.",
+    "ts": "2026-07-07T14:26:50.390394+00:00",
+    "actor": "claude",
+    "action_type": "ledger_block",
+    "inputs": [
+      "user supervisory correction pasted-text-2026-07-07T14-22-45 (0a2d320d)",
+      "blocks 13-17",
+      "BRIDGE_PILOT_VERDICTS.csv"
+    ],
+    "operations": [
+      "Registered doctrine: corpus anatomy -> physiology -> biomechanics; ledger subordinated to interpretation",
+      "Wrote docs/domain/FUNCTIONAL_IR_INTERPRETATION_PROTOCOL.md sha256=12a809f96a2ddbf6",
+      "Added persistent functional_role table to build_prism_db.py (survives derived rebuild, verified)",
+      "Authored functional-IR readings (5-question schema) for 11 promoted + 3 unresolved rows",
+      "Evidence grade recorded as annotation ON the functional reading, not a substitute"
+    ],
+    "artifacts_produced": [
+      "functional_role: 14 rows",
+      "FUNCTIONAL_ROLE_TABLE.csv + .md",
+      "NO promotion, NO scaling — stop for review as instructed"
+    ],
+    "prev_hash": "6ba581549c76f6e1216c4ed8c0dc8f979608bdc924a6d469ea2eba53870bd866",
+    "block_hash": "aaaaddf63942f8aaef2f11e1044e3a3c04ea336213e871d3f01389e832c0a65f",
+    "source_file": "block_0018_functional_ir_turn.json",
+    "chain_link_ok": true
+  }
+]

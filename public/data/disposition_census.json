@@ -1,0 +1,8 @@
+{
+  "core_candidate": 11,
+  "Peripheral_context": 1,
+  "claim_supported_but_project_irrelevant": 2,
+  "excluded_misfile_noise": 1,
+  "excluded_unreadable": 1,
+  "review_required": 2
+}

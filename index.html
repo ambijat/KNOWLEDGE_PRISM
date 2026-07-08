@@ -6,115 +6,102 @@
   <title>Knowledge Prism Graph Lab</title>
   <style>
     :root {
-      --bg: #07111f;
-      --bg-2: #0b1728;
-      --panel: rgba(11, 23, 40, .82);
-      --panel-solid: #101d30;
-      --ink: #edf5ff;
-      --muted: #9fb0c8;
-      --line: rgba(164, 187, 219, .18);
-      --line-strong: rgba(164, 187, 219, .34);
-      --blue: #55a7ff;
-      --cyan: #37d5d7;
-      --green: #57d68d;
-      --amber: #ffbd5a;
-      --red: #ff6a76;
-      --violet: #a98cff;
-      --pink: #ff7fd1;
-      --shadow: 0 20px 70px rgba(0, 0, 0, .38);
-      --radius: 8px;
+      --paper: #f7f4ec;
+      --paper-2: #ece7dc;
+      --ink: #1f2825;
+      --muted: #63716c;
+      --line: #d7cebf;
+      --panel: #fffdf7;
+      --green: #2f715d;
+      --teal: #0d6f72;
+      --ochre: #b57822;
+      --red: #a53e37;
+      --plum: #6f4d73;
+      --brown: #7d6042;
+      --shadow: 0 18px 50px rgba(48, 40, 28, .12);
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html,
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      min-height: 100%;
-      overflow: hidden;
       background:
-        radial-gradient(circle at 18% 18%, rgba(85, 167, 255, .26), transparent 28%),
-        radial-gradient(circle at 82% 14%, rgba(87, 214, 141, .16), transparent 24%),
-        radial-gradient(circle at 56% 90%, rgba(169, 140, 255, .18), transparent 32%),
-        linear-gradient(145deg, #050a13, var(--bg) 48%, #0b1020);
+        linear-gradient(90deg, rgba(31, 40, 37, .035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(31, 40, 37, .035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 28px 28px;
       color: var(--ink);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       letter-spacing: 0;
     }
 
     button,
-    input,
-    select,
-    textarea {
+    input {
       font: inherit;
     }
 
     button {
       border: 1px solid var(--line);
       border-radius: 7px;
-      background: rgba(255, 255, 255, .06);
+      background: var(--panel);
       color: var(--ink);
-      padding: 9px 12px;
       cursor: pointer;
+      padding: 9px 12px;
     }
 
-    button:hover {
-      border-color: var(--line-strong);
-      background: rgba(255, 255, 255, .1);
+    button:hover,
+    button.active {
+      border-color: var(--green);
+      background: #edf5ef;
     }
 
-    .app {
+    a {
+      color: var(--green);
+    }
+
+    .shell {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .hero {
       display: grid;
-      grid-template-columns: 330px minmax(440px, 1fr) 380px;
-      height: 100vh;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr);
+      gap: 18px;
+      align-items: stretch;
+      min-height: 420px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 22px;
     }
 
-    .left,
-    .right {
+    .hero-main {
       display: flex;
-      min-width: 0;
       flex-direction: column;
-      gap: 14px;
-      padding: 16px;
-      border-color: var(--line);
-      background: linear-gradient(180deg, rgba(16, 29, 48, .9), rgba(7, 17, 31, .76));
-      backdrop-filter: blur(18px);
-      z-index: 2;
-    }
-
-    .left {
-      border-right: 1px solid var(--line);
-    }
-
-    .right {
-      border-left: 1px solid var(--line);
-    }
-
-    .brand {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .mark {
-      position: relative;
-      width: 46px;
-      height: 46px;
+      justify-content: space-between;
+      gap: 28px;
+      border: 1px solid var(--line);
       border-radius: 8px;
-      background: linear-gradient(135deg, rgba(85, 167, 255, .95), rgba(55, 213, 215, .72) 45%, rgba(169, 140, 255, .9));
-      box-shadow: 0 0 26px rgba(85, 167, 255, .38);
-      transform: rotate(45deg);
+      background:
+        radial-gradient(circle at 18% 24%, rgba(47, 113, 93, .14), transparent 28%),
+        radial-gradient(circle at 78% 16%, rgba(181, 120, 34, .13), transparent 24%),
+        linear-gradient(135deg, #fffdf7, #eee7d9);
+      box-shadow: var(--shadow);
+      padding: 26px;
     }
 
-    .mark::after {
-      content: "";
-      position: absolute;
-      inset: 9px;
-      border: 1px solid rgba(255, 255, 255, .58);
-      border-radius: 6px;
-      transform: rotate(18deg);
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
     h1,
@@ -125,1233 +112,1484 @@
     }
 
     h1 {
-      font-size: 21px;
-      line-height: 1.12;
+      max-width: 780px;
+      font-size: clamp(36px, 5vw, 74px);
+      line-height: .95;
+      letter-spacing: 0;
     }
 
     h2 {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+      font-size: 22px;
+      line-height: 1.2;
     }
 
     h3 {
-      font-size: 15px;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .lead {
+      max-width: 820px;
+      color: #394641;
+      font-size: 18px;
+      line-height: 1.55;
     }
 
     .small {
       color: var(--muted);
-      font-size: 12px;
+      font-size: 13px;
       line-height: 1.45;
     }
 
+    .hero-side,
     .panel {
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel);
+      border-radius: 8px;
+      background: rgba(255, 253, 247, .94);
       box-shadow: var(--shadow);
-      padding: 13px;
+      padding: 18px;
     }
 
-    .panel.tight {
-      padding: 10px;
-    }
-
-    .search-row,
-    .control-row {
+    .hero-side {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: 10px;
+      align-content: start;
+      gap: 14px;
     }
 
-    .search-row {
-      grid-template-columns: 1fr;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 7px;
-      background: rgba(255, 255, 255, .06);
-      color: var(--ink);
-      outline: none;
-      padding: 9px 10px;
-    }
-
-    select option {
-      background: #101d30;
-      color: var(--ink);
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: rgba(85, 167, 255, .78);
-      box-shadow: 0 0 0 3px rgba(85, 167, 255, .14);
-    }
-
-    .library {
-      display: grid;
-      gap: 9px;
-      min-height: 0;
-      overflow: auto;
-      padding-right: 3px;
-    }
-
-    .piece {
-      display: grid;
-      gap: 7px;
-      width: 100%;
-      border: 1px solid var(--line);
-      border-left-width: 5px;
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, .055);
-      color: var(--ink);
-      padding: 11px;
-      text-align: left;
-    }
-
-    .piece:hover,
-    .piece.active {
-      border-color: var(--line-strong);
-      background: rgba(255, 255, 255, .1);
-      box-shadow: 0 0 28px rgba(85, 167, 255, .12);
-    }
-
-    .piece-title {
-      font-size: 14px;
-      font-weight: 790;
-      line-height: 1.26;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-
-    .tag {
-      border: 1px solid rgba(255, 255, 255, .07);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .06);
-      color: #c8d5e8;
-      font-size: 11px;
-      padding: 3px 7px;
-      white-space: nowrap;
-    }
-
-    .graph-stage {
-      position: relative;
-      min-width: 0;
-      overflow: hidden;
-    }
-
-    .topbar {
-      position: absolute;
-      left: 16px;
-      top: 16px;
-      right: 16px;
-      z-index: 3;
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: flex-start;
-      pointer-events: none;
-    }
-
-    .topbar > * {
-      pointer-events: auto;
-    }
-
-    .glass {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(7, 17, 31, .64);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 18px 55px rgba(0, 0, 0, .24);
-      padding: 12px;
-    }
-
-    .graph-title {
-      max-width: 560px;
-    }
-
-    .graph-title h1 {
-      font-size: 24px;
-    }
-
-    .toolbar {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    #graphCanvas {
-      display: block;
-      width: 100%;
-      height: 100vh;
-      cursor: grab;
-    }
-
-    #graphCanvas.dragging {
-      cursor: grabbing;
-    }
-
-    .legend {
-      position: absolute;
-      left: 16px;
-      right: 16px;
-      bottom: 16px;
-      z-index: 3;
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 8px;
-      pointer-events: none;
-    }
-
-    .legend-item {
-      min-width: 0;
-      border: 1px solid var(--line);
-      border-radius: 7px;
-      background: rgba(7, 17, 31, .66);
-      backdrop-filter: blur(12px);
-      color: #c6d3e6;
-      padding: 8px;
-      font-size: 12px;
-      font-weight: 750;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      pointer-events: auto;
-    }
-
-    .legend-item.active {
-      border-color: rgba(85, 167, 255, .8);
-      box-shadow: 0 0 24px rgba(85, 167, 255, .18);
-    }
-
-    .swatch {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      margin-right: 6px;
-      border-radius: 50%;
-      vertical-align: -1px;
-    }
-
-    .metrics {
+    .metric-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
+      gap: 10px;
     }
 
     .metric {
+      min-width: 0;
       border: 1px solid var(--line);
       border-radius: 7px;
-      background: rgba(255, 255, 255, .045);
-      padding: 9px;
+      background: #fbf8f0;
+      padding: 12px;
     }
 
     .metric strong {
       display: block;
-      font-size: 22px;
+      color: var(--green);
+      font-size: 30px;
       line-height: 1;
     }
 
-    .stack {
-      display: grid;
-      gap: 9px;
-      max-height: 27vh;
-      overflow: auto;
-      padding-right: 3px;
-    }
-
-    .stack-item {
-      border: 1px solid var(--line);
-      border-left-width: 5px;
-      border-radius: 7px;
-      background: rgba(255, 255, 255, .055);
-      padding: 9px;
-    }
-
-    .stack-item button {
-      margin-top: 8px;
-      padding: 5px 8px;
+    .metric span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
       font-size: 12px;
+      line-height: 1.25;
     }
 
-    .mode-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .mode.active,
-    .legend-item.active {
-      color: var(--ink);
-      background: rgba(85, 167, 255, .16);
-    }
-
-    .synthesis {
-      min-height: 142px;
-      color: #dce9fb;
+    .status-note {
+      border-left: 4px solid var(--ochre);
+      background: #fff6e6;
+      padding: 12px;
+      color: #594022;
       font-size: 14px;
-      line-height: 1.55;
-      white-space: pre-wrap;
+      line-height: 1.45;
     }
 
-    .node-detail {
-      display: grid;
-      gap: 8px;
-    }
-
-    .detail-title {
+    .toolbar,
+    .filters,
+    .export-actions {
       display: flex;
-      justify-content: space-between;
-      gap: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
       align-items: center;
     }
 
-    .badge {
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .08);
-      color: #d9e8fb;
-      font-size: 11px;
-      padding: 4px 8px;
-      white-space: nowrap;
+    .toolbar {
+      justify-content: space-between;
     }
 
-    .export-row {
+    .search {
+      min-width: min(420px, 100%);
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fffdf7;
+      color: var(--ink);
+      padding: 10px 12px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .grid.two {
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    }
+
+    .grid.reader {
+      grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 14px;
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(10, minmax(130px, 1fr));
+      gap: 0;
+      overflow: auto;
+      padding-bottom: 4px;
+    }
+
+    .stage {
+      position: relative;
+      min-height: 112px;
+      border: 1px solid var(--line);
+      border-left: 0;
+      background: #fbf8f0;
+      padding: 12px 26px 12px 12px;
+    }
+
+    .stage:first-child {
+      border-left: 1px solid var(--line);
+      border-radius: 7px 0 0 7px;
+    }
+
+    .stage:last-child {
+      border-radius: 0 7px 7px 0;
+    }
+
+    .stage::after {
+      content: ">";
+      position: absolute;
+      top: 12px;
+      right: 10px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .stage:last-child::after {
+      content: "";
+    }
+
+    .stage .status {
+      display: inline-block;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: #edf5ef;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 750;
+      padding: 4px 7px;
+    }
+
+    .story-strip {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .story-card,
+    .piece-card,
+    .selected-work {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbf8f0;
+      padding: 14px;
+    }
+
+    .story-card {
+      min-height: 132px;
+    }
+
+    .story-number {
+      color: var(--green);
+      font-size: 28px;
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .piece-list {
+      display: grid;
       gap: 8px;
+      max-height: 560px;
+      overflow: auto;
+      padding-right: 4px;
     }
 
-    .region { border-left-color: var(--green); }
-    .actor { border-left-color: var(--amber); }
-    .process { border-left-color: var(--red); }
-    .theory { border-left-color: var(--blue); }
-    .method { border-left-color: var(--violet); }
-    .object { border-left-color: var(--cyan); }
-
-    @media (max-width: 1160px) {
-      .app {
-        grid-template-columns: 300px minmax(420px, 1fr);
-      }
-
-      .right {
-        position: absolute;
-        right: 12px;
-        top: 96px;
-        bottom: 16px;
-        width: 360px;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-      }
+    .piece-card {
+      width: 100%;
+      border-left: 5px solid var(--green);
+      text-align: left;
     }
 
-    @media (max-width: 820px) {
-      body {
-        overflow: auto;
+    .piece-card.review {
+      border-left-color: var(--ochre);
+    }
+
+    .piece-card.excluded {
+      border-left-color: var(--red);
+    }
+
+    .piece-card.peripheral {
+      border-left-color: var(--plum);
+    }
+
+    .piece-card.active {
+      border-color: var(--green);
+      border-left-width: 5px;
+      background: #edf5ef;
+    }
+
+    .piece-title {
+      display: block;
+      font-size: 14px;
+      font-weight: 780;
+      line-height: 1.25;
+    }
+
+    .selected-work {
+      display: grid;
+      gap: 12px;
+      min-height: 560px;
+      align-content: start;
+    }
+
+    .meaning-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .meaning-card {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fffdf7;
+      padding: 12px;
+    }
+
+    .plain-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .plain-list li {
+      border-left: 3px solid var(--green);
+      padding-left: 9px;
+      color: #3d4945;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .evidence-card {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fbf8f0;
+      padding: 12px;
+    }
+
+    .evidence-card strong {
+      display: block;
+      color: var(--green);
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .functional-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .functional-card {
+      display: grid;
+      gap: 10px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--green);
+      border-radius: 8px;
+      background: #fbf8f0;
+      padding: 14px;
+    }
+
+    .functional-card.review {
+      border-left-color: var(--ochre);
+    }
+
+    .functional-card .role {
+      color: #34443e;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .badge-list,
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag,
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      max-width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fbf8f0;
+      color: #40504a;
+      font-size: 12px;
+      line-height: 1.2;
+      padding: 5px 8px;
+    }
+
+    .badge.core_candidate,
+    .badge.sampled {
+      border-color: rgba(47, 113, 93, .32);
+      background: #edf5ef;
+      color: var(--green);
+    }
+
+    .badge.review_required {
+      border-color: rgba(181, 120, 34, .38);
+      background: #fff6e6;
+      color: #8a5815;
+    }
+
+    .badge.excluded,
+    .badge.excluded_misfile_noise,
+    .badge.excluded_unreadable,
+    .badge.claim_supported_but_project_irrelevant {
+      border-color: rgba(165, 62, 55, .28);
+      background: #fff0ee;
+      color: var(--red);
+    }
+
+    .badge.Peripheral_context {
+      border-color: rgba(111, 77, 115, .28);
+      background: #f6eef7;
+      color: var(--plum);
+    }
+
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffdf7;
+      max-height: 680px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1180px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #eee7d9;
+      color: #37433f;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    td {
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .title-cell {
+      max-width: 280px;
+      font-weight: 750;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: 130px repeat(8, minmax(120px, 1fr));
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffdf7;
+    }
+
+    .matrix > div {
+      min-height: 78px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 9px;
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .matrix .head,
+    .matrix .axis {
+      background: #eee7d9;
+      color: #37433f;
+      font-weight: 800;
+    }
+
+    .matrix strong {
+      display: block;
+      color: var(--green);
+      font-size: 18px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .graph-frame {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, rgba(31, 40, 37, .04) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(31, 40, 37, .04) 1px, transparent 1px),
+        #fffdf7;
+      background-size: 24px 24px;
+    }
+
+    #graphSvg {
+      display: block;
+      width: 100%;
+      height: 520px;
+    }
+
+    .graph-label {
+      font-size: 11px;
+      pointer-events: none;
+    }
+
+    .graph-link {
+      stroke: rgba(99, 113, 108, .34);
+      stroke-width: 1;
+    }
+
+    .graph-node.work { fill: var(--green); }
+    .graph-node.evidence { fill: var(--teal); }
+    .graph-node.disposition { fill: var(--ochre); }
+    .graph-node.layer { fill: var(--plum); }
+    .graph-node.action { fill: var(--red); }
+    .graph-node.function { fill: #234f79; }
+    .graph-node.interaction { fill: #8a5815; }
+    .graph-node.concept { fill: #6f4d73; }
+    .graph-node.ontology { fill: #a53e37; }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+      max-height: 520px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .block {
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--green);
+      border-radius: 7px;
+      background: #fbf8f0;
+      padding: 12px;
+    }
+
+    .block.bad {
+      border-left-color: var(--red);
+    }
+
+    .review-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .review-card {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fbf8f0;
+      padding: 13px;
+    }
+
+    .footer {
+      margin-top: 22px;
+      border-top: 1px solid var(--line);
+      padding: 18px 0 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .error {
+      border: 1px solid rgba(165, 62, 55, .42);
+      border-radius: 8px;
+      background: #fff0ee;
+      color: var(--red);
+      padding: 14px;
+    }
+
+    @media (max-width: 1180px) {
+      .hero,
+      .grid.two {
+        grid-template-columns: 1fr;
       }
 
-      .app {
-        display: block;
-        height: auto;
-      }
-
-      .left,
-      .right {
-        position: relative;
-        inset: auto;
-        width: auto;
-        border: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .graph-stage {
-        height: 680px;
-      }
-
-      #graphCanvas {
-        height: 680px;
-      }
-
-      .topbar,
-      .legend {
-        position: absolute;
-      }
-
-      .topbar {
-        flex-direction: column;
-      }
-
-      .legend {
+      .pipeline,
+      .evidence-grid,
+      .functional-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid.reader,
+      .story-strip,
+      .meaning-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .review-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .shell {
+        padding: 12px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .hero-main,
+      .hero-side,
+      .panel {
+        padding: 14px;
+      }
+
+      .metric-grid,
+      .pipeline,
+      .evidence-grid,
+      .functional-grid,
+      .story-strip,
+      .meaning-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <main class="app">
-    <aside class="left">
-      <div class="brand">
-        <div class="mark" aria-hidden="true"></div>
+  <main class="shell">
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="hero-main">
         <div>
-          <h1>Knowledge Prism</h1>
-          <p class="small">A graph lab for assembling ideas from evidence-graded pieces.</p>
+          <p class="eyebrow">Knowledge Prism Graph Lab</p>
+          <h1 id="pageTitle">Move evidence into International Relations explanation.</h1>
+        </div>
+        <p class="lead">KNOWLEDGE_PRISM does not merely evidence-grade corpus claims. It interprets sampled works by their function in International Relations explanation: what they help explain, which interactions they illuminate, and how they may feed a future ontology.</p>
+        <div class="tags" aria-label="Evidence ladder">
+          <span class="tag">14 functional IR readings</span>
+          <span class="tag">11 works sample-supported</span>
+          <span class="tag">evidence supports interpretation</span>
+          <span class="tag">0 final ontology-core claims</span>
         </div>
       </div>
 
-      <section class="panel">
-        <h2>Graph Controls</h2>
-        <div class="search-row">
-          <input id="searchInput" type="search" placeholder="Search nodes, tags, prompts">
+      <aside class="hero-side" aria-label="Current project status">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Current State</p>
+            <h2>The honest shape of the work</h2>
+          </div>
         </div>
-        <div class="control-row">
-          <select id="typeFilter" aria-label="Filter by type">
-            <option value="all">All types</option>
-            <option value="Empirical Region">Regions</option>
-            <option value="Actor">Actors</option>
-            <option value="Process">Processes</option>
-            <option value="Theory">Theories</option>
-            <option value="Method">Methods</option>
-            <option value="Knowledge Object">Knowledge objects</option>
-          </select>
-          <select id="gradeFilter" aria-label="Filter by grade">
-            <option value="all">All grades</option>
-            <option value="metadata_only">Metadata only</option>
-            <option value="metadata_manifest">Manifest</option>
-            <option value="analysis">Analysis</option>
-            <option value="sampled_text">Sampled text</option>
-            <option value="concept_verified">Verified</option>
-          </select>
+        <div class="metric-grid">
+          <div class="metric"><strong id="metricMaster">-</strong><span>master register rows</span></div>
+          <div class="metric"><strong id="metricPilot">-</strong><span>pilot verification rows</span></div>
+          <div class="metric"><strong id="metricPromoted">-</strong><span>sample-level supported rows</span></div>
+          <div class="metric"><strong id="metricOntology">0</strong><span>final ontology-core rows</span></div>
         </div>
-      </section>
+        <p class="status-note">The project has begun to say what the sampled works do for IR, while still keeping every claim tied to its evidence grade. Functional interpretation is now the front layer; promotion still remains locked.</p>
+        <div class="small" id="statusMeta">Loading exported project state...</div>
+      </aside>
+    </section>
 
-      <section class="panel tight">
-        <h2>Piece Library</h2>
-      </section>
-      <div id="library" class="library" aria-live="polite"></div>
-    </aside>
-
-    <section class="graph-stage">
-      <div class="topbar">
-        <div class="glass graph-title">
-          <h2>Living Prism Simulation</h2>
-          <h1>Move concepts until a larger idea appears.</h1>
-          <p class="small">Click nodes to inspect. Double-click to assemble. Drag to pull pieces into relation. Evidence strength controls glow.</p>
+    <section class="grid" aria-labelledby="storyTitle">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Five-Minute Reading</p>
+            <h2 id="storyTitle">From folder pile to explanatory machine</h2>
+          </div>
         </div>
-        <div class="glass toolbar">
-          <button id="pulseBtn" type="button">Pulse</button>
-          <button id="autoBtn" type="button">Auto idea</button>
-          <button id="freezeBtn" type="button">Freeze</button>
-          <button id="resetBtn" type="button">Reset</button>
+        <div class="story-strip">
+          <article class="story-card">
+            <div class="story-number">1</div>
+            <h3>First, the archive is mapped.</h3>
+            <p class="small" style="margin-top: 8px;">Titles, folders, and metadata help find the terrain. They are clues, not scholarship.</p>
+          </article>
+          <article class="story-card">
+            <div class="story-number">2</div>
+            <h3>Then works are interpreted.</h3>
+            <p class="small" style="margin-top: 8px;">A sampled work must answer an IR question: what interaction, theory, method, or empirical mechanism does it illuminate?</p>
+          </article>
+          <article class="story-card">
+            <div class="story-number">3</div>
+            <h3>Only then can the graph grow.</h3>
+            <p class="small" style="margin-top: 8px;">Evidence grades annotate confidence; functional roles explain why a text matters for geopolitics, theory, method, or ontology.</p>
+          </article>
         </div>
-      </div>
-
-      <canvas id="graphCanvas" aria-label="Interactive knowledge graph"></canvas>
-
-      <div class="legend" id="legend">
-        <button class="legend-item active" data-type="all"><span class="swatch" style="background:#edf5ff"></span>All</button>
-        <button class="legend-item" data-type="Empirical Region"><span class="swatch" style="background:#57d68d"></span>Region</button>
-        <button class="legend-item" data-type="Actor"><span class="swatch" style="background:#ffbd5a"></span>Actor</button>
-        <button class="legend-item" data-type="Process"><span class="swatch" style="background:#ff6a76"></span>Process</button>
-        <button class="legend-item" data-type="Theory"><span class="swatch" style="background:#55a7ff"></span>Theory</button>
-        <button class="legend-item" data-type="Method"><span class="swatch" style="background:#a98cff"></span>Method</button>
       </div>
     </section>
 
-    <aside class="right">
-      <section class="panel">
-        <h2>Graph State</h2>
-        <div class="metrics" style="margin-top: 10px;">
-          <div class="metric"><strong id="metricNodes">0</strong><span class="small">visible nodes</span></div>
-          <div class="metric"><strong id="metricLinks">0</strong><span class="small">visible links</span></div>
-          <div class="metric"><strong id="metricStack">0</strong><span class="small">idea pieces</span></div>
-          <div class="metric"><strong id="metricWeak">0</strong><span class="small">weak evidence</span></div>
+    <section class="grid reader" aria-label="Reading tray and selected work">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Reading Tray</p>
+            <h2>Start with the works, not the codes</h2>
+          </div>
         </div>
-      </section>
+        <div id="pieceList" class="piece-list"></div>
+      </div>
 
-      <section class="panel">
-        <h2>Selected Node</h2>
-        <div id="nodeDetail" class="node-detail" style="margin-top: 10px;"></div>
-      </section>
-
-      <section class="panel">
-        <h2>Idea Stack</h2>
-        <input id="ideaTitle" value="A prism-built idea" aria-label="Idea title" style="margin-top: 10px;">
-        <div id="stack" class="stack" style="margin-top: 10px;"></div>
-      </section>
-
-      <section class="panel">
-        <h2>Philosophise</h2>
-        <div class="mode-grid">
-          <button class="mode active" data-mode="thesis" type="button">Thesis</button>
-          <button class="mode" data-mode="tension" type="button">Tension</button>
-          <button class="mode" data-mode="method" type="button">Method</button>
-          <button class="mode" data-mode="pedagogy" type="button">Pedagogy</button>
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Selected Work</p>
+            <h2 id="selectedTitle">Choose a work to inspect</h2>
+          </div>
         </div>
-        <div id="synthesis" class="synthesis" style="margin-top: 12px;"></div>
-      </section>
+        <div id="selectedWork" class="selected-work"></div>
+      </div>
+    </section>
 
-      <section class="panel">
-        <h2>Standards</h2>
-        <p class="small" style="margin-top: 10px;">Use the graph to generate ideas, then preserve what future sessions cannot easily recreate: standards, verification tasks, and learning notes.</p>
-        <div class="tags" style="margin-top: 10px;">
-          <span class="tag">metadata is clue</span>
-          <span class="tag">sample text before promotion</span>
-          <span class="tag">ledger remembers</span>
-          <span class="tag">export judgment</span>
+    <section class="grid" aria-labelledby="pipelineTitle">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Project Path</p>
+            <h2 id="pipelineTitle">A claim moves slowly: map it, sample it, judge its relevance, then wait for proper promotion.</h2>
+          </div>
         </div>
-      </section>
+        <div id="pipeline" class="pipeline"></div>
+      </div>
+    </section>
 
-      <section class="panel">
-        <h2>Human Notes</h2>
-        <textarea id="notes" rows="5" placeholder="Write what the graph makes you think."></textarea>
-      </section>
-
-      <section class="panel">
-        <h2>Export</h2>
-        <div class="export-row" style="margin-top: 10px;">
-          <button id="copyBtn" type="button">Copy brief</button>
-          <button id="downloadBtn" type="button">Download JSON</button>
-          <button id="learningBtn" type="button">Copy learning note</button>
+    <section class="grid two" aria-label="Evidence and disposition dashboards">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Confidence</p>
+            <h2>What the project can say today</h2>
+          </div>
         </div>
-        <p id="copyStatus" class="small" style="margin-top: 9px;"></p>
-      </section>
-    </aside>
+        <div id="evidenceGrid" class="evidence-grid"></div>
+      </div>
+
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Sorting Shelf</p>
+            <h2>Accurate is not the same as useful here</h2>
+          </div>
+        </div>
+        <div id="censusGrid" class="evidence-grid"></div>
+      </div>
+    </section>
+
+    <section class="grid" aria-labelledby="functionalTitle">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Functional IR Interpretation</p>
+            <h2 id="functionalTitle">Why the sampled works matter for International Relations</h2>
+            <p class="small" style="margin-top: 8px;">Evidence grades tell us whether a claim has been sampled and supported. Functional IR roles tell us why the work matters for International Relations.</p>
+          </div>
+          <div class="badge-list">
+            <span class="badge" id="functionalCount">0 functional roles</span>
+          </div>
+        </div>
+        <div id="functionalGrid" class="functional-grid"></div>
+      </div>
+    </section>
+
+    <section class="grid" aria-labelledby="pilotTitle">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Evidence Register</p>
+            <h2 id="pilotTitle">The audit table is here when you need the exact fields</h2>
+          </div>
+        </div>
+        <div class="toolbar">
+          <div class="filters" role="group" aria-label="Pilot filters">
+            <button class="filter active" data-filter="all" type="button">All works</button>
+            <button class="filter" data-filter="promoted" type="button">Sample-supported</button>
+            <button class="filter" data-filter="review" type="button">Needs rereading</button>
+            <button class="filter" data-filter="excluded" type="button">Set aside</button>
+            <button class="filter" data-filter="peripheral" type="button">Context only</button>
+            <button class="filter" data-filter="unreadable" type="button">Needs OCR</button>
+          </div>
+          <input id="search" class="search" type="search" placeholder="Search title, status, layer, next action">
+        </div>
+        <p class="small" style="margin: 12px 0;" id="visibleSummary">Loading rows...</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Thesis Verdict</th>
+                <th>Confidence</th>
+                <th>Quote</th>
+                <th>Disposition</th>
+                <th>Evidence Grade</th>
+                <th>Layer Tag</th>
+                <th>Promotion Eligibility</th>
+                <th>Next Action</th>
+              </tr>
+            </thead>
+            <tbody id="pilotTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid two" aria-label="Two-axis decision view and graph lab">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Two-Axis Decision View</p>
+            <h2>Two questions, one decision</h2>
+          </div>
+        </div>
+        <div id="matrix" class="matrix" aria-label="Thesis verdict by project relevance matrix"></div>
+        <p class="small" style="margin-top: 12px;">Question one: does the sampled text support the claim? Question two: does the work belong to this project? Histology passes the first question and fails the second.</p>
+      </div>
+
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Graph Lab</p>
+            <h2>The pilot works as a living map</h2>
+          </div>
+          <div class="badge-list">
+            <span class="badge" id="graphNodes">0 visible nodes</span>
+            <span class="badge" id="graphLinks">0 visible links</span>
+          </div>
+        </div>
+        <div class="graph-frame">
+          <svg id="graphSvg" role="img" aria-label="Evidence graph built from pilot rows"></svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid two" aria-label="Review queue and ledger timeline">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Human Review Queue</p>
+            <h2>The places where the project refuses to guess</h2>
+          </div>
+        </div>
+        <div id="reviewQueue" class="review-list"></div>
+      </div>
+
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Ledger Timeline</p>
+            <h2>What the project remembers</h2>
+          </div>
+        </div>
+        <div id="ledgerTimeline" class="timeline"></div>
+      </div>
+    </section>
+
+    <section class="grid" aria-labelledby="exportTitle">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Export</p>
+            <h2 id="exportTitle">Take the current state with its cautions intact</h2>
+          </div>
+        </div>
+        <div class="export-actions">
+          <button id="downloadPilotJson" type="button">Download pilot JSON</button>
+          <button id="downloadPilotCsv" type="button">Download pilot CSV</button>
+          <button id="downloadReviewJson" type="button">Download review queue JSON</button>
+          <button id="downloadLedgerJson" type="button">Download ledger summary JSON</button>
+          <button id="copyBrief" type="button">Copy project brief</button>
+          <button id="copyHandover" type="button">Copy Codex handover status</button>
+        </div>
+        <p class="small" style="margin-top: 12px;" id="exportStatus">Exports load after static data is available.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Public static page. Data generated from local project artifacts by <code>python3 scripts/export_frontend_data.py</code>. No API keys, secrets, or raw corpus files are required by this page.
+    </footer>
   </main>
 
   <script>
-    const nodes = [
-      { id: "afghanistan", label: "Afghanistan", type: "Empirical Region", grade: "metadata_only", tags: ["Taliban", "state-building", "intervention"], prompt: "An empirical core where intervention, regional security, state formation, and symbolic geography intersect." },
-      { id: "central-asia", label: "Central Asia", type: "Empirical Region", grade: "metadata_only", tags: ["Eurasia", "energy", "corridors"], prompt: "A corridor-space where energy, empire, infrastructure, and regional imagination meet." },
-      { id: "south-asia", label: "South Asia", type: "Empirical Region", grade: "metadata_only", tags: ["Pakistan", "India", "security"], prompt: "A neighbouring security field that pulls Afghanistan into broader regional interdependence." },
-      { id: "eurasia", label: "Eurasia", type: "Empirical Region", grade: "analysis", tags: ["Heartland", "Russia", "China"], prompt: "A scale-shifting geopolitical container that turns local conflicts into continental questions." },
-      { id: "taliban", label: "Taliban", type: "Actor", grade: "metadata_only", tags: ["movement", "regime", "security"], prompt: "An actor that appears as movement, state-maker, threat, negotiator, and symbolic object." },
-      { id: "china", label: "China / BRI", type: "Actor", grade: "analysis", tags: ["BRI", "connectivity", "geoeconomics"], prompt: "An actor-network that converts infrastructure into regional imagination and strategic depth." },
-      { id: "russia", label: "Russia", type: "Actor", grade: "metadata_only", tags: ["energy", "security", "Eurasia"], prompt: "A strategic actor whose regional role links energy, security, memory, and sphere-of-influence thinking." },
-      { id: "india", label: "India", type: "Actor", grade: "metadata_only", tags: ["energy", "South Asia", "connectivity"], prompt: "A regional actor for reading corridors, energy, and strategic competition." },
-      { id: "rsct", label: "Regional Security Complex", type: "Process", grade: "analysis", tags: ["security", "region", "interdependence"], prompt: "A process through which security interdependence makes regions analytically real." },
-      { id: "connectivity", label: "Connectivity Politics", type: "Process", grade: "analysis", tags: ["infrastructure", "corridors", "power"], prompt: "The conversion of roads, ports, pipelines, and maps into claims about order." },
-      { id: "state-building", label: "State Building", type: "Process", grade: "metadata_only", tags: ["institutions", "intervention", "authority"], prompt: "The contested making of authority through institutions, coercion, external design, and local legitimacy." },
-      { id: "securitisation", label: "Securitisation", type: "Process", grade: "metadata_only", tags: ["speech", "threat", "exception"], prompt: "The act of turning a political issue into a security object." },
-      { id: "critical-geopolitics", label: "Critical Geopolitics", type: "Theory", grade: "analysis", tags: ["discourse", "maps", "power"], prompt: "Asks how regions are narrated, visualised, and authorised as common sense." },
-      { id: "realism", label: "Realism", type: "Theory", grade: "metadata_only", tags: ["power", "state", "security"], prompt: "Reads the archive through power, threat, interest, survival, and strategic necessity." },
-      { id: "constructivism", label: "Constructivism", type: "Theory", grade: "metadata_only", tags: ["identity", "norms", "meaning"], prompt: "Treats interests and regions as socially produced rather than simply given." },
-      { id: "systems-theory", label: "Systems Theory", type: "Theory", grade: "analysis", tags: ["feedback", "complexity", "structure"], prompt: "Lets the corpus be read as interacting parts, feedback loops, and emergent order." },
-      { id: "semiotics", label: "Semiotics", type: "Method", grade: "analysis", tags: ["signs", "meaning", "representation"], prompt: "Treats maps, terms, concepts, and policy labels as signs inside geopolitical grammar." },
-      { id: "network-analysis", label: "Network Analysis", type: "Method", grade: "analysis", tags: ["nodes", "edges", "centrality"], prompt: "Turns actors, texts, concepts, and regions into inspectable structures." },
-      { id: "grounded-theory", label: "Grounded Theory", type: "Method", grade: "sampled_text", tags: ["coding", "sampling", "categories"], prompt: "Lets categories emerge from sampled text rather than folder names." },
-      { id: "ontology-building", label: "Ontology Building", type: "Method", grade: "analysis", tags: ["classes", "relations", "evidence"], prompt: "Builds controlled classes and relations from auditable evidence." },
-      { id: "bridge-claims", label: "392 Bridge Claims", type: "Knowledge Object", grade: "metadata_manifest", tags: ["hypothesis", "pilot", "verification"], prompt: "AI-generated theses waiting for sampled text; useful as hypotheses, not scholarly evidence." },
-      { id: "ledger", label: "Evidence Ledger", type: "Knowledge Object", grade: "concept_verified", tags: ["provenance", "claim events", "audit"], prompt: "The mechanism that records how clues become evidence-backed claims." },
-      { id: "core-corpus", label: "Core Corpus", type: "Knowledge Object", grade: "metadata_manifest", tags: ["triage", "dedupe", "selection"], prompt: "The future defensible working set: not what is owned, but what can be cited responsibly." },
-      { id: "openalex", label: "OpenAlex Enrichment", type: "Knowledge Object", grade: "analysis", tags: ["DOI", "citations", "external graph"], prompt: "External bibliographic grounding after the internal corpus is stable." }
-    ];
-
-    const links = [
-      ["afghanistan", "taliban", "governed by / contested through"],
-      ["afghanistan", "rsct", "situated in"],
-      ["afghanistan", "state-building", "tested by"],
-      ["afghanistan", "critical-geopolitics", "represented through"],
-      ["central-asia", "connectivity", "structured by"],
-      ["central-asia", "china", "linked through"],
-      ["central-asia", "russia", "conditioned by"],
-      ["eurasia", "russia", "scaled by"],
-      ["eurasia", "china", "reimagined by"],
-      ["south-asia", "india", "anchored by"],
-      ["south-asia", "afghanistan", "security spillover"],
-      ["china", "connectivity", "projects"],
-      ["india", "connectivity", "contests"],
-      ["rsct", "realism", "can be read through"],
-      ["rsct", "constructivism", "can be reframed through"],
-      ["connectivity", "critical-geopolitics", "is narrated by"],
-      ["securitisation", "taliban", "names as threat"],
-      ["state-building", "systems-theory", "shows feedback"],
-      ["critical-geopolitics", "semiotics", "shares sign-work with"],
-      ["systems-theory", "network-analysis", "models relations with"],
-      ["grounded-theory", "bridge-claims", "samples"],
-      ["ontology-building", "ledger", "requires"],
-      ["bridge-claims", "ledger", "must be promoted through"],
-      ["core-corpus", "bridge-claims", "is trained by"],
-      ["openalex", "core-corpus", "reconciles after"],
-      ["network-analysis", "ontology-building", "feeds"],
-      ["semiotics", "ontology-building", "names signs as classes"],
-      ["realism", "russia", "foregrounds"],
-      ["constructivism", "taliban", "interprets identity of"],
-      ["ledger", "core-corpus", "audits"],
-      ["grounded-theory", "core-corpus", "disciplines selection of"]
-    ].map(([source, target, label]) => ({ source, target, label }));
-
-    const typeColor = {
-      "Empirical Region": "#57d68d",
-      "Actor": "#ffbd5a",
-      "Process": "#ff6a76",
-      "Theory": "#55a7ff",
-      "Method": "#a98cff",
-      "Knowledge Object": "#37d5d7"
-    };
-
-    const typeClass = {
-      "Empirical Region": "region",
-      "Actor": "actor",
-      "Process": "process",
-      "Theory": "theory",
-      "Method": "method",
-      "Knowledge Object": "object"
-    };
-
-    const gradeWeight = {
-      metadata_only: 1,
-      metadata_manifest: 2,
-      analysis: 3,
-      sampled_text: 4,
-      concept_verified: 5
-    };
-
-    const canvas = document.getElementById("graphCanvas");
-    const ctx = canvas.getContext("2d");
-    const library = document.getElementById("library");
-    const searchInput = document.getElementById("searchInput");
-    const typeFilter = document.getElementById("typeFilter");
-    const gradeFilter = document.getElementById("gradeFilter");
-    const stackEl = document.getElementById("stack");
-    const nodeDetail = document.getElementById("nodeDetail");
-    const synthesis = document.getElementById("synthesis");
-    const notes = document.getElementById("notes");
-    const ideaTitle = document.getElementById("ideaTitle");
-
+    const DATA_BASE = "public/data/";
     const state = {
-      width: 0,
-      height: 0,
-      selectedId: null,
-      draggingId: null,
-      hoverId: null,
-      frozen: false,
-      mode: "thesis",
-      stack: JSON.parse(localStorage.getItem("kp-graph-stack") || "[]"),
-      tick: 0
+      filter: "all",
+      search: "",
+      pilotRows: [],
+      reviewQueue: [],
+      census: {},
+      ledger: [],
+      status: {},
+      evidence: {},
+      pipeline: [],
+      functionalRoles: [],
+      filteredRows: [],
+      selectedId: null
     };
 
-    notes.value = localStorage.getItem("kp-graph-notes") || "";
-    ideaTitle.value = localStorage.getItem("kp-graph-title") || ideaTitle.value;
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
-    const nodeById = new Map(nodes.map(node => [node.id, node]));
-    links.forEach(link => {
-      link.sourceNode = nodeById.get(link.source);
-      link.targetNode = nodeById.get(link.target);
-    });
+    const labels = {
+      provisional_unverified_rows: "still only mapped as clues",
+      sampled_text_supported_rows: "sampled and currently supported",
+      review_required_rows: "waiting for a closer human read",
+      out_of_domain_rows: "true enough, but outside this project",
+      unreadable_rows: "blocked by OCR or scan quality",
+      ontology_core_rows: "final ontology entries",
+      core_candidate: "belongs in the core, at sample level",
+      Peripheral_context: "useful context, not core scholarship",
+      claim_supported_but_project_irrelevant: "accurate claim, wrong project",
+      excluded_misfile_noise: "filed here by mistake",
+      excluded_unreadable: "cannot be judged yet",
+      review_required: "needs another reading"
+    };
 
-    function resize() {
-      const rect = canvas.getBoundingClientRect();
-      const dpr = window.devicePixelRatio || 1;
-      state.width = rect.width;
-      state.height = rect.height;
-      canvas.width = Math.floor(rect.width * dpr);
-      canvas.height = Math.floor(rect.height * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      if (!nodes[0].x) seedPositions();
-      draw();
+    function fmt(value) {
+      return Number(value || 0).toLocaleString("en-US");
     }
 
-    function seedPositions() {
-      const rings = {
-        "Empirical Region": 0.28,
-        "Actor": 0.4,
-        "Process": 0.52,
-        "Theory": 0.64,
-        "Method": 0.76,
-        "Knowledge Object": 0.88
-      };
-      nodes.forEach((node, index) => {
-        const angle = (index / nodes.length) * Math.PI * 2;
-        const radius = Math.min(state.width, state.height) * (rings[node.type] || .5) * .48;
-        node.x = state.width / 2 + Math.cos(angle) * radius;
-        node.y = state.height / 2 + Math.sin(angle) * radius;
-        node.vx = 0;
-        node.vy = 0;
-      });
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
     }
 
-    function visibleNodes() {
-      const query = searchInput.value.trim().toLowerCase();
-      const type = typeFilter.value;
-      const grade = gradeFilter.value;
-      return nodes.filter(node => {
-        const haystack = [node.label, node.type, node.grade, node.tags.join(" "), node.prompt].join(" ").toLowerCase();
-        return (!query || haystack.includes(query))
-          && (type === "all" || node.type === type)
-          && (grade === "all" || node.grade === grade);
-      });
-    }
-
-    function visibleNodeSet() {
-      return new Set(visibleNodes().map(node => node.id));
-    }
-
-    function visibleLinks() {
-      const visible = visibleNodeSet();
-      return links.filter(link => visible.has(link.source) && visible.has(link.target));
-    }
-
-    function simulate() {
-      if (state.frozen) return;
-      const visible = visibleNodes();
-      const visibleIds = new Set(visible.map(node => node.id));
-      const cx = state.width / 2;
-      const cy = state.height / 2;
-
-      for (let i = 0; i < visible.length; i++) {
-        const a = visible[i];
-        for (let j = i + 1; j < visible.length; j++) {
-          const b = visible[j];
-          let dx = a.x - b.x;
-          let dy = a.y - b.y;
-          let dist2 = dx * dx + dy * dy || 1;
-          const force = Math.min(4200 / dist2, .22);
-          const dist = Math.sqrt(dist2);
-          dx /= dist;
-          dy /= dist;
-          a.vx += dx * force;
-          a.vy += dy * force;
-          b.vx -= dx * force;
-          b.vy -= dy * force;
-        }
+    async function loadJson(name) {
+      const response = await fetch(`${DATA_BASE}${name}.json`, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Could not load ${name}.json`);
       }
-
-      links.forEach(link => {
-        if (!visibleIds.has(link.source) || !visibleIds.has(link.target)) return;
-        const a = link.sourceNode;
-        const b = link.targetNode;
-        const dx = b.x - a.x;
-        const dy = b.y - a.y;
-        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-        const target = 142;
-        const force = (dist - target) * .006;
-        const fx = (dx / dist) * force;
-        const fy = (dy / dist) * force;
-        if (state.draggingId !== a.id) {
-          a.vx += fx;
-          a.vy += fy;
-        }
-        if (state.draggingId !== b.id) {
-          b.vx -= fx;
-          b.vy -= fy;
-        }
-      });
-
-      visible.forEach(node => {
-        if (state.draggingId === node.id) return;
-        node.vx += (cx - node.x) * .0009;
-        node.vy += (cy - node.y) * .0009;
-        node.vx *= .88;
-        node.vy *= .88;
-        node.x += node.vx;
-        node.y += node.vy;
-        node.x = Math.max(28, Math.min(state.width - 28, node.x));
-        node.y = Math.max(92, Math.min(state.height - 42, node.y));
-      });
+      return response.json();
     }
 
-    function drawBackground() {
-      ctx.clearRect(0, 0, state.width, state.height);
-      const cx = state.width / 2;
-      const cy = state.height / 2;
-      const pulse = Math.sin(state.tick * .018) * 14;
-
-      ctx.save();
-      ctx.globalAlpha = .55;
-      for (let i = 0; i < 4; i++) {
-        ctx.beginPath();
-        ctx.arc(cx, cy, Math.min(state.width, state.height) * (.16 + i * .105) + pulse, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(85, 167, 255, ${.13 - i * .018})`;
-        ctx.lineWidth = 1;
-        ctx.stroke();
-      }
-      ctx.restore();
-
-      ctx.save();
-      ctx.translate(cx, cy);
-      ctx.rotate(state.tick * .0018);
-      ctx.globalAlpha = .18;
-      const r = Math.min(state.width, state.height) * .24;
-      ctx.beginPath();
-      for (let i = 0; i < 6; i++) {
-        const a = Math.PI / 6 + i * Math.PI / 3;
-        const x = Math.cos(a) * r;
-        const y = Math.sin(a) * r;
-        if (i === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.closePath();
-      ctx.strokeStyle = "#edf5ff";
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-      ctx.restore();
-    }
-
-    function drawLinks() {
-      const selected = state.selectedId ? nodeById.get(state.selectedId) : null;
-      visibleLinks().forEach(link => {
-        const a = link.sourceNode;
-        const b = link.targetNode;
-        const active = selected && (selected.id === a.id || selected.id === b.id);
-        ctx.save();
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        const mx = (a.x + b.x) / 2;
-        const my = (a.y + b.y) / 2;
-        const curve = active ? 22 : 10;
-        ctx.quadraticCurveTo(mx + curve, my - curve, b.x, b.y);
-        ctx.strokeStyle = active ? "rgba(237,245,255,.55)" : "rgba(159,176,200,.18)";
-        ctx.lineWidth = active ? 2.2 : 1.1;
-        ctx.stroke();
-
-        if (active) {
-          ctx.fillStyle = "rgba(237,245,255,.62)";
-          ctx.font = "11px system-ui";
-          ctx.fillText(link.label, mx + 8, my - 8);
-        }
-        ctx.restore();
-      });
-    }
-
-    function drawNodes() {
-      const visible = visibleNodeSet();
-      nodes.forEach(node => {
-        if (!visible.has(node.id)) return;
-        const selected = state.selectedId === node.id;
-        const inStack = state.stack.includes(node.id);
-        const hovered = state.hoverId === node.id;
-        const weight = gradeWeight[node.grade] || 1;
-        const radius = 10 + weight * 3 + (selected ? 5 : 0);
-        const color = typeColor[node.type];
-        const glow = selected || inStack || hovered ? .55 : .22 + weight * .035;
-
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, radius + 10, 0, Math.PI * 2);
-        ctx.fillStyle = hexToRgba(color, glow * .22);
-        ctx.shadowColor = color;
-        ctx.shadowBlur = selected ? 34 : inStack ? 24 : 13;
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
-        ctx.fillStyle = hexToRgba(color, .88);
-        ctx.fill();
-        ctx.lineWidth = selected ? 3 : 1.4;
-        ctx.strokeStyle = inStack ? "#edf5ff" : "rgba(255,255,255,.58)";
-        ctx.stroke();
-
-        ctx.shadowBlur = 0;
-        ctx.fillStyle = "#edf5ff";
-        ctx.font = selected ? "700 13px system-ui" : "600 12px system-ui";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "top";
-        wrapLabel(node.label, node.x, node.y + radius + 7, selected ? 118 : 92);
-        ctx.restore();
-      });
-    }
-
-    function wrapLabel(text, x, y, maxWidth) {
-      const words = text.split(" ");
-      let line = "";
-      const lines = [];
-      words.forEach(word => {
-        const test = line ? `${line} ${word}` : word;
-        if (ctx.measureText(test).width > maxWidth && line) {
-          lines.push(line);
-          line = word;
-        } else {
-          line = test;
-        }
-      });
-      if (line) lines.push(line);
-      lines.slice(0, 2).forEach((item, index) => ctx.fillText(item, x, y + index * 14));
-    }
-
-    function draw() {
-      drawBackground();
-      drawLinks();
-      drawNodes();
-    }
-
-    function loop() {
-      state.tick++;
-      simulate();
-      draw();
-      requestAnimationFrame(loop);
-    }
-
-    function hexToRgba(hex, alpha) {
-      const clean = hex.replace("#", "");
-      const value = parseInt(clean, 16);
-      const r = (value >> 16) & 255;
-      const g = (value >> 8) & 255;
-      const b = value & 255;
-      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-    }
-
-    function nodeAt(x, y) {
-      const visible = visibleNodeSet();
-      for (let i = nodes.length - 1; i >= 0; i--) {
-        const node = nodes[i];
-        if (!visible.has(node.id)) continue;
-        const radius = 18 + (gradeWeight[node.grade] || 1) * 3;
-        const dx = x - node.x;
-        const dy = y - node.y;
-        if (dx * dx + dy * dy <= radius * radius) return node;
-      }
-      return null;
-    }
-
-    function pointerPos(event) {
-      const rect = canvas.getBoundingClientRect();
-      return {
-        x: event.clientX - rect.left,
-        y: event.clientY - rect.top
-      };
-    }
-
-    function selectNode(node) {
-      state.selectedId = node ? node.id : null;
-      renderDetail();
-      renderLibrary();
-      renderSynthesis();
-    }
-
-    function toggleStack(id) {
-      if (state.stack.includes(id)) state.stack = state.stack.filter(item => item !== id);
-      else state.stack.push(id);
-      persist();
-      renderAllSidebars();
-    }
-
-    function renderLibrary() {
-      const visible = visibleNodes();
-      library.innerHTML = "";
-      visible.forEach(node => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = `piece ${typeClass[node.type]} ${state.selectedId === node.id ? "active" : ""}`;
-        button.innerHTML = `
-          <div class="piece-title">${node.label}</div>
-          <div class="small">${node.type} / ${node.grade.replaceAll("_", " ")}</div>
-          <div class="tags">${node.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
-        `;
-        button.addEventListener("click", () => selectNode(node));
-        button.addEventListener("dblclick", () => toggleStack(node.id));
-        library.appendChild(button);
-      });
-    }
-
-    function renderDetail() {
-      const node = state.selectedId ? nodeById.get(state.selectedId) : null;
-      if (!node) {
-        nodeDetail.innerHTML = `<p class="small">Click a graph node to inspect its role. Double-click a node to add it to the idea stack.</p>`;
-        return;
-      }
-      const neighbours = links
-        .filter(link => link.source === node.id || link.target === node.id)
-        .map(link => {
-          const other = link.source === node.id ? nodeById.get(link.target) : nodeById.get(link.source);
-          return `${link.label}: ${other.label}`;
-        });
-      nodeDetail.innerHTML = `
-        <div class="detail-title">
-          <h3>${node.label}</h3>
-          <span class="badge">${node.grade.replaceAll("_", " ")}</span>
-        </div>
-        <p class="small">${node.type}</p>
-        <p>${node.prompt}</p>
-        <div class="tags">${node.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
-        <button type="button" id="stackSelectedBtn">${state.stack.includes(node.id) ? "Remove from idea" : "Add to idea"}</button>
-        <p class="small">${neighbours.slice(0, 5).join(" | ") || "No visible relations."}</p>
-      `;
-      document.getElementById("stackSelectedBtn").addEventListener("click", () => toggleStack(node.id));
-    }
-
-    function renderStack() {
-      const items = state.stack.map(id => nodeById.get(id)).filter(Boolean);
-      stackEl.innerHTML = "";
-      if (!items.length) {
-        stackEl.innerHTML = `<p class="small">Double-click graph nodes or library pieces to assemble an idea.</p>`;
-        return;
-      }
-      items.forEach(node => {
-        const div = document.createElement("div");
-        div.className = `stack-item ${typeClass[node.type]}`;
-        div.innerHTML = `
-          <h3>${node.label}</h3>
-          <p class="small">${node.type} / ${node.grade.replaceAll("_", " ")}</p>
-          <button type="button">Remove</button>
-        `;
-        div.querySelector("button").addEventListener("click", () => toggleStack(node.id));
-        stackEl.appendChild(div);
-      });
-    }
-
-    function renderMetrics() {
-      const visible = visibleNodes();
-      const visibleIds = new Set(visible.map(node => node.id));
-      const visibleLinkCount = links.filter(link => visibleIds.has(link.source) && visibleIds.has(link.target)).length;
-      const weak = state.stack.map(id => nodeById.get(id)).filter(node => node && gradeWeight[node.grade] <= 2).length;
-      document.getElementById("metricNodes").textContent = visible.length;
-      document.getElementById("metricLinks").textContent = visibleLinkCount;
-      document.getElementById("metricStack").textContent = state.stack.length;
-      document.getElementById("metricWeak").textContent = weak;
-    }
-
-    function renderSynthesis() {
-      const items = state.stack.map(id => nodeById.get(id)).filter(Boolean);
-      if (!items.length) {
-        synthesis.textContent = "Assemble a cluster first. The graph can suggest structure, but the human still decides what becomes an argument.";
-        return;
-      }
-      const byType = items.reduce((acc, node) => {
-        acc[node.type] = acc[node.type] || [];
-        acc[node.type].push(node.label);
-        return acc;
-      }, {});
-      const strongest = items.reduce((best, node) => gradeWeight[node.grade] > gradeWeight[best.grade] ? node : best, items[0]);
-      const weakCount = items.filter(node => gradeWeight[node.grade] <= 2).length;
-      const region = phrase(byType["Empirical Region"], "a geopolitical field");
-      const actor = phrase(byType.Actor, "strategic actors");
-      const process = phrase(byType.Process, "knowledge-making processes");
-      const theory = phrase(byType.Theory, "interpretive theory");
-      const method = phrase(byType.Method, "auditable methods");
-      const object = phrase(byType["Knowledge Object"], "the evidence system");
-
-      const text = {
-        thesis: `Provisional thesis:\n${region} becomes legible when ${actor} and ${process} are read through ${theory}, then disciplined by ${method}. The claim should pass through ${object}; currently, ${strongest.label} carries the strongest evidence grade in this assembled idea.`,
-        tension: `Productive tension:\nThis cluster wants to become a large argument, but ${weakCount} piece(s) are still metadata or manifest-level. The next philosophical question is not "does this sound right?" but "which sampled text would allow this relation to exist responsibly?"`,
-        method: `Method sketch:\nStart with ${region}. Trace actors such as ${actor}. Code the language around ${process}. Use ${method} to convert recurring signs into ontology edges, then let ${object} record every promotion from clue to claim.`,
-        pedagogy: `Pedagogic protocol:\nGive learners these pieces as movable objects. Ask them to build a claim, identify the weak blocks, then require every block to declare its evidence grade before the structure can be called knowledge.`
-      };
-      synthesis.textContent = text[state.mode];
-    }
-
-    function phrase(list, fallback) {
-      if (!list || !list.length) return fallback;
-      if (list.length === 1) return list[0];
-      return `${list.slice(0, -1).join(", ")} and ${list[list.length - 1]}`;
-    }
-
-    function renderAllSidebars() {
-      renderLibrary();
-      renderDetail();
-      renderStack();
-      renderMetrics();
-      renderSynthesis();
-    }
-
-    function persist() {
-      localStorage.setItem("kp-graph-stack", JSON.stringify(state.stack));
-      localStorage.setItem("kp-graph-notes", notes.value);
-      localStorage.setItem("kp-graph-title", ideaTitle.value);
-    }
-
-    function pulse() {
-      nodes.forEach(node => {
-        const dx = node.x - state.width / 2;
-        const dy = node.y - state.height / 2;
-        const d = Math.sqrt(dx * dx + dy * dy) || 1;
-        node.vx += (dx / d) * 8;
-        node.vy += (dy / d) * 8;
-      });
-    }
-
-    function autoIdea() {
-      state.stack = ["afghanistan", "china", "connectivity", "critical-geopolitics", "semiotics", "ledger"];
-      persist();
-      renderAllSidebars();
-    }
-
-    function resetGraph() {
-      seedPositions();
-      state.frozen = false;
-      document.getElementById("freezeBtn").textContent = "Freeze";
-      renderAllSidebars();
-    }
-
-    function exportBrief() {
-      const items = state.stack.map(id => nodeById.get(id)).filter(Boolean);
-      const weak = items.filter(node => gradeWeight[node.grade] <= 2);
-      return {
-        title: ideaTitle.value,
-        mode: state.mode,
-        synthesis: synthesis.textContent,
-        irreversibility_filter: "Preserve standards, verification logic, and learning notes that a weaker future session should not have to reinvent.",
-        next_verification_task: weak.length
-          ? `Sample text for weak evidence pieces: ${weak.map(node => node.label).join(", ")}.`
-          : "Convert this assembled idea into claim events only after textual support is recorded.",
-        nodes: items.map(node => ({
-          id: node.id,
-          label: node.label,
-          type: node.type,
-          evidence_grade: node.grade,
-          tags: node.tags,
-          prompt: node.prompt
-        })),
-        notes: notes.value,
-        warning: "This graph is a conceptual workbench. Metadata-level nodes are clues, not scholarly evidence."
-      };
-    }
-
-    function learningNote() {
-      const brief = exportBrief();
-      const nodeLines = brief.nodes.map(node => `- ${node.label} (${node.type}, ${node.evidence_grade})`).join("\n");
-      return [
-        `# ${brief.title}`,
-        "",
-        "## Why This Note Exists",
-        "",
-        "This note preserves a graph-session insight so future work does not have to reconstruct the same reasoning from scratch.",
-        "",
-        "## Assembled Pieces",
-        "",
-        nodeLines || "- No nodes selected.",
-        "",
-        "## Provisional Synthesis",
-        "",
-        brief.synthesis,
-        "",
-        "## Evidence Warning",
-        "",
-        brief.warning,
-        "",
-        "## Next Verification Task",
-        "",
-        brief.next_verification_task,
-        "",
-        "## Human Note",
-        "",
-        brief.notes || "No human note recorded."
-      ].join("\n");
-    }
-
-    canvas.addEventListener("pointerdown", event => {
-      const point = pointerPos(event);
-      const node = nodeAt(point.x, point.y);
-      if (node) {
-        state.draggingId = node.id;
-        selectNode(node);
-        canvas.classList.add("dragging");
-        node.vx = 0;
-        node.vy = 0;
-        canvas.setPointerCapture(event.pointerId);
-      }
-    });
-
-    canvas.addEventListener("pointermove", event => {
-      const point = pointerPos(event);
-      const hover = nodeAt(point.x, point.y);
-      state.hoverId = hover ? hover.id : null;
-      if (state.draggingId) {
-        const node = nodeById.get(state.draggingId);
-        node.x = point.x;
-        node.y = point.y;
-        node.vx = 0;
-        node.vy = 0;
-      }
-    });
-
-    canvas.addEventListener("pointerup", event => {
-      if (state.draggingId) {
-        state.draggingId = null;
-        canvas.classList.remove("dragging");
-        canvas.releasePointerCapture(event.pointerId);
-      }
-    });
-
-    canvas.addEventListener("dblclick", event => {
-      const point = pointerPos(event);
-      const node = nodeAt(point.x, point.y);
-      if (node) toggleStack(node.id);
-    });
-
-    canvas.addEventListener("click", event => {
-      const point = pointerPos(event);
-      const node = nodeAt(point.x, point.y);
-      selectNode(node);
-    });
-
-    document.querySelectorAll(".legend-item").forEach(button => {
-      button.addEventListener("click", () => {
-        typeFilter.value = button.dataset.type;
-        document.querySelectorAll(".legend-item").forEach(item => item.classList.toggle("active", item === button));
-        renderAllSidebars();
-      });
-    });
-
-    document.querySelectorAll(".mode").forEach(button => {
-      button.addEventListener("click", () => {
-        state.mode = button.dataset.mode;
-        document.querySelectorAll(".mode").forEach(item => item.classList.toggle("active", item === button));
-        renderSynthesis();
-      });
-    });
-
-    [searchInput, typeFilter, gradeFilter].forEach(control => {
-      control.addEventListener("input", renderAllSidebars);
-    });
-
-    [notes, ideaTitle].forEach(control => {
-      control.addEventListener("input", persist);
-    });
-
-    document.getElementById("pulseBtn").addEventListener("click", pulse);
-    document.getElementById("autoBtn").addEventListener("click", autoIdea);
-    document.getElementById("resetBtn").addEventListener("click", resetGraph);
-    document.getElementById("freezeBtn").addEventListener("click", event => {
-      state.frozen = !state.frozen;
-      event.currentTarget.textContent = state.frozen ? "Unfreeze" : "Freeze";
-    });
-
-    document.getElementById("copyBtn").addEventListener("click", async () => {
+    async function boot() {
       try {
-        await navigator.clipboard.writeText(JSON.stringify(exportBrief(), null, 2));
-        document.getElementById("copyStatus").textContent = "Brief copied.";
-      } catch (error) {
-        document.getElementById("copyStatus").textContent = "Copy failed; use Download JSON.";
-      }
-    });
+        const [rawPilotRows, functionalRoles, reviewQueue, census, ledger, status, evidence, pipeline] = await Promise.all([
+          loadJson("pilot_rows"),
+          loadJson("functional_roles"),
+          loadJson("review_queue"),
+          loadJson("disposition_census"),
+          loadJson("ledger_blocks"),
+          loadJson("project_status"),
+          loadJson("evidence_dashboard"),
+          loadJson("pipeline")
+        ]);
 
-    document.getElementById("downloadBtn").addEventListener("click", () => {
-      const blob = new Blob([JSON.stringify(exportBrief(), null, 2)], { type: "application/json" });
+        const pilotRows = mergeFunctionalRoles(rawPilotRows, functionalRoles);
+        Object.assign(state, { pilotRows, reviewQueue, census, ledger, status, evidence, pipeline });
+        state.functionalRoles = functionalRoles;
+        bindEvents();
+        renderAll();
+      } catch (error) {
+        document.body.innerHTML = `<main class="shell"><div class="error"><strong>Front-end data did not load.</strong><br>${escapeHtml(error.message)}<br>Run <code>python3 scripts/export_frontend_data.py</code> and serve the folder through a static server.</div></main>`;
+      }
+    }
+
+    function bindEvents() {
+      $$(".filter").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.filter = button.dataset.filter;
+          $$(".filter").forEach((item) => item.classList.toggle("active", item === button));
+          renderReadingTray();
+          renderPilot();
+          renderMatrix();
+          renderGraph();
+        });
+      });
+
+      $("#search").addEventListener("input", (event) => {
+        state.search = event.target.value.toLowerCase();
+        renderReadingTray();
+        renderPilot();
+        renderMatrix();
+        renderGraph();
+      });
+
+      $("#downloadPilotJson").addEventListener("click", () => downloadJson("knowledge_prism_pilot_rows.json", state.pilotRows));
+      $("#downloadPilotCsv").addEventListener("click", () => downloadText("knowledge_prism_pilot_rows.csv", toCsv(state.pilotRows), "text/csv"));
+      $("#downloadReviewJson").addEventListener("click", () => downloadJson("knowledge_prism_review_queue.json", state.reviewQueue));
+      $("#downloadLedgerJson").addEventListener("click", () => downloadJson("knowledge_prism_ledger_summary.json", state.ledger));
+      $("#copyBrief").addEventListener("click", () => copyText(projectBrief(), "Project brief copied."));
+      $("#copyHandover").addEventListener("click", () => copyText(handoverBrief(), "Codex handover status copied."));
+    }
+
+    function renderAll() {
+      renderHero();
+      state.selectedId = state.pilotRows[0]?.id || null;
+      renderReadingTray();
+      renderPipeline();
+      renderEvidence();
+      renderCensus();
+      renderFunctionalRoles();
+      renderPilot();
+      renderMatrix();
+      renderGraph();
+      renderReviewQueue();
+      renderLedger();
+      $("#exportStatus").textContent = "Exports are ready. JSON and CSV preserve functional interpretation, evidence-grade, and disposition fields.";
+    }
+
+    function mergeFunctionalRoles(rows, functionalRoles) {
+      const byId = Object.fromEntries(functionalRoles.map((role) => [role.id, role]));
+      const byFile = Object.fromEntries(functionalRoles.filter((role) => role.file).map((role) => [role.file, role]));
+      return rows.map((row) => ({
+        ...row,
+        ...(byId[row.id] || byFile[row.file] || {})
+      }));
+    }
+
+    function renderHero() {
+      $("#metricMaster").textContent = fmt(state.status.master_corpus_rows);
+      $("#metricPilot").textContent = fmt(state.status.pilot_rows);
+      $("#metricPromoted").textContent = fmt(state.status.promoted_sample_level_rows);
+      $("#metricOntology").textContent = fmt(state.status.ontology_core_rows);
+      const chain = state.status.ledger_chain_verifies ? "ledger chain verifies" : "ledger chain needs review";
+      $("#statusMeta").textContent = `${fmt(state.status.bridge_concept_rows)} bridge concept rows; ${fmt(state.status.ledger_blocks)} ledger blocks; ${chain}. Generated ${new Date(state.status.generated_at).toLocaleString()}.`;
+    }
+
+    function renderReadingTray() {
+      const rows = filteredRows();
+      if (!rows.some((row) => row.id === state.selectedId)) {
+        state.selectedId = rows[0]?.id || state.pilotRows[0]?.id || null;
+      }
+
+      $("#pieceList").innerHTML = rows.map((row) => `
+        <button class="piece-card ${pieceTone(row)} ${row.id === state.selectedId ? "active" : ""}" type="button" data-id="${escapeHtml(row.id)}">
+          <span class="piece-title">${row.pilot_index}. ${escapeHtml(row.title)}</span>
+          <span class="small">${escapeHtml(statusSentence(row))}</span>
+        </button>
+      `).join("");
+
+      $$("#pieceList .piece-card").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.selectedId = button.dataset.id;
+          renderReadingTray();
+        });
+      });
+
+      const selected = state.pilotRows.find((row) => row.id === state.selectedId);
+      if (!selected) {
+        $("#selectedTitle").textContent = "No work selected";
+        $("#selectedWork").innerHTML = `<p class="small">No rows match the current filter.</p>`;
+        return;
+      }
+
+      $("#selectedTitle").textContent = selected.title;
+      $("#selectedWork").innerHTML = `
+        <p class="lead" style="font-size: 17px;">${escapeHtml(functionalOpening(selected))}</p>
+        <div class="meaning-grid">
+          <div class="meaning-card">
+            <p class="eyebrow">IR Function</p>
+            <p class="small">${escapeHtml(selected.functional_ir_role || "No functional IR role has been recorded for this row yet.")}</p>
+          </div>
+          <div class="meaning-card">
+            <p class="eyebrow">Interaction Illuminated</p>
+            <p class="small">${escapeHtml(selected.interaction_illuminated || "No interaction has been assigned yet.")}</p>
+          </div>
+          <div class="meaning-card">
+            <p class="eyebrow">Ontology Use</p>
+            <p class="small">${escapeHtml(selected.ontology_use || selected.next_action)}</p>
+          </div>
+        </div>
+        <div class="meaning-card">
+          <p class="eyebrow">Layer In Substance</p>
+          <p class="small">${escapeHtml(selected.substantive_layer_explanation || selected.layer_tag)}</p>
+        </div>
+        <div class="meaning-card">
+          <p class="eyebrow">Limitation Or Caution</p>
+          <p class="small">${escapeHtml(selected.limitation_or_caution || plainMeaning(selected))}</p>
+        </div>
+        <div class="badge-list">
+          <span class="badge ${escapeHtml(selected.disposition)}">${escapeHtml(humanDisposition(selected))}</span>
+          <span class="badge ${selected.evidence_grade === "sampled_text_supported_core_candidate" ? "sampled" : ""}">${escapeHtml(humanEvidence(selected))}</span>
+          <span class="badge">${escapeHtml(selected.thesis_verdict)}</span>
+        </div>
+        <ul class="plain-list">
+          <li>Confidence: ${Number(selected.thesis_confidence ?? 0).toFixed(2)}; quote check: ${escapeHtml(selected.quote_validation_status)}.</li>
+          <li>Layer: ${escapeHtml(selected.layer_tag)}.</li>
+          <li>Stored fields remain: ${escapeHtml(selected.disposition)} / ${escapeHtml(selected.evidence_grade)}.</li>
+        </ul>
+        <details>
+          <summary>Show the full audit wording</summary>
+          <p class="small" style="margin-top: 8px;"><strong>Claim tested:</strong> ${escapeHtml(selected.ai_thesis || "No full claim text was exported for this row.")}</p>
+          <p class="small" style="margin-top: 8px;"><strong>Recorded reasoning:</strong> ${escapeHtml(selected.thesis_reasoning || selected.reason || "No extended reasoning was exported for this row.")}</p>
+          <p class="small" style="margin-top: 8px;"><strong>Audit finding:</strong> ${escapeHtml(findingSummary(selected))}</p>
+        </details>
+      `;
+    }
+
+    function pieceTone(row) {
+      if (row.disposition === "review_required" || row.disposition === "excluded_unreadable") return "review";
+      if (row.disposition === "Peripheral_context") return "peripheral";
+      if (row.disposition.startsWith("excluded") || row.disposition === "claim_supported_but_project_irrelevant") return "excluded";
+      return "";
+    }
+
+    function statusSentence(row) {
+      if (row.evidence_grade === "sampled_text_supported_core_candidate") return "Sampled text supports it, but it is not final ontology-core.";
+      if (row.disposition === "review_required") return "Promising enough to keep, uncertain enough to reread.";
+      if (row.disposition === "excluded_unreadable") return "The title may matter, but the text cannot yet be read.";
+      if (row.disposition === "Peripheral_context") return "Relevant background, not a core scholarly building block.";
+      if (row.disposition === "claim_supported_but_project_irrelevant") return "The claim is supported, but it belongs outside this project.";
+      if (row.disposition === "excluded_misfile_noise") return "Administrative noise, not a scholarly contradiction.";
+      return row.next_action;
+    }
+
+    function humanDisposition(row) {
+      return labels[row.disposition] || row.disposition;
+    }
+
+    function humanEvidence(row) {
+      if (row.evidence_grade === "sampled_text_supported_core_candidate") return "sample-supported, not final";
+      if (row.evidence_grade === "metadata_only") return "metadata only";
+      return "not scholarly evidence yet";
+    }
+
+    function functionalOpening(row) {
+      if (row.functional_ir_role) {
+        return `This work enters the graph because it performs a role in IR explanation: ${row.functional_ir_role}`;
+      }
+      return "This row does not yet have a recorded functional IR role. Its audit status remains visible, but it should not be treated as an explanatory building block until the functional layer is written.";
+    }
+
+    function plainMeaning(row) {
+      if (row.evidence_grade === "sampled_text_supported_core_candidate") {
+        return "This work has passed the pilot's first serious test: the sampled text supports the claim and the work belongs to the project. It can be used as a candidate for later concept verification, but not as final ontology truth.";
+      }
+      if (row.disposition === "review_required") {
+        return "This work may matter, but the current sample is not strong enough. The project keeps it visible and asks for a better reading instead of forcing a premature answer.";
+      }
+      if (row.disposition === "excluded_unreadable") {
+        return "This work is parked because the text layer failed. The project is not saying the idea is irrelevant; it is saying the evidence is not readable yet.";
+      }
+      if (row.disposition === "claim_supported_but_project_irrelevant") {
+        return "The sampled text supports the claim, but the work does not belong to KNOWLEDGE_PRISM's research boundary. Accuracy alone is not enough.";
+      }
+      if (row.disposition === "Peripheral_context") {
+        return "This is useful context around the empirical world, but it is not being treated as core scholarship for the ontology.";
+      }
+      if (row.disposition === "excluded_misfile_noise") {
+        return "This file was swept into the corpus by mistake. It is excluded as noise, not treated as evidence against a scholarly thesis.";
+      }
+      return row.reason || row.next_action;
+    }
+
+    function testSummary(row) {
+      if (row.thesis_verdict === "UNREADABLE") return "The pilot tried to read the work but the extracted text was not usable.";
+      if (row.disposition === "excluded_misfile_noise") return "The pilot checked whether this was a scholarly work and found an administrative form instead.";
+      if (row.ai_thesis) return shortLabel(row.ai_thesis, 180);
+      return "The pilot tested the proposed claim against a bounded sample of text.";
+    }
+
+    function findingSummary(row) {
+      if (row.evidence_grade === "sampled_text_supported_core_candidate") return "The sampled text supports the claim and the work belongs to the current project boundary.";
+      if (row.disposition === "review_required") return "The sample is too weak or partial for promotion; the row stays visible for a deeper read.";
+      if (row.disposition === "claim_supported_but_project_irrelevant") return "The claim is supported, but the work is outside the Knowledge Prism domain.";
+      if (row.disposition === "Peripheral_context") return "The work gives useful empirical background, but not core ontology material.";
+      if (row.disposition === "excluded_unreadable") return "The text cannot be assessed until OCR or manual inspection improves the source.";
+      if (row.disposition === "excluded_misfile_noise") return "The file is excluded as a misfile/noise case.";
+      return shortLabel(row.thesis_reasoning || row.reason || "The current disposition is recorded in the pilot ledger.", 180);
+    }
+
+    function renderPipeline() {
+      $("#pipeline").innerHTML = state.pipeline.map((stage, index) => `
+        <article class="stage">
+          <div class="small">Step ${index + 1}</div>
+          <h3>${escapeHtml(stage.stage)}</h3>
+          <span class="status">${escapeHtml(humanStageStatus(stage.status))}</span>
+          <p class="small" style="margin-top: 8px;">${escapeHtml(stage.note)}</p>
+        </article>
+      `).join("");
+    }
+
+    function humanStageStatus(status) {
+      const map = {
+        done_metadata_level: "mapped",
+        built_partly_heuristic: "built, still cautious",
+        operational: "working",
+        active: "active",
+        run: "pilot run",
+        not_final: "not final",
+        not_started: "not started",
+        partial: "partial",
+        in_progress: "in progress"
+      };
+      return map[status] || String(status || "").replaceAll("_", " ");
+    }
+
+    function renderEvidence() {
+      $("#evidenceGrid").innerHTML = Object.entries(state.evidence).map(([key, value]) => `
+        <div class="evidence-card">
+          <strong>${fmt(value)}</strong>
+          <span class="small">${escapeHtml(labels[key] || key)}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderCensus() {
+      $("#censusGrid").innerHTML = Object.entries(state.census).map(([key, value]) => `
+        <div class="evidence-card">
+          <strong>${fmt(value)}</strong>
+          <span class="small">${escapeHtml(labels[key] || key)}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderFunctionalRoles() {
+      const rows = state.pilotRows.filter((row) => row.functional_ir_role);
+      $("#functionalCount").textContent = `${rows.length} functional roles`;
+      $("#functionalGrid").innerHTML = rows.map((row) => `
+        <article class="functional-card ${row.disposition === "review_required" || row.disposition === "excluded_unreadable" ? "review" : ""}">
+          <div>
+            <h3>${escapeHtml(row.title)}</h3>
+            <div class="badge-list" style="margin-top: 8px;">
+              <span class="badge ${row.evidence_grade === "sampled_text_supported_core_candidate" ? "sampled" : ""}">${escapeHtml(humanEvidence(row))}</span>
+              <span class="badge ${escapeHtml(row.disposition)}">${escapeHtml(humanDisposition(row))}</span>
+            </div>
+          </div>
+          <p class="role">${escapeHtml(row.functional_ir_role)}</p>
+          <div class="meaning-grid">
+            <div class="meaning-card">
+              <p class="eyebrow">Interaction</p>
+              <p class="small">${escapeHtml(row.interaction_illuminated)}</p>
+            </div>
+            <div class="meaning-card">
+              <p class="eyebrow">Layer In Substance</p>
+              <p class="small">${escapeHtml(row.substantive_layer_explanation)}</p>
+            </div>
+            <div class="meaning-card">
+              <p class="eyebrow">Ontology Use</p>
+              <p class="small">${escapeHtml(shortLabel(row.ontology_use, 210))}</p>
+            </div>
+          </div>
+          <p class="small"><strong>Caution:</strong> ${escapeHtml(row.limitation_or_caution)}</p>
+        </article>
+      `).join("");
+    }
+
+    function rowMatchesFilter(row) {
+      if (state.filter === "promoted") return row.evidence_grade === "sampled_text_supported_core_candidate";
+      if (state.filter === "review") return row.disposition === "review_required";
+      if (state.filter === "excluded") return row.disposition.startsWith("excluded") || row.disposition === "claim_supported_but_project_irrelevant";
+      if (state.filter === "peripheral") return row.disposition === "Peripheral_context";
+      if (state.filter === "unreadable") return row.disposition === "excluded_unreadable";
+      return true;
+    }
+
+    function rowMatchesSearch(row) {
+      if (!state.search) return true;
+      return [
+        row.title,
+        row.disposition,
+        row.evidence_grade,
+        row.layer_tag,
+        row.next_action,
+        row.thesis_verdict,
+        row.functional_ir_role,
+        row.interaction_illuminated,
+        row.ontology_use,
+        row.limitation_or_caution
+      ]
+        .join(" ")
+        .toLowerCase()
+        .includes(state.search);
+    }
+
+    function filteredRows() {
+      state.filteredRows = state.pilotRows.filter((row) => rowMatchesFilter(row) && rowMatchesSearch(row));
+      return state.filteredRows;
+    }
+
+    function renderPilot() {
+      const rows = filteredRows();
+      $("#visibleSummary").textContent = `${rows.length} visible works of ${state.pilotRows.length}. The table preserves exact audit fields; the reading tray above gives the plain-language meaning.`;
+      $("#pilotTable").innerHTML = rows.map((row) => `
+        <tr>
+          <td>${row.pilot_index}</td>
+          <td class="title-cell">${escapeHtml(row.title)}<div class="small">${escapeHtml(row.folder || "")}</div></td>
+          <td><span class="badge">${escapeHtml(row.thesis_verdict)}</span></td>
+          <td>${Number(row.thesis_confidence ?? 0).toFixed(2)}</td>
+          <td>${escapeHtml(row.quote_validation_status)}</td>
+          <td><span class="badge ${escapeHtml(row.disposition)}">${escapeHtml(humanDisposition(row))}</span><div class="small">${escapeHtml(row.disposition)}</div></td>
+          <td><span class="badge ${row.evidence_grade === "sampled_text_supported_core_candidate" ? "sampled" : ""}">${escapeHtml(row.evidence_grade)}</span></td>
+          <td>${escapeHtml(row.layer_tag)}</td>
+          <td>${escapeHtml(row.promotion_eligibility)}</td>
+          <td>${escapeHtml(row.next_action)}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderMatrix() {
+      const verdicts = ["SUPPORTED", "PARTIAL", "CONTRADICTED", "UNREADABLE"];
+      const layers = [
+        ["Layer A", "Layer_A_empirical_core"],
+        ["Layer B", "Layer_B_method_theory_core"],
+        ["Layer AB", "Layer_AB_bridge_core"],
+        ["Ambiguous", "Ambiguous_review_required"],
+        ["Peripheral", "Peripheral_context"],
+        ["Out-of-domain", "Out_of_domain_noise"],
+        ["Misfile/noise", "Misfile_or_metadata_error"],
+        ["Unreadable", "Unreadable_or_unassessable"]
+      ];
+      const rows = filteredRows();
+      let html = `<div class="head">Thesis verdict</div>${layers.map(([label]) => `<div class="head">${label}</div>`).join("")}`;
+      verdicts.forEach((verdict) => {
+        html += `<div class="axis">${verdict}</div>`;
+        layers.forEach(([, layer]) => {
+          const matches = rows.filter((row) => row.thesis_verdict === verdict && normalizeLayerTag(row.layer_tag) === layer);
+          const example = matches[0] ? matches[0].title : "";
+          html += `<div><strong>${matches.length}</strong>${escapeHtml(example)}</div>`;
+        });
+      });
+      $("#matrix").innerHTML = html;
+    }
+
+    function normalizeLayerTag(layer) {
+      const aliases = {
+        A: "Layer_A_empirical_core",
+        B: "Layer_B_method_theory_core",
+        AB: "Layer_AB_bridge_core",
+        AMB: "Ambiguous_review_required",
+        Layer_B_geopolitics: "Layer_B_method_theory_core"
+      };
+      return aliases[layer] || layer;
+    }
+
+    function renderGraph() {
+      const rows = filteredRows();
+      const svg = $("#graphSvg");
+      const width = Math.max(svg.clientWidth || 640, 640);
+      const height = 520;
+      svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const workRadiusX = Math.max(220, width * .38);
+      const workRadiusY = 200;
+      const innerRadiusX = Math.max(130, width * .22);
+      const innerRadiusY = 118;
+      const nodes = [];
+      const links = [];
+      const addNode = (id, label, type) => {
+        if (!id || !label) return;
+        if (!nodes.some((node) => node.id === id)) nodes.push({ id, label, type, x: centerX, y: centerY });
+      };
+      const addLink = (source, target) => links.push({ source, target });
+
+      rows.forEach((row, index) => {
+        const angle = (Math.PI * 2 * index) / Math.max(rows.length, 1) - Math.PI / 2;
+        const workId = `work-${row.pilot_index}`;
+        addNode(workId, `${row.pilot_index}. ${row.title}`, "work");
+        const work = nodes.find((node) => node.id === workId);
+        work.x = centerX + Math.cos(angle) * workRadiusX;
+        work.y = centerY + Math.sin(angle) * workRadiusY;
+
+        const functionId = `function-${normalizeForId(row.functional_ir_role || "uninterpreted")}`;
+        const interactionId = `interaction-${normalizeForId(row.interaction_illuminated || "interaction pending")}`;
+        const conceptId = `concept-${normalizeForId(row.concept_family || row.axis || "concept family pending")}`;
+        const ontologyId = `ontology-${normalizeForId(row.ontology_use || row.next_action)}`;
+        const gradeId = `grade-${normalizeForId(row.evidence_grade)}`;
+        const dispositionId = `disposition-${normalizeForId(row.disposition)}`;
+
+        addNode(functionId, row.functional_ir_role || "Functional role pending", "function");
+        addNode(interactionId, row.interaction_illuminated || "Interaction pending", "interaction");
+        addNode(conceptId, row.concept_family || row.axis || "Concept family pending", "concept");
+        addNode(ontologyId, row.ontology_use || row.next_action, "ontology");
+        addNode(gradeId, row.evidence_grade, "evidence");
+        addNode(dispositionId, humanDisposition(row), "disposition");
+
+        addLink(workId, functionId);
+        addLink(workId, interactionId);
+        addLink(workId, conceptId);
+        addLink(workId, ontologyId);
+        addLink(workId, gradeId);
+        addLink(workId, dispositionId);
+      });
+
+      const innerNodes = nodes.filter((node) => node.type !== "work");
+      innerNodes.forEach((node, index) => {
+        const angle = (Math.PI * 2 * index) / Math.max(innerNodes.length, 1) - Math.PI / 2;
+        node.x = centerX + Math.cos(angle) * innerRadiusX;
+        node.y = centerY + Math.sin(angle) * innerRadiusY;
+      });
+
+      const nodeById = Object.fromEntries(nodes.map((node) => [node.id, node]));
+      const lineMarkup = links.map((link) => {
+        const source = nodeById[link.source];
+        const target = nodeById[link.target];
+        if (!source || !target) return "";
+        return `<line class="graph-link" x1="${source.x}" y1="${source.y}" x2="${target.x}" y2="${target.y}"></line>`;
+      }).join("");
+      const nodeMarkup = nodes.map((node) => `
+        <g>
+          <circle class="graph-node ${node.type}" cx="${node.x}" cy="${node.y}" r="${node.type === "work" ? 7 : 10}">
+            <title>${escapeHtml(node.label)}</title>
+          </circle>
+          <text class="graph-label" x="${node.x + 10}" y="${node.y + 4}">${escapeHtml(shortLabel(node.label, node.type === "work" ? 28 : 22))}</text>
+        </g>
+      `).join("");
+      svg.innerHTML = `${lineMarkup}${nodeMarkup}`;
+      $("#graphNodes").textContent = `${nodes.length} visible nodes`;
+      $("#graphLinks").textContent = `${links.length} visible links`;
+    }
+
+    function shortLabel(value, limit) {
+      const text = String(value || "");
+      return text.length > limit ? `${text.slice(0, limit - 1)}...` : text;
+    }
+
+    function normalizeForId(value) {
+      return String(value || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")
+        .slice(0, 60);
+    }
+
+    function renderReviewQueue() {
+      $("#reviewQueue").innerHTML = state.reviewQueue.map((row) => `
+        <article class="review-card">
+          <h3>${escapeHtml(row.title)}</h3>
+          <div class="badge-list" style="margin: 10px 0;">
+            <span class="badge review_required">${escapeHtml(row.disposition)}</span>
+            <span class="badge">${escapeHtml(row.thesis_verdict)}</span>
+            <span class="badge">${Number(row.confidence ?? 0).toFixed(2)}</span>
+          </div>
+          <p class="small"><strong>Next:</strong> ${escapeHtml(row.next_action)}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderLedger() {
+      $("#ledgerTimeline").innerHTML = state.ledger.map((block) => `
+        <article class="block ${block.chain_link_ok ? "" : "bad"}">
+          <div class="small">Block ${block.block_no} | ${escapeHtml(block.actor || "unknown")} | ${escapeHtml(block.ts || "")}</div>
+          <h3>${escapeHtml(block.title)}</h3>
+          <p class="small" style="margin-top: 8px;">${block.chain_link_ok ? "Chain link verifies." : "Chain link needs review."}</p>
+          <p class="small" style="margin-top: 8px;"><strong>Artifacts:</strong> ${escapeHtml(asList(block.artifacts_produced).join("; "))}</p>
+        </article>
+      `).join("");
+    }
+
+    function asList(value) {
+      if (Array.isArray(value)) return value.map((item) => typeof item === "string" ? item : JSON.stringify(item));
+      if (value === undefined || value === null) return [];
+      return [String(value)];
+    }
+
+    function downloadJson(filename, data) {
+      downloadText(filename, JSON.stringify(data, null, 2), "application/json");
+    }
+
+    function downloadText(filename, text, type) {
+      const blob = new Blob([text], { type });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = "knowledge-prism-graph-idea.json";
+      link.download = filename;
       link.click();
       URL.revokeObjectURL(url);
-    });
+    }
 
-    document.getElementById("learningBtn").addEventListener("click", async () => {
+    function toCsv(rows) {
+      const columns = [
+        "pilot_index",
+        "title",
+        "functional_ir_role",
+        "interaction_illuminated",
+        "substantive_layer_explanation",
+        "ontology_use",
+        "limitation_or_caution",
+        "thesis_verdict",
+        "thesis_confidence",
+        "quote_validation_status",
+        "disposition",
+        "evidence_grade",
+        "layer_tag",
+        "promotion_eligibility",
+        "next_action"
+      ];
+      const quote = (value) => `"${String(value ?? "").replaceAll('"', '""')}"`;
+      return [columns.join(","), ...rows.map((row) => columns.map((column) => quote(row[column])).join(","))].join("\n");
+    }
+
+    async function copyText(text, successMessage) {
       try {
-        await navigator.clipboard.writeText(learningNote());
-        document.getElementById("copyStatus").textContent = "Learning note copied.";
-      } catch (error) {
-        document.getElementById("copyStatus").textContent = "Learning note copy failed.";
+        await navigator.clipboard.writeText(text);
+      } catch {
+        const area = document.createElement("textarea");
+        area.value = text;
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand("copy");
+        area.remove();
       }
-    });
+      $("#exportStatus").textContent = successMessage;
+    }
 
-    window.addEventListener("resize", resize);
+    function projectBrief() {
+      return [
+        "KNOWLEDGE_PRISM does not merely evidence-grade corpus claims. It interprets sampled works by their function in International Relations explanation.",
+        `Current pilot state: ${state.pilotRows.length} rows; ${state.functionalRoles.length} functional IR readings; ${state.status.promoted_sample_level_rows} rows at sampled_text_supported_core_candidate; ${state.status.ontology_core_rows} ontology_core rows.`,
+        "Claim accuracy is separated from project relevance. Supported claims may still be excluded when out-of-domain.",
+        "Unresolved queue: Ratzel and Demography, Russia and the Mongols, and Advaita Vedanta and International Relations require deeper re-sampling or OCR/manual inspection."
+      ].join("\n");
+    }
 
-    resize();
-    if (!state.stack.length) autoIdea();
-    renderAllSidebars();
-    loop();
+    function handoverBrief() {
+      return [
+        "Codex handover status for KNOWLEDGE_PRISM front end:",
+        "Static data is exported by scripts/export_frontend_data.py into public/data/.",
+        `Pilot rows: ${state.pilotRows.length}. Functional IR readings: ${state.functionalRoles.length}. Sample-level promoted rows: ${state.status.promoted_sample_level_rows}. Final ontology-core rows: 0.`,
+        "Front end reads pilot rows, functional roles, disposition census, review queue, ledger blocks, evidence dashboard, and pipeline status.",
+        "Do not promote review-required rows or write ledger changes from the browser."
+      ].join("\n");
+    }
+
+    boot();
   </script>
 </body>
 </html>

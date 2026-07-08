@@ -1,0 +1,37 @@
+{
+  "block_no": 16,
+  "block_id": "block_0016_sample_level_promotion_11",
+  "title": "SAMPLE-LEVEL promotion of 11 core_candidate rows to sampled_text_supported_core_candidate \u2014 NOT final ontology-core, NOT scaling",
+  "ts": "2026-07-07T13:57:51.791225+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude",
+  "inputs": [
+    "block 15 dispositions",
+    "user sign-off pasted-text-2026-07-07T13-56-22 (b646ffae)",
+    "BRIDGE_PILOT_VERDICTS.csv"
+  ],
+  "operations": [
+    "Promoted rows #1 to sampled_text_supported_core_candidate",
+    "Promoted rows #2 to sampled_text_supported_core_candidate",
+    "Promoted rows #3 to sampled_text_supported_core_candidate",
+    "Promoted rows #4 to sampled_text_supported_core_candidate",
+    "Promoted rows #5 to sampled_text_supported_core_candidate",
+    "Promoted rows #6 to sampled_text_supported_core_candidate",
+    "Promoted rows #8 to sampled_text_supported_core_candidate",
+    "Promoted rows #9 to sampled_text_supported_core_candidate",
+    "Promoted rows #10 to sampled_text_supported_core_candidate",
+    "Promoted rows #11 to sampled_text_supported_core_candidate",
+    "Promoted rows #15 to sampled_text_supported_core_candidate",
+    "Added evidence_grade column to verdict_disposition (seeded in build_prism_db.py)",
+    "Registered 11 evidence-ledger claims scope=corpus.evidence_grade status=accepted",
+    "#5 retains layer_tag Layer_B_method_theory_core",
+    "EXPLICIT: this is sample-level promotion only; NOT concept_verified, NOT ontology_core; no scaling to remaining ~370 bridge rows"
+  ],
+  "outputs": [
+    "11 verdict_disposition rows at grade sampled_text_supported_core_candidate",
+    "11 accepted claims KP-CLAIM",
+    "7 rows unchanged (2 review_required,1 unreadable,1 peripheral,2 project_irrelevant,1 misfile)"
+  ],
+  "prev_hash": "86a2cd3bc768dc25a2c2118dffa28cf2aa42e3873f887a1e4a4bd7f302781ac2",
+  "block_hash": "e88e46dfb1c5c0da2af82d767250be61465d3c28675f823dd15ce26932b7d57a"
+}

@@ -1,0 +1,13 @@
+{
+  "block_no": 13,
+  "block_id": "block_rubric_v2_pilot_run",
+  "title": "Rubric v2 approval + stratified 18-book sampling pilot (verdicts provisional, nothing promoted)",
+  "ts": "2026-07-07T13:30:47.363469+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude",
+  "inputs": "[\"VERIFICATION_RUBRIC.md v2 (supervisor-approved)\", \"db/_staging/pilot_list_proposal.csv (18 rows, supervisor-approved)\", \"bridge_concepts.thesis + concepts\", \"18 source PDFs on SOLEMON\"]",
+  "operations": "[\"recorded supervisor approval of rubric v2 (0.75 gate, three tracks, reasoning model, CONTRADICTED=human, argument-vs-term evidence)\", \"resolved all 18 pilot rows to accessible PDFs; extracted bounded slices (front-matter+TOC+intro; theory/mixed extra ~2000-word chapter; per-concept probes)\", \"ran reasoning-model (claude-sonnet-5) three-track verdicts; programmatically re-validated every quote verbatim against slice\", \"caught+fixed a pipeline bug (blank thesis in first run) by backfilling thesis from bridge_concepts before re-run\", \"verdict distribution: {'claim_sampled_supported': 14, 'claim_sampled_partial': 2, 'flagged_contradicted': 1, 'blocked_unreadable': 1}\", \"NO claim status advanced, NO ontology promotion, NO evidence-grade change \\u2014 verdicts are proposals for human review\"]",
+  "outputs": "[\"outputs/reports/BRIDGE_PILOT_RESULTS.md\", \"outputs/reports/BRIDGE_PILOT_VERDICTS.csv\", \"outputs/reports/BRIDGE_PILOT_VERDICTS.json\"]",
+  "prev_hash": "53ed6b9ab5951de95d5c9d97a3f69ecde9c7a7c97eed5b1850c6069d67e44c72",
+  "block_hash": "7ff28b393486daae0d25344a0f58045edd75e846f1ae260071b16b5c8b6fc7bc"
+}

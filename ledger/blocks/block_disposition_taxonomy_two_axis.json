@@ -1,0 +1,13 @@
+{
+  "block_no": 14,
+  "block_id": "block_disposition_taxonomy_two_axis",
+  "title": "Two-axis disposition taxonomy: separate thesis-accuracy from corpus-membership; add claim_supported_but_project_irrelevant + misfile/noise",
+  "ts": "2026-07-07T13:43:32.577801+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude",
+  "inputs": "[\"USER instruction: accept CONTRADICTED for Practical Exam Format but record as misfile/noise, not substantive contradiction\", \"USER instruction: create category claim_supported_but_project_irrelevant \\u2014 supported thesis but out-of-domain, excluded as noise\", \"pilot verdicts (block 13)\"]",
+  "operations": "[\"added persistent tables verdict_disposition + disposition_taxonomy to db/build_prism_db.py (survive derived rebuilds)\", \"established two-axis model: AXIS1 thesis verdict (accuracy) is independent of AXIS2 corpus membership (belonging)\", \"seeded controlled vocabulary: core_candidate, claim_supported_but_project_irrelevant, excluded_misfile_noise, excluded_unreadable, review_required\", \"recorded Practical Exam Format -> excluded_misfile_noise (human_review): CONTRADICTED verdict stands but reason is administrative misfile, NOT refuted scholarship\", \"recorded Histology atlas -> claim_supported_but_project_irrelevant (AI, pending user confirm): thesis accurate, book out-of-domain\", \"NO core-corpus promotion performed; excluded rows are marked, not deleted from master_corpus\"]",
+  "outputs": "[\"db/build_prism_db.py (schema +2 tables)\", \"verdict_disposition (2 rows)\", \"disposition_taxonomy (5 rows)\"]",
+  "prev_hash": "7ff28b393486daae0d25344a0f58045edd75e846f1ae260071b16b5c8b6fc7bc",
+  "block_hash": "14863284f2316b18bf55f2efc9e8c97e0de7fe5875045e3637c2adb7947f7534"
+}

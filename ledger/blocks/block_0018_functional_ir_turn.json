@@ -1,0 +1,27 @@
+{
+  "block_no": 18,
+  "block_id": "block_0018_functional_ir_turn",
+  "title": "FUNCTIONAL TURN \u2014 subordinate ledger to interpretation: add FUNCTIONAL_IR_INTERPRETATION_PROTOCOL + functional_role table + functional readings of 14 live rows. No promotion/scaling.",
+  "ts": "2026-07-07T14:26:50.390394+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude",
+  "inputs": [
+    "user supervisory correction pasted-text-2026-07-07T14-22-45 (0a2d320d)",
+    "blocks 13-17",
+    "BRIDGE_PILOT_VERDICTS.csv"
+  ],
+  "operations": [
+    "Registered doctrine: corpus anatomy -> physiology -> biomechanics; ledger subordinated to interpretation",
+    "Wrote docs/domain/FUNCTIONAL_IR_INTERPRETATION_PROTOCOL.md sha256=12a809f96a2ddbf6",
+    "Added persistent functional_role table to build_prism_db.py (survives derived rebuild, verified)",
+    "Authored functional-IR readings (5-question schema) for 11 promoted + 3 unresolved rows",
+    "Evidence grade recorded as annotation ON the functional reading, not a substitute"
+  ],
+  "outputs": [
+    "functional_role: 14 rows",
+    "FUNCTIONAL_ROLE_TABLE.csv + .md",
+    "NO promotion, NO scaling \u2014 stop for review as instructed"
+  ],
+  "prev_hash": "6ba581549c76f6e1216c4ed8c0dc8f979608bdc924a6d469ea2eba53870bd866",
+  "block_hash": "aaaaddf63942f8aaef2f11e1044e3a3c04ea336213e871d3f01389e832c0a65f"
+}

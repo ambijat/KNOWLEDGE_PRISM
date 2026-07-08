@@ -1,0 +1,1072 @@
+[
+ {
+  "file": "Barry_Buzan_George_Lawson_The_Global_Transforma.pdf",
+  "axis": "mixed",
+  "folder": "International Relations Theory",
+  "title": "The Global Transformation: History, Modernity and the Making of International Relations",
+  "total_pages": 417,
+  "ai_thesis": "The 'long nineteenth century' (1776\u20131914) witnessed multiple political, economic, military and cultural revolutions that fundamentally reconstituted both domestic and international societies, creating the material and ideational foundations of modern international relations and establishing a power gap between those who harnessed modernity and those denied access to it.",
+  "concept_list": [
+   "global modernity",
+   "long nineteenth century",
+   "power gap between developed and developing states",
+   "multiple revolutions (political, economic, military, cultural)",
+   "world history and international relations",
+   "international order"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.93,
+   "argument_quote": "Global modernity reconstituted the mode of power that underpinned international order and opened a power gap between those who harnessed the revolutions of modernity and those who were denied access to them.",
+   "thesis_reasoning": "The back-cover/blurb text, repeated verbatim in both the front-matter and the extra chapter sample, directly asserts the claimed argument: that the long nineteenth century's political, economic, military and cultural revolutions re-forged domestic and international societies and produced the material/ideational foundations of modern IR, plus a power gap between those who harnessed and those denied access to modernity's revolutions. This is argument-level endorsement, not mere term appearance, and the table of contents (e.g. Ch.1 'The Global Transformation', Ch.6 'Establishing a Core-Periphery International Order', Ch.7 'Eroding the Core-Periphery International Order') corroborates that the book's structure develops this exact thesis.",
+   "key_concepts": [
+    {
+     "concept": "global modernity",
+     "tag": "seen_in_text",
+     "term_quote": "Global modernity reconstituted the mode of power that underpinned international order",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "long nineteenth century",
+     "tag": "seen_in_text",
+     "term_quote": "The \u2018long nineteenth century\u2019 (1776\u20131914) was a period of political, economic, military and cultural revolutions",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "power gap between developed and developing states",
+     "tag": "variant_seen",
+     "term_quote": "opened a power gap between those who harnessed the revolutions of modernity and those who were denied access to them",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "multiple revolutions (political, economic, military, cultural)",
+     "tag": "seen_in_text",
+     "term_quote": "a period of political, economic, military and cultural revolutions that re-forged both domestic and international societies",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "world history and international relations",
+     "tag": "seen_in_text",
+     "term_quote": "establishes a new way of both understanding and teaching the relationship between world history and international relations",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "international order",
+     "tag": "seen_in_text",
+     "term_quote": "Global modernity reconstituted the mode of power that underpinned international order",
+     "_term_quote_verified": true
+    }
+   ],
+   "peripheral_notes": "All six key concepts appear directly in the sampled slice, mostly within the identical blurb passage repeated across front matter and chapter sample; the TOC (chapters on core-periphery order, catch-up, great power transformation) further corroborates the thesis structurally, though no full chapter-body argumentation beyond the blurb/TOC was sampled.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 5,
+   "_n_concepts_total": 6
+  }
+ },
+ {
+  "file": "Nations at War A Scientific Study of International Conflict Geller Singer.pdf",
+  "axis": "empirical",
+  "folder": "International Relations Theory",
+  "title": "Nations at War: A Scientific Study of International Conflict",
+  "total_pages": 260,
+  "ai_thesis": "War in international politics can be explained through data-based empirical research identifying structural factors at multiple analytical levels and using scientific covering-law models to generate probabilistic predictions.",
+  "concept_list": [
+   "rational and nonrational decision-making models",
+   "multi-level analysis (state, dyad, region, system)",
+   "quantitative conflict analysis",
+   "structural factors in war onset",
+   "covering-law scientific explanation",
+   "probabilistic prediction"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.9,
+   "argument_quote": "Nations at war provides an explanation of war in international politics grounded on data-based, empirical research.",
+   "thesis_reasoning": "The blurb explicitly states the book's argument: it explains war through empirical, quantitative research across multiple analytic levels (state, dyad, region, system), organizes findings via 'covering law' scientific explanation, and closes with discussion of probabilistic prediction. This is argument-evidence, not mere term presence, since the front matter directly asserts the explanatory approach and structure of the book, and the Introduction/TOC corroborate the levels-of-analysis and decision-model framework.",
+   "key_concepts": [
+    {
+     "concept": "rational and nonrational decision-making models",
+     "tag": "seen_in_text",
+     "term_quote": "two basic decisionmaking models - the rational and the nonrational - are examined in relation to the explanatory framework of the volume",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "multi-level analysis (state, dyad, region, system)",
+     "tag": "seen_in_text",
+     "term_quote": "the analytic levels of the state, dyad, region, and international system",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "quantitative conflict analysis",
+     "tag": "seen_in_text",
+     "term_quote": "over 500 quantitative analyses of war",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "structural factors in war onset",
+     "tag": "seen_in_text",
+     "term_quote": "The primary structural factors responsible for the onset and seriousness of war are identified",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "covering-law scientific explanation",
+     "tag": "seen_in_text",
+     "term_quote": "the explanations are developed according to the scientific model of \" covering laws.\"",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "probabilistic prediction",
+     "tag": "seen_in_text",
+     "term_quote": "a discussion of the potential for probabilistic predictions of conflict within the context of war and peace studies",
+     "_term_quote_verified": true
+    }
+   ],
+   "peripheral_notes": "All six key concepts appear directly in the front-matter/TOC/introduction slice with clear term-level and argument-level evidence; no mismatch signals - genre (quantitative IR/Correlates of War tradition), publisher (Cambridge Studies in IR), and content are fully consistent with the claimed thesis.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 6,
+   "_n_concepts_total": 6
+  }
+ },
+ {
+  "file": "Ideology_and_International_relations.pdf",
+  "axis": "theory",
+  "folder": "International Relations Theory",
+  "title": "Ideology and International Relations in the Modern World",
+  "total_pages": 317,
+  "ai_thesis": "Ideology has been a decisive force shaping interstate politics and international behavior from the French Revolution to the present, operating alongside and often against realist interests.",
+  "concept_list": [
+   "ideology and foreign policy",
+   "nationalism and internationalism",
+   "totalitarian doctrines (Marxism-Leninism, Fascism, Nazism)",
+   "liberalism and conservatism in IR",
+   "raison d'\u00e9tat and belief systems",
+   "propaganda and mass democracy"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.9,
+   "argument_quote": "That is the phenomenon of nationalism\u2014the sort of ideology that, according to one authority on nationalism, 'can have a political impact only if presented in simplified forms and embodied in symbols and ceremonials'.",
+   "key_concepts": [
+    {
+     "concept": "ideology and foreign policy",
+     "tag": "seen_in_text",
+     "term_quote": "The idea of linking PREFACE xiii ideology and foreign policy originated with him",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "nationalism and internationalism",
+     "tag": "variant_seen",
+     "term_quote": "conservatism, liberalism and nationalism influence international affairs",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "totalitarian doctrines (Marxism-Leninism, Fascism, Nazism)",
+     "tag": "seen_in_text",
+     "term_quote": "Cassels includes discussion of Marxism\u2014Leninism, Fascism and Nazism",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "liberalism and conservatism in IR",
+     "tag": "seen_in_text",
+     "term_quote": "the less rigid belief systems of conservatism, liberalism and nationalism influence international affairs",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "raison d'\u00e9tat and belief systems",
+     "tag": "seen_in_text",
+     "term_quote": "1 Raison d\u2019\u00e9tat meets the Enlightenment 9",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "propaganda and mass democracy",
+     "tag": "seen_in_text",
+     "term_quote": "5 Ideology and mass democracy 85 ... Total war and propaganda 126",
+     "_term_quote_verified": false
+    }
+   ],
+   "peripheral_notes": "All six key concepts appear directly in the front matter/TOC/introduction sample, either as chapter headings or thematic descriptions from the publisher's blurb and preface. The thesis is stated almost verbatim in the back-cover copy ('Cassels traces the part played by ideology in international relations over the past two centuries...Starting with the French Revolution's injection of ideology into interstate politics') and reinforced in the preface, which explicitly contrasts ideology's role against realist/raison d'\u00e9tat framings ('the realist theorists of international relations play down its influence'). No mismatch signals; text slice is consistent with an IR-theory/history monograph on ideology.",
+   "thesis_reasoning": "The slice is not merely term-matching: the publisher's description and the author's own preface explicitly assert the book's argument that ideology has been a persistent, often underrated force in international relations from the French Revolution onward, standing in tension with realist accounts ('the realist theorists of international relations play down its influence'). The introduction sample further argues nationalism and ideological thinking shape political behavior via emotional/symbolic conviction rather than rational interest, which supports the 'against realist interests' component of the thesis. This constitutes genuine argument-evidence, not just concept presence.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 5,
+   "_n_concepts_total": 6
+  }
+ },
+ {
+  "file": "Theory and metatheory in international relations.pdf",
+  "axis": "method",
+  "folder": "International Relations Theory",
+  "title": "Theory and Metatheory in International Relations: Concepts and Contending Accounts",
+  "total_pages": 234,
+  "ai_thesis": "Understanding foreign policy decisions requires grasping both international relations theories and the philosophical criteria for choosing among competing theoretical frameworks, particularly the debate between rationalist and reflectivist approaches.",
+  "concept_list": [
+   "scientific rationalism in IR",
+   "constructivism and poststructuralism",
+   "metatheory and theory selection",
+   "policy-theory linkage",
+   "reflectivist versus positivist methodology"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.9,
+   "argument_quote": "It attempts to show why anyone who wants to solve foreign policy problems must understand theories of international relations and the philosophical issues involved in determining how to choose the best theory.",
+   "thesis_reasoning": "The Preface explicitly states the book's argument that solving foreign policy problems requires understanding both IR theories and the philosophical criteria for choosing among them, and further links this to the rationalist-versus-reflectivist/constructivist debate ('competing scientific-style rationalist foundations of social science theory with constructivist and poststructuralist positions'). This is argument-level evidence, not mere term presence, since the Preface and Introduction lay out this claim as the book's organizing thesis, and the TOC (chapters 3-4 on scientific criteria vs. reflectivist opposition) corroborates the structure.",
+   "key_concepts": [
+    {
+     "concept": "scientific rationalism in IR",
+     "tag": "seen_in_text",
+     "term_quote": "International Relations and Scientific Criteria for Choosing a Theory",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "constructivism and poststructuralism",
+     "tag": "seen_in_text",
+     "term_quote": "competing scientific-style rationalist foundations of social science theory with constructivist and poststructuralist positions",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "metatheory and theory selection",
+     "tag": "seen_in_text",
+     "term_quote": "Theory and Metatheory in International Relations",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "policy-theory linkage",
+     "tag": "seen_in_text",
+     "term_quote": "It shows the specific links between policy decisions and principles of international relations theories and the further links to philosophical claims about how to choose the best theory.",
+     "_term_quote_verified": false
+    },
+    {
+     "concept": "reflectivist versus positivist methodology",
+     "tag": "variant_seen",
+     "term_quote": "Reflectivist Opposition to the Scientific Approach",
+     "_term_quote_verified": true
+    }
+   ],
+   "peripheral_notes": "All five probed concepts appear in the sampled slice, mostly in TOC/Preface material rather than deep chapter argumentation; 'positivist' term itself not verbatim seen, only 'Scientific Approach/Criteria' and 'Reflectivist Opposition', so tagged as variant_seen rather than exact seen_in_text. No mismatch signals; the front matter and Preface directly match the folder title and claimed thesis.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 4,
+   "_n_concepts_total": 5
+  }
+ },
+ {
+  "file": "Does_ethnofederalism_explain_the_success_of_Indian_federalism.pdf",
+  "axis": "empirical",
+  "folder": "Social Science Theories and Geography",
+  "title": "Does ethnofederalism explain the success of Indian federalism?",
+  "total_pages": 25,
+  "ai_thesis": "While ethnofederal institutions have promoted stability in India through linguistic reorganization, territorial redesign has simultaneously increased conflict in cases where ethnic groups are intermixed or where autonomy has been downgraded, revealing a more complex picture than the conventional narrative of Indian federalism as a straightforward success.",
+  "concept_list": [
+   "ethnofederalism",
+   "territorial recognition and redesign",
+   "linguistic reorganization",
+   "conflict management",
+   "ethnic power relations",
+   "multinational federation"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.78,
+   "argument_quote": "India has simultaneously been both a success and a failure at conflict management.",
+   "thesis_reasoning": "The abstract and introduction explicitly argue that India's ethnofederal reorganization is often read as a straightforward success story but that a 'group-level analysis reveals a more diverse picture,' directly endorsing the claim's core complication of the conventional narrative. The specific mechanisms named in the thesis (intermixed groups, downgraded autonomy) are set up as theoretical concerns (minorities as 'twice cursed,' poor relations within homogenous units) but this slice does not yet show the paper applying them as empirical findings, so the argument is present at the level of general thesis but not fully detailed for those two sub-mechanisms within this excerpt.",
+   "key_concepts": [
+    {
+     "concept": "ethnofederalism",
+     "tag": "seen_in_text",
+     "term_quote": "Does ethnofederalism explain the success of Indian federalism?",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "territorial recognition and redesign",
+     "tag": "seen_in_text",
+     "term_quote": "purposively incorpo\u00adrated that diversity into its constitution through territorial recognition and territorial redesign",
+     "_term_quote_verified": false
+    },
+    {
+     "concept": "linguistic reorganization",
+     "tag": "seen_in_text",
+     "term_quote": "Through the process of linguistic reorganization, India became what is known in the political science literature as an ethnofederation",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "conflict management",
+     "tag": "seen_in_text",
+     "term_quote": "India has simultaneously been both a success and a failure at conflict management.",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "ethnic power relations",
+     "tag": "seen_in_text",
+     "term_quote": "deploying a group level quan\u00adtitative analysis, using the Ethnic Power Relations dataset",
+     "_term_quote_verified": false
+    },
+    {
+     "concept": "multinational federation",
+     "tag": "seen_in_text",
+     "term_quote": "In terms of population, India is the world's largest multinational federation.",
+     "_term_quote_verified": true
+    }
+   ],
+   "peripheral_notes": "All six key concepts appear directly in the sampled slice as term-level evidence, consistent with the claim's framing. The slice does not yet contain explicit sentences tying conflict specifically to 'intermixed ethnic groups' or 'downgraded autonomy' as empirical findings\u2014these appear to be elaborated later in the article beyond the sampled text.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 6,
+   "_n_concepts_total": 6
+  }
+ },
+ {
+  "file": "why_islamism_is_winning.pdf",
+  "axis": "theory",
+  "folder": "Social Science Theories and Geography",
+  "title": "Why Islamism Is Winning",
+  "total_pages": 3,
+  "ai_thesis": "Islamist parties are succeeding in post-Arab Spring elections not because of extremism but because they provide a coherent ideological framework and political program that resonates with diverse populations experiencing economic grievance and state failure, paralleling how liberalism unified disparate European movements in the 19th century.",
+  "concept_list": [
+   "ideological diffusion across societies",
+   "revolutionary waves and contagion",
+   "post-authoritarian political realignment",
+   "grievance aggregation around shared ideology",
+   "transnational networks of dissent"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.8,
+   "argument_quote": "Rather than bringing secular revolutionaries to power, the Arab Spring is producing flowers of a decidedly Islamist hue... So why are so many Arabs voting for parties that seem politically regressive to Westerners? The West's own history furnishes an answer... frustrated people in many nations with relatively little in common rallied around a single ideology \u2014 one not of their own making, but inherited from previous generations of radicals.",
+   "thesis_reasoning": "Article explicitly parallels 19th-century liberalism's spread with Islamism's rise, framing both as ideologies channeling shared grievance rather than being caused by extremism itself.",
+   "key_concepts": [
+    {
+     "concept": "ideological diffusion across societies",
+     "tag": "seen_in_text",
+     "term_quote": "networks of liberals \u2014 Italian carbonari, Freemasons, English Radicals \u2014 continued to operate underground, communicating ac\u2026",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "revolutionary waves and contagion",
+     "tag": "seen_in_text",
+     "term_quote": "Invented in the 1920s by the Muslim Brotherhood, kept alive by their many affiliates and offshoots, boosted by the failures of Nasserism and Baathism, allegedly bankrolled by Saudi and Qatari money, and inspir\u2026",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "post-authoritarian political realignment",
+     "tag": "seen_in_text",
+     "term_quote": "The Muslim Brotherhood will most likely win half the lower house of Parliament, and more extreme Islamists will occupy a quarter.",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "grievance aggregation around shared ideology",
+     "tag": "seen_in_text",
+     "term_quote": "News of the Spanish revolution even spurred the adoption of liberal constitutions in the nascent states of Gran Colombia, Argentina, Ur\u2026",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "transnational networks of dissent",
+     "tag": "seen_in_text",
+     "term_quote": "Islamism is winning out because it is the deepest and widest channel into which today's Arab discontent can flow.",
+     "_term_quote_verified": true
+    }
+   ],
+   "peripheral_notes": "Slice consistently supports the historical-parallel argument across all probed concepts.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 5,
+   "_n_concepts_total": 5
+  }
+ },
+ {
+  "file": "ratzel_and_demography.pdf",
+  "axis": "mixed",
+  "folder": "Social Science Theories and Geography",
+  "title": "Ratzel and Demography",
+  "total_pages": 13,
+  "ai_thesis": "Friedrich Ratzel examines the religious, cultural, and demographic characteristics of non-Western peoples, arguing against evolutionary degradation narratives and proposing instead that cultural differences reflect distinct developmental trajectories and external contact patterns.",
+  "concept_list": [
+   "ethnography and religious evolution",
+   "diffusionism of cultural traits",
+   "people evaluation and internal-external functions",
+   "nature-oriented peoples",
+   "cultural transmission and decline"
+  ],
+  "verdict": {
+   "thesis_verdict": "PARTIAL",
+   "thesis_confidence": 0.55,
+   "argument_quote": "Ethnography does not recognize nonreligious peoples, but only different evolutionary stages of religious ideas, which in some peoples are described as that of the chrysalis, small and hidden, while others have created numerous myths and legends.",
+   "thesis_reasoning": "Slice supports the religious/cultural-evolution and diffusionist strands of the thesis (rejection of degradation narratives in favor of differing evolutionary stages, plus discussion of transferred/borrowed myths as 'offshoots'), but the demographic dimension of the thesis is not evidenced here; INTRO section instead covers eminent men and labor classes, unrelated to demography.",
+   "key_concepts": [
+    {
+     "concept": "ethnography and religious evolution",
+     "tag": "seen_in_text",
+     "term_quote": "Ethnography does not recognize nonreligious peoples, but only different evolutionary stages of religious ideas",
+     "_term_quote_verified": false
+    },
+    {
+     "concept": "diffusionism of cultural traits",
+     "tag": "seen_in_text",
+     "term_quote": "an offshoot of European myths, fairy tales, etc. were accidentally found there, creating on foreign soil offshoots thanks to the multiplying momentum",
+     "_term_quote_verified": false
+    },
+    {
+     "concept": "people evaluation and internal-external functions",
+     "tag": "variant_seen",
+     "term_quote": "it is hard to give a lot of weight to them (i.e. eminent men) when assessing peoples",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "nature-oriented peoples",
+     "tag": "seen_in_text",
+     "term_quote": "Even the folk poems of nature-orientated peoples, collected with great affection and painstaking work",
+     "_term_quote_verified": false
+    },
+    {
+     "concept": "cultural transmission and decline",
+     "tag": "seen_in_text",
+     "term_quote": "Today we find declining fragments of Christian attitudes in Indian or Polynesian myths",
+     "_term_quote_verified": true
+    }
+   ],
+   "peripheral_notes": "INTRO excerpt is about intellectual heroes/great statesmen and labor-class conflict, not demography; no demographic data or argument visible in the slice to support that part of the thesis.",
+   "verdict_status": "claim_sampled_partial",
+   "_argument_quote_verified": false,
+   "_n_concepts_seen": 4,
+   "_n_concepts_total": 5
+  }
+ },
+ {
+  "file": "30_1.pdf",
+  "axis": "method",
+  "folder": "semiotics",
+  "title": "Overview of the Semiotics of Maps",
+  "total_pages": 12,
+  "ai_thesis": "Cartosemiotics is the sign-theoretic study of maps, encompassing map symbolism, sign processes, contexts of sign embedding, marginal notes, and peripheral signification phenomena.",
+  "concept_list": [
+   "map symbolism (map language)",
+   "sign processes (production, reception, employment)",
+   "cartographic contexts",
+   "sign systems",
+   "cartographic representation"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.95,
+   "argument_quote": "Its subject matter is subsumed under five major themes: map symbolism (map language), sign processes, contexts in which signs and sign processes are embedded, marginal notes, and peripheral signification phenomena.",
+   "thesis_reasoning": "The abstract itself directly states cartosemiotics/semiotics of maps is the sign-theoretic study of maps and explicitly enumerates the same five themes (map symbolism, sign processes, contexts, marginal notes, peripheral signification) named in the AI thesis, matching it almost verbatim. This is argument-level endorsement, not mere term appearance, since the text is structurally organized around exactly these five themes (see Table 1 and section headers 1-5).",
+   "key_concepts": [
+    {
+     "concept": "map symbolism (map language)",
+     "tag": "seen_in_text",
+     "term_quote": "map symbolism (map language)",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "sign processes (production, reception, employment)",
+     "tag": "seen_in_text",
+     "term_quote": "sign production; (2.2) sign reception... (2.3) sign employment",
+     "_term_quote_verified": false
+    },
+    {
+     "concept": "cartographic contexts",
+     "tag": "variant_seen",
+     "term_quote": "Contexts in which signs are realized and sign processes take place",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "sign systems",
+     "tag": "seen_in_text",
+     "term_quote": "the type of sign systems that are manifested in individual maps",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "cartographic representation",
+     "tag": "seen_in_text",
+     "term_quote": "cartographic models (or cartographic representation forms)",
+     "_term_quote_verified": true
+    }
+   ],
+   "peripheral_notes": "All five key concepts and both marginal notes/peripheral signification themes named in the thesis appear explicitly and are structurally central (Table 1 lists all five as section headings), so no mismatch signals were found.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 4,
+   "_n_concepts_total": 5
+  }
+ },
+ {
+  "file": "AG_660_0159.pdf",
+  "axis": "mixed",
+  "folder": "semiotics",
+  "title": "Cultural Cartography: Maps and Mapping in Cultural Geography",
+  "total_pages": 21,
+  "ai_thesis": "Over three decades, theoretical and practical shifts in cartography have transformed mapping's role in geography, creating new connections between cultural geography and artistic practices through critiques of cartography's scientific claims and the democratization of map-making via digital technologies.",
+  "concept_list": [
+   "cartographic critique and representation",
+   "cultural geography and art practice",
+   "virtual and digital cartographies",
+   "map-making democratization",
+   "site-specific and Land Art",
+   "spatial documentation"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.95,
+   "argument_quote": "Over the past three decades, significant shifts in both the theory and practice of cartography and indeed in the definition of the map itself have transformed the role of mapping within geography, while maps and map making have become a focus for important contemporary connections between cultural geography and various art practices.",
+   "thesis_reasoning": "The abstract states this near-verbatim, matching the claimed thesis directly.",
+   "key_concepts": [
+    {
+     "concept": "cartographic critique and representation",
+     "tag": "seen_in_text",
+     "term_quote": "the map has been among the most consistent targets for post-modern deconstruction",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "cultural geography and art practice",
+     "tag": "seen_in_text",
+     "term_quote": "important contemporary connections between cultural geography and various art practices",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "virtual and digital cartographies",
+     "tag": "variant_seen",
+     "term_quote": "democratised through virtual c",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "map-making democratization",
+     "tag": "variant_seen",
+     "term_quote": "democratised through virtual c",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "site-specific and Land Art",
+     "tag": "not_found",
+     "term_quote": null,
+     "_term_quote_verified": null
+    },
+    {
+     "concept": "spatial documentation",
+     "tag": "not_found",
+     "term_quote": null,
+     "_term_quote_verified": null
+    }
+   ],
+   "peripheral_notes": "Slice covers intro/citations/art-history background (Schulz, Alpers, Harley) but lacks Land Art/site-specific or spatial documentation sections.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 2,
+   "_n_concepts_total": 6
+  }
+ },
+ {
+  "file": "Structural Realism Structure Object and Causality.pdf",
+  "axis": "theory",
+  "folder": "cognitive_philiosophy",
+  "title": "Structural Realism: Structure, Object, and Causality",
+  "total_pages": 226,
+  "ai_thesis": "Scientific realism is best understood through structural realism, which privileges relational and structural aspects of ontology over object-based aspects, though the position encompasses diverse interpretations regarding whether this reflects fundamental reality or our epistemic engagement with it.",
+  "concept_list": [
+   "structural realism",
+   "scientific realism",
+   "ontological vs. epistemological thesis",
+   "relational ontology",
+   "physical symmetries",
+   "group theory"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.9,
+   "argument_quote": "But there is a general convergence on the idea that a central role is to be played by relational aspects over object-based aspects of ontology\u2014whether this reflects a fundamental fact about the world (the ontological thesis)\u2014as opposed to our engagement with it (the epistemological thesis)\u2014introduces still further divisions.",
+   "thesis_reasoning": "The preface directly makes the argument that structural realism's core commitment is privileging relational/structural aspects over object-based ontology, and explicitly frames the ontological-vs-epistemological split as internal diversity within the position, matching the claim closely. This is argument-level evidence (the book's own editorial framing), not mere term appearance, and is reinforced by the introduction's discussion of diverse representations of structure (Ramsey sentences, group/set/category theory) reflecting the 'diverse interpretations' part of the thesis.",
+   "key_concepts": [
+    {
+     "concept": "structural realism",
+     "tag": "seen_in_text",
+     "term_quote": "Structural Realism THE WESTERN ONTARIO SERIES IN PHILOSOPHY OF SCIENCE",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "scientific realism",
+     "tag": "seen_in_text",
+     "term_quote": "It still seems reasonable to assume that scientific realism, in some form or other, is the majority position amongst both practicing scientists and philosophers of science.",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "ontological vs. epistemological thesis",
+     "tag": "seen_in_text",
+     "term_quote": "For example, the position spawned an ontological version, according to which \u2018the shadows\u2019 are all that exists at a fundamental level",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "relational ontology",
+     "tag": "variant_seen",
+     "term_quote": "a central role is to be played by relational aspects over object-based aspects of ontology",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "physical symmetries",
+     "tag": "seen_in_text",
+     "term_quote": "largely thanks to its integration with themes from the philosophy of physics (especially physical symmetries and group theory)",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "group theory",
+     "tag": "seen_in_text",
+     "term_quote": "especially physical symmetries and group theory), it has evolved and broadened considerably from this earlier epistemological sta",
+     "_term_quote_verified": true
+    }
+   ],
+   "peripheral_notes": "All six key concepts appear in the sampled text, several with direct argument-level context rather than mere mention. The book is a multi-author edited philosophy-of-science volume (Springer, Western Ontario Series), consistent with the folder mismatch (filed under cognitive_philosophy rather than IR/theory), but this is a metadata/filing anomaly, not a contradiction of the thesis content itself.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 5,
+   "_n_concepts_total": 6
+  }
+ },
+ {
+  "file": "Discourse Analysis as Theory and Method.pdf",
+  "axis": "method",
+  "folder": "cognitive_philiosophy",
+  "title": "Discourse Analysis as Theory and Method",
+  "total_pages": 240,
+  "ai_thesis": "An introduction to social constructionist discourse analysis presenting three major approaches\u2014Laclau and Mouffe's discourse theory, critical discourse analysis, and discursive psychology\u2014with their distinctive theoretical and methodological features.",
+  "concept_list": [
+   "discourse theory",
+   "critical discourse analysis",
+   "discursive psychology",
+   "social constructionism",
+   "textual interpretation",
+   "methodology"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.97,
+   "argument_quote": "In the book, we demonstrate the scope of the field by present\u2500ing and discussing three different approaches to discourse analysis \u2013 Laclau and Mouffe\u2019s discourse theory, critical discourse analysis and discursive psychology. We aim to delineate the distinctive theoretical and methodological features of each of the approaches, and, by presenting a range of empirical examples, we hope to provide inspiration for new dis\u2500course analytical studies.",
+   "thesis_reasoning": "The introduction explicitly states the book's purpose as presenting three approaches to social constructionist discourse analysis \u2014 Laclau and Mouffe's discourse theory, critical discourse analysis, and discursive psychology \u2014 and delineating their distinctive theoretical and methodological features, matching the thesis nearly verbatim. This is argument-level evidence (the authors' own stated aim), not mere term appearance, and is corroborated by the table of contents devoting individual chapters to each approach plus a cross-approach chapter.",
+   "key_concepts": [
+    {
+     "concept": "discourse theory",
+     "tag": "seen_in_text",
+     "term_quote": "Laclau and Mouffe\u2019s discourse theory 24",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "critical discourse analysis",
+     "tag": "seen_in_text",
+     "term_quote": "Critical discourse analysis 60",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "discursive psychology",
+     "tag": "seen_in_text",
+     "term_quote": "Discursive psychology 96",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "social constructionism",
+     "tag": "seen_in_text",
+     "term_quote": "The three approaches on which we have chosen to concentrate are all based on social constructionism.",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "textual interpretation",
+     "tag": "variant_seen",
+     "term_quote": "Detailed textual analysis within the field of linguistics (including Michael Halliday\u2019s functional grammar).",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "methodology",
+     "tag": "seen_in_text",
+     "term_quote": "unite three traditions (Fairclough 1992b: 72)",
+     "_term_quote_verified": true
+    }
+   ],
+   "peripheral_notes": "The folder axis 'cognitive_philiosophy' and provisional axis 'method' seem mismatched to the book's actual field (communication/discourse studies, published by SAGE, Roskilde Dept of Communication) rather than cognitive philosophy per se, though 'method' fits reasonably given the book's explicit theory-and-method framing. 'Textual interpretation' as an exact phrase was not found verbatim; only a close variant ('textual analysis') appears.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 5,
+   "_n_concepts_total": 6
+  }
+ },
+ {
+  "file": "Regional Action Plan towards the Information Society in Asia and the Pacific by United Nations.pdf",
+  "axis": "empirical",
+  "folder": "Statistical Analysis and Research Methods",
+  "title": "Regional Action Plan towards the Information Society in Asia and the Pacific",
+  "total_pages": 147,
+  "ai_thesis": "ESCAP presents a coordinated regional strategy to bridge the digital divide in Asia and the Pacific by addressing ICT policy gaps, building stakeholder capacity, and leveraging information and communication technologies for sustainable socio-economic development and disaster management.",
+  "concept_list": [
+   "digital divide",
+   "ICT policy and regulation",
+   "capacity building",
+   "disaster management technology",
+   "sustainable development"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.85,
+   "argument_quote": "Barriers to bridging the digital divide include: a lack of coherent and integrated ICT policies and regulatory frameworks; a lack of awareness among stakeholders, including policymakers, concerning the benefits of ICT for socio-economic development; low skill levels or capacity among ICT stakeholders; and low levels of cooperation and coordination in policymaking and implementation, including among government entities.",
+   "thesis_reasoning": "The foreword explicitly frames ESCAP's coordinated regional conferences/expert meetings as producing the Regional Action Plan to address the digital divide via ICT policy gaps, stakeholder capacity, and cooperation, and separately states these meetings addressed ICST for knowledge-based disaster management and its link to sustainable development in the Tunis outcomes. This is argument-level evidence (not mere term appearance) because the text asserts causal/purposive claims (barriers named, actions taken, outcomes reported) matching the thesis's core claims about policy gaps, capacity building, and disaster management/sustainable development integration. The TOC also structurally confirms dedicated sections on strategic framework, WSIS action lines, disaster management, and Internet governance/financing, reinforcing that this is a coordinated strategy document rather than incidental mention.",
+   "key_concepts": [
+    {
+     "concept": "digital divide",
+     "tag": "seen_in_text",
+     "term_quote": "This digital divide has threatened to widen the economic and social disparity not only between countries but also within countries",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "ICT policy and regulation",
+     "tag": "seen_in_text",
+     "term_quote": "a lack of coherent and integrated ICT policies and regulatory frameworks",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "capacity building",
+     "tag": "seen_in_text",
+     "term_quote": "assisting in capacity building for understanding, collecting and analyzing ICT indicators",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "disaster management technology",
+     "tag": "seen_in_text",
+     "term_quote": "the role of information, communication and space technology (ICST) for knowledge-based disaster management",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "sustainable development",
+     "tag": "seen_in_text",
+     "term_quote": "contributed, to recognition of the role of ICST in disaster reduction and sustainable development in the Tunis Commitment",
+     "_term_quote_verified": true
+    }
+   ],
+   "peripheral_notes": "All five key concepts appear with more than trivial context (policy/argument framing, not just passing mention). No contradiction signals: genre (UN ESCAP regional action plan/policy document, 2005/2006) matches the claim's description of a coordinated regional ICT strategy. TOC structure (strategic framework, priorities, WSIS action lines, disaster management section, Tehran Declaration) corroborates the thesis's scope.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 5,
+   "_n_concepts_total": 5
+  }
+ },
+ {
+  "file": "Russia and the Mongols Slavs and the steppe in medieval and early modern Russia.pdf",
+  "axis": "mixed",
+  "folder": "Statistical Analysis and Research Methods",
+  "title": "Russia and the Mongols: Slavs and the Steppe in Medieval and Early Modern Russia",
+  "total_pages": 349,
+  "ai_thesis": "Collected essays examining the complex historical relationship between Russian principalities and the Mongol Golden Horde, challenging historiographical myths and reconstructing the political, religious, and cultural dynamics of Russian incorporation into the Mongol empire.",
+  "concept_list": [
+   "Golden Horde",
+   "Mongol conquest",
+   "Russian principalities",
+   "Historiography",
+   "Medieval Eurasia",
+   "Tatar Yoke",
+   "Chingissid influence"
+  ],
+  "verdict": {
+   "thesis_verdict": "PARTIAL",
+   "thesis_confidence": 0.55,
+   "argument_quote": "Charles J. Halperin remained true to what he was mainly preoccupied in his youth, namely with the relat\u2026",
+   "thesis_reasoning": "TOC confirms this is a collected-essays volume on Russia/Mongols covering historiography, Golden Horde, Tatar Yoke etc., matching thesis's topical scope, but slice lacks a full argumentative sentence explicitly stating the 'challenging myths/reconstructing dynamics' synthesis claim.",
+   "key_concepts": [
+    {
+     "concept": "Golden Horde",
+     "tag": "seen_in_text",
+     "term_quote": "Tsarev ulus: Russia in the Golden Horde",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "Mongol conquest",
+     "tag": "variant_seen",
+     "term_quote": "Russo-Tatar Relations in Mongol Context: Two Notes",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "Russian principalities",
+     "tag": "not_found",
+     "term_quote": null,
+     "_term_quote_verified": null
+    },
+    {
+     "concept": "Historiography",
+     "tag": "seen_in_text",
+     "term_quote": "Soviet Historiography on Russia and the Mongols",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "Medieval Eurasia",
+     "tag": "variant_seen",
+     "term_quote": "Archivum Eurasiae Medii Aevi, III, 1983",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "Tatar Yoke",
+     "tag": "seen_in_text",
+     "term_quote": "The Tatar Yoke and Tatar Oppression",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "Chingissid influence",
+     "tag": "variant_seen",
+     "term_quote": "A CHINGISSID SAINT OF RUSSIAN ORTHODOX CHURCH",
+     "_term_quote_verified": true
+    }
+   ],
+   "peripheral_notes": "Book is a reprint collection of Halperin's articles from 1975-2005, edited by Spinei and Bilavschi.",
+   "verdict_status": "claim_sampled_partial",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 3,
+   "_n_concepts_total": 7
+  }
+ },
+ {
+  "file": "HISTOLOGY A Text and Atlas with Correlated Cell and Molecular Biology.pdf",
+  "axis": "method",
+  "folder": "Statistical Analysis and Research Methods",
+  "title": "Histology: A Text and Atlas with Correlated Cell and Molecular Biology",
+  "total_pages": 1002,
+  "ai_thesis": "A comprehensive reference integrating microscopic tissue structure with cellular and molecular biology mechanisms to provide foundational knowledge of human histology for medical and biological science students.",
+  "concept_list": [
+   "tissue microstructure",
+   "cell biology correlation",
+   "molecular mechanisms",
+   "histological techniques",
+   "organ systems anatomy"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.75,
+   "argument_quote": "Histology A TEXT AND ATLAS With Correlated Cell and Molecular Biology",
+   "thesis_reasoning": "The slice's title page, chapter content (microscopy methods, histochemistry, immunocytochemistry), and TOC entries directly show a textbook combining tissue-level histology atlas material with cell/molecular biology techniques, matching the thesis's core claim of an integrated reference text. This is the actual genre and content of the sampled text (a histology methods chapter on microscopy and staining), not merely incidental term matches, so the argument is demonstrated structurally by the book's organization rather than by a single explicit thesis-statement sentence.",
+   "key_concepts": [
+    {
+     "concept": "tissue microstructure",
+     "tag": "variant_seen",
+     "term_quote": "Dominant features of cells, tissues, and organs have been summarized into short phrases",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "cell biology correlation",
+     "tag": "seen_in_text",
+     "term_quote": "Histology A TEXT AND ATLAS With Correlated Cell and Molecular Biology",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "molecular mechanisms",
+     "tag": "variant_seen",
+     "term_quote": "With Correlated Cell and Molecular Biology",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "histological techniques",
+     "tag": "seen_in_text",
+     "term_quote": "HISTOCHEMISTRY AND CYTOCHEMISTRY / 3 Chemical Composition of Histologic Samples / 3",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "organ systems anatomy",
+     "tag": "variant_seen",
+     "term_quote": "Dominant features of cells, tissues, and organs have been summarized into short phrases",
+     "_term_quote_verified": true
+    }
+   ],
+   "peripheral_notes": "No explicit sentence in the slice states the pedagogical purpose ('foundational knowledge for medical and biological science students') verbatim; this is inferred from front-matter/publisher context (Wolters Kluwer medical reference, DNLM classification 'Histology\u2014Atlases') and chapter content rather than a directly quoted thesis statement. All five key concepts appear as terms or close paraphrases in TOC/front matter, consistent with the folder's provisional 'method' axis given the heavy methods/microscopy chapter sampled.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 2,
+   "_n_concepts_total": 5
+  }
+ },
+ {
+  "file": "To Lead the Free World American Nationalism and the Cultural Roots of the Cold War.pdf",
+  "axis": "mixed",
+  "folder": "Classical Political Philosophy",
+  "title": "To Lead the Free World: American Nationalism and the Cultural Roots of the Cold War",
+  "total_pages": 270,
+  "ai_thesis": "American Cold War foreign policy consensus was shaped by nationalist discourse in public culture, constructed through the interplay of government rhetoric, mass media, African American voices, and labor movements between 1945 and 1950.",
+  "concept_list": [
+   "public discourse and nationalism",
+   "Cold War consensus formation",
+   "cultural history methodology",
+   "imagined communities",
+   "race, class, and foreign policy"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.88,
+   "argument_quote": "The decision to focus on these four areas reflects, on the one hand, an interest in the relative roles of the government and the media in fostering the Cold War consensus and, on the other hand, an interest in the relationships between race, class, and American nationalism.",
+   "thesis_reasoning": "The introduction explicitly states the book examines public discourse from the Truman administration, mass print media, African American press/organizations, and organized labor to trace the fostering of Cold War consensus and its ties to race, class, and nationalism\u2014directly matching the AI thesis's claimed actors and timeframe (1945-1950 era of Truman's foreign policy speeches). This is argument-evidence, not mere term appearance, since the author states this as the organizing rationale of the study.",
+   "key_concepts": [
+    {
+     "concept": "public discourse and nationalism",
+     "tag": "seen_in_text",
+     "term_quote": "I have attempted to discern the development of such patterns... I treat public discourse as contested terrain",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "Cold War consensus formation",
+     "tag": "seen_in_text",
+     "term_quote": "an interest in the relative roles of the government and the media in fostering the Cold War consensus",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "cultural history methodology",
+     "tag": "seen_in_text",
+     "term_quote": "Like practi\ufffetioners of the \u2018\u2018new cultural history,\u2019\u2019 I approach popular perceptions primarily through the prism of public discourse",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "imagined communities",
+     "tag": "seen_in_text",
+     "term_quote": "To the extent that nations are \u2018\u2018imagined communities,\u2019\u2019 as the political scientist Benedict Anderson has argued, they are imagined in and through the public cul\ufffeture",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "race, class, and foreign policy",
+     "tag": "seen_in_text",
+     "term_quote": "an interest in the relationships between race, class, and American nationalism",
+     "_term_quote_verified": true
+    }
+   ],
+   "peripheral_notes": "The folder axis 'Classical Political Philosophy' and provisional axis 'mixed' appear mismatched with the actual content, which is a work of cultural/diplomatic history (public culture, mass media, labor unions, African American press) rather than classical political philosophy; this is a filing/genre mismatch, not a thesis contradiction. All five key concepts appear directly in the sampled introduction text.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 5,
+   "_n_concepts_total": 5
+  }
+ },
+ {
+  "file": "_We_have_to_go_Afghans_ready_to_flee_country_as_foreign_troop.pdf",
+  "axis": "empirical",
+  "folder": "Advaita Vedanta and International Relations",
+  "title": "We have to go: Afghans ready to flee country as foreign troops withdraw",
+  "total_pages": 2,
+  "ai_thesis": "As American military withdrawal from Afghanistan approaches in 2014, a mass exodus of Afghan citizens fleeing economic collapse, political instability, and security threats is accelerating, driven by loss of international support and prospects for Taliban return.",
+  "concept_list": [
+   "post-conflict migration",
+   "economic dependency on foreign aid",
+   "security vacuum and state collapse",
+   "refugee displacement cycles",
+   "brain drain and capital flight"
+  ],
+  "verdict": {
+   "thesis_verdict": "SUPPORTED",
+   "thesis_confidence": 0.75,
+   "argument_quote": "As tens of thousands of American troops prepare to withdraw from Afghanistan in time for the 2014 deadline set by the White House, another exodus is gathering pace: Afghans fleeing their country\u2019s violence and economic uncertainty.",
+   "thesis_reasoning": "The article directly argues that the approaching 2014 withdrawal is accelerating Afghan emigration, tying it to economic uncertainty, security fears of a Taliban return, and political instability from the upcoming election \u2014 matching the claimed thesis closely. This is argument-level evidence, not just term presence, since the piece explicitly frames withdrawal as the driver of the exodus via direct quotes and NGO research citation.",
+   "key_concepts": [
+    {
+     "concept": "post-conflict migration",
+     "tag": "seen_in_text",
+     "term_quote": "Fear of instability in 2014 is driving emigration of the very people and money that could prevent instability",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "economic dependency on foreign aid",
+     "tag": "variant_seen",
+     "term_quote": "as international funding dries up and with many international companies due to shut down after the departure of foreign troops, Afghanistan\u2019s economy is set to shrink dramatically",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "security vacuum and state collapse",
+     "tag": "seen_in_text",
+     "term_quote": "If Americans \u2013 the soldiers and the troops \u2013 leave here we will have no proper security and we will have the Taliban here again",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "refugee displacement cycles",
+     "tag": "seen_in_text",
+     "term_quote": "Afghans already make up the biggest refugee population in the world at almost 3 million, with waves having left during the Soviet occupation in the 1980s and again during the country\u2019s civil war a decade later",
+     "_term_quote_verified": true
+    },
+    {
+     "concept": "brain drain and capital flight",
+     "tag": "not_found",
+     "term_quote": null,
+     "_term_quote_verified": null
+    }
+   ],
+   "peripheral_notes": "This is a short news article (2 pages), not a book chapter or academic monograph, despite being filed under 'Advaita Vedanta and International Relations' \u2014 a folder title with no discernible connection to the content, which is purely a journalistic report on Afghan migration. 'Brain drain and capital flight' as an explicit term/concept was not found in the sampled region, though the passport black-market and 'money' fleeing with people is a loose adjacent theme.",
+   "verdict_status": "claim_sampled_supported",
+   "_argument_quote_verified": true,
+   "_n_concepts_seen": 3,
+   "_n_concepts_total": 5
+  }
+ },
+ {
+  "file": "Practical Exam Format May, 2020.pdf",
+  "axis": "empirical",
+  "folder": "Advaita Vedanta and International Relations",
+  "title": "Practical Exam Format May 2020",
+  "total_pages": 1,
+  "ai_thesis": "UNCLEAR",
+  "concept_list": [],
+  "verdict": {
+   "thesis_verdict": "CONTRADICTED",
+   "thesis_confidence": 0.95,
+   "argument_quote": null,
+   "thesis_reasoning": "The slice is a blank practical exam attendance/award sheet from University of Delhi, containing only administrative fields (examiner names, roll numbers, signatures) with no narrative or argumentative content. This is clearly not an Advaita Vedanta or International Relations scholarly text, so no thesis about empirical claims can be evidenced; the genre mismatch itself contradicts the notion that this file contains a book's thesis.",
+   "key_concepts": [],
+   "peripheral_notes": "No key concepts were listed to check, and none appear in the text. The document is an exam attendance/award sheet, not a scholarly work; it does not match the folder's implied subject matter (Advaita Vedanta and International Relations) at all.",
+   "verdict_status": "flagged_contradicted",
+   "_argument_quote_verified": null,
+   "_n_concepts_seen": 0,
+   "_n_concepts_total": 0
+  }
+ },
+ {
+  "file": "abiword_job__2_job_287.pdf",
+  "axis": "mixed",
+  "folder": "Advaita Vedanta and International Relations",
+  "title": "Advaita Vedanta and International Relations",
+  "total_pages": 8,
+  "ai_thesis": "UNCLEAR",
+  "concept_list": [
+   "Advaita Vedanta",
+   "non-dualism",
+   "international relations theory",
+   "philosophical foundations",
+   "statecraft"
+  ],
+  "verdict": {
+   "thesis_verdict": "UNREADABLE",
+   "thesis_confidence": 0.0,
+   "argument_quote": null,
+   "thesis_reasoning": "The sampled text is corrupted/garbled (OCR or encoding failure) across all sections\u2014front matter, introduction, and chapter sample\u2014yielding no legible sentences or coherent argument. No thesis about Advaita Vedanta and international relations can be assessed from this slice.",
+   "key_concepts": [
+    {
+     "concept": "Advaita Vedanta",
+     "tag": "not_found",
+     "term_quote": null,
+     "_term_quote_verified": null
+    },
+    {
+     "concept": "non-dualism",
+     "tag": "not_found",
+     "term_quote": null,
+     "_term_quote_verified": null
+    },
+    {
+     "concept": "international relations theory",
+     "tag": "not_found",
+     "term_quote": null,
+     "_term_quote_verified": null
+    },
+    {
+     "concept": "philosophical foundations",
+     "tag": "not_found",
+     "term_quote": null,
+     "_term_quote_verified": null
+    },
+    {
+     "concept": "statecraft",
+     "tag": "not_found",
+     "term_quote": null,
+     "_term_quote_verified": null
+    }
+   ],
+   "peripheral_notes": "All five key concepts returned NOT FOUND in the concept probes, and the raw text samples themselves are illegible garbled character strings rather than readable prose, preventing any verification of subject matter or argument.",
+   "verdict_status": "blocked_unreadable",
+   "_argument_quote_verified": null,
+   "_n_concepts_seen": 0,
+   "_n_concepts_total": 5
+  }
+ }
+]

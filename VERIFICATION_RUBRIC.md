@@ -176,26 +176,71 @@ it keeps the strongest/riskiest calls — every rejection, and anything below 0.
 
 ---
 
-## 6. Pilot before scale
+## 6. Pilot before scale — stratified, 15–20 items
 
-The first run is a **pilot of ~15–20 books** drawn from the load-bearing theory
-folders (IR Theory, general systems theory, semiotics). We inspect the verdicts
-together, confirm the quotes are real and the grades are right, tune the
-confidence threshold, and only then run the remaining ~370. Budget and method
-are both validated before the large spend.
+The first run is a **stratified pilot of 15–20 rows**, deliberately spanning the
+project's intellectual range rather than one folder, so the method is tested
+against easy and hard cases at once. Required strata:
+
+1. **International Relations theory** — the load-bearing core (167 rows).
+2. **General systems theory** — method/epistemology backbone.
+3. **Semiotics / cognitive philosophy** — interpretive-lens material.
+4. **Social network analysis or AI-for-IR** — the computational frontier.
+5. **Afghanistan / geopolitics / Eurasia** — the empirical bridge material.
+6. **Risky or unclear folders** — dump/opaque folders where title inference is
+   least trustworthy (the cases most likely to produce ABSENT/CONTRADICTED).
+
+We inspect the verdicts together, confirm every quote is real and correctly
+graded, check that the 0.75 gate routes the right cases to review, and only then
+authorise the remaining ~370. Method and budget are both validated before scale.
+
+**The pilot list is a proposal.** It is generated for approval through the
+midwife. No sampling, promotion, or status change happens until it is approved.
 
 ---
 
-## 7. Open parameters for your decision
+## 7. Settled parameters (supervisor-approved)
 
-1. **Sample depth** — is front-matter + intro + concept probes enough, or do
-   you want a deeper chapter sample for the 220 theory books?
-2. **Confidence threshold** — default 0.6 for auto-accept; raise for stricter
-   scholarship, lower to reduce your review queue.
-3. **Concept granularity** — verify the *thesis* only, or also require every
-   listed concept to be text-tagged before a book is "done"?
-4. **Reviewer model** — the per-book reading can use the utility model (cheap,
-   large batch) or the reasoning model (better judgment, higher cost). Pilot
-   will show which is adequate.
-5. **Rejection standard** — should CONTRADICTED always require human sign-off
-   (recommended), or may high-confidence AI rejections auto-record?
+| # | Parameter | Decision |
+|---|-----------|----------|
+| 1 | Sample depth | Front-matter + TOC + intro + concept probes for all; **theory/mixed books get one extra ~2,000-word chapter sample** at the densest concept cluster. |
+| 2 | Confidence threshold | **0.75** for auto-accept; below → human review. |
+| 3 | Concept granularity | **Thesis, key concepts, and peripheral concepts tracked separately.** Not every concept need be found for a row to count as sampled. |
+| 4 | Reviewer model | **Stronger reasoning model** for the pilot. |
+| 5 | Rejection standard | **CONTRADICTED always requires human sign-off.** No AI contradiction verdict auto-rejects. |
+| 6 | Evidence anchor | "No quote, no promotion" preserved, **split into argument evidence (thesis) vs term evidence (concept)**. |
+| 7 | Object under test | **The AI claim about the book**, not the book. Outcomes are phrased "claim sampled and evidence-graded." |
+
+These are locked for the pilot. They may be revisited only after pilot results
+are reviewed, and any change is itself recorded as a ledger event.
+
+---
+
+## 8. Two-axis disposition (added block 14, supervisor-directed)
+
+The pilot exposed that **thesis accuracy and corpus membership are different
+questions**. A book can have a perfectly accurate AI thesis yet not belong to
+the project (e.g. a histology atlas whose thesis "an integrated histology
+reference" is true but irrelevant to IR). Verdicts are therefore recorded on two
+independent axes, stored in the persistent `verdict_disposition` table.
+
+- **Axis 1 — thesis verdict** (accuracy of the AI claim against sampled text):
+  SUPPORTED / PARTIAL / CONTRADICTED / ABSENT / UNREADABLE.
+- **Axis 2 — corpus membership** (does the book belong to the IR project?):
+  `core_candidate` / `excluded` / `review_required`.
+
+Controlled vocabulary (`disposition_taxonomy`):
+
+| disposition | Axis 1 | Axis 2 | meaning |
+|---|---|---|---|
+| `core_candidate` | SUPPORTED/PARTIAL | core_candidate | Accurate thesis AND in-domain. Eligible for the core corpus pending promotion. |
+| `claim_supported_but_project_irrelevant` | SUPPORTED | excluded | Thesis accurate but book out-of-domain. **Not a contradiction.** Excluded as out-of-domain noise. |
+| `excluded_misfile_noise` | CONTRADICTED/ABSENT/UNCLEAR | excluded | Not scholarship at all — form, exam paper, scan fragment. Excluded as noise. **Not a substantive contradiction.** |
+| `excluded_unreadable` | UNREADABLE | excluded | Cannot be assessed from the slice (image-only/corrupt). Excluded until better source. |
+| `review_required` | CONTRADICTED/PARTIAL/any | review_required | Below 0.75 gate, or a substantive contradiction alleging the book argues against its claimed thesis. Human sign-off required. |
+
+**Exclusion marks, never deletes.** An excluded row keeps its `master_corpus`
+record; only its disposition changes. Nothing is removed from disk or register.
+A CONTRADICTED verdict does **not** by itself mean "refuted scholarship" — the
+disposition names *why* the claim failed (misfile vs out-of-domain vs genuine
+counter-argument), and only the last of those is a substantive contradiction.

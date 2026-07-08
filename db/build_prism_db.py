@@ -116,7 +116,78 @@ CREATE TABLE IF NOT EXISTS retrievable (
 CREATE TABLE IF NOT EXISTS source_registry (
   source_file TEXT, sha256 TEXT, n_rows INTEGER, ingested_ts TEXT, target_table TEXT
 );
+CREATE TABLE IF NOT EXISTS verdict_disposition (
+  -- Persistent record of a sampling verdict + its two-axis disposition.
+  -- Survives derived-table rebuilds. One row per (file, block_no) decision.
+  file            TEXT,    -- source filename (joins bridge_concepts.file when present)
+  title           TEXT,
+  folder          TEXT,
+  provisional_axis TEXT,   -- folder-inferred axis at sampling time
+  thesis_verdict  TEXT,    -- AXIS 1: SUPPORTED|PARTIAL|CONTRADICTED|ABSENT|UNREADABLE
+  thesis_confidence REAL,
+  corpus_membership TEXT,  -- AXIS 2: core_candidate | excluded | review_required
+  disposition     TEXT,    -- taxonomy value (see disposition_taxonomy)
+  reason          TEXT,    -- human/AI free-text basis
+  argument_quote  TEXT,    -- verbatim evidence if any
+  quote_verified  INTEGER, -- 1 if quote found verbatim in slice, 0 if not, NULL if none
+  decided_by      TEXT,    -- AI | human_review | codex
+  layer_tag       TEXT,    -- optional sub-tag e.g. Layer_B_method_theory_core
+  evidence_grade  TEXT,    -- promotion grade on the evidence ladder (NULL until promoted)
+  ts              TEXT,
+  block_no        INTEGER
+);
+CREATE TABLE IF NOT EXISTS disposition_taxonomy (
+  -- Controlled vocabulary for verdict_disposition.disposition.
+  disposition   TEXT PRIMARY KEY,
+  axis1_thesis  TEXT,   -- typical Axis-1 verdict for this disposition
+  axis2_corpus  TEXT,   -- core_candidate | excluded | review_required
+  meaning       TEXT,
+  added_block   INTEGER
+);
+CREATE TABLE IF NOT EXISTS functional_role (
+  -- Functional IR interpretation of an item (FUNCTIONAL_IR_INTERPRETATION_PROTOCOL.md).
+  -- Subordinates the ledger to interpretation: the evidence grade is a confidence
+  -- annotation ON the functional reading, never a substitute for it. Persistent.
+  file            TEXT,    -- joins verdict_disposition.file / bridge_concepts.file
+  title           TEXT,
+  ir_function     TEXT,    -- Q1: what IR function the text performs
+  contribution    TEXT,    -- Q2: empirical|theoretical|methodological|genealogy|historical|discourse (>=1)
+  interaction     TEXT,    -- Q3: state-space|region-security|empire-frontier|identity-order|connectivity|conflict|knowledge-production|actor-behaviour
+  layer_substantive TEXT,  -- Q4: A|B|AB argued in substance
+  explanatory_contribution TEXT, -- Q5: how it builds explanation for Eurasia/Afghanistan/C.Asia/geopolitics/IR
+  evidence_grade  TEXT,    -- annotation only (mirrors verdict_disposition.evidence_grade)
+  decided_by      TEXT,
+  ts              TEXT,
+  block_no        INTEGER
+);
 """)
+
+# Backfill layer_tag column on pre-existing verdict_disposition tables (idempotent).
+_cols = [c[1] for c in cur.execute("PRAGMA table_info(verdict_disposition)").fetchall()]
+if "layer_tag" not in _cols:
+    cur.execute("ALTER TABLE verdict_disposition ADD COLUMN layer_tag TEXT")
+if "evidence_grade" not in _cols:
+    cur.execute("ALTER TABLE verdict_disposition ADD COLUMN evidence_grade TEXT")
+
+# Seed the controlled vocabulary so it is reproducible from a from-scratch build.
+# INSERT OR IGNORE preserves any live-added rows and their original added_block.
+_TAXONOMY = [
+ ("core_candidate","SUPPORTED|PARTIAL","core_candidate",
+  "Thesis accurate AND item belongs to Layer A/B/AB. Eligible for promotion.",14),
+ ("claim_supported_but_project_irrelevant","SUPPORTED","excluded",
+  "Thesis accurate but domain outside KNOWLEDGE_PRISM. Kept in master_corpus for provenance; excluded from core+ontology. NOT a contradiction.",14),
+ ("excluded_misfile_noise","CONTRADICTED|ABSENT|UNCLEAR","excluded",
+  "Forms/exams/fragments/admin docs, or content contradicting folder/path inference. Not scholarship; NOT a substantive contradiction.",14),
+ ("excluded_unreadable","UNREADABLE","excluded",
+  "OCR/extraction failure. Park pending reOCR/manual inspection; not excluded as noise unless later confirmed irrelevant.",14),
+ ("review_required","CONTRADICTED|PARTIAL|any","review_required",
+  "Below 0.75 gate, failed quote validation, ambiguous relevance, or genuine counter-argument. Human sign-off / re-sample required.",14),
+ ("Peripheral_context","SUPPORTED|PARTIAL","peripheral",
+  "Topic touches Layer A/B but genre is journalism/primary reportage/media, not scholarship. Empirical contextual material; not core, not ontology-promoted unless a later primary-source/media-evidence layer is created.",15),
+]
+cur.executemany(
+ "INSERT OR IGNORE INTO disposition_taxonomy(disposition,axis1_thesis,axis2_corpus,meaning,added_block) VALUES (?,?,?,?,?)",
+ _TAXONOMY)
 
 # ---------------------------------------------------------------- DERIVED (rebuilt each run)
 for t in ["master_corpus","zotero_register","bridge_concepts",

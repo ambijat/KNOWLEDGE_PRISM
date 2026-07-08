@@ -1,0 +1,26 @@
+{
+  "block_no": 17,
+  "block_id": "block_0017_shift_close_handover",
+  "title": "SHIFT CLOSE \u2014 Claude session handover: pilot complete, 11 rows at sampled_text_supported_core_candidate, 3 rows queued (re-sample/OCR), no scaling, no ontology-core",
+  "ts": "2026-07-07T14:04:01.003533+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude",
+  "inputs": [
+    "blocks 13-16",
+    "logs/agent_actions.jsonl (9 records)",
+    "SHIFT_HANDOVER.md sha256=ee4c8381c1603ed0"
+  ],
+  "operations": [
+    "Compiled full session ledger: blocks 13-16, claims KP-CLAIM-000021..000032, 18 pilot dispositions",
+    "Recorded scripts/schema touched: build_prism_db.py (v2, +3 schema additions), VERIFICATION_RUBRIC.md (v3)",
+    "Verified persistence: verdict_disposition/disposition_taxonomy/evidence_grade survive derived rebuild",
+    "Wrote SHIFT_HANDOVER.md with resume instructions and next-shift queue"
+  ],
+  "outputs": [
+    "SHIFT_HANDOVER.md sha256=ee4c8381c1603ed0c97bfc59eef4135b0cdf8d53aa71b697e6d2c379aeab404d",
+    "Chain: blocks 0-17 sealed",
+    "Next-shift queue: re-sample #7 Ratzel + #13 Russia/Mongols; OCR #18; await sign-off for concept_verified + ~370-row scale"
+  ],
+  "prev_hash": "e88e46dfb1c5c0da2af82d767250be61465d3c28675f823dd15ce26932b7d57a",
+  "block_hash": "6ba581549c76f6e1216c4ed8c0dc8f979608bdc924a6d469ea2eba53870bd866"
+}

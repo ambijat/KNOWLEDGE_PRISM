@@ -1,0 +1,1952 @@
+{
+  "nodes": [
+    {
+      "id": "work:theglobaltransformationhistorymodernityandthemakin",
+      "label": "The Global Transformation: History, Modernity and the Making of International Relations",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "grade:sampled_text_supported_core_candidate",
+      "label": "sampled_text_supported_core_candidate",
+      "type": "evidence_grade",
+      "group": "evidence"
+    },
+    {
+      "id": "disposition:core_candidate",
+      "label": "core_candidate",
+      "type": "disposition",
+      "group": "disposition"
+    },
+    {
+      "id": "layer:Layer_B_method_theory_core",
+      "label": "Layer_B_method_theory_core",
+      "type": "layer",
+      "group": "layer"
+    },
+    {
+      "id": "action:eligibleforfutureconceptverificationnotontologycor",
+      "label": "Eligible for future concept verification; not ontology-core.",
+      "type": "required_action",
+      "group": "action"
+    },
+    {
+      "id": "function:suppliesthemacrohistoricalframeforthemoderninterna",
+      "label": "Supplies the macro-historical frame for the modern international order: the 'global transformation' of the long 19th century (industrialisation, rational state-building, ideologies of progress) as the moment that produced the mode of power today's IR studies.",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "interaction:statespaceknowledgeproduction",
+      "label": "state-space; knowledge-production",
+      "type": "interaction",
+      "group": "interaction"
+    },
+    {
+      "id": "concept_family:theoreticalframinghistoricalcontext",
+      "label": "theoretical framing; historical context",
+      "type": "concept_family",
+      "group": "concept"
+    },
+    {
+      "id": "ontology_use:givestheprojectitsperiodisationitletsusexplainafgh",
+      "label": "Gives the project its periodisation: it lets us explain Afghanistan, Central Asian states and Russia as entrants into (or resisters of) a globally transformed states-system, rather than as timeless units. The backbone for situating regional cases in world-historical time.",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:globalmodernity",
+      "label": "global modernity",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:longnineteenthcentury",
+      "label": "long nineteenth century",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:powergapbetweendevelopedanddevelopingstates",
+      "label": "power gap between developed and developing states",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:multiplerevolutionspoliticaleconomicmilitarycultur",
+      "label": "multiple revolutions (political, economic, military, cultural)",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:nationsatwarascientificstudyofinternationalconflic",
+      "label": "Nations at War: A Scientific Study of International Conflict",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "function:anchorstheempiricalexplanatoryscientificstudypoleo",
+      "label": "Anchors the empirical-explanatory / scientific-study pole of the corpus: quantitative correlates-of-war style analysis of when and why interstate conflict occurs.",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "interaction:conflictactorbehaviour",
+      "label": "conflict; actor-behaviour",
+      "type": "interaction",
+      "group": "interaction"
+    },
+    {
+      "id": "concept_family:empiricalexplanationmethodologicalapparatus",
+      "label": "empirical explanation; methodological apparatus",
+      "type": "concept_family",
+      "group": "concept"
+    },
+    {
+      "id": "ontology_use:providesthevariableandhypothesisvocabularycapabili",
+      "label": "Provides the variable-and-hypothesis vocabulary (capabilities, alliances, escalation) for testing conflict propositions about the Eurasian/Afghan security space against a general baseline of interstate war behaviour.",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:rationalandnonrationaldecisionmakingmodels",
+      "label": "rational and nonrational decision-making models",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:multilevelanalysisstatedyadregionsystem",
+      "label": "multi-level analysis (state, dyad, region, system)",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:quantitativeconflictanalysis",
+      "label": "quantitative conflict analysis",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:structuralfactorsinwaronset",
+      "label": "structural factors in war onset",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:ideologyandinternationalrelationsinthemodernworld",
+      "label": "Ideology and International Relations in the Modern World",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "function:tracesideologyasacausalforceinirhowbeliefsystemsli",
+      "label": "Traces ideology as a causal force in IR — how belief systems (liberalism, nationalism, communism, Islamism) organise state action across the modern era.",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "interaction:identityorderknowledgeproduction",
+      "label": "identity-order; knowledge-production",
+      "type": "interaction",
+      "group": "interaction"
+    },
+    {
+      "id": "concept_family:conceptualgenealogyhistoricalcontexttheoreticalfra",
+      "label": "conceptual genealogy; historical context; theoretical framing",
+      "type": "concept_family",
+      "group": "concept"
+    },
+    {
+      "id": "ontology_use:bridgestotheempiricalcoredirectlythetoolstoreadtal",
+      "label": "Bridges to the empirical core directly: the tools to read Taliban ideology, Soviet/post-Soviet Central Asian state ideologies, and pan-Islamism as structured belief systems that drive geopolitical behaviour, not mere background colour.",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:ideologyandforeignpolicy",
+      "label": "ideology and foreign policy",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:nationalismandinternationalism",
+      "label": "nationalism and internationalism",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:totalitariandoctrinesmarxismleninismfascismnazism",
+      "label": "totalitarian doctrines (Marxism-Leninism, Fascism, Nazism)",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:liberalismandconservatisminir",
+      "label": "liberalism and conservatism in IR",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:theoryandmetatheoryininternationalrelationsconcept",
+      "label": "Theory and Metatheory in International Relations: Concepts and Contending Accounts",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "function:metatheoreticalapparatusclassifieswhatcountsasexpl",
+      "label": "Meta-theoretical apparatus: classifies what counts as explanation, prediction and theory in IR, and how paradigms are adjudicated.",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "interaction:knowledgeproduction",
+      "label": "knowledge-production",
+      "type": "interaction",
+      "group": "interaction"
+    },
+    {
+      "id": "concept_family:methodologicalapparatustheoreticalframing",
+      "label": "methodological apparatus; theoretical framing",
+      "type": "concept_family",
+      "group": "concept"
+    },
+    {
+      "id": "ontology_use:thisistheprojectsselfreflectiveinstrumentittellskn",
+      "label": "This is the project's self-reflective instrument: it tells KNOWLEDGE_PRISM what kind of knowledge-structure claim is even admissible, and underwrites the epistemology behind the two-axis / evidence-ladder machinery itself.",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:scientificrationalisminir",
+      "label": "scientific rationalism in IR",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:constructivismandpoststructuralism",
+      "label": "constructivism and poststructuralism",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:metatheoryandtheoryselection",
+      "label": "metatheory and theory selection",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:policytheorylinkage",
+      "label": "policy-theory linkage",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:doesethnofederalismexplainthesuccessofindianfedera",
+      "label": "Does ethnofederalism explain the success of Indian federalism?",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "function:comparativepoliticaltheorycaseonethnofederalismhow",
+      "label": "Comparative political-theory case on ethnofederalism: how federal design manages ethnic diversity and holds multi-ethnic states together (India as the success case).",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "interaction:identityorderstatespace",
+      "label": "identity-order; state-space",
+      "type": "interaction",
+      "group": "interaction"
+    },
+    {
+      "id": "concept_family:theoreticalframingempiricalexplanation",
+      "label": "theoretical framing; empirical explanation",
+      "type": "concept_family",
+      "group": "concept"
+    },
+    {
+      "id": "ontology_use:portabledesigntheorysuppliesthestatestructurediver",
+      "label": "Portable design theory: supplies the state-structure / diversity-governance lens to ask why Afghanistan's and Central Asian states' federal or unitary arrangements succeed or fail — a transferable mechanism, held in the method layer rather than the regional empirics.",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:ethnofederalism",
+      "label": "ethnofederalism",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:territorialrecognitionandredesign",
+      "label": "territorial recognition and redesign",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:linguisticreorganization",
+      "label": "linguistic reorganization",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:conflictmanagement",
+      "label": "conflict management",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:whyislamismiswinning",
+      "label": "Why Islamism Is Winning",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "layer:Layer_AB_bridge_core",
+      "label": "Layer_AB_bridge_core",
+      "type": "layer",
+      "group": "layer"
+    },
+    {
+      "id": "function:explainsthepoliticalascendancyofislamismasamobilis",
+      "label": "Explains the political ascendancy of Islamism as a mobilising order — why Islamist movements out-compete secular rivals for legitimacy and organisation.",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "interaction:identityorderactorbehaviourregionsecurity",
+      "label": "identity-order; actor-behaviour; region-security",
+      "type": "interaction",
+      "group": "interaction"
+    },
+    {
+      "id": "concept_family:empiricalexplanationtheoreticalframingdiscoursekno",
+      "label": "empirical explanation; theoretical framing; discourse/knowledge construction",
+      "type": "concept_family",
+      "group": "concept"
+    },
+    {
+      "id": "ontology_use:oneofthemostloadbearingbridgetextsdirectlyexplains",
+      "label": "One of the most load-bearing bridge texts: directly explains actor behaviour in the Afghan-Central Asian religious-political field, linking ideology theory (#3) to on-the-ground security outcomes.",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:ideologicaldiffusionacrosssocieties",
+      "label": "ideological diffusion across societies",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:revolutionarywavesandcontagion",
+      "label": "revolutionary waves and contagion",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:postauthoritarianpoliticalrealignment",
+      "label": "post-authoritarian political realignment",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:grievanceaggregationaroundsharedideology",
+      "label": "grievance aggregation around shared ideology",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:ratzelanddemography",
+      "label": "Ratzel and Demography",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "grade:hypothesis_only_not_scholarly_evidence",
+      "label": "hypothesis_only_not_scholarly_evidence",
+      "type": "evidence_grade",
+      "group": "evidence"
+    },
+    {
+      "id": "disposition:review_required",
+      "label": "review_required",
+      "type": "disposition",
+      "group": "disposition"
+    },
+    {
+      "id": "action:deeperresampleneededvalidatedargumentquoterequired",
+      "label": "Deeper re-sample needed; validated argument quote required.",
+      "type": "required_action",
+      "group": "action"
+    },
+    {
+      "id": "function:potentialagenealogyofpoliticalgeographyandgeopolit",
+      "label": "POTENTIAL: a genealogy of political geography and geopolitical reasoning — how territory, state expansion, demographic imagination and spatial power (Ratzel's Lebensraum lineage) entered IR/geopolitical thought.",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "interaction:empirefrontierstatespace",
+      "label": "empire-frontier; state-space",
+      "type": "interaction",
+      "group": "interaction"
+    },
+    {
+      "id": "concept_family:conceptualgenealogytheoreticalframing",
+      "label": "conceptual genealogy; theoretical framing",
+      "type": "concept_family",
+      "group": "concept"
+    },
+    {
+      "id": "ontology_use:iffirmedupitexplainstheintellectualoriginsoftheter",
+      "label": "If firmed up, it explains the intellectual origins of the territorial-expansion and organic-state ideas that classical geopolitics (an eigenaxis) rests on. Evidence is currently weak (PARTIAL, 0.55, quote failed verbatim) → deeper sampling with a validated argument quote before admission to the theory-method layer.",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:ethnographyandreligiousevolution",
+      "label": "ethnography and religious evolution",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:diffusionismofculturaltraits",
+      "label": "diffusionism of cultural traits",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:peopleevaluationandinternalexternalfunctions",
+      "label": "people evaluation and internal-external functions",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:natureorientedpeoples",
+      "label": "nature-oriented peoples",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:overviewofthesemioticsofmaps",
+      "label": "Overview of the Semiotics of Maps",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "function:establishesmapsassemioticsystemsthatcartographyenc",
+      "label": "Establishes maps as semiotic systems — that cartography encodes power and meaning, not neutral geography.",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "interaction:knowledgeproductionstatespace",
+      "label": "knowledge-production; state-space",
+      "type": "interaction",
+      "group": "interaction"
+    },
+    {
+      "id": "concept_family:methodologicalapparatusdiscourseknowledgeconstruct",
+      "label": "methodological apparatus; discourse/knowledge construction",
+      "type": "concept_family",
+      "group": "concept"
+    },
+    {
+      "id": "ontology_use:givestheprojectitscriticalcartographyinstrumentthe",
+      "label": "Gives the project its critical-cartography instrument: the means to read how Eurasia, frontiers and 'the region' are constructed representationally — essential for the critical-geopolitics eigenaxis and for treating maps of Afghanistan/CA as arguments, not facts.",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:mapsymbolismmaplanguage",
+      "label": "map symbolism (map language)",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:signprocessesproductionreceptionemployment",
+      "label": "sign processes (production, reception, employment)",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:cartographiccontexts",
+      "label": "cartographic contexts",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:signsystems",
+      "label": "sign systems",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:culturalcartographymapsandmappinginculturalgeograp",
+      "label": "Cultural Cartography: Maps and Mapping in Cultural Geography",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "function:extendsmapsemioticsintoculturalcartographyhowmappi",
+      "label": "Extends map-semiotics into cultural cartography: how mapping practices produce cultural and political space.",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "interaction:knowledgeproductionempirefrontier",
+      "label": "knowledge-production; empire-frontier",
+      "type": "interaction",
+      "group": "interaction"
+    },
+    {
+      "id": "ontology_use:reinforcestherepresentationalspacetoolkitsupportsa",
+      "label": "Reinforces the representational-space toolkit; supports analysis of how imperial/frontier space in Eurasia is culturally produced. (Soft flag: only 2/6 concept probes located in slice — functionally promising, evidentially thinner than #8.)",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:cartographiccritiqueandrepresentation",
+      "label": "cartographic critique and representation",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:culturalgeographyandartpractice",
+      "label": "cultural geography and art practice",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:virtualanddigitalcartographies",
+      "label": "virtual and digital cartographies",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:mapmakingdemocratization",
+      "label": "map-making democratization",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:structuralrealismstructureobjectandcausality",
+      "label": "Structural Realism: Structure, Object, and Causality",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "function:appliesscientificstructuralrealismphilosophyofscie",
+      "label": "Applies scientific/structural realism (philosophy of science) to IR structure — what it means to claim that unobservable structures (anarchy, the balance of power) cause outcomes.",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "concept_family:theoreticalframingmethodologicalapparatusconceptua",
+      "label": "theoretical framing; methodological apparatus; conceptual genealogy",
+      "type": "concept_family",
+      "group": "concept"
+    },
+    {
+      "id": "ontology_use:undergirdstherealistrscteigenaxisitjustifiestreati",
+      "label": "Undergirds the realist/RSCT eigenaxis: it justifies treating regional security structures as real causal objects, which is exactly the ontological claim the Af-Pak/Central Asia security-complex analysis rests on.",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:structuralrealism",
+      "label": "structural realism",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:scientificrealism",
+      "label": "scientific realism",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:ontologicalvsepistemologicalthesis",
+      "label": "ontological vs. epistemological thesis",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:relationalontology",
+      "label": "relational ontology",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:discourseanalysisastheoryandmethod",
+      "label": "Discourse Analysis as Theory and Method",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "function:providesdiscourseanalysisasafulltheoryandmethodpac",
+      "label": "Provides discourse analysis as a full theory-and-method package: language and discourse as constitutive of political reality.",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "interaction:knowledgeproductionidentityorder",
+      "label": "knowledge-production; identity-order",
+      "type": "interaction",
+      "group": "interaction"
+    },
+    {
+      "id": "ontology_use:theprojectsprimaryinterpretivemethodenginetheopera",
+      "label": "The project's primary interpretive-method engine: the operational apparatus for the securitisation, constructivist and critical-geopolitics strands — how KNOWLEDGE_PRISM will actually analyse texts as discourse rather than count them.",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:discoursetheory",
+      "label": "discourse theory",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:criticaldiscourseanalysis",
+      "label": "critical discourse analysis",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:discursivepsychology",
+      "label": "discursive psychology",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:socialconstructionism",
+      "label": "social constructionism",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:regionalactionplantowardstheinformationsocietyinas",
+      "label": "Regional Action Plan towards the Information Society in Asia and the Pacific",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "disposition:claim_supported_but_project_irrelevant",
+      "label": "claim_supported_but_project_irrelevant",
+      "type": "disposition",
+      "group": "disposition"
+    },
+    {
+      "id": "layer:Out_of_domain_noise",
+      "label": "Out_of_domain_noise",
+      "type": "layer",
+      "group": "layer"
+    },
+    {
+      "id": "action:keepexcludedfromcoreclaimsupportdoesnotimplyprojec",
+      "label": "Keep excluded from core; claim support does not imply project relevance.",
+      "type": "required_action",
+      "group": "action"
+    },
+    {
+      "id": "concept:digitaldivide",
+      "label": "digital divide",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:ictpolicyandregulation",
+      "label": "ICT policy and regulation",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:capacitybuilding",
+      "label": "capacity building",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:disastermanagementtechnology",
+      "label": "disaster management technology",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:russiaandthemongolsslavsandthesteppeinmedievalande",
+      "label": "Russia and the Mongols: Slavs and the Steppe in Medieval and Early Modern Russia",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "layer:Layer_A_empirical_core",
+      "label": "Layer_A_empirical_core",
+      "type": "layer",
+      "group": "layer"
+    },
+    {
+      "id": "action:deeperresampleneededdecidecorevsperipheralvshistor",
+      "label": "Deeper re-sample needed; decide core vs peripheral vs historical background.",
+      "type": "required_action",
+      "group": "action"
+    },
+    {
+      "id": "function:potentialhistoricaleurasiancontextthesteppemongoli",
+      "label": "POTENTIAL: historical-Eurasian context — the steppe/Mongol imprint on Russian state formation and the empire-frontier dynamic of inner Eurasia.",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "interaction:empirefrontierregionsecurity",
+      "label": "empire-frontier; region-security",
+      "type": "interaction",
+      "group": "interaction"
+    },
+    {
+      "id": "concept_family:historicalcontextempiricalexplanationcandidate",
+      "label": "historical context; empirical explanation (candidate)",
+      "type": "concept_family",
+      "group": "concept"
+    },
+    {
+      "id": "ontology_use:couldsupplythedeephistoricallayerexplainingrussias",
+      "label": "Could supply the deep-historical layer explaining Russia's frontier posture toward Central Asia. But at 0.55 (PARTIAL) we cannot yet say whether it functions as core Eurasian explanation or merely background → deeper re-sample to decide core vs peripheral vs background.",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:goldenhorde",
+      "label": "Golden Horde",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:mongolconquest",
+      "label": "Mongol conquest",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:russianprincipalities",
+      "label": "Russian principalities",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:historiography",
+      "label": "Historiography",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:histologyatextandatlaswithcorrelatedcellandmolecul",
+      "label": "Histology: A Text and Atlas with Correlated Cell and Molecular Biology",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "concept:tissuemicrostructure",
+      "label": "tissue microstructure",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:cellbiologycorrelation",
+      "label": "cell biology correlation",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:molecularmechanisms",
+      "label": "molecular mechanisms",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:histologicaltechniques",
+      "label": "histological techniques",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:toleadthefreeworldamericannationalismandthecultura",
+      "label": "To Lead the Free World: American Nationalism and the Cultural Roots of the Cold War",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "function:explainsamericancoldwarconductthroughnationalisman",
+      "label": "Explains American Cold-War conduct through nationalism and cultural self-understanding — ideology-as-identity driving superpower foreign policy.",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "interaction:identityorderactorbehaviourknowledgeproduction",
+      "label": "identity-order; actor-behaviour; knowledge-production",
+      "type": "interaction",
+      "group": "interaction"
+    },
+    {
+      "id": "concept_family:empiricalexplanationhistoricalcontextdiscourseknow",
+      "label": "empirical explanation; historical context; discourse/knowledge construction",
+      "type": "concept_family",
+      "group": "concept"
+    },
+    {
+      "id": "ontology_use:modelsthegreatpowerbackdropagainstwhicheurasianand",
+      "label": "Models the great-power backdrop against which Eurasian and Afghan geopolitics played out (Cold-War proxy space); a template for reading how a great power's identity narrative structures its regional interventions.",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:publicdiscourseandnationalism",
+      "label": "public discourse and nationalism",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:coldwarconsensusformation",
+      "label": "Cold War consensus formation",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:culturalhistorymethodology",
+      "label": "cultural history methodology",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:imaginedcommunities",
+      "label": "imagined communities",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:wehavetogoafghansreadytofleecountryasforeigntroops",
+      "label": "We have to go: Afghans ready to flee country as foreign troops withdraw",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "disposition:Peripheral_context",
+      "label": "Peripheral_context",
+      "type": "disposition",
+      "group": "disposition"
+    },
+    {
+      "id": "layer:Peripheral_context",
+      "label": "Peripheral_context",
+      "type": "layer",
+      "group": "layer"
+    },
+    {
+      "id": "action:keepasempiricalcontextdonotpromotetoontologycore",
+      "label": "Keep as empirical context; do not promote to ontology-core.",
+      "type": "required_action",
+      "group": "action"
+    },
+    {
+      "id": "concept:postconflictmigration",
+      "label": "post-conflict migration",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:economicdependencyonforeignaid",
+      "label": "economic dependency on foreign aid",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:securityvacuumandstatecollapse",
+      "label": "security vacuum and state collapse",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:refugeedisplacementcycles",
+      "label": "refugee displacement cycles",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "work:practicalexamformatmay2020",
+      "label": "Practical Exam Format May 2020",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "grade:metadata_only",
+      "label": "metadata_only",
+      "type": "evidence_grade",
+      "group": "evidence"
+    },
+    {
+      "id": "disposition:excluded_misfile_noise",
+      "label": "excluded_misfile_noise",
+      "type": "disposition",
+      "group": "disposition"
+    },
+    {
+      "id": "layer:Misfile_or_metadata_error",
+      "label": "Misfile_or_metadata_error",
+      "type": "layer",
+      "group": "layer"
+    },
+    {
+      "id": "action:keepexcludedasadministrativemisfilenoise",
+      "label": "Keep excluded as administrative misfile/noise.",
+      "type": "required_action",
+      "group": "action"
+    },
+    {
+      "id": "work:advaitavedantaandinternationalrelations",
+      "label": "Advaita Vedanta and International Relations",
+      "type": "work",
+      "group": "work"
+    },
+    {
+      "id": "disposition:excluded_unreadable",
+      "label": "excluded_unreadable",
+      "type": "disposition",
+      "group": "disposition"
+    },
+    {
+      "id": "layer:Unreadable_or_unassessable",
+      "label": "Unreadable_or_unassessable",
+      "type": "layer",
+      "group": "layer"
+    },
+    {
+      "id": "action:ocrormanualinspectionrequiredbeforeanyrelevancejud",
+      "label": "OCR or manual inspection required before any relevance judgement.",
+      "type": "required_action",
+      "group": "action"
+    },
+    {
+      "id": "function:undeterminedtitlesuggestsabridgebetweenadvaitaveda",
+      "label": "UNDETERMINED: title suggests a bridge between Advaita Vedanta and IR — potentially a non-Western ontology / knowledge-construction contribution (the user's own 'ontological understanding' strand).",
+      "type": "ir_function",
+      "group": "function"
+    },
+    {
+      "id": "concept_family:conceptualgenealogydiscourseknowledgeconstructionc",
+      "label": "conceptual genealogy; discourse/knowledge construction (candidate)",
+      "type": "concept_family",
+      "group": "concept"
+    },
+    {
+      "id": "ontology_use:iftheextractionisrecovereditmayfunctionasanindigen",
+      "label": "If the extraction is recovered, it may function as an indigenous-ontology lens on IR knowledge structures — squarely the project's meta-interest. Currently unreadable → OCR/manual inspection before any functional claim is trusted.",
+      "type": "ontology_use",
+      "group": "ontology"
+    },
+    {
+      "id": "concept:advaitavedanta",
+      "label": "Advaita Vedanta",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:nondualism",
+      "label": "non-dualism",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:internationalrelationstheory",
+      "label": "international relations theory",
+      "type": "concept",
+      "group": "concept"
+    },
+    {
+      "id": "concept:philosophicalfoundations",
+      "label": "philosophical foundations",
+      "type": "concept",
+      "group": "concept"
+    }
+  ],
+  "edges": [
+    {
+      "source": "work:theglobaltransformationhistorymodernityandthemakin",
+      "target": "grade:sampled_text_supported_core_candidate",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:theglobaltransformationhistorymodernityandthemakin",
+      "target": "disposition:core_candidate",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:theglobaltransformationhistorymodernityandthemakin",
+      "target": "layer:Layer_B_method_theory_core",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:theglobaltransformationhistorymodernityandthemakin",
+      "target": "action:eligibleforfutureconceptverificationnotontologycor",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:theglobaltransformationhistorymodernityandthemakin",
+      "target": "function:suppliesthemacrohistoricalframeforthemoderninterna",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:theglobaltransformationhistorymodernityandthemakin",
+      "target": "interaction:statespaceknowledgeproduction",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:theglobaltransformationhistorymodernityandthemakin",
+      "target": "concept_family:theoreticalframinghistoricalcontext",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:theglobaltransformationhistorymodernityandthemakin",
+      "target": "ontology_use:givestheprojectitsperiodisationitletsusexplainafgh",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:theglobaltransformationhistorymodernityandthemakin",
+      "target": "concept:globalmodernity",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:theglobaltransformationhistorymodernityandthemakin",
+      "target": "concept:longnineteenthcentury",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:theglobaltransformationhistorymodernityandthemakin",
+      "target": "concept:powergapbetweendevelopedanddevelopingstates",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:theglobaltransformationhistorymodernityandthemakin",
+      "target": "concept:multiplerevolutionspoliticaleconomicmilitarycultur",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:nationsatwarascientificstudyofinternationalconflic",
+      "target": "grade:sampled_text_supported_core_candidate",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:nationsatwarascientificstudyofinternationalconflic",
+      "target": "disposition:core_candidate",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:nationsatwarascientificstudyofinternationalconflic",
+      "target": "layer:Layer_B_method_theory_core",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:nationsatwarascientificstudyofinternationalconflic",
+      "target": "action:eligibleforfutureconceptverificationnotontologycor",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:nationsatwarascientificstudyofinternationalconflic",
+      "target": "function:anchorstheempiricalexplanatoryscientificstudypoleo",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:nationsatwarascientificstudyofinternationalconflic",
+      "target": "interaction:conflictactorbehaviour",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:nationsatwarascientificstudyofinternationalconflic",
+      "target": "concept_family:empiricalexplanationmethodologicalapparatus",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:nationsatwarascientificstudyofinternationalconflic",
+      "target": "ontology_use:providesthevariableandhypothesisvocabularycapabili",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:nationsatwarascientificstudyofinternationalconflic",
+      "target": "concept:rationalandnonrationaldecisionmakingmodels",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:nationsatwarascientificstudyofinternationalconflic",
+      "target": "concept:multilevelanalysisstatedyadregionsystem",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:nationsatwarascientificstudyofinternationalconflic",
+      "target": "concept:quantitativeconflictanalysis",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:nationsatwarascientificstudyofinternationalconflic",
+      "target": "concept:structuralfactorsinwaronset",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:ideologyandinternationalrelationsinthemodernworld",
+      "target": "grade:sampled_text_supported_core_candidate",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:ideologyandinternationalrelationsinthemodernworld",
+      "target": "disposition:core_candidate",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:ideologyandinternationalrelationsinthemodernworld",
+      "target": "layer:Layer_B_method_theory_core",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:ideologyandinternationalrelationsinthemodernworld",
+      "target": "action:eligibleforfutureconceptverificationnotontologycor",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:ideologyandinternationalrelationsinthemodernworld",
+      "target": "function:tracesideologyasacausalforceinirhowbeliefsystemsli",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:ideologyandinternationalrelationsinthemodernworld",
+      "target": "interaction:identityorderknowledgeproduction",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:ideologyandinternationalrelationsinthemodernworld",
+      "target": "concept_family:conceptualgenealogyhistoricalcontexttheoreticalfra",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:ideologyandinternationalrelationsinthemodernworld",
+      "target": "ontology_use:bridgestotheempiricalcoredirectlythetoolstoreadtal",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:ideologyandinternationalrelationsinthemodernworld",
+      "target": "concept:ideologyandforeignpolicy",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:ideologyandinternationalrelationsinthemodernworld",
+      "target": "concept:nationalismandinternationalism",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:ideologyandinternationalrelationsinthemodernworld",
+      "target": "concept:totalitariandoctrinesmarxismleninismfascismnazism",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:ideologyandinternationalrelationsinthemodernworld",
+      "target": "concept:liberalismandconservatisminir",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:theoryandmetatheoryininternationalrelationsconcept",
+      "target": "grade:sampled_text_supported_core_candidate",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:theoryandmetatheoryininternationalrelationsconcept",
+      "target": "disposition:core_candidate",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:theoryandmetatheoryininternationalrelationsconcept",
+      "target": "layer:Layer_B_method_theory_core",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:theoryandmetatheoryininternationalrelationsconcept",
+      "target": "action:eligibleforfutureconceptverificationnotontologycor",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:theoryandmetatheoryininternationalrelationsconcept",
+      "target": "function:metatheoreticalapparatusclassifieswhatcountsasexpl",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:theoryandmetatheoryininternationalrelationsconcept",
+      "target": "interaction:knowledgeproduction",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:theoryandmetatheoryininternationalrelationsconcept",
+      "target": "concept_family:methodologicalapparatustheoreticalframing",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:theoryandmetatheoryininternationalrelationsconcept",
+      "target": "ontology_use:thisistheprojectsselfreflectiveinstrumentittellskn",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:theoryandmetatheoryininternationalrelationsconcept",
+      "target": "concept:scientificrationalisminir",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:theoryandmetatheoryininternationalrelationsconcept",
+      "target": "concept:constructivismandpoststructuralism",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:theoryandmetatheoryininternationalrelationsconcept",
+      "target": "concept:metatheoryandtheoryselection",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:theoryandmetatheoryininternationalrelationsconcept",
+      "target": "concept:policytheorylinkage",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:doesethnofederalismexplainthesuccessofindianfedera",
+      "target": "grade:sampled_text_supported_core_candidate",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:doesethnofederalismexplainthesuccessofindianfedera",
+      "target": "disposition:core_candidate",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:doesethnofederalismexplainthesuccessofindianfedera",
+      "target": "layer:Layer_B_method_theory_core",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:doesethnofederalismexplainthesuccessofindianfedera",
+      "target": "action:eligibleforfutureconceptverificationnotontologycor",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:doesethnofederalismexplainthesuccessofindianfedera",
+      "target": "function:comparativepoliticaltheorycaseonethnofederalismhow",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:doesethnofederalismexplainthesuccessofindianfedera",
+      "target": "interaction:identityorderstatespace",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:doesethnofederalismexplainthesuccessofindianfedera",
+      "target": "concept_family:theoreticalframingempiricalexplanation",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:doesethnofederalismexplainthesuccessofindianfedera",
+      "target": "ontology_use:portabledesigntheorysuppliesthestatestructurediver",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:doesethnofederalismexplainthesuccessofindianfedera",
+      "target": "concept:ethnofederalism",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:doesethnofederalismexplainthesuccessofindianfedera",
+      "target": "concept:territorialrecognitionandredesign",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:doesethnofederalismexplainthesuccessofindianfedera",
+      "target": "concept:linguisticreorganization",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:doesethnofederalismexplainthesuccessofindianfedera",
+      "target": "concept:conflictmanagement",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:whyislamismiswinning",
+      "target": "grade:sampled_text_supported_core_candidate",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:whyislamismiswinning",
+      "target": "disposition:core_candidate",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:whyislamismiswinning",
+      "target": "layer:Layer_AB_bridge_core",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:whyislamismiswinning",
+      "target": "action:eligibleforfutureconceptverificationnotontologycor",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:whyislamismiswinning",
+      "target": "function:explainsthepoliticalascendancyofislamismasamobilis",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:whyislamismiswinning",
+      "target": "interaction:identityorderactorbehaviourregionsecurity",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:whyislamismiswinning",
+      "target": "concept_family:empiricalexplanationtheoreticalframingdiscoursekno",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:whyislamismiswinning",
+      "target": "ontology_use:oneofthemostloadbearingbridgetextsdirectlyexplains",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:whyislamismiswinning",
+      "target": "concept:ideologicaldiffusionacrosssocieties",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:whyislamismiswinning",
+      "target": "concept:revolutionarywavesandcontagion",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:whyislamismiswinning",
+      "target": "concept:postauthoritarianpoliticalrealignment",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:whyislamismiswinning",
+      "target": "concept:grievanceaggregationaroundsharedideology",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:ratzelanddemography",
+      "target": "grade:hypothesis_only_not_scholarly_evidence",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:ratzelanddemography",
+      "target": "disposition:review_required",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:ratzelanddemography",
+      "target": "layer:Layer_B_method_theory_core",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:ratzelanddemography",
+      "target": "action:deeperresampleneededvalidatedargumentquoterequired",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:ratzelanddemography",
+      "target": "function:potentialagenealogyofpoliticalgeographyandgeopolit",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:ratzelanddemography",
+      "target": "interaction:empirefrontierstatespace",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:ratzelanddemography",
+      "target": "concept_family:conceptualgenealogytheoreticalframing",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:ratzelanddemography",
+      "target": "ontology_use:iffirmedupitexplainstheintellectualoriginsoftheter",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:ratzelanddemography",
+      "target": "concept:ethnographyandreligiousevolution",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:ratzelanddemography",
+      "target": "concept:diffusionismofculturaltraits",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:ratzelanddemography",
+      "target": "concept:peopleevaluationandinternalexternalfunctions",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:ratzelanddemography",
+      "target": "concept:natureorientedpeoples",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:overviewofthesemioticsofmaps",
+      "target": "grade:sampled_text_supported_core_candidate",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:overviewofthesemioticsofmaps",
+      "target": "disposition:core_candidate",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:overviewofthesemioticsofmaps",
+      "target": "layer:Layer_B_method_theory_core",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:overviewofthesemioticsofmaps",
+      "target": "action:eligibleforfutureconceptverificationnotontologycor",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:overviewofthesemioticsofmaps",
+      "target": "function:establishesmapsassemioticsystemsthatcartographyenc",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:overviewofthesemioticsofmaps",
+      "target": "interaction:knowledgeproductionstatespace",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:overviewofthesemioticsofmaps",
+      "target": "concept_family:methodologicalapparatusdiscourseknowledgeconstruct",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:overviewofthesemioticsofmaps",
+      "target": "ontology_use:givestheprojectitscriticalcartographyinstrumentthe",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:overviewofthesemioticsofmaps",
+      "target": "concept:mapsymbolismmaplanguage",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:overviewofthesemioticsofmaps",
+      "target": "concept:signprocessesproductionreceptionemployment",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:overviewofthesemioticsofmaps",
+      "target": "concept:cartographiccontexts",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:overviewofthesemioticsofmaps",
+      "target": "concept:signsystems",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:culturalcartographymapsandmappinginculturalgeograp",
+      "target": "grade:sampled_text_supported_core_candidate",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:culturalcartographymapsandmappinginculturalgeograp",
+      "target": "disposition:core_candidate",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:culturalcartographymapsandmappinginculturalgeograp",
+      "target": "layer:Layer_B_method_theory_core",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:culturalcartographymapsandmappinginculturalgeograp",
+      "target": "action:eligibleforfutureconceptverificationnotontologycor",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:culturalcartographymapsandmappinginculturalgeograp",
+      "target": "function:extendsmapsemioticsintoculturalcartographyhowmappi",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:culturalcartographymapsandmappinginculturalgeograp",
+      "target": "interaction:knowledgeproductionempirefrontier",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:culturalcartographymapsandmappinginculturalgeograp",
+      "target": "concept_family:methodologicalapparatusdiscourseknowledgeconstruct",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:culturalcartographymapsandmappinginculturalgeograp",
+      "target": "ontology_use:reinforcestherepresentationalspacetoolkitsupportsa",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:culturalcartographymapsandmappinginculturalgeograp",
+      "target": "concept:cartographiccritiqueandrepresentation",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:culturalcartographymapsandmappinginculturalgeograp",
+      "target": "concept:culturalgeographyandartpractice",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:culturalcartographymapsandmappinginculturalgeograp",
+      "target": "concept:virtualanddigitalcartographies",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:culturalcartographymapsandmappinginculturalgeograp",
+      "target": "concept:mapmakingdemocratization",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:structuralrealismstructureobjectandcausality",
+      "target": "grade:sampled_text_supported_core_candidate",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:structuralrealismstructureobjectandcausality",
+      "target": "disposition:core_candidate",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:structuralrealismstructureobjectandcausality",
+      "target": "layer:Layer_B_method_theory_core",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:structuralrealismstructureobjectandcausality",
+      "target": "action:eligibleforfutureconceptverificationnotontologycor",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:structuralrealismstructureobjectandcausality",
+      "target": "function:appliesscientificstructuralrealismphilosophyofscie",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:structuralrealismstructureobjectandcausality",
+      "target": "interaction:statespaceknowledgeproduction",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:structuralrealismstructureobjectandcausality",
+      "target": "concept_family:theoreticalframingmethodologicalapparatusconceptua",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:structuralrealismstructureobjectandcausality",
+      "target": "ontology_use:undergirdstherealistrscteigenaxisitjustifiestreati",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:structuralrealismstructureobjectandcausality",
+      "target": "concept:structuralrealism",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:structuralrealismstructureobjectandcausality",
+      "target": "concept:scientificrealism",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:structuralrealismstructureobjectandcausality",
+      "target": "concept:ontologicalvsepistemologicalthesis",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:structuralrealismstructureobjectandcausality",
+      "target": "concept:relationalontology",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:discourseanalysisastheoryandmethod",
+      "target": "grade:sampled_text_supported_core_candidate",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:discourseanalysisastheoryandmethod",
+      "target": "disposition:core_candidate",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:discourseanalysisastheoryandmethod",
+      "target": "layer:Layer_B_method_theory_core",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:discourseanalysisastheoryandmethod",
+      "target": "action:eligibleforfutureconceptverificationnotontologycor",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:discourseanalysisastheoryandmethod",
+      "target": "function:providesdiscourseanalysisasafulltheoryandmethodpac",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:discourseanalysisastheoryandmethod",
+      "target": "interaction:knowledgeproductionidentityorder",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:discourseanalysisastheoryandmethod",
+      "target": "concept_family:methodologicalapparatusdiscourseknowledgeconstruct",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:discourseanalysisastheoryandmethod",
+      "target": "ontology_use:theprojectsprimaryinterpretivemethodenginetheopera",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:discourseanalysisastheoryandmethod",
+      "target": "concept:discoursetheory",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:discourseanalysisastheoryandmethod",
+      "target": "concept:criticaldiscourseanalysis",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:discourseanalysisastheoryandmethod",
+      "target": "concept:discursivepsychology",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:discourseanalysisastheoryandmethod",
+      "target": "concept:socialconstructionism",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:regionalactionplantowardstheinformationsocietyinas",
+      "target": "grade:hypothesis_only_not_scholarly_evidence",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:regionalactionplantowardstheinformationsocietyinas",
+      "target": "disposition:claim_supported_but_project_irrelevant",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:regionalactionplantowardstheinformationsocietyinas",
+      "target": "layer:Out_of_domain_noise",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:regionalactionplantowardstheinformationsocietyinas",
+      "target": "action:keepexcludedfromcoreclaimsupportdoesnotimplyprojec",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:regionalactionplantowardstheinformationsocietyinas",
+      "target": "concept:digitaldivide",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:regionalactionplantowardstheinformationsocietyinas",
+      "target": "concept:ictpolicyandregulation",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:regionalactionplantowardstheinformationsocietyinas",
+      "target": "concept:capacitybuilding",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:regionalactionplantowardstheinformationsocietyinas",
+      "target": "concept:disastermanagementtechnology",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:russiaandthemongolsslavsandthesteppeinmedievalande",
+      "target": "grade:hypothesis_only_not_scholarly_evidence",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:russiaandthemongolsslavsandthesteppeinmedievalande",
+      "target": "disposition:review_required",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:russiaandthemongolsslavsandthesteppeinmedievalande",
+      "target": "layer:Layer_A_empirical_core",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:russiaandthemongolsslavsandthesteppeinmedievalande",
+      "target": "action:deeperresampleneededdecidecorevsperipheralvshistor",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:russiaandthemongolsslavsandthesteppeinmedievalande",
+      "target": "function:potentialhistoricaleurasiancontextthesteppemongoli",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:russiaandthemongolsslavsandthesteppeinmedievalande",
+      "target": "interaction:empirefrontierregionsecurity",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:russiaandthemongolsslavsandthesteppeinmedievalande",
+      "target": "concept_family:historicalcontextempiricalexplanationcandidate",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:russiaandthemongolsslavsandthesteppeinmedievalande",
+      "target": "ontology_use:couldsupplythedeephistoricallayerexplainingrussias",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:russiaandthemongolsslavsandthesteppeinmedievalande",
+      "target": "concept:goldenhorde",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:russiaandthemongolsslavsandthesteppeinmedievalande",
+      "target": "concept:mongolconquest",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:russiaandthemongolsslavsandthesteppeinmedievalande",
+      "target": "concept:russianprincipalities",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:russiaandthemongolsslavsandthesteppeinmedievalande",
+      "target": "concept:historiography",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:histologyatextandatlaswithcorrelatedcellandmolecul",
+      "target": "grade:hypothesis_only_not_scholarly_evidence",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:histologyatextandatlaswithcorrelatedcellandmolecul",
+      "target": "disposition:claim_supported_but_project_irrelevant",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:histologyatextandatlaswithcorrelatedcellandmolecul",
+      "target": "layer:Out_of_domain_noise",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:histologyatextandatlaswithcorrelatedcellandmolecul",
+      "target": "action:keepexcludedfromcoreclaimsupportdoesnotimplyprojec",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:histologyatextandatlaswithcorrelatedcellandmolecul",
+      "target": "concept:tissuemicrostructure",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:histologyatextandatlaswithcorrelatedcellandmolecul",
+      "target": "concept:cellbiologycorrelation",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:histologyatextandatlaswithcorrelatedcellandmolecul",
+      "target": "concept:molecularmechanisms",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:histologyatextandatlaswithcorrelatedcellandmolecul",
+      "target": "concept:histologicaltechniques",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:toleadthefreeworldamericannationalismandthecultura",
+      "target": "grade:sampled_text_supported_core_candidate",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:toleadthefreeworldamericannationalismandthecultura",
+      "target": "disposition:core_candidate",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:toleadthefreeworldamericannationalismandthecultura",
+      "target": "layer:Layer_AB_bridge_core",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:toleadthefreeworldamericannationalismandthecultura",
+      "target": "action:eligibleforfutureconceptverificationnotontologycor",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:toleadthefreeworldamericannationalismandthecultura",
+      "target": "function:explainsamericancoldwarconductthroughnationalisman",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:toleadthefreeworldamericannationalismandthecultura",
+      "target": "interaction:identityorderactorbehaviourknowledgeproduction",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:toleadthefreeworldamericannationalismandthecultura",
+      "target": "concept_family:empiricalexplanationhistoricalcontextdiscourseknow",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:toleadthefreeworldamericannationalismandthecultura",
+      "target": "ontology_use:modelsthegreatpowerbackdropagainstwhicheurasianand",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:toleadthefreeworldamericannationalismandthecultura",
+      "target": "concept:publicdiscourseandnationalism",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:toleadthefreeworldamericannationalismandthecultura",
+      "target": "concept:coldwarconsensusformation",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:toleadthefreeworldamericannationalismandthecultura",
+      "target": "concept:culturalhistorymethodology",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:toleadthefreeworldamericannationalismandthecultura",
+      "target": "concept:imaginedcommunities",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:wehavetogoafghansreadytofleecountryasforeigntroops",
+      "target": "grade:hypothesis_only_not_scholarly_evidence",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:wehavetogoafghansreadytofleecountryasforeigntroops",
+      "target": "disposition:Peripheral_context",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:wehavetogoafghansreadytofleecountryasforeigntroops",
+      "target": "layer:Peripheral_context",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:wehavetogoafghansreadytofleecountryasforeigntroops",
+      "target": "action:keepasempiricalcontextdonotpromotetoontologycore",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:wehavetogoafghansreadytofleecountryasforeigntroops",
+      "target": "concept:postconflictmigration",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:wehavetogoafghansreadytofleecountryasforeigntroops",
+      "target": "concept:economicdependencyonforeignaid",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:wehavetogoafghansreadytofleecountryasforeigntroops",
+      "target": "concept:securityvacuumandstatecollapse",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:wehavetogoafghansreadytofleecountryasforeigntroops",
+      "target": "concept:refugeedisplacementcycles",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:practicalexamformatmay2020",
+      "target": "grade:metadata_only",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:practicalexamformatmay2020",
+      "target": "disposition:excluded_misfile_noise",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:practicalexamformatmay2020",
+      "target": "layer:Misfile_or_metadata_error",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:practicalexamformatmay2020",
+      "target": "action:keepexcludedasadministrativemisfilenoise",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:advaitavedantaandinternationalrelations",
+      "target": "grade:metadata_only",
+      "relation": "work_to_evidence_grade"
+    },
+    {
+      "source": "work:advaitavedantaandinternationalrelations",
+      "target": "disposition:excluded_unreadable",
+      "relation": "work_to_disposition"
+    },
+    {
+      "source": "work:advaitavedantaandinternationalrelations",
+      "target": "layer:Unreadable_or_unassessable",
+      "relation": "work_to_layer"
+    },
+    {
+      "source": "work:advaitavedantaandinternationalrelations",
+      "target": "action:ocrormanualinspectionrequiredbeforeanyrelevancejud",
+      "relation": "work_to_next_action"
+    },
+    {
+      "source": "work:advaitavedantaandinternationalrelations",
+      "target": "function:undeterminedtitlesuggestsabridgebetweenadvaitaveda",
+      "relation": "work_to_functional_role"
+    },
+    {
+      "source": "work:advaitavedantaandinternationalrelations",
+      "target": "interaction:knowledgeproduction",
+      "relation": "work_to_interaction"
+    },
+    {
+      "source": "work:advaitavedantaandinternationalrelations",
+      "target": "concept_family:conceptualgenealogydiscourseknowledgeconstructionc",
+      "relation": "work_to_concept_family"
+    },
+    {
+      "source": "work:advaitavedantaandinternationalrelations",
+      "target": "ontology_use:iftheextractionisrecovereditmayfunctionasanindigen",
+      "relation": "work_to_ontology_use"
+    },
+    {
+      "source": "work:advaitavedantaandinternationalrelations",
+      "target": "concept:advaitavedanta",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:advaitavedantaandinternationalrelations",
+      "target": "concept:nondualism",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:advaitavedantaandinternationalrelations",
+      "target": "concept:internationalrelationstheory",
+      "relation": "work_to_concept"
+    },
+    {
+      "source": "work:advaitavedantaandinternationalrelations",
+      "target": "concept:philosophicalfoundations",
+      "relation": "work_to_concept"
+    }
+  ]
+}

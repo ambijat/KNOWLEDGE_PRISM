@@ -1,0 +1,62 @@
+[
+  {
+    "stage": "Reconnaissance",
+    "status": "done_metadata_level",
+    "evidence_grade": "metadata_only",
+    "note": "Archive terrain mapped; not treated as read scholarship."
+  },
+  {
+    "stage": "Master Register",
+    "status": "built_partly_heuristic",
+    "evidence_grade": "metadata_only / metadata_manifest",
+    "note": "Unified register exists; duplicate and class labels still need verification."
+  },
+  {
+    "stage": "Evidence Ledger",
+    "status": "operational",
+    "evidence_grade": "infrastructure",
+    "note": "Hash-chained blocks and claim lifecycle are active."
+  },
+  {
+    "stage": "Verification Queue",
+    "status": "active",
+    "evidence_grade": "hypothesis_only_not_scholarly_evidence",
+    "note": "Bridge concepts are queued for sampled text checks."
+  },
+  {
+    "stage": "Rubric",
+    "status": "active",
+    "evidence_grade": "rubric_v2",
+    "note": "Two independent axes: thesis support and project relevance."
+  },
+  {
+    "stage": "Pilot Verification",
+    "status": "run",
+    "evidence_grade": "sampled_text",
+    "note": "18 rows tested; 11 rows sample-level promoted only."
+  },
+  {
+    "stage": "Core Corpus",
+    "status": "not_final",
+    "evidence_grade": "sampled_text_supported_core_candidate",
+    "note": "No final ontology-core promotion has happened."
+  },
+  {
+    "stage": "Verified Ontology",
+    "status": "not_started",
+    "evidence_grade": "concept_verified / ontology_core",
+    "note": "Both final ontology grades remain at zero."
+  },
+  {
+    "stage": "OpenAlex Enrichment",
+    "status": "partial",
+    "evidence_grade": "external_bibliographic_enrichment",
+    "note": "Enrichment work is partial and not a substitute for text verification."
+  },
+  {
+    "stage": "Codex Handover",
+    "status": "in_progress",
+    "evidence_grade": "handover",
+    "note": "Static front end now reads exported project-state JSON."
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-07-08T03:35:48.484034+00:00",
+  "project_identity": "Knowledge Prism Graph Lab",
+  "summary": "Proof-of-provenance graph lab for converting a scholarly corpus into an evidence-graded research ontology.",
+  "master_corpus_rows": 35861,
+  "bridge_concept_rows": 392,
+  "pilot_rows": 18,
+  "promoted_sample_level_rows": 11,
+  "ontology_core_rows": 0,
+  "concept_verified_rows": 0,
+  "ledger_blocks": 19,
+  "ledger_chain_verifies": true,
+  "functional_role_rows": 14,
+  "source_counts": {
+    "rows": 35861,
+    "duplicates": 7259,
+    "classes": {
+      "Noise": 432,
+      "Peripheral": 839,
+      "Core": 11453,
+      "Unknown": 23137
+    },
+    "evidence": {
+      "metadata_only": 23267,
+      "metadata_manifest": 12594
+    }
+  },
+  "data_sources": [
+    "db/knowledge_prism.db: verdict_disposition, functional_role, bridge_concepts, master_corpus",
+    "outputs/reports/BRIDGE_PILOT_VERDICTS.csv",
+    "outputs/reports/BRIDGE_PILOT_VERDICTS.json",
+    "ledger/blocks/*.json",
+    "outputs/reports/project_status_counts.json"
+  ],
+  "public_safety": "Secrets, API keys, and absolute local paths are not exported."
+}
