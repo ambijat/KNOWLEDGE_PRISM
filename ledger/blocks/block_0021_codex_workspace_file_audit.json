@@ -1,0 +1,32 @@
+{
+  "block_no": 21,
+  "block_id": "block_0021_codex_workspace_file_audit",
+  "title": "Codex workspace file audit: classify new files, quarantine Recoll raw output, and scrub local paths",
+  "ts": "2026-07-08T14:48:46.842171+00:00",
+  "session_id": "codex-workspace-audit-2026-07-08",
+  "actor": "codex",
+  "inputs": [
+    "git status --short",
+    "git ls-files --others --exclude-standard",
+    "new front-end/provenance/report files",
+    "docs/reports/RECOLL_KALEIDOSCOPE_TRIAL_001.md",
+    "outputs/recoll/recoll_kaleidoscope_trial_001.csv"
+  ],
+  "operations": [
+    "audited modified and untracked project files after commercial front-end pass",
+    "identified outputs/recoll as local retrieval output containing absolute source paths",
+    "added outputs/recoll/ to .gitignore so raw retrieval CSVs remain local-only",
+    "redacted local Recoll configuration path from public Recoll trial report",
+    "removed generated Python __pycache__ directories from the working tree",
+    "re-scanned unignored new files and public front-end exports for local paths and secret-like strings",
+    "confirmed no evidence grades, dispositions, ontology status, database research records, corpus files, or research judgments changed"
+  ],
+  "outputs": [
+    ".gitignore",
+    "docs/reports/RECOLL_KALEIDOSCOPE_TRIAL_001.md",
+    "public/data/ledger_blocks.json",
+    "public/data/project_status.json"
+  ],
+  "prev_hash": "090df66b7a9f16d8dd62baecba0978650e208a96897bde3c0b0ff080dcd7fc7d",
+  "block_hash": "31ed861992374adfe545def404310881d02ba17abf857bd031c9b7a700f85cce"
+}

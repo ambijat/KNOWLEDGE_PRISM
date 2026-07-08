@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T03:35:48.484034+00:00",
+  "generated_at": "2026-07-08T14:51:39.113098+00:00",
   "project_identity": "Knowledge Prism Graph Lab",
   "summary": "Proof-of-provenance graph lab for converting a scholarly corpus into an evidence-graded research ontology.",
   "master_corpus_rows": 35861,
@@ -8,7 +8,7 @@
   "promoted_sample_level_rows": 11,
   "ontology_core_rows": 0,
   "concept_verified_rows": 0,
-  "ledger_blocks": 19,
+  "ledger_blocks": 24,
   "ledger_chain_verifies": true,
   "functional_role_rows": 14,
   "source_counts": {

@@ -1,0 +1,1673 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knowledge Prism Expert Dashboard</title>
+  <style>
+    :root {
+      --paper: #f7f4ec;
+      --paper-2: #ece7dc;
+      --ink: #1f2825;
+      --muted: #63716c;
+      --line: #d7cebf;
+      --panel: #fffdf7;
+      --green: #2f715d;
+      --teal: #0d6f72;
+      --ochre: #b57822;
+      --red: #a53e37;
+      --plum: #6f4d73;
+      --brown: #7d6042;
+      --shadow: 0 18px 50px rgba(48, 40, 28, .12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(31, 40, 37, .035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(31, 40, 37, .035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 28px 28px;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--panel);
+      color: var(--ink);
+      cursor: pointer;
+      padding: 9px 12px;
+    }
+
+    button:hover,
+    button.active {
+      border-color: var(--green);
+      background: #edf5ef;
+    }
+
+    a {
+      color: var(--green);
+    }
+
+    .shell {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--ink);
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .mark {
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--green);
+      border-radius: 7px;
+      background: linear-gradient(135deg, #ffffff, #edf5ef);
+      transform: rotate(45deg);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .nav a:hover {
+      color: var(--green);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr);
+      gap: 18px;
+      align-items: stretch;
+      min-height: 420px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 22px;
+    }
+
+    .hero-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 18% 24%, rgba(47, 113, 93, .14), transparent 28%),
+        radial-gradient(circle at 78% 16%, rgba(181, 120, 34, .13), transparent 24%),
+        linear-gradient(135deg, #fffdf7, #eee7d9);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 780px;
+      font-size: clamp(36px, 5vw, 74px);
+      line-height: .95;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .lead {
+      max-width: 820px;
+      color: #394641;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .hero-side,
+    .panel {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 247, .94);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .hero-side {
+      display: grid;
+      align-content: start;
+      gap: 14px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .metric {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fbf8f0;
+      padding: 12px;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--green);
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .status-note {
+      border-left: 4px solid var(--ochre);
+      background: #fff6e6;
+      padding: 12px;
+      color: #594022;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .advanced-warning {
+      border-left: 5px solid var(--ochre);
+      border-radius: 7px;
+      background: #fff6e6;
+      color: #594022;
+      padding: 12px;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .toolbar,
+    .filters,
+    .export-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .toolbar {
+      justify-content: space-between;
+    }
+
+    .search {
+      min-width: min(420px, 100%);
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fffdf7;
+      color: var(--ink);
+      padding: 10px 12px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .grid > *,
+    .hero > * {
+      min-width: 0;
+    }
+
+    .grid.two {
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    }
+
+    .grid.reader {
+      grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 14px;
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(10, minmax(130px, 1fr));
+      gap: 0;
+      max-width: 100%;
+      overflow: auto;
+      padding-bottom: 4px;
+    }
+
+    .stage {
+      position: relative;
+      min-height: 112px;
+      border: 1px solid var(--line);
+      border-left: 0;
+      background: #fbf8f0;
+      padding: 12px 26px 12px 12px;
+    }
+
+    .stage:first-child {
+      border-left: 1px solid var(--line);
+      border-radius: 7px 0 0 7px;
+    }
+
+    .stage:last-child {
+      border-radius: 0 7px 7px 0;
+    }
+
+    .stage::after {
+      content: ">";
+      position: absolute;
+      top: 12px;
+      right: 10px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .stage:last-child::after {
+      content: "";
+    }
+
+    .stage .status {
+      display: inline-block;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: #edf5ef;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 750;
+      padding: 4px 7px;
+    }
+
+    .story-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .story-card,
+    .piece-card,
+    .selected-work {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbf8f0;
+      padding: 14px;
+    }
+
+    .story-card {
+      min-height: 132px;
+    }
+
+    .story-number {
+      color: var(--green);
+      font-size: 28px;
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .piece-list {
+      display: grid;
+      gap: 8px;
+      max-height: 560px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .piece-card {
+      width: 100%;
+      border-left: 5px solid var(--green);
+      text-align: left;
+    }
+
+    .piece-card.review {
+      border-left-color: var(--ochre);
+    }
+
+    .piece-card.excluded {
+      border-left-color: var(--red);
+    }
+
+    .piece-card.peripheral {
+      border-left-color: var(--plum);
+    }
+
+    .piece-card.active {
+      border-color: var(--green);
+      border-left-width: 5px;
+      background: #edf5ef;
+    }
+
+    .piece-title {
+      display: block;
+      font-size: 14px;
+      font-weight: 780;
+      line-height: 1.25;
+    }
+
+    .selected-work {
+      display: grid;
+      gap: 12px;
+      min-height: 560px;
+      align-content: start;
+    }
+
+    .meaning-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .meaning-card {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fffdf7;
+      padding: 12px;
+    }
+
+    .plain-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .plain-list li {
+      border-left: 3px solid var(--green);
+      padding-left: 9px;
+      color: #3d4945;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .evidence-card {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fbf8f0;
+      padding: 12px;
+    }
+
+    .evidence-card strong {
+      display: block;
+      color: var(--green);
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .functional-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .functional-card {
+      display: grid;
+      gap: 10px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--green);
+      border-radius: 8px;
+      background: #fbf8f0;
+      padding: 14px;
+    }
+
+    .functional-card.review {
+      border-left-color: var(--ochre);
+    }
+
+    .functional-card .role {
+      color: #34443e;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .badge-list,
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag,
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      max-width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fbf8f0;
+      color: #40504a;
+      font-size: 12px;
+      line-height: 1.2;
+      padding: 5px 8px;
+    }
+
+    .badge.core_candidate,
+    .badge.sampled {
+      border-color: rgba(47, 113, 93, .32);
+      background: #edf5ef;
+      color: var(--green);
+    }
+
+    .badge.review_required {
+      border-color: rgba(181, 120, 34, .38);
+      background: #fff6e6;
+      color: #8a5815;
+    }
+
+    .badge.excluded,
+    .badge.excluded_misfile_noise,
+    .badge.excluded_unreadable,
+    .badge.claim_supported_but_project_irrelevant {
+      border-color: rgba(165, 62, 55, .28);
+      background: #fff0ee;
+      color: var(--red);
+    }
+
+    .badge.Peripheral_context {
+      border-color: rgba(111, 77, 115, .28);
+      background: #f6eef7;
+      color: var(--plum);
+    }
+
+    .table-wrap {
+      max-width: 100%;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffdf7;
+      max-height: 680px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1180px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #eee7d9;
+      color: #37433f;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    td {
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .title-cell {
+      max-width: 280px;
+      font-weight: 750;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: 130px repeat(8, minmax(120px, 1fr));
+      max-width: 100%;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffdf7;
+    }
+
+    .matrix > div {
+      min-height: 78px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 9px;
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .matrix .head,
+    .matrix .axis {
+      background: #eee7d9;
+      color: #37433f;
+      font-weight: 800;
+    }
+
+    .matrix strong {
+      display: block;
+      color: var(--green);
+      font-size: 18px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .graph-frame {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, rgba(31, 40, 37, .04) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(31, 40, 37, .04) 1px, transparent 1px),
+        #fffdf7;
+      background-size: 24px 24px;
+    }
+
+    #graphSvg {
+      display: block;
+      width: 100%;
+      height: 520px;
+    }
+
+    .graph-label {
+      font-size: 11px;
+      pointer-events: none;
+    }
+
+    .graph-link {
+      stroke: rgba(99, 113, 108, .34);
+      stroke-width: 1;
+    }
+
+    .graph-node.work { fill: var(--green); }
+    .graph-node.evidence { fill: var(--teal); }
+    .graph-node.disposition { fill: var(--ochre); }
+    .graph-node.layer { fill: var(--plum); }
+    .graph-node.action { fill: var(--red); }
+    .graph-node.function { fill: #234f79; }
+    .graph-node.interaction { fill: #8a5815; }
+    .graph-node.concept { fill: #6f4d73; }
+    .graph-node.ontology { fill: #a53e37; }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+      max-height: 520px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .block {
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--green);
+      border-radius: 7px;
+      background: #fbf8f0;
+      padding: 12px;
+    }
+
+    .block.bad {
+      border-left-color: var(--red);
+    }
+
+    .review-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .review-card {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fbf8f0;
+      padding: 13px;
+    }
+
+    .footer {
+      margin-top: 22px;
+      border-top: 1px solid var(--line);
+      padding: 18px 0 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .error {
+      border: 1px solid rgba(165, 62, 55, .42);
+      border-radius: 8px;
+      background: #fff0ee;
+      color: var(--red);
+      padding: 14px;
+    }
+
+    @media (max-width: 1180px) {
+      .hero,
+      .grid.two {
+        grid-template-columns: 1fr;
+      }
+
+      .pipeline,
+      .evidence-grid,
+      .functional-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid.reader,
+      .story-strip,
+      .meaning-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .review-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .shell {
+        padding: 12px;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .hero-main,
+      .hero-side,
+      .panel {
+        padding: 14px;
+      }
+
+      .metric-grid,
+      .pipeline,
+      .evidence-grid,
+      .functional-grid,
+      .story-strip,
+      .meaning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span>Knowledge Prism</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Expert Dashboard</a>
+        <a href="case-study-ir.html">IR Pilot Case Study</a>
+        <a href="method.html">Method</a>
+        <a href="#exportTitle">Export / Sample Brief</a>
+      </div>
+    </nav>
+
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="hero-main">
+        <div>
+          <p class="eyebrow">Expert Dashboard</p>
+          <h1 id="pageTitle">Research Cockpit for evidence-backed IR interpretation.</h1>
+        </div>
+        <p class="lead">This is the advanced cockpit. KNOWLEDGE_PRISM does not merely evidence-grade corpus claims. It interprets sampled works by their function in International Relations explanation: what they help explain, which interactions they illuminate, and how they may feed a future ontology.</p>
+        <p class="advanced-warning"><strong>This is the advanced evidence dashboard.</strong> For the public overview, return to <a href="index.html">Home</a>.</p>
+        <div class="tags" aria-label="Evidence ladder">
+          <span class="tag"><a href="index.html">Home</a></span>
+          <span class="tag"><a href="case-study-ir.html">IR Pilot Case Study</a></span>
+          <span class="tag"><a href="method.html">Method</a></span>
+          <span class="tag">14 functional IR readings</span>
+          <span class="tag">11 works sample-supported</span>
+          <span class="tag">evidence supports interpretation</span>
+          <span class="tag">0 final ontology-core claims</span>
+        </div>
+      </div>
+
+      <aside class="hero-side" aria-label="Current project status">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Current State</p>
+            <h2>The honest shape of the work</h2>
+          </div>
+        </div>
+        <div class="metric-grid">
+          <div class="metric"><strong id="metricMaster">-</strong><span>master register rows</span></div>
+          <div class="metric"><strong id="metricPilot">-</strong><span>pilot verification rows</span></div>
+          <div class="metric"><strong id="metricPromoted">-</strong><span>sample-level supported rows</span></div>
+          <div class="metric"><strong id="metricOntology">0</strong><span>final ontology-core rows</span></div>
+        </div>
+        <p class="status-note">The project has begun to say what the sampled works do for IR, while still keeping every claim tied to its evidence grade. Functional interpretation is now the front layer; promotion still remains locked.</p>
+        <div class="small" id="statusMeta">Loading exported project state...</div>
+      </aside>
+    </section>
+
+    <section class="grid" aria-labelledby="storyTitle">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Five-Minute Reading</p>
+            <h2 id="storyTitle">From folder pile to explanatory machine</h2>
+          </div>
+        </div>
+        <div class="story-strip">
+          <article class="story-card">
+            <div class="story-number">1</div>
+            <h3>First, the archive is mapped.</h3>
+            <p class="small" style="margin-top: 8px;">Titles, folders, and metadata help find the terrain. They are clues, not scholarship.</p>
+          </article>
+          <article class="story-card">
+            <div class="story-number">2</div>
+            <h3>Then works are interpreted.</h3>
+            <p class="small" style="margin-top: 8px;">A sampled work must answer an IR question: what interaction, theory, method, or empirical mechanism does it illuminate?</p>
+          </article>
+          <article class="story-card">
+            <div class="story-number">3</div>
+            <h3>Only then can the graph grow.</h3>
+            <p class="small" style="margin-top: 8px;">Evidence grades annotate confidence; functional roles explain why a text matters for geopolitics, theory, method, or ontology.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid reader" aria-label="Reading tray and selected work">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Reading Tray</p>
+            <h2>Start with the works, not the codes</h2>
+          </div>
+        </div>
+        <div id="pieceList" class="piece-list"></div>
+      </div>
+
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Selected Work</p>
+            <h2 id="selectedTitle">Choose a work to inspect</h2>
+          </div>
+        </div>
+        <div id="selectedWork" class="selected-work"></div>
+      </div>
+    </section>
+
+    <section class="grid" aria-labelledby="pipelineTitle">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Project Path</p>
+            <h2 id="pipelineTitle">A claim moves slowly: map it, sample it, judge its relevance, then wait for proper promotion.</h2>
+          </div>
+        </div>
+        <div id="pipeline" class="pipeline"></div>
+      </div>
+    </section>
+
+    <section class="grid two" aria-label="Evidence and disposition dashboards">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Confidence</p>
+            <h2>What the project can say today</h2>
+          </div>
+        </div>
+        <div id="evidenceGrid" class="evidence-grid"></div>
+      </div>
+
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Sorting Shelf</p>
+            <h2>Accurate is not the same as useful here</h2>
+          </div>
+        </div>
+        <div id="censusGrid" class="evidence-grid"></div>
+      </div>
+    </section>
+
+    <section class="grid" aria-labelledby="functionalTitle">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Functional IR Interpretation</p>
+            <h2 id="functionalTitle">Why the sampled works matter for International Relations</h2>
+            <p class="small" style="margin-top: 8px;">Evidence grades tell us whether a claim has been sampled and supported. Functional IR roles tell us why the work matters for International Relations.</p>
+          </div>
+          <div class="badge-list">
+            <span class="badge" id="functionalCount">0 functional roles</span>
+          </div>
+        </div>
+        <div id="functionalGrid" class="functional-grid"></div>
+      </div>
+    </section>
+
+    <section class="grid" aria-labelledby="pilotTitle">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Evidence Register</p>
+            <h2 id="pilotTitle">The audit table is here when you need the exact fields</h2>
+          </div>
+        </div>
+        <div class="toolbar">
+          <div class="filters" role="group" aria-label="Pilot filters">
+            <button class="filter active" data-filter="all" type="button">All works</button>
+            <button class="filter" data-filter="promoted" type="button">Sample-supported</button>
+            <button class="filter" data-filter="review" type="button">Needs rereading</button>
+            <button class="filter" data-filter="excluded" type="button">Set aside</button>
+            <button class="filter" data-filter="peripheral" type="button">Context only</button>
+            <button class="filter" data-filter="unreadable" type="button">Needs OCR</button>
+          </div>
+          <input id="search" class="search" type="search" placeholder="Search title, status, layer, next action">
+        </div>
+        <p class="small" style="margin: 12px 0;" id="visibleSummary">Loading rows...</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Thesis Verdict</th>
+                <th>Confidence</th>
+                <th>Quote</th>
+                <th>Disposition</th>
+                <th>Evidence Grade</th>
+                <th>Layer Tag</th>
+                <th>Promotion Eligibility</th>
+                <th>Next Action</th>
+              </tr>
+            </thead>
+            <tbody id="pilotTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid two" aria-label="Two-axis decision view and graph lab">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Two-Axis Decision View</p>
+            <h2>Two questions, one decision</h2>
+          </div>
+        </div>
+        <div id="matrix" class="matrix" aria-label="Thesis verdict by project relevance matrix"></div>
+        <p class="small" style="margin-top: 12px;">Question one: does the sampled text support the claim? Question two: does the work belong to this project? Histology passes the first question and fails the second.</p>
+      </div>
+
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Graph Lab</p>
+            <h2>The pilot works as a living map</h2>
+          </div>
+          <div class="badge-list">
+            <span class="badge" id="graphNodes">0 visible nodes</span>
+            <span class="badge" id="graphLinks">0 visible links</span>
+          </div>
+        </div>
+        <div class="graph-frame">
+          <svg id="graphSvg" role="img" aria-label="Evidence graph built from pilot rows"></svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid two" aria-label="Review queue and ledger timeline">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Human Review Queue</p>
+            <h2>The places where the project refuses to guess</h2>
+          </div>
+        </div>
+        <div id="reviewQueue" class="review-list"></div>
+      </div>
+
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Ledger Timeline</p>
+            <h2>What the project remembers</h2>
+          </div>
+        </div>
+        <div id="ledgerTimeline" class="timeline"></div>
+      </div>
+    </section>
+
+    <section class="grid" aria-labelledby="exportTitle">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Export</p>
+            <h2 id="exportTitle">Take the current state with its cautions intact</h2>
+          </div>
+        </div>
+        <div class="export-actions">
+          <button id="downloadPilotJson" type="button">Download pilot JSON</button>
+          <button id="downloadPilotCsv" type="button">Download pilot CSV</button>
+          <button id="downloadReviewJson" type="button">Download review queue JSON</button>
+          <button id="downloadLedgerJson" type="button">Download ledger summary JSON</button>
+          <button id="copyBrief" type="button">Copy project brief</button>
+          <button id="copyHandover" type="button">Copy Codex handover status</button>
+        </div>
+        <p class="small" style="margin-top: 12px;" id="exportStatus">Exports load after static data is available.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Public static page. Data generated from local project artifacts by <code>python3 scripts/export_frontend_data.py</code>. No API keys, secrets, or raw corpus files are required by this page.
+    </footer>
+  </main>
+
+  <script>
+    const DATA_BASE = "public/data/";
+    const state = {
+      filter: "all",
+      search: "",
+      pilotRows: [],
+      reviewQueue: [],
+      census: {},
+      ledger: [],
+      status: {},
+      evidence: {},
+      pipeline: [],
+      functionalRoles: [],
+      filteredRows: [],
+      selectedId: null
+    };
+
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+
+    const labels = {
+      provisional_unverified_rows: "still only mapped as clues",
+      sampled_text_supported_rows: "sampled and currently supported",
+      review_required_rows: "waiting for a closer human read",
+      out_of_domain_rows: "true enough, but outside this project",
+      unreadable_rows: "blocked by OCR or scan quality",
+      ontology_core_rows: "final ontology entries",
+      core_candidate: "belongs in the core, at sample level",
+      Peripheral_context: "useful context, not core scholarship",
+      claim_supported_but_project_irrelevant: "accurate claim, wrong project",
+      excluded_misfile_noise: "filed here by mistake",
+      excluded_unreadable: "cannot be judged yet",
+      review_required: "needs another reading"
+    };
+
+    function fmt(value) {
+      return Number(value || 0).toLocaleString("en-US");
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    async function loadJson(name) {
+      const response = await fetch(`${DATA_BASE}${name}.json`, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Could not load ${name}.json`);
+      }
+      return response.json();
+    }
+
+    async function boot() {
+      try {
+        const [rawPilotRows, functionalRoles, reviewQueue, census, ledger, status, evidence, pipeline] = await Promise.all([
+          loadJson("pilot_rows"),
+          loadJson("functional_roles"),
+          loadJson("review_queue"),
+          loadJson("disposition_census"),
+          loadJson("ledger_blocks"),
+          loadJson("project_status"),
+          loadJson("evidence_dashboard"),
+          loadJson("pipeline")
+        ]);
+
+        const pilotRows = mergeFunctionalRoles(rawPilotRows, functionalRoles);
+        Object.assign(state, { pilotRows, reviewQueue, census, ledger, status, evidence, pipeline });
+        state.functionalRoles = functionalRoles;
+        bindEvents();
+        renderAll();
+      } catch (error) {
+        document.body.innerHTML = `<main class="shell"><div class="error"><strong>Front-end data did not load.</strong><br>${escapeHtml(error.message)}<br>Run <code>python3 scripts/export_frontend_data.py</code> and serve the folder through a static server.</div></main>`;
+      }
+    }
+
+    function bindEvents() {
+      $$(".filter").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.filter = button.dataset.filter;
+          $$(".filter").forEach((item) => item.classList.toggle("active", item === button));
+          renderReadingTray();
+          renderPilot();
+          renderMatrix();
+          renderGraph();
+        });
+      });
+
+      $("#search").addEventListener("input", (event) => {
+        state.search = event.target.value.toLowerCase();
+        renderReadingTray();
+        renderPilot();
+        renderMatrix();
+        renderGraph();
+      });
+
+      $("#downloadPilotJson").addEventListener("click", () => downloadJson("knowledge_prism_pilot_rows.json", state.pilotRows));
+      $("#downloadPilotCsv").addEventListener("click", () => downloadText("knowledge_prism_pilot_rows.csv", toCsv(state.pilotRows), "text/csv"));
+      $("#downloadReviewJson").addEventListener("click", () => downloadJson("knowledge_prism_review_queue.json", state.reviewQueue));
+      $("#downloadLedgerJson").addEventListener("click", () => downloadJson("knowledge_prism_ledger_summary.json", state.ledger));
+      $("#copyBrief").addEventListener("click", () => copyText(projectBrief(), "Project brief copied."));
+      $("#copyHandover").addEventListener("click", () => copyText(handoverBrief(), "Codex handover status copied."));
+    }
+
+    function renderAll() {
+      renderHero();
+      state.selectedId = state.pilotRows[0]?.id || null;
+      renderReadingTray();
+      renderPipeline();
+      renderEvidence();
+      renderCensus();
+      renderFunctionalRoles();
+      renderPilot();
+      renderMatrix();
+      renderGraph();
+      renderReviewQueue();
+      renderLedger();
+      $("#exportStatus").textContent = "Exports are ready. JSON and CSV preserve functional interpretation, evidence-grade, and disposition fields.";
+    }
+
+    function mergeFunctionalRoles(rows, functionalRoles) {
+      const byId = Object.fromEntries(functionalRoles.map((role) => [role.id, role]));
+      const byFile = Object.fromEntries(functionalRoles.filter((role) => role.file).map((role) => [role.file, role]));
+      return rows.map((row) => ({
+        ...row,
+        ...(byId[row.id] || byFile[row.file] || {})
+      }));
+    }
+
+    function renderHero() {
+      $("#metricMaster").textContent = fmt(state.status.master_corpus_rows);
+      $("#metricPilot").textContent = fmt(state.status.pilot_rows);
+      $("#metricPromoted").textContent = fmt(state.status.promoted_sample_level_rows);
+      $("#metricOntology").textContent = fmt(state.status.ontology_core_rows);
+      const chain = state.status.ledger_chain_verifies ? "ledger chain verifies" : "ledger chain needs review";
+      $("#statusMeta").textContent = `${fmt(state.status.bridge_concept_rows)} bridge concept rows; ${fmt(state.status.ledger_blocks)} ledger blocks; ${chain}. Generated ${new Date(state.status.generated_at).toLocaleString()}.`;
+    }
+
+    function renderReadingTray() {
+      const rows = filteredRows();
+      if (!rows.some((row) => row.id === state.selectedId)) {
+        state.selectedId = rows[0]?.id || state.pilotRows[0]?.id || null;
+      }
+
+      $("#pieceList").innerHTML = rows.map((row) => `
+        <button class="piece-card ${pieceTone(row)} ${row.id === state.selectedId ? "active" : ""}" type="button" data-id="${escapeHtml(row.id)}">
+          <span class="piece-title">${row.pilot_index}. ${escapeHtml(row.title)}</span>
+          <span class="small">${escapeHtml(statusSentence(row))}</span>
+        </button>
+      `).join("");
+
+      $$("#pieceList .piece-card").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.selectedId = button.dataset.id;
+          renderReadingTray();
+        });
+      });
+
+      const selected = state.pilotRows.find((row) => row.id === state.selectedId);
+      if (!selected) {
+        $("#selectedTitle").textContent = "No work selected";
+        $("#selectedWork").innerHTML = `<p class="small">No rows match the current filter.</p>`;
+        return;
+      }
+
+      $("#selectedTitle").textContent = selected.title;
+      $("#selectedWork").innerHTML = `
+        <p class="lead" style="font-size: 17px;">${escapeHtml(functionalOpening(selected))}</p>
+        <div class="meaning-grid">
+          <div class="meaning-card">
+            <p class="eyebrow">IR Function</p>
+            <p class="small">${escapeHtml(selected.functional_ir_role || "No functional IR role has been recorded for this row yet.")}</p>
+          </div>
+          <div class="meaning-card">
+            <p class="eyebrow">Interaction Illuminated</p>
+            <p class="small">${escapeHtml(selected.interaction_illuminated || "No interaction has been assigned yet.")}</p>
+          </div>
+          <div class="meaning-card">
+            <p class="eyebrow">Ontology Use</p>
+            <p class="small">${escapeHtml(selected.ontology_use || selected.next_action)}</p>
+          </div>
+        </div>
+        <div class="meaning-card">
+          <p class="eyebrow">Layer In Substance</p>
+          <p class="small">${escapeHtml(selected.substantive_layer_explanation || selected.layer_tag)}</p>
+        </div>
+        <div class="meaning-card">
+          <p class="eyebrow">Limitation Or Caution</p>
+          <p class="small">${escapeHtml(selected.limitation_or_caution || plainMeaning(selected))}</p>
+        </div>
+        <div class="badge-list">
+          <span class="badge ${escapeHtml(selected.disposition)}">${escapeHtml(humanDisposition(selected))}</span>
+          <span class="badge ${selected.evidence_grade === "sampled_text_supported_core_candidate" ? "sampled" : ""}">${escapeHtml(humanEvidence(selected))}</span>
+          <span class="badge">${escapeHtml(selected.thesis_verdict)}</span>
+        </div>
+        <ul class="plain-list">
+          <li>Confidence: ${Number(selected.thesis_confidence ?? 0).toFixed(2)}; quote check: ${escapeHtml(selected.quote_validation_status)}.</li>
+          <li>Layer: ${escapeHtml(selected.layer_tag)}.</li>
+          <li>Stored fields remain: ${escapeHtml(selected.disposition)} / ${escapeHtml(selected.evidence_grade)}.</li>
+        </ul>
+        <details>
+          <summary>Show the full audit wording</summary>
+          <p class="small" style="margin-top: 8px;"><strong>Claim tested:</strong> ${escapeHtml(selected.ai_thesis || "No full claim text was exported for this row.")}</p>
+          <p class="small" style="margin-top: 8px;"><strong>Recorded reasoning:</strong> ${escapeHtml(selected.thesis_reasoning || selected.reason || "No extended reasoning was exported for this row.")}</p>
+          <p class="small" style="margin-top: 8px;"><strong>Audit finding:</strong> ${escapeHtml(findingSummary(selected))}</p>
+        </details>
+      `;
+    }
+
+    function pieceTone(row) {
+      if (row.disposition === "review_required" || row.disposition === "excluded_unreadable") return "review";
+      if (row.disposition === "Peripheral_context") return "peripheral";
+      if (row.disposition.startsWith("excluded") || row.disposition === "claim_supported_but_project_irrelevant") return "excluded";
+      return "";
+    }
+
+    function statusSentence(row) {
+      if (row.evidence_grade === "sampled_text_supported_core_candidate") return "Sampled text supports it, but it is not final ontology-core.";
+      if (row.disposition === "review_required") return "Promising enough to keep, uncertain enough to reread.";
+      if (row.disposition === "excluded_unreadable") return "The title may matter, but the text cannot yet be read.";
+      if (row.disposition === "Peripheral_context") return "Relevant background, not a core scholarly building block.";
+      if (row.disposition === "claim_supported_but_project_irrelevant") return "The claim is supported, but it belongs outside this project.";
+      if (row.disposition === "excluded_misfile_noise") return "Administrative noise, not a scholarly contradiction.";
+      return row.next_action;
+    }
+
+    function humanDisposition(row) {
+      return labels[row.disposition] || row.disposition;
+    }
+
+    function humanEvidence(row) {
+      if (row.evidence_grade === "sampled_text_supported_core_candidate") return "sample-supported, not final";
+      if (row.evidence_grade === "metadata_only") return "metadata only";
+      return "not scholarly evidence yet";
+    }
+
+    function functionalOpening(row) {
+      if (row.functional_ir_role) {
+        return `This work enters the graph because it performs a role in IR explanation: ${row.functional_ir_role}`;
+      }
+      return "This row does not yet have a recorded functional IR role. Its audit status remains visible, but it should not be treated as an explanatory building block until the functional layer is written.";
+    }
+
+    function plainMeaning(row) {
+      if (row.evidence_grade === "sampled_text_supported_core_candidate") {
+        return "This work has passed the pilot's first serious test: the sampled text supports the claim and the work belongs to the project. It can be used as a candidate for later concept verification, but not as final ontology truth.";
+      }
+      if (row.disposition === "review_required") {
+        return "This work may matter, but the current sample is not strong enough. The project keeps it visible and asks for a better reading instead of forcing a premature answer.";
+      }
+      if (row.disposition === "excluded_unreadable") {
+        return "This work is parked because the text layer failed. The project is not saying the idea is irrelevant; it is saying the evidence is not readable yet.";
+      }
+      if (row.disposition === "claim_supported_but_project_irrelevant") {
+        return "The sampled text supports the claim, but the work does not belong to KNOWLEDGE_PRISM's research boundary. Accuracy alone is not enough.";
+      }
+      if (row.disposition === "Peripheral_context") {
+        return "This is useful context around the empirical world, but it is not being treated as core scholarship for the ontology.";
+      }
+      if (row.disposition === "excluded_misfile_noise") {
+        return "This file was swept into the corpus by mistake. It is excluded as noise, not treated as evidence against a scholarly thesis.";
+      }
+      return row.reason || row.next_action;
+    }
+
+    function testSummary(row) {
+      if (row.thesis_verdict === "UNREADABLE") return "The pilot tried to read the work but the extracted text was not usable.";
+      if (row.disposition === "excluded_misfile_noise") return "The pilot checked whether this was a scholarly work and found an administrative form instead.";
+      if (row.ai_thesis) return shortLabel(row.ai_thesis, 180);
+      return "The pilot tested the proposed claim against a bounded sample of text.";
+    }
+
+    function findingSummary(row) {
+      if (row.evidence_grade === "sampled_text_supported_core_candidate") return "The sampled text supports the claim and the work belongs to the current project boundary.";
+      if (row.disposition === "review_required") return "The sample is too weak or partial for promotion; the row stays visible for a deeper read.";
+      if (row.disposition === "claim_supported_but_project_irrelevant") return "The claim is supported, but the work is outside the Knowledge Prism domain.";
+      if (row.disposition === "Peripheral_context") return "The work gives useful empirical background, but not core ontology material.";
+      if (row.disposition === "excluded_unreadable") return "The text cannot be assessed until OCR or manual inspection improves the source.";
+      if (row.disposition === "excluded_misfile_noise") return "The file is excluded as a misfile/noise case.";
+      return shortLabel(row.thesis_reasoning || row.reason || "The current disposition is recorded in the pilot ledger.", 180);
+    }
+
+    function renderPipeline() {
+      $("#pipeline").innerHTML = state.pipeline.map((stage, index) => `
+        <article class="stage">
+          <div class="small">Step ${index + 1}</div>
+          <h3>${escapeHtml(stage.stage)}</h3>
+          <span class="status">${escapeHtml(humanStageStatus(stage.status))}</span>
+          <p class="small" style="margin-top: 8px;">${escapeHtml(stage.note)}</p>
+        </article>
+      `).join("");
+    }
+
+    function humanStageStatus(status) {
+      const map = {
+        done_metadata_level: "mapped",
+        built_partly_heuristic: "built, still cautious",
+        operational: "working",
+        active: "active",
+        run: "pilot run",
+        not_final: "not final",
+        not_started: "not started",
+        partial: "partial",
+        in_progress: "in progress"
+      };
+      return map[status] || String(status || "").replaceAll("_", " ");
+    }
+
+    function renderEvidence() {
+      $("#evidenceGrid").innerHTML = Object.entries(state.evidence).map(([key, value]) => `
+        <div class="evidence-card">
+          <strong>${fmt(value)}</strong>
+          <span class="small">${escapeHtml(labels[key] || key)}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderCensus() {
+      $("#censusGrid").innerHTML = Object.entries(state.census).map(([key, value]) => `
+        <div class="evidence-card">
+          <strong>${fmt(value)}</strong>
+          <span class="small">${escapeHtml(labels[key] || key)}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderFunctionalRoles() {
+      const rows = state.pilotRows.filter((row) => row.functional_ir_role);
+      $("#functionalCount").textContent = `${rows.length} functional roles`;
+      $("#functionalGrid").innerHTML = rows.map((row) => `
+        <article class="functional-card ${row.disposition === "review_required" || row.disposition === "excluded_unreadable" ? "review" : ""}">
+          <div>
+            <h3>${escapeHtml(row.title)}</h3>
+            <div class="badge-list" style="margin-top: 8px;">
+              <span class="badge ${row.evidence_grade === "sampled_text_supported_core_candidate" ? "sampled" : ""}">${escapeHtml(humanEvidence(row))}</span>
+              <span class="badge ${escapeHtml(row.disposition)}">${escapeHtml(humanDisposition(row))}</span>
+            </div>
+          </div>
+          <p class="role">${escapeHtml(row.functional_ir_role)}</p>
+          <div class="meaning-grid">
+            <div class="meaning-card">
+              <p class="eyebrow">Interaction</p>
+              <p class="small">${escapeHtml(row.interaction_illuminated)}</p>
+            </div>
+            <div class="meaning-card">
+              <p class="eyebrow">Layer In Substance</p>
+              <p class="small">${escapeHtml(row.substantive_layer_explanation)}</p>
+            </div>
+            <div class="meaning-card">
+              <p class="eyebrow">Ontology Use</p>
+              <p class="small">${escapeHtml(shortLabel(row.ontology_use, 210))}</p>
+            </div>
+          </div>
+          <p class="small"><strong>Caution:</strong> ${escapeHtml(row.limitation_or_caution)}</p>
+        </article>
+      `).join("");
+    }
+
+    function rowMatchesFilter(row) {
+      if (state.filter === "promoted") return row.evidence_grade === "sampled_text_supported_core_candidate";
+      if (state.filter === "review") return row.disposition === "review_required";
+      if (state.filter === "excluded") return row.disposition.startsWith("excluded") || row.disposition === "claim_supported_but_project_irrelevant";
+      if (state.filter === "peripheral") return row.disposition === "Peripheral_context";
+      if (state.filter === "unreadable") return row.disposition === "excluded_unreadable";
+      return true;
+    }
+
+    function rowMatchesSearch(row) {
+      if (!state.search) return true;
+      return [
+        row.title,
+        row.disposition,
+        row.evidence_grade,
+        row.layer_tag,
+        row.next_action,
+        row.thesis_verdict,
+        row.functional_ir_role,
+        row.interaction_illuminated,
+        row.ontology_use,
+        row.limitation_or_caution
+      ]
+        .join(" ")
+        .toLowerCase()
+        .includes(state.search);
+    }
+
+    function filteredRows() {
+      state.filteredRows = state.pilotRows.filter((row) => rowMatchesFilter(row) && rowMatchesSearch(row));
+      return state.filteredRows;
+    }
+
+    function renderPilot() {
+      const rows = filteredRows();
+      $("#visibleSummary").textContent = `${rows.length} visible works of ${state.pilotRows.length}. The table preserves exact audit fields; the reading tray above gives the plain-language meaning.`;
+      $("#pilotTable").innerHTML = rows.map((row) => `
+        <tr>
+          <td>${row.pilot_index}</td>
+          <td class="title-cell">${escapeHtml(row.title)}<div class="small">${escapeHtml(row.folder || "")}</div></td>
+          <td><span class="badge">${escapeHtml(row.thesis_verdict)}</span></td>
+          <td>${Number(row.thesis_confidence ?? 0).toFixed(2)}</td>
+          <td>${escapeHtml(row.quote_validation_status)}</td>
+          <td><span class="badge ${escapeHtml(row.disposition)}">${escapeHtml(humanDisposition(row))}</span><div class="small">${escapeHtml(row.disposition)}</div></td>
+          <td><span class="badge ${row.evidence_grade === "sampled_text_supported_core_candidate" ? "sampled" : ""}">${escapeHtml(row.evidence_grade)}</span></td>
+          <td>${escapeHtml(row.layer_tag)}</td>
+          <td>${escapeHtml(row.promotion_eligibility)}</td>
+          <td>${escapeHtml(row.next_action)}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderMatrix() {
+      const verdicts = ["SUPPORTED", "PARTIAL", "CONTRADICTED", "UNREADABLE"];
+      const layers = [
+        ["Layer A", "Layer_A_empirical_core"],
+        ["Layer B", "Layer_B_method_theory_core"],
+        ["Layer AB", "Layer_AB_bridge_core"],
+        ["Ambiguous", "Ambiguous_review_required"],
+        ["Peripheral", "Peripheral_context"],
+        ["Out-of-domain", "Out_of_domain_noise"],
+        ["Misfile/noise", "Misfile_or_metadata_error"],
+        ["Unreadable", "Unreadable_or_unassessable"]
+      ];
+      const rows = filteredRows();
+      let html = `<div class="head">Thesis verdict</div>${layers.map(([label]) => `<div class="head">${label}</div>`).join("")}`;
+      verdicts.forEach((verdict) => {
+        html += `<div class="axis">${verdict}</div>`;
+        layers.forEach(([, layer]) => {
+          const matches = rows.filter((row) => row.thesis_verdict === verdict && normalizeLayerTag(row.layer_tag) === layer);
+          const example = matches[0] ? matches[0].title : "";
+          html += `<div><strong>${matches.length}</strong>${escapeHtml(example)}</div>`;
+        });
+      });
+      $("#matrix").innerHTML = html;
+    }
+
+    function normalizeLayerTag(layer) {
+      const aliases = {
+        A: "Layer_A_empirical_core",
+        B: "Layer_B_method_theory_core",
+        AB: "Layer_AB_bridge_core",
+        AMB: "Ambiguous_review_required",
+        Layer_B_geopolitics: "Layer_B_method_theory_core"
+      };
+      return aliases[layer] || layer;
+    }
+
+    function renderGraph() {
+      const rows = filteredRows();
+      const svg = $("#graphSvg");
+      const width = Math.max(svg.clientWidth || 640, 640);
+      const height = 520;
+      svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const workRadiusX = Math.max(220, width * .38);
+      const workRadiusY = 200;
+      const innerRadiusX = Math.max(130, width * .22);
+      const innerRadiusY = 118;
+      const nodes = [];
+      const links = [];
+      const addNode = (id, label, type) => {
+        if (!id || !label) return;
+        if (!nodes.some((node) => node.id === id)) nodes.push({ id, label, type, x: centerX, y: centerY });
+      };
+      const addLink = (source, target) => links.push({ source, target });
+
+      rows.forEach((row, index) => {
+        const angle = (Math.PI * 2 * index) / Math.max(rows.length, 1) - Math.PI / 2;
+        const workId = `work-${row.pilot_index}`;
+        addNode(workId, `${row.pilot_index}. ${row.title}`, "work");
+        const work = nodes.find((node) => node.id === workId);
+        work.x = centerX + Math.cos(angle) * workRadiusX;
+        work.y = centerY + Math.sin(angle) * workRadiusY;
+
+        const functionId = `function-${normalizeForId(row.functional_ir_role || "uninterpreted")}`;
+        const interactionId = `interaction-${normalizeForId(row.interaction_illuminated || "interaction pending")}`;
+        const conceptId = `concept-${normalizeForId(row.concept_family || row.axis || "concept family pending")}`;
+        const ontologyId = `ontology-${normalizeForId(row.ontology_use || row.next_action)}`;
+        const gradeId = `grade-${normalizeForId(row.evidence_grade)}`;
+        const dispositionId = `disposition-${normalizeForId(row.disposition)}`;
+
+        addNode(functionId, row.functional_ir_role || "Functional role pending", "function");
+        addNode(interactionId, row.interaction_illuminated || "Interaction pending", "interaction");
+        addNode(conceptId, row.concept_family || row.axis || "Concept family pending", "concept");
+        addNode(ontologyId, row.ontology_use || row.next_action, "ontology");
+        addNode(gradeId, row.evidence_grade, "evidence");
+        addNode(dispositionId, humanDisposition(row), "disposition");
+
+        addLink(workId, functionId);
+        addLink(workId, interactionId);
+        addLink(workId, conceptId);
+        addLink(workId, ontologyId);
+        addLink(workId, gradeId);
+        addLink(workId, dispositionId);
+      });
+
+      const innerNodes = nodes.filter((node) => node.type !== "work");
+      innerNodes.forEach((node, index) => {
+        const angle = (Math.PI * 2 * index) / Math.max(innerNodes.length, 1) - Math.PI / 2;
+        node.x = centerX + Math.cos(angle) * innerRadiusX;
+        node.y = centerY + Math.sin(angle) * innerRadiusY;
+      });
+
+      const nodeById = Object.fromEntries(nodes.map((node) => [node.id, node]));
+      const lineMarkup = links.map((link) => {
+        const source = nodeById[link.source];
+        const target = nodeById[link.target];
+        if (!source || !target) return "";
+        return `<line class="graph-link" x1="${source.x}" y1="${source.y}" x2="${target.x}" y2="${target.y}"></line>`;
+      }).join("");
+      const nodeMarkup = nodes.map((node) => `
+        <g>
+          <circle class="graph-node ${node.type}" cx="${node.x}" cy="${node.y}" r="${node.type === "work" ? 7 : 10}">
+            <title>${escapeHtml(node.label)}</title>
+          </circle>
+          <text class="graph-label" x="${node.x + 10}" y="${node.y + 4}">${escapeHtml(shortLabel(node.label, node.type === "work" ? 28 : 22))}</text>
+        </g>
+      `).join("");
+      svg.innerHTML = `${lineMarkup}${nodeMarkup}`;
+      $("#graphNodes").textContent = `${nodes.length} visible nodes`;
+      $("#graphLinks").textContent = `${links.length} visible links`;
+    }
+
+    function shortLabel(value, limit) {
+      const text = String(value || "");
+      return text.length > limit ? `${text.slice(0, limit - 1)}...` : text;
+    }
+
+    function normalizeForId(value) {
+      return String(value || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")
+        .slice(0, 60);
+    }
+
+    function renderReviewQueue() {
+      $("#reviewQueue").innerHTML = state.reviewQueue.map((row) => `
+        <article class="review-card">
+          <h3>${escapeHtml(row.title)}</h3>
+          <div class="badge-list" style="margin: 10px 0;">
+            <span class="badge review_required">${escapeHtml(row.disposition)}</span>
+            <span class="badge">${escapeHtml(row.thesis_verdict)}</span>
+            <span class="badge">${Number(row.confidence ?? 0).toFixed(2)}</span>
+          </div>
+          <p class="small"><strong>Next:</strong> ${escapeHtml(row.next_action)}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderLedger() {
+      $("#ledgerTimeline").innerHTML = state.ledger.map((block) => `
+        <article class="block ${block.chain_link_ok ? "" : "bad"}">
+          <div class="small">Block ${block.block_no} | ${escapeHtml(block.actor || "unknown")} | ${escapeHtml(block.ts || "")}</div>
+          <h3>${escapeHtml(block.title)}</h3>
+          <p class="small" style="margin-top: 8px;">${block.chain_link_ok ? "Chain link verifies." : "Chain link needs review."}</p>
+          <p class="small" style="margin-top: 8px;"><strong>Artifacts:</strong> ${escapeHtml(asList(block.artifacts_produced).join("; "))}</p>
+        </article>
+      `).join("");
+    }
+
+    function asList(value) {
+      if (Array.isArray(value)) return value.map((item) => typeof item === "string" ? item : JSON.stringify(item));
+      if (value === undefined || value === null) return [];
+      return [String(value)];
+    }
+
+    function downloadJson(filename, data) {
+      downloadText(filename, JSON.stringify(data, null, 2), "application/json");
+    }
+
+    function downloadText(filename, text, type) {
+      const blob = new Blob([text], { type });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function toCsv(rows) {
+      const columns = [
+        "pilot_index",
+        "title",
+        "functional_ir_role",
+        "interaction_illuminated",
+        "substantive_layer_explanation",
+        "ontology_use",
+        "limitation_or_caution",
+        "thesis_verdict",
+        "thesis_confidence",
+        "quote_validation_status",
+        "disposition",
+        "evidence_grade",
+        "layer_tag",
+        "promotion_eligibility",
+        "next_action"
+      ];
+      const quote = (value) => `"${String(value ?? "").replaceAll('"', '""')}"`;
+      return [columns.join(","), ...rows.map((row) => columns.map((column) => quote(row[column])).join(","))].join("\n");
+    }
+
+    async function copyText(text, successMessage) {
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        const area = document.createElement("textarea");
+        area.value = text;
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand("copy");
+        area.remove();
+      }
+      $("#exportStatus").textContent = successMessage;
+    }
+
+    function projectBrief() {
+      return [
+        "KNOWLEDGE_PRISM does not merely evidence-grade corpus claims. It interprets sampled works by their function in International Relations explanation.",
+        `Current pilot state: ${state.pilotRows.length} rows; ${state.functionalRoles.length} functional IR readings; ${state.status.promoted_sample_level_rows} rows at sampled_text_supported_core_candidate; ${state.status.ontology_core_rows} ontology_core rows.`,
+        "Claim accuracy is separated from project relevance. Supported claims may still be excluded when out-of-domain.",
+        "Unresolved queue: Ratzel and Demography, Russia and the Mongols, and Advaita Vedanta and International Relations require deeper re-sampling or OCR/manual inspection."
+      ].join("\n");
+    }
+
+    function handoverBrief() {
+      return [
+        "Codex handover status for KNOWLEDGE_PRISM front end:",
+        "Static data is exported by scripts/export_frontend_data.py into public/data/.",
+        `Pilot rows: ${state.pilotRows.length}. Functional IR readings: ${state.functionalRoles.length}. Sample-level promoted rows: ${state.status.promoted_sample_level_rows}. Final ontology-core rows: 0.`,
+        "Front end reads pilot rows, functional roles, disposition census, review queue, ledger blocks, evidence dashboard, and pipeline status.",
+        "Do not promote review-required rows or write ledger changes from the browser."
+      ].join("\n");
+    }
+
+    boot();
+  </script>
+</body>
+</html>

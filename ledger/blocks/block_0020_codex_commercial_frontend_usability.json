@@ -1,0 +1,42 @@
+{
+  "block_no": 20,
+  "block_id": "block_0020_codex_commercial_frontend_usability",
+  "title": "Codex commercial usability pass: public front-end clarity, navigation helper, and safe validation",
+  "ts": "2026-07-08T14:43:57.271123+00:00",
+  "session_id": "codex-commercial-usability-2026-07-08",
+  "actor": "codex",
+  "inputs": [
+    "CHARTER.md",
+    "RESTORE.md",
+    "docs/handover/FRONTEND_HANDOVER_STATUS.md",
+    "docs/handover/FRONTEND_FUNCTIONAL_IR_REALIGNMENT.md",
+    "index.html",
+    "dashboard.html",
+    "case-study-ir.html",
+    "method.html",
+    "public/data/*.json"
+  ],
+  "operations": [
+    "commercial clarity pass on public landing page",
+    "progressive disclosure order reinforced: value -> demonstration -> method -> evidence -> machinery",
+    "expert dashboard labeled as advanced evidence cockpit with return-to-home warning",
+    "IR pilot case study expanded as narrative explanation of the 18-work pilot",
+    "method page simplified around exoskeleton, evidence ladder, claim accuracy vs relevance, functional interpretation, boundary kinematics, and ledger-as-memory",
+    "cross-page navigation standardized",
+    "scripts/sync_frontend_nav.py added for future navigation synchronization",
+    "safe-server, JSON, link, JavaScript syntax, mobile screenshot, secret/path, git diff, and compile checks run",
+    "no evidence grades, dispositions, ontology status, database research records, corpus files, or research judgments changed"
+  ],
+  "outputs": [
+    "index.html",
+    "dashboard.html",
+    "case-study-ir.html",
+    "method.html",
+    "scripts/sync_frontend_nav.py",
+    "docs/handover/CODEX_COMMERCIAL_USABILITY_REPORT.md",
+    "public/data/ledger_blocks.json",
+    "public/data/project_status.json"
+  ],
+  "prev_hash": "f0b296433135c550ca72211066ae9d2899432d57ede5de254207809819d534ef",
+  "block_hash": "090df66b7a9f16d8dd62baecba0978650e208a96897bde3c0b0ff080dcd7fc7d"
+}

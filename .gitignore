@@ -8,6 +8,7 @@ venv/
 logs/*.log
 logs/*.jsonl
 .cache/
+outputs/recoll/
 
 # Runtime databases
 *.db

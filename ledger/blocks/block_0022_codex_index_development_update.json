@@ -1,0 +1,29 @@
+{
+  "block_no": 23,
+  "block_id": "block_0022_codex_index_development_update",
+  "title": "Codex index update: expose latest development state on public landing page",
+  "ts": "2026-07-08T14:51:39.017802+00:00",
+  "session_id": "codex-index-development-update-2026-07-08",
+  "actor": "codex",
+  "inputs": [
+    "index.html",
+    "public/data/project_status.json",
+    "public/data/ledger_blocks.json",
+    "block_0020_codex_commercial_frontend_usability",
+    "block_0021_codex_workspace_file_audit"
+  ],
+  "operations": [
+    "added buyer-friendly current development state section to the landing page",
+    "surfaced latest public ledger count, latest block number, zero final graph claims, zero concept-verified claims, and four linked public pages",
+    "summarized commercial clarity pass, navigation synchronization helper, and workspace audit in public-safe language",
+    "kept landing-page first screen focused on commercial value and placed development details after trust layer",
+    "no evidence grades, dispositions, ontology status, database research records, corpus files, or research judgments changed"
+  ],
+  "outputs": [
+    "index.html",
+    "public/data/ledger_blocks.json",
+    "public/data/project_status.json"
+  ],
+  "prev_hash": "d423c75b75fb686be87cd8124f23218965c364f82a68b070e265f3c46312ff19",
+  "block_hash": "bc1129c0c263bbb16e670466d69d638371084e8ddb5af0b5e1861b74153f3fd7"
+}

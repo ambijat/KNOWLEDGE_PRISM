@@ -1,0 +1,28 @@
+{
+  "block_no": 19,
+  "block_id": "block_0019_founding_charter",
+  "title": "FOUNDING CHARTER (living doctrine, above the ledger): exoskeleton principle; invariant vessel of research + 8-gesture mapping; kaleidoscope / non-static corpus; three registers (anatomy/physiology/biomechanics); Three Laws of the Boundary (fixed essence / zone of discretion / kinematics of learning). Ideas by Ambrish Dhaka.",
+  "ts": "2026-07-08T04:14:46.465570+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude",
+  "inputs": [
+    "session 7b564c3e dialogue (5 supervisory messages)",
+    "FUNCTIONAL_IR_INTERPRETATION_PROTOCOL.md",
+    "blocks 13-18"
+  ],
+  "operations": [
+    "Wrote CHARTER.md as the project beacon, marked LIVING (revisable, self-referential Third Law)",
+    "Recorded exoskeleton principle: amplify the invariant gestures, never substitute; four amplifications = reach/memory/endurance/integrity",
+    "Recorded 8-gesture vessel-of-research mapping to the 8 components; register-as-blockchain observation",
+    "Recorded kaleidoscope doctrine: corpus non-static, retrieval-as-physiology, recoll relevance = clue not evidence, feeds pipeline never bypasses",
+    "Recorded three registers anatomy/physiology/biomechanics with biomechanics as centre",
+    "Recorded Three Laws of the Boundary: fixed essence; zone of discretion (judge freely never silently); kinematics (ledger=training set, move-on-surprise rest-on-confirmation, avoid overfitting)"
+  ],
+  "outputs": [
+    "CHARTER.md sha256=ae61b627da5649c7277c4ebb1b533f25e190f2b695c60ddf9d5ae1d8a6627089",
+    "Doctrine sits ABOVE the ledger; every shift reads it first",
+    "Charter is itself revisable under its own Third Law with change-history on chain"
+  ],
+  "prev_hash": "aaaaddf63942f8aaef2f11e1044e3a3c04ea336213e871d3f01389e832c0a65f",
+  "block_hash": "f0b296433135c550ca72211066ae9d2899432d57ede5de254207809819d534ef"
+}

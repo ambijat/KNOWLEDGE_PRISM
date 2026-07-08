@@ -1,0 +1,33 @@
+{
+  "block_no": 24,
+  "block_id": "block_0024_queue_schema_normalisation",
+  "title": "Normalise verification_queue: controlled-vocab taxonomies (candidate_type, status), 11 pre-sampling governance fields, layer_prior A->AB queue correction, Trenin duplicate group",
+  "ts": "2026-07-08T14:59:26.825846+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude",
+  "inputs": [
+    {
+      "table": "verification_queue"
+    },
+    {
+      "table": "boundary_proposal"
+    }
+  ],
+  "operations": [
+    "CREATE queue_candidate_type_taxonomy (8 values); kaleidoscope_anchor_piece=synonym of anchor_candidate",
+    "CREATE queue_status_taxonomy (9 values)",
+    "ALTER verification_queue ADD COLUMNS ['approved_by', 'approved_ts', 'sampling_block_no', 'rubric_version', 'target_file_sha256', 'concept_probes', 'retrieval_cycle_id', 'research_question', 'raw_rank', 'duplicate_group_id', 'canonical_candidate_id']",
+    "UPDATE KP-VQ-000001 layer_prior A->AB (queue metadata correction, reason recorded)",
+    "UPDATE KP-VQ-000001 duplicate_group_id=DUP-TRENIN-EOE, canonical=NULL (hash-compare deferred, PDFs not opened)",
+    "NO sampling, NO evidence grade, NO disposition, NO promotion, NO ontology, NO boundary adoption; Trenin stays status=queued"
+  ],
+  "outputs": [
+    {
+      "queue_id": "KP-VQ-000001",
+      "layer_prior": "AB",
+      "status": "queued"
+    }
+  ],
+  "prev_hash": "bc1129c0c263bbb16e670466d69d638371084e8ddb5af0b5e1861b74153f3fd7",
+  "block_hash": "43cd2082e1b10a069d82acb153359f6980372615767fdef7e44a7e7a35757de6"
+}

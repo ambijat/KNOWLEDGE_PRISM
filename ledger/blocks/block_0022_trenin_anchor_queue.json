@@ -1,0 +1,34 @@
+{
+  "block_no": 22,
+  "block_id": "block_0022_trenin_anchor_queue",
+  "title": "Record Trenin as anchor_candidate in verification queue; log Layer A/AB boundary refinement as proposed (not adopted)",
+  "ts": "2026-07-08T14:50:53.465333+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude",
+  "inputs": [
+    {
+      "artifact": "recoll_kaleidoscope_trial_001.csv"
+    },
+    {
+      "artifact": "RECOLL_KALEIDOSCOPE_TRIAL_001.md"
+    }
+  ],
+  "operations": [
+    "CREATE persistent tables verification_queue, boundary_proposal (added to build_prism_db.py)",
+    "INSERT verification_queue KP-VQ-000001 trenin_eurasia.pdf candidate_type=anchor_candidate status=queued",
+    "INSERT boundary_proposal KP-BP-000001 scope=layer_A_AB status=proposed_boundary_refinement",
+    "NO sampling, NO evidence grade, NO disposition, NO promotion, NO ontology action"
+  ],
+  "outputs": [
+    {
+      "queue_id": "KP-VQ-000001",
+      "status": "queued"
+    },
+    {
+      "proposal_id": "KP-BP-000001",
+      "status": "proposed_boundary_refinement"
+    }
+  ],
+  "prev_hash": "31ed861992374adfe545def404310881d02ba17abf857bd031c9b7a700f85cce",
+  "block_hash": "d423c75b75fb686be87cd8124f23218965c364f82a68b070e265f3c46312ff19"
+}

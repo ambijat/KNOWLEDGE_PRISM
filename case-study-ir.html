@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knowledge Prism IR Pilot Case Study</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --ink: #16201d;
+      --muted: #5f6f6a;
+      --line: #dce6e2;
+      --green: #176b56;
+      --blue: #205f8f;
+      --red: #a53e37;
+      --soft: #edf7f3;
+      --soft-blue: #eef6fb;
+      --shadow: 0 18px 46px rgba(28, 45, 39, .11);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(23, 107, 86, .045) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(32, 95, 143, .045) 1px, transparent 1px),
+        var(--bg);
+      background-size: 32px 32px;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    p, h1, h2, h3 { margin: 0; }
+
+    .shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--ink);
+      font-weight: 850;
+    }
+
+    .mark {
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--green);
+      border-radius: 7px;
+      background: linear-gradient(135deg, #ffffff, #dff3ec);
+      transform: rotate(45deg);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .hero,
+    .panel,
+    .work-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .96);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, .45fr);
+      gap: 18px;
+      align-items: stretch;
+      padding: 30px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-top: 12px;
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: clamp(26px, 4vw, 38px);
+      line-height: 1.08;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin-top: 18px;
+      color: #34433f;
+      font-size: 19px;
+      line-height: 1.55;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .metric,
+    .story,
+    .note {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #ffffff;
+      padding: 12px;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--green);
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .section {
+      margin-top: 22px;
+    }
+
+    .panel {
+      padding: 24px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 16px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .story {
+      background: var(--soft-blue);
+      min-height: 150px;
+    }
+
+    .story h3,
+    .note h3 {
+      margin-bottom: 8px;
+    }
+
+    .note {
+      border-left: 5px solid var(--green);
+    }
+
+    .note.warning {
+      border-left-color: var(--red);
+    }
+
+    .work-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .work-card {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      min-height: 220px;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .badge {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      padding: 6px 9px;
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      border: 1px solid var(--green);
+      border-radius: 7px;
+      background: var(--green);
+      color: #ffffff;
+      padding: 10px 14px;
+      font-weight: 750;
+    }
+
+    .footer {
+      margin-top: 24px;
+      border-top: 1px solid var(--line);
+      padding: 18px 0 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .grid.two,
+      .grid.three,
+      .work-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell { padding: 14px; }
+      .nav { align-items: flex-start; flex-direction: column; }
+      .hero, .panel { padding: 18px; }
+      h1 { font-size: 40px; }
+      .metric-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span>Knowledge Prism</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Expert Dashboard</a>
+        <a href="case-study-ir.html">IR Pilot Case Study</a>
+        <a href="method.html">Method</a>
+        <a href="index.html#sample-brief">Export / Sample Brief</a>
+      </div>
+    </nav>
+
+    <section class="hero" aria-labelledby="pageTitle">
+      <div>
+        <p class="eyebrow">IR pilot case study</p>
+        <h1 id="pageTitle">How Knowledge Prism tested a live International Relations corpus.</h1>
+        <p class="lead">The pilot was deliberately small. It tested whether the system could distinguish supported claims, irrelevant-but-accurate files, misfiled noise, weak samples, unreadable text, and works that matter because of their function in IR explanation.</p>
+      </div>
+      <aside class="metric-grid" aria-label="Case study facts">
+        <div class="metric"><strong id="pilotCount">18</strong><span>works tested</span></div>
+        <div class="metric"><strong id="supportedCount">11</strong><span>sample-supported candidates</span></div>
+        <div class="metric"><strong id="functionCount">14</strong><span>functional interpretations</span></div>
+        <div class="metric"><strong id="ontologyCount">0</strong><span>final graph claims</span></div>
+      </aside>
+    </section>
+
+    <section class="section panel" aria-labelledby="whyTitle">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Why the pilot was run</p>
+          <h2 id="whyTitle">The system had to prove discipline before scale.</h2>
+        </div>
+      </div>
+      <div class="grid three">
+        <article class="story"><h3>Test the range</h3><p class="small">The 18 rows span IR theory, systems and methods, semiotics, Eurasian history, policy documents, journalism, noise, and unreadable material.</p></article>
+        <article class="story"><h3>Test the boundary</h3><p class="small">The pilot asks two questions separately: is the claim textually supported, and does the work belong to this project?</p></article>
+        <article class="story"><h3>Test restraint</h3><p class="small">No row was promoted to a final graph claim. That restraint is the point: evidence discipline beats display.</p></article>
+      </div>
+    </section>
+
+    <section class="section panel" aria-labelledby="testedTitle">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">What the 18 works tested</p>
+          <h2 id="testedTitle">The pilot was a stress test of judgment, not a race for impressive numbers.</h2>
+        </div>
+      </div>
+      <div class="grid three">
+        <article class="story"><h3>Core scholarly works</h3><p class="small">IR theory, conflict studies, ideology, metatheory, semiotics, cartography, realism, discourse analysis, and nationalism tested whether sampled text could support real research use.</p></article>
+        <article class="story"><h3>Boundary cases</h3><p class="small">Histology, Afghan reportage, Ratzel, Russia/Mongols, and the Advaita Vedanta file tested whether the system could keep accurate, promising, peripheral, and unreadable material apart.</p></article>
+        <article class="story"><h3>Noise and failure cases</h3><p class="small">Practical Exam Format and abiword_job show that a trustworthy system must recognize misfiles and unreadable extraction instead of pretending every file is evidence.</p></article>
+      </div>
+    </section>
+
+    <section class="section grid two" aria-label="Boundary examples">
+      <article class="note">
+        <h3>Why 11 rows were promoted only to sample-level support</h3>
+        <p class="small">The sampled text supported the claim and the works fit the project boundary. That makes them candidates for later verification, not final ontology truth. The system can use them for review and interpretation while keeping the stronger gates closed.</p>
+      </article>
+      <article class="note">
+        <h3>Why zero final graph claims is a strength</h3>
+        <p class="small">The pilot proves the machine refuses premature certainty. A public dashboard with zero final claims is more trustworthy than one that turns first-pass samples into settled ontology.</p>
+      </article>
+      <article class="note">
+        <h3>Why Histology was excluded despite being accurate</h3>
+        <p class="small">The sampled text supported a claim about a histology atlas, but the work does not serve the International Relations research boundary. Accuracy alone is not enough.</p>
+      </article>
+      <article class="note warning">
+        <h3>Why Practical Exam Format is misfile/noise</h3>
+        <p class="small">The file is an administrative exam artifact, not scholarship. It is excluded as a corpus-cleaning case, not treated as a serious contradiction of a scholarly thesis.</p>
+      </article>
+      <article class="note warning">
+        <h3>Why Ratzel and Russia/Mongols need deeper re-sampling</h3>
+        <p class="small">Both may matter for geopolitical genealogy or Eurasian historical explanation, but their current samples are partial. The system keeps them visible and asks for better evidence.</p>
+      </article>
+      <article class="note warning">
+        <h3>Why abiword_job needs OCR or manual inspection</h3>
+        <p class="small">Unreadable is not the same as irrelevant. The title suggests possible non-Western ontology or IR knowledge-construction value, but no functional claim should be trusted until the text is recoverable.</p>
+      </article>
+    </section>
+
+    <section class="section panel" aria-labelledby="lessonTitle">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">What the pilot teaches</p>
+          <h2 id="lessonTitle">Trustworthy AI-assisted research is allowed to slow down.</h2>
+        </div>
+      </div>
+      <div class="grid three">
+        <article class="story"><h3>AI can help find and organize.</h3><p class="small">It can surface candidate claims, collect review material, and make a knowledge map easier to inspect.</p></article>
+        <article class="story"><h3>The scholar keeps judgment.</h3><p class="small">The system separates source relevance, claim support, and functional interpretation so the human decision is visible instead of hidden.</p></article>
+        <article class="story"><h3>Refusal is a feature.</h3><p class="small">The strongest result is not that 11 rows were supported. It is that the system also held back, queued rereads, and refused final graph claims.</p></article>
+      </div>
+    </section>
+
+    <section class="section panel" aria-labelledby="rowsTitle">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Sample-supported rows</p>
+          <h2 id="rowsTitle">The 11 candidate works and their IR functions</h2>
+          <p class="small" style="margin-top: 8px;">These are sample-supported candidates only. They are not final accepted concepts or final graph claims.</p>
+        </div>
+        <a class="button" href="dashboard.html">Open Expert Dashboard</a>
+      </div>
+      <div id="workList" class="work-list"></div>
+    </section>
+
+    <footer class="footer">
+      This page reads static exports from <code>public/data/</code> and does not alter research data, evidence grades, dispositions, or ledger blocks.
+    </footer>
+  </main>
+
+  <script>
+    const DATA_BASE = "public/data/";
+    const files = ["pilot_rows", "functional_roles", "review_queue", "disposition_census", "ledger_blocks", "project_status", "evidence_dashboard", "pipeline"];
+    const state = {};
+    const $ = (selector) => document.querySelector(selector);
+    const fmt = (value) => new Intl.NumberFormat().format(Number(value || 0));
+
+    async function loadJson(name) {
+      const response = await fetch(`${DATA_BASE}${name}.json`, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Could not load ${name}.json`);
+      return response.json();
+    }
+
+    async function boot() {
+      const payloads = await Promise.all(files.map(loadJson));
+      files.forEach((name, index) => {
+        state[name] = payloads[index];
+      });
+      render();
+    }
+
+    function render() {
+      const status = state.project_status || {};
+      const evidence = state.evidence_dashboard || {};
+      const rows = state.pilot_rows || [];
+      $("#pilotCount").textContent = fmt(status.pilot_rows || rows.length);
+      $("#supportedCount").textContent = fmt(evidence.sampled_text_supported_rows);
+      $("#functionCount").textContent = fmt(status.functional_role_rows);
+      $("#ontologyCount").textContent = fmt(status.ontology_core_rows);
+
+      const supported = rows.filter((row) => row.evidence_grade === "sampled_text_supported_core_candidate");
+      $("#workList").innerHTML = supported.map((row) => `
+        <article class="work-card">
+          <div>
+            <h3>${escapeHtml(row.title)}</h3>
+            <div class="badge-list" style="margin-top: 9px;">
+              <span class="badge">confidence ${Number(row.thesis_confidence || 0).toFixed(2)}</span>
+              <span class="badge">${escapeHtml(row.layer_tag || "layer pending")}</span>
+            </div>
+          </div>
+          <p class="small"><strong>Function:</strong> ${escapeHtml(row.functional_ir_role || "No functional role recorded yet.")}</p>
+          <p class="small"><strong>Interaction:</strong> ${escapeHtml(row.interaction_illuminated || "Not recorded.")}</p>
+          <p class="small"><strong>Caution:</strong> ${escapeHtml(row.limitation_or_caution || "Sample-supported only, not final ontology.")}</p>
+        </article>
+      `).join("");
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    boot().catch((error) => {
+      $("#workList").innerHTML = `<div class="note warning">Static data failed to load: ${escapeHtml(error.message)}</div>`;
+    });
+  </script>
+</body>
+</html>

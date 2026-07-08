@@ -6,6 +6,19 @@ database governed by a **proof-of-provenance** discipline: nothing is silently
 overwritten, and every claim, classification, and output carries a verifiable
 audit trail.
 
+> ## ★ READ THE BEACON FIRST — `CHARTER.md`
+> Before this guide, before the boot ritual, before touching the ledger, read
+> **`CHARTER.md`** (sealed as doctrine block 19). It states what the project is
+> *for* and how it must behave: the **exoskeleton** principle (amplify the
+> scholar's invariant gestures, never substitute), the **kaleidoscope** (the
+> corpus reconfigures around each research goal), the three registers
+> (anatomy → physiology → **biomechanics**), and the **Three Laws of the
+> Boundary** (fixed essence · zone of discretion · kinematics of learning).
+> The database, dispositions, and this restore guide are all *support systems*
+> subordinate to the Charter. It is a **living** document — revisable under its
+> own Third Law. If anything below ever seems to contradict the Charter, the
+> Charter governs.
+
 ---
 
 ## 1. Start an agent shift (required first step)

@@ -160,6 +160,68 @@ CREATE TABLE IF NOT EXISTS functional_role (
   ts              TEXT,
   block_no        INTEGER
 );
+CREATE TABLE IF NOT EXISTS verification_queue (
+  -- Auditable retrieval-stage queue. A retrieval clue (e.g. Recoll Kaleidoscope hit)
+  -- is recorded here BEFORE any sampling, so the queueing act is visible and the
+  -- kaleidoscope never behaves as an automatic research agent. Persistent.
+  -- Pipeline: retrieval clue -> verification_queue -> approved sampling ->
+  --           evidence grade -> functional interpretation -> possible ontology use.
+  queue_id        TEXT,    -- e.g. KP-VQ-000001
+  file            TEXT,    -- source basename
+  title           TEXT,
+  path            TEXT,    -- disk path of the surfaced copy
+  source_stage    TEXT,    -- how it entered the queue e.g. recoll_kaleidoscope_trial_001
+  candidate_type  TEXT,    -- controlled vocab: see queue_candidate_type_taxonomy
+  clue_score      REAL,    -- retrieval clue score at time of queueing (NOT evidence)
+  layer_prior     TEXT,    -- provisional layer prior (clue, overridable): A|B|AB|Peripheral|Out_of_domain|Ambiguous
+  status          TEXT,    -- controlled vocab: see queue_status_taxonomy
+  rationale       TEXT,    -- why queued
+  recommended_action TEXT, -- next governed step
+  decided_by      TEXT,    -- claude | codex | user
+  ts              TEXT,
+  block_no        INTEGER,
+  -- pre-sampling governance fields (block 24). Null until the governed step that fills them.
+  approved_by     TEXT,    -- who authorised queued -> approved_for_sampling
+  approved_ts     TEXT,
+  sampling_block_no INTEGER,-- block under which sampling occurs (distinct from queueing block_no)
+  rubric_version  TEXT,    -- VERIFICATION_RUBRIC version governing the sample
+  target_file_sha256 TEXT, -- binds a verdict to exact bytes sampled
+  concept_probes  TEXT,    -- hypothesised concept terms to probe
+  retrieval_cycle_id TEXT, -- which retrieval cycle surfaced it
+  research_question TEXT,  -- RQ under which it surfaced
+  raw_rank        INTEGER, -- raw retrieval rank behind clue_score
+  duplicate_group_id TEXT, -- groups multiple drive-copies of the same work
+  canonical_candidate_id TEXT -- chosen canonical queue_id; NULL until hash-compared
+);
+CREATE TABLE IF NOT EXISTS queue_candidate_type_taxonomy (
+  -- Controlled vocabulary for verification_queue.candidate_type.
+  candidate_type TEXT PRIMARY KEY,
+  meaning        TEXT,
+  synonyms       TEXT,   -- e.g. kaleidoscope_anchor_piece -> anchor_candidate
+  added_block    INTEGER
+);
+CREATE TABLE IF NOT EXISTS queue_status_taxonomy (
+  -- Controlled vocabulary for verification_queue.status.
+  status      TEXT PRIMARY KEY,
+  meaning     TEXT,
+  is_terminal INTEGER,   -- 1 if a closed/terminal state
+  added_block INTEGER
+);
+CREATE TABLE IF NOT EXISTS boundary_proposal (
+  -- Boundary-kinematics ledger. A surprise during retrieval/verification may suggest
+  -- moving the Layer A / Layer B / Layer AB boundary. Such a move is PROPOSED here,
+  -- never enacted silently. Status stays 'proposed_boundary_refinement' until a
+  -- user-ratified boundary block adopts it. Persistent.
+  proposal_id     TEXT,    -- e.g. KP-BP-000001
+  scope           TEXT,    -- which boundary e.g. layer_A_AB
+  observation     TEXT,    -- the surprise that triggered it
+  proposed_change TEXT,    -- the refinement proposed
+  status          TEXT,    -- proposed_boundary_refinement | adopted | rejected
+  triggered_by    TEXT,    -- source_stage / event
+  decided_by      TEXT,
+  ts              TEXT,
+  block_no        INTEGER
+);
 """)
 
 # Backfill layer_tag column on pre-existing verdict_disposition tables (idempotent).
@@ -168,6 +230,40 @@ if "layer_tag" not in _cols:
     cur.execute("ALTER TABLE verdict_disposition ADD COLUMN layer_tag TEXT")
 if "evidence_grade" not in _cols:
     cur.execute("ALTER TABLE verdict_disposition ADD COLUMN evidence_grade TEXT")
+
+# Backfill pre-sampling governance columns on pre-existing verification_queue (block 24, idempotent).
+_vqcols = [c[1] for c in cur.execute("PRAGMA table_info(verification_queue)").fetchall()]
+for _n,_t in [("approved_by","TEXT"),("approved_ts","TEXT"),("sampling_block_no","INTEGER"),
+              ("rubric_version","TEXT"),("target_file_sha256","TEXT"),("concept_probes","TEXT"),
+              ("retrieval_cycle_id","TEXT"),("research_question","TEXT"),("raw_rank","INTEGER"),
+              ("duplicate_group_id","TEXT"),("canonical_candidate_id","TEXT")]:
+    if _n not in _vqcols:
+        cur.execute(f"ALTER TABLE verification_queue ADD COLUMN {_n} {_t}")
+
+# Seed queue controlled vocabularies (block 24). INSERT OR IGNORE preserves live rows.
+_CAND_TYPES = [
+ ("anchor_candidate","High-significance candidate that anchors a lens/region/theory cluster","kaleidoscope_anchor_piece",24),
+ ("ordinary_candidate","Standard relevance candidate","normal_candidate|standard_candidate",24),
+ ("surprise_candidate","Surfaced against expectation; boundary-learning signal","",24),
+ ("resample_candidate","Previously sampled; queued for deeper/validated re-sample","",24),
+ ("ocr_candidate","Unreadable/OCR-failed; queued pending reOCR or manual inspection","",24),
+ ("manual_nomination","Human-nominated, not retrieval-surfaced","",24),
+ ("openalex_candidate","Surfaced via OpenAlex enrichment (Stage 7)","",24),
+ ("recoll_candidate","Surfaced via a Recoll retrieval cycle","",24),
+]
+cur.executemany("INSERT OR IGNORE INTO queue_candidate_type_taxonomy(candidate_type,meaning,synonyms,added_block) VALUES (?,?,?,?)", _CAND_TYPES)
+_STATUSES = [
+ ("queued","Recorded as retrieval clue; awaiting approval to sample",0,24),
+ ("approved_for_sampling","User/governance approved rubric-governed sampling",0,24),
+ ("sampling_in_progress","Sampling underway under a rubric version",0,24),
+ ("sampled_pending_review","Sample taken; verdict awaiting human review",0,24),
+ ("verified_sample_supported","Sample verified; thesis supported (evidence in verdict_disposition/claim)",0,24),
+ ("rejected_after_sampling","Sampled and rejected",1,24),
+ ("deferred","Parked; revisit later",0,24),
+ ("duplicate","Duplicate of another queued candidate",1,24),
+ ("closed","Queue item resolved/closed",1,24),
+]
+cur.executemany("INSERT OR IGNORE INTO queue_status_taxonomy(status,meaning,is_terminal,added_block) VALUES (?,?,?,?)", _STATUSES)
 
 # Seed the controlled vocabulary so it is reproducible from a from-scratch build.
 # INSERT OR IGNORE preserves any live-added rows and their original added_block.

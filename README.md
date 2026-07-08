@@ -75,8 +75,11 @@ python3 scripts/06_serve_gui.py
 Then open:
 
 ```text
-http://127.0.0.1:8787/index.html
+http://127.0.0.1:8765/
 ```
+
+The safe server exposes only the public HTML pages and generated
+`public/data/*.json` exports.
 
 ## Golden principle
 

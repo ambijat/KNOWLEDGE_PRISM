@@ -558,5 +558,180 @@
     "block_hash": "aaaaddf63942f8aaef2f11e1044e3a3c04ea336213e871d3f01389e832c0a65f",
     "source_file": "block_0018_functional_ir_turn.json",
     "chain_link_ok": true
+  },
+  {
+    "block_no": 19,
+    "block_id": "block_0019_founding_charter",
+    "title": "FOUNDING CHARTER (living doctrine, above the ledger): exoskeleton principle; invariant vessel of research + 8-gesture mapping; kaleidoscope / non-static corpus; three registers (anatomy/physiology/biomechanics); Three Laws of the Boundary (fixed essence / zone of discretion / kinematics of learning). Ideas by Ambrish Dhaka.",
+    "ts": "2026-07-08T04:14:46.465570+00:00",
+    "actor": "claude",
+    "action_type": "ledger_block",
+    "inputs": [
+      "session 7b564c3e dialogue (5 supervisory messages)",
+      "FUNCTIONAL_IR_INTERPRETATION_PROTOCOL.md",
+      "blocks 13-18"
+    ],
+    "operations": [
+      "Wrote CHARTER.md as the project beacon, marked LIVING (revisable, self-referential Third Law)",
+      "Recorded exoskeleton principle: amplify the invariant gestures, never substitute; four amplifications = reach/memory/endurance/integrity",
+      "Recorded 8-gesture vessel-of-research mapping to the 8 components; register-as-blockchain observation",
+      "Recorded kaleidoscope doctrine: corpus non-static, retrieval-as-physiology, recoll relevance = clue not evidence, feeds pipeline never bypasses",
+      "Recorded three registers anatomy/physiology/biomechanics with biomechanics as centre",
+      "Recorded Three Laws of the Boundary: fixed essence; zone of discretion (judge freely never silently); kinematics (ledger=training set, move-on-surprise rest-on-confirmation, avoid overfitting)"
+    ],
+    "artifacts_produced": [
+      "CHARTER.md sha256=ae61b627da5649c7277c4ebb1b533f25e190f2b695c60ddf9d5ae1d8a6627089",
+      "Doctrine sits ABOVE the ledger; every shift reads it first",
+      "Charter is itself revisable under its own Third Law with change-history on chain"
+    ],
+    "prev_hash": "aaaaddf63942f8aaef2f11e1044e3a3c04ea336213e871d3f01389e832c0a65f",
+    "block_hash": "f0b296433135c550ca72211066ae9d2899432d57ede5de254207809819d534ef",
+    "source_file": "block_0019_founding_charter.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 20,
+    "block_id": "block_0020_codex_commercial_frontend_usability",
+    "title": "Codex commercial usability pass: public front-end clarity, navigation helper, and safe validation",
+    "ts": "2026-07-08T14:43:57.271123+00:00",
+    "actor": "codex",
+    "action_type": "ledger_block",
+    "inputs": [
+      "CHARTER.md",
+      "RESTORE.md",
+      "docs/handover/FRONTEND_HANDOVER_STATUS.md",
+      "docs/handover/FRONTEND_FUNCTIONAL_IR_REALIGNMENT.md",
+      "index.html",
+      "dashboard.html",
+      "case-study-ir.html",
+      "method.html",
+      "public/data/*.json"
+    ],
+    "operations": [
+      "commercial clarity pass on public landing page",
+      "progressive disclosure order reinforced: value -> demonstration -> method -> evidence -> machinery",
+      "expert dashboard labeled as advanced evidence cockpit with return-to-home warning",
+      "IR pilot case study expanded as narrative explanation of the 18-work pilot",
+      "method page simplified around exoskeleton, evidence ladder, claim accuracy vs relevance, functional interpretation, boundary kinematics, and ledger-as-memory",
+      "cross-page navigation standardized",
+      "scripts/sync_frontend_nav.py added for future navigation synchronization",
+      "[sensitive reference redacted]",
+      "no evidence grades, dispositions, ontology status, database research records, corpus files, or research judgments changed"
+    ],
+    "artifacts_produced": [
+      "index.html",
+      "dashboard.html",
+      "case-study-ir.html",
+      "method.html",
+      "scripts/sync_frontend_nav.py",
+      "docs/handover/CODEX_COMMERCIAL_USABILITY_REPORT.md",
+      "public/data/ledger_blocks.json",
+      "public/data/project_status.json"
+    ],
+    "prev_hash": "f0b296433135c550ca72211066ae9d2899432d57ede5de254207809819d534ef",
+    "block_hash": "090df66b7a9f16d8dd62baecba0978650e208a96897bde3c0b0ff080dcd7fc7d",
+    "source_file": "block_0020_codex_commercial_frontend_usability.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 21,
+    "block_id": "block_0021_codex_workspace_file_audit",
+    "title": "Codex workspace file audit: classify new files, quarantine Recoll raw output, and scrub local paths",
+    "ts": "2026-07-08T14:48:46.842171+00:00",
+    "actor": "codex",
+    "action_type": "ledger_block",
+    "inputs": [
+      "git status --short",
+      "git ls-files --others --exclude-standard",
+      "new front-end/provenance/report files",
+      "docs/reports/RECOLL_KALEIDOSCOPE_TRIAL_001.md",
+      "outputs/recoll/recoll_kaleidoscope_trial_001.csv"
+    ],
+    "operations": [
+      "audited modified and untracked project files after commercial front-end pass",
+      "identified outputs/recoll as local retrieval output containing absolute source paths",
+      "added outputs/recoll/ to .gitignore so raw retrieval CSVs remain local-only",
+      "redacted local Recoll configuration path from public Recoll trial report",
+      "removed generated Python __pycache__ directories from the working tree",
+      "[sensitive reference redacted]",
+      "confirmed no evidence grades, dispositions, ontology status, database research records, corpus files, or research judgments changed"
+    ],
+    "artifacts_produced": [
+      ".gitignore",
+      "docs/reports/RECOLL_KALEIDOSCOPE_TRIAL_001.md",
+      "public/data/ledger_blocks.json",
+      "public/data/project_status.json"
+    ],
+    "prev_hash": "090df66b7a9f16d8dd62baecba0978650e208a96897bde3c0b0ff080dcd7fc7d",
+    "block_hash": "31ed861992374adfe545def404310881d02ba17abf857bd031c9b7a700f85cce",
+    "source_file": "block_0021_codex_workspace_file_audit.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 22,
+    "block_id": "block_0022_trenin_anchor_queue",
+    "title": "Record Trenin as anchor_candidate in verification queue; log Layer A/AB boundary refinement as proposed (not adopted)",
+    "ts": "2026-07-08T14:50:53.465333+00:00",
+    "actor": "claude",
+    "action_type": "ledger_block",
+    "inputs": [
+      {
+        "artifact": "recoll_kaleidoscope_trial_001.csv"
+      },
+      {
+        "artifact": "RECOLL_KALEIDOSCOPE_TRIAL_001.md"
+      }
+    ],
+    "operations": [
+      "CREATE persistent tables verification_queue, boundary_proposal (added to build_prism_db.py)",
+      "INSERT verification_queue KP-VQ-000001 trenin_eurasia.pdf candidate_type=anchor_candidate status=queued",
+      "INSERT boundary_proposal KP-BP-000001 scope=layer_A_AB status=proposed_boundary_refinement",
+      "NO sampling, NO evidence grade, NO disposition, NO promotion, NO ontology action"
+    ],
+    "artifacts_produced": [
+      {
+        "queue_id": "KP-VQ-000001",
+        "status": "queued"
+      },
+      {
+        "proposal_id": "KP-BP-000001",
+        "status": "proposed_boundary_refinement"
+      }
+    ],
+    "prev_hash": "31ed861992374adfe545def404310881d02ba17abf857bd031c9b7a700f85cce",
+    "block_hash": "d423c75b75fb686be87cd8124f23218965c364f82a68b070e265f3c46312ff19",
+    "source_file": "block_0022_trenin_anchor_queue.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 23,
+    "block_id": "block_0022_codex_index_development_update",
+    "title": "Codex index update: expose latest development state on public landing page",
+    "ts": "2026-07-08T14:51:39.017802+00:00",
+    "actor": "codex",
+    "action_type": "ledger_block",
+    "inputs": [
+      "index.html",
+      "public/data/project_status.json",
+      "public/data/ledger_blocks.json",
+      "block_0020_codex_commercial_frontend_usability",
+      "block_0021_codex_workspace_file_audit"
+    ],
+    "operations": [
+      "added buyer-friendly current development state section to the landing page",
+      "surfaced latest public ledger count, latest block number, zero final graph claims, zero concept-verified claims, and four linked public pages",
+      "summarized commercial clarity pass, navigation synchronization helper, and workspace audit in public-safe language",
+      "kept landing-page first screen focused on commercial value and placed development details after trust layer",
+      "no evidence grades, dispositions, ontology status, database research records, corpus files, or research judgments changed"
+    ],
+    "artifacts_produced": [
+      "index.html",
+      "public/data/ledger_blocks.json",
+      "public/data/project_status.json"
+    ],
+    "prev_hash": "d423c75b75fb686be87cd8124f23218965c364f82a68b070e265f3c46312ff19",
+    "block_hash": "bc1129c0c263bbb16e670466d69d638371084e8ddb5af0b5e1861b74153f3fd7",
+    "source_file": "block_0022_codex_index_development_update.json",
+    "chain_link_ok": true
   }
 ]
