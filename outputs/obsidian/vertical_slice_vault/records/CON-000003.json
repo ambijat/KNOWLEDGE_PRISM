@@ -1,0 +1,33 @@
+{
+  "projection_version": "1.0",
+  "record_id": "CON-000003",
+  "record_type": "concept",
+  "title": "Eurasian Integration (working synthesis)",
+  "definition": "[SYNTHETIC] Researcher's own synthesis linking heartland geography to securitized regional order.",
+  "status": "researcher_synthesis",
+  "source_ids": [
+    "SRC-000001",
+    "SRC-000002"
+  ],
+  "layer": "meta",
+  "evidence_grade": null,
+  "relationships": [
+    {
+      "relationship_id": "REL-000003",
+      "predicate": "fuses_with",
+      "target_id": "CON-000001",
+      "target_title": "Heartland Theory",
+      "status": "researcher_synthesis"
+    }
+  ],
+  "provenance": {
+    "reviewed": true,
+    "review_date": "2026-07-16T12:00:00+00:00",
+    "block_no": null,
+    "origin_table": "ontology_node"
+  },
+  "sync": {
+    "projection_built_ts": "2026-07-16T12:00:00+00:00",
+    "projection_version": "1.0"
+  }
+}

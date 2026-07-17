@@ -733,5 +733,83 @@
     "block_hash": "bc1129c0c263bbb16e670466d69d638371084e8ddb5af0b5e1861b74153f3fd7",
     "source_file": "block_0022_codex_index_development_update.json",
     "chain_link_ok": true
+  },
+  {
+    "block_no": 24,
+    "block_id": "block_0024_queue_schema_normalisation",
+    "title": "Normalise verification_queue: controlled-vocab taxonomies (candidate_type, status), 11 pre-sampling governance fields, layer_prior A->AB queue correction, Trenin duplicate group",
+    "ts": "2026-07-08T14:59:26.825846+00:00",
+    "actor": "claude",
+    "action_type": "ledger_block",
+    "inputs": [
+      {
+        "table": "verification_queue"
+      },
+      {
+        "table": "boundary_proposal"
+      }
+    ],
+    "operations": [
+      "CREATE queue_candidate_type_taxonomy (8 values); kaleidoscope_anchor_piece=synonym of anchor_candidate",
+      "CREATE queue_status_taxonomy (9 values)",
+      "ALTER verification_queue ADD COLUMNS ['approved_by', 'approved_ts', 'sampling_block_no', 'rubric_version', 'target_file_sha256', 'concept_probes', 'retrieval_cycle_id', 'research_question', 'raw_rank', 'duplicate_group_id', 'canonical_candidate_id']",
+      "UPDATE KP-VQ-000001 layer_prior A->AB (queue metadata correction, reason recorded)",
+      "UPDATE KP-VQ-000001 duplicate_group_id=DUP-TRENIN-EOE, canonical=NULL (hash-compare deferred, PDFs not opened)",
+      "NO sampling, NO evidence grade, NO disposition, NO promotion, NO ontology, NO boundary adoption; Trenin stays status=queued"
+    ],
+    "artifacts_produced": [
+      {
+        "queue_id": "KP-VQ-000001",
+        "layer_prior": "AB",
+        "status": "queued"
+      }
+    ],
+    "prev_hash": "bc1129c0c263bbb16e670466d69d638371084e8ddb5af0b5e1861b74153f3fd7",
+    "block_hash": "43cd2082e1b10a069d82acb153359f6980372615767fdef7e44a7e7a35757de6",
+    "source_file": "block_0024_queue_schema_normalisation.json",
+    "chain_link_ok": true
+  },
+  {
+    "block_no": 25,
+    "block_id": "block_0025_audit_remediation_layer_ontology_provenance",
+    "title": "Audit remediation: add layer_norm controlled column to verdict_disposition+functional_role (derived from prose, prose kept as rationale); add provenance_status to ontology_node (43 nodes marked design_hypothesis, distinguishing design map from text-verified ontology); correct Trenin duplicate group to 4 copies",
+    "ts": "2026-07-09T01:29:38.970138+00:00",
+    "actor": "claude",
+    "action_type": "ledger_block",
+    "inputs": [
+      {
+        "table": "verdict_disposition"
+      },
+      {
+        "table": "functional_role"
+      },
+      {
+        "table": "ontology_node"
+      },
+      {
+        "table": "verification_queue"
+      }
+    ],
+    "operations": [
+      "ALTER verdict_disposition/functional_role ADD layer_norm; populated via transparent leading-token rule (undecided/unconfirmed->Ambiguous)",
+      "ALTER ontology_node ADD provenance_status; 43 existing nodes = design_hypothesis (NOT text_verified); 0 text_verified (matches 0 at ontology_core)",
+      "UPDATE Trenin queue note: duplicate group spans 4 physical copies (was 2); canonical still NULL, hash-compare deferred",
+      "NO evidence grade / disposition / claim / ontology-membership / boundary change; layer prose preserved verbatim"
+    ],
+    "artifacts_produced": [
+      {
+        "layer_norm": "added+populated"
+      },
+      {
+        "ontology_provenance": "design_hypothesis x43"
+      },
+      {
+        "trenin_copies": 4
+      }
+    ],
+    "prev_hash": "43cd2082e1b10a069d82acb153359f6980372615767fdef7e44a7e7a35757de6",
+    "block_hash": "fe96314ec635fd9fb49009673a550320e715b240ab604c626e9513baa4e69710",
+    "source_file": "block_0025_audit_remediation_layer_ontology_provenance.json",
+    "chain_link_ok": true
   }
 ]

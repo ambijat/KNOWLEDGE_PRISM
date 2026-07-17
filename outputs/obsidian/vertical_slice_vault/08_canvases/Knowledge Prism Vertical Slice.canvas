@@ -1,0 +1,144 @@
+{
+  "nodes": [
+    {
+      "id": "n1",
+      "type": "file",
+      "file": "03_sources/SRC-000001 synthetic-eurasian-geopolitics-primer.md",
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 220
+    },
+    {
+      "id": "n2",
+      "type": "file",
+      "file": "03_sources/SRC-000002 synthetic-securitization-in-regional-security-complexes.md",
+      "x": 430,
+      "y": 0,
+      "width": 390,
+      "height": 220
+    },
+    {
+      "id": "n3",
+      "type": "file",
+      "file": "01_concepts/CON-000001 heartland-theory.md",
+      "x": 860,
+      "y": 0,
+      "width": 390,
+      "height": 220
+    },
+    {
+      "id": "n4",
+      "type": "file",
+      "file": "01_concepts/CON-000002 securitization.md",
+      "x": 1290,
+      "y": 0,
+      "width": 390,
+      "height": 220
+    },
+    {
+      "id": "n5",
+      "type": "file",
+      "file": "01_concepts/CON-000003 eurasian-integration-working-synthesis.md",
+      "x": 0,
+      "y": 260,
+      "width": 390,
+      "height": 220
+    },
+    {
+      "id": "n6",
+      "type": "file",
+      "file": "02_entities/ENT-000001 afghanistan.md",
+      "x": 430,
+      "y": 260,
+      "width": 390,
+      "height": 220
+    },
+    {
+      "id": "n7",
+      "type": "file",
+      "file": "02_entities/ENT-000002 central-asia.md",
+      "x": 860,
+      "y": 260,
+      "width": 390,
+      "height": 220
+    },
+    {
+      "id": "n8",
+      "type": "file",
+      "file": "02_entities/ENT-000003 shanghai-cooperation-organisation.md",
+      "x": 1290,
+      "y": 260,
+      "width": 390,
+      "height": 220
+    },
+    {
+      "id": "n9",
+      "type": "file",
+      "file": "06_arguments/CLM-000001 synthetic-land-power-organises-eurasian-security.md",
+      "x": 0,
+      "y": 520,
+      "width": 390,
+      "height": 220
+    },
+    {
+      "id": "n10",
+      "type": "file",
+      "file": "06_arguments/CLM-000002 synthetic-threat-framing-precedes-regional-cooperation.md",
+      "x": 430,
+      "y": 520,
+      "width": 390,
+      "height": 220
+    },
+    {
+      "id": "n11",
+      "type": "file",
+      "file": "06_arguments/CLM-000003 synthetic-afghanistan-is-a-pivot-of-regional-order.md",
+      "x": 860,
+      "y": 520,
+      "width": 390,
+      "height": 220
+    },
+    {
+      "id": "n12",
+      "type": "file",
+      "file": "06_arguments/CLM-000004 synthetic-the-sco-securitizes-cross-border-movement.md",
+      "x": 1290,
+      "y": 520,
+      "width": 390,
+      "height": 220
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "n3",
+      "toNode": "n7",
+      "label": "associated_with"
+    },
+    {
+      "id": "e2",
+      "fromNode": "n4",
+      "toNode": "n8",
+      "label": "defines"
+    },
+    {
+      "id": "e3",
+      "fromNode": "n5",
+      "toNode": "n3",
+      "label": "fuses_with"
+    },
+    {
+      "id": "e4",
+      "fromNode": "n6",
+      "toNode": "n7",
+      "label": "located_in"
+    },
+    {
+      "id": "e5",
+      "fromNode": "n9",
+      "toNode": "n3",
+      "label": "supports"
+    }
+  ]
+}

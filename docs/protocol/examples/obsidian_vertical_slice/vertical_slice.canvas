@@ -1,0 +1,144 @@
+{
+  "nodes": [
+    {
+      "id": "n1",
+      "type": "file",
+      "file": "docs/protocol/examples/obsidian_vertical_slice/notes/CLM-000001 synthetic-land-power-organises-eurasian-.md",
+      "x": 0,
+      "y": 0,
+      "width": 380,
+      "height": 200
+    },
+    {
+      "id": "n2",
+      "type": "file",
+      "file": "docs/protocol/examples/obsidian_vertical_slice/notes/CLM-000002 synthetic-threat-framing-precedes-region.md",
+      "x": 420,
+      "y": 0,
+      "width": 380,
+      "height": 200
+    },
+    {
+      "id": "n3",
+      "type": "file",
+      "file": "docs/protocol/examples/obsidian_vertical_slice/notes/CLM-000003 synthetic-afghanistan-is-a-pivot-of-regi.md",
+      "x": 840,
+      "y": 0,
+      "width": 380,
+      "height": 200
+    },
+    {
+      "id": "n4",
+      "type": "file",
+      "file": "docs/protocol/examples/obsidian_vertical_slice/notes/CLM-000004 synthetic-the-sco-securitizes-cross-bord.md",
+      "x": 1260,
+      "y": 0,
+      "width": 380,
+      "height": 200
+    },
+    {
+      "id": "n5",
+      "type": "file",
+      "file": "docs/protocol/examples/obsidian_vertical_slice/notes/CON-000001 heartland-theory.md",
+      "x": 0,
+      "y": 240,
+      "width": 380,
+      "height": 200
+    },
+    {
+      "id": "n6",
+      "type": "file",
+      "file": "docs/protocol/examples/obsidian_vertical_slice/notes/CON-000002 securitization.md",
+      "x": 420,
+      "y": 240,
+      "width": 380,
+      "height": 200
+    },
+    {
+      "id": "n7",
+      "type": "file",
+      "file": "docs/protocol/examples/obsidian_vertical_slice/notes/CON-000003 eurasian-integration-working-synthesis.md",
+      "x": 840,
+      "y": 240,
+      "width": 380,
+      "height": 200
+    },
+    {
+      "id": "n8",
+      "type": "file",
+      "file": "docs/protocol/examples/obsidian_vertical_slice/notes/ENT-000001 afghanistan.md",
+      "x": 1260,
+      "y": 240,
+      "width": 380,
+      "height": 200
+    },
+    {
+      "id": "n9",
+      "type": "file",
+      "file": "docs/protocol/examples/obsidian_vertical_slice/notes/ENT-000002 central-asia.md",
+      "x": 0,
+      "y": 480,
+      "width": 380,
+      "height": 200
+    },
+    {
+      "id": "n10",
+      "type": "file",
+      "file": "docs/protocol/examples/obsidian_vertical_slice/notes/ENT-000003 shanghai-cooperation-organisation.md",
+      "x": 420,
+      "y": 480,
+      "width": 380,
+      "height": 200
+    },
+    {
+      "id": "n11",
+      "type": "file",
+      "file": "docs/protocol/examples/obsidian_vertical_slice/notes/SRC-000001 synthetic-eurasian-geopolitics-primer.md",
+      "x": 840,
+      "y": 480,
+      "width": 380,
+      "height": 200
+    },
+    {
+      "id": "n12",
+      "type": "file",
+      "file": "docs/protocol/examples/obsidian_vertical_slice/notes/SRC-000002 synthetic-securitization-in-regional-sec.md",
+      "x": 1260,
+      "y": 480,
+      "width": 380,
+      "height": 200
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "n5",
+      "toNode": "n9",
+      "label": "associated_with"
+    },
+    {
+      "id": "e2",
+      "fromNode": "n6",
+      "toNode": "n10",
+      "label": "defines"
+    },
+    {
+      "id": "e3",
+      "fromNode": "n7",
+      "toNode": "n5",
+      "label": "fuses_with"
+    },
+    {
+      "id": "e4",
+      "fromNode": "n8",
+      "toNode": "n9",
+      "label": "located_in"
+    },
+    {
+      "id": "e5",
+      "fromNode": "n1",
+      "toNode": "n5",
+      "label": "supports"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Synchronize the public front-end navigation across the four HTML pages."""
+"""Synchronize the public front-end navigation across public HTML pages."""
 
 from __future__ import annotations
 
@@ -10,6 +10,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = {
     "index.html": "#sample-brief",
+    "interface.html": "index.html#sample-brief",
+    "interaction.html": "index.html#sample-brief",
     "dashboard.html": "#exportTitle",
     "case-study-ir.html": "index.html#sample-brief",
     "method.html": "index.html#sample-brief",
@@ -21,6 +23,8 @@ def nav(export_href: str) -> str:
       <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span>Knowledge Prism</span></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
+        <a href="interface.html">Research Console</a>
+        <a href="interaction.html">Human Workbench</a>
         <a href="dashboard.html">Expert Dashboard</a>
         <a href="case-study-ir.html">IR Pilot Case Study</a>
         <a href="method.html">Method</a>

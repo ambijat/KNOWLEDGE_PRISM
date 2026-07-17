@@ -18,6 +18,8 @@ ROOT = Path(__file__).resolve().parents[1]
 ALLOWED_HTML = {
     "/": ROOT / "index.html",
     "/index.html": ROOT / "index.html",
+    "/interface.html": ROOT / "interface.html",
+    "/interaction.html": ROOT / "interaction.html",
     "/dashboard.html": ROOT / "dashboard.html",
     "/case-study-ir.html": ROOT / "case-study-ir.html",
     "/method.html": ROOT / "method.html",

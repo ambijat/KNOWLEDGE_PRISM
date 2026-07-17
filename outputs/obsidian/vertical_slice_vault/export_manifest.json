@@ -1,0 +1,154 @@
+{
+  "manifest_version": "1.0",
+  "generated_ts": "2026-07-16T12:00:00+00:00",
+  "projection_version": "1.0",
+  "source_db": {
+    "path": "db/knowledge_prism.db (SYNTHETIC FIXTURE — not built from live DB)",
+    "head_block_no": 0,
+    "chain_ok": true
+  },
+  "counts": {
+    "concept": 3,
+    "entity": 3,
+    "source": 2,
+    "claim": 4,
+    "relationship": 5,
+    "proposal": 1
+  },
+  "records": [
+    {
+      "record_id": "SRC-000001",
+      "record_type": "source",
+      "file": "records/SRC-000001.json",
+      "status": "extracted"
+    },
+    {
+      "record_id": "SRC-000002",
+      "record_type": "source",
+      "file": "records/SRC-000002.json",
+      "status": "extracted"
+    },
+    {
+      "record_id": "CON-000001",
+      "record_type": "concept",
+      "file": "records/CON-000001.json",
+      "status": "extracted"
+    },
+    {
+      "record_id": "CON-000002",
+      "record_type": "concept",
+      "file": "records/CON-000002.json",
+      "status": "extracted"
+    },
+    {
+      "record_id": "CON-000003",
+      "record_type": "concept",
+      "file": "records/CON-000003.json",
+      "status": "researcher_synthesis"
+    },
+    {
+      "record_id": "ENT-000001",
+      "record_type": "entity",
+      "file": "records/ENT-000001.json",
+      "status": "extracted"
+    },
+    {
+      "record_id": "ENT-000002",
+      "record_type": "entity",
+      "file": "records/ENT-000002.json",
+      "status": "extracted"
+    },
+    {
+      "record_id": "ENT-000003",
+      "record_type": "entity",
+      "file": "records/ENT-000003.json",
+      "status": "extracted"
+    },
+    {
+      "record_id": "CLM-000001",
+      "record_type": "claim",
+      "file": "records/CLM-000001.json",
+      "status": "extracted"
+    },
+    {
+      "record_id": "CLM-000002",
+      "record_type": "claim",
+      "file": "records/CLM-000002.json",
+      "status": "extracted"
+    },
+    {
+      "record_id": "CLM-000003",
+      "record_type": "claim",
+      "file": "records/CLM-000003.json",
+      "status": "extracted"
+    },
+    {
+      "record_id": "CLM-000004",
+      "record_type": "claim",
+      "file": "records/CLM-000004.json",
+      "status": "extracted"
+    }
+  ],
+  "id_crosswalk": [
+    {
+      "projection_id": "SRC-000001",
+      "backend_id": "synthetic_src_a",
+      "origin_table": "source_registry"
+    },
+    {
+      "projection_id": "SRC-000002",
+      "backend_id": "synthetic_src_b",
+      "origin_table": "source_registry"
+    },
+    {
+      "projection_id": "CON-000001",
+      "backend_id": "axis1",
+      "origin_table": "ontology_node"
+    },
+    {
+      "projection_id": "CON-000002",
+      "backend_id": "mt_securitization",
+      "origin_table": "ontology_node"
+    },
+    {
+      "projection_id": "CON-000003",
+      "backend_id": "synthesis_eurasia",
+      "origin_table": "ontology_node"
+    },
+    {
+      "projection_id": "ENT-000001",
+      "backend_id": "eo_afghanistan",
+      "origin_table": "ontology_node"
+    },
+    {
+      "projection_id": "ENT-000002",
+      "backend_id": "eo_central_asia",
+      "origin_table": "ontology_node"
+    },
+    {
+      "projection_id": "ENT-000003",
+      "backend_id": "eo_sco",
+      "origin_table": "ontology_node"
+    },
+    {
+      "projection_id": "CLM-000001",
+      "backend_id": "KP-CLAIM-000101",
+      "origin_table": "claim"
+    },
+    {
+      "projection_id": "CLM-000002",
+      "backend_id": "KP-CLAIM-000102",
+      "origin_table": "claim"
+    },
+    {
+      "projection_id": "CLM-000003",
+      "backend_id": "KP-CLAIM-000103",
+      "origin_table": "claim"
+    },
+    {
+      "projection_id": "CLM-000004",
+      "backend_id": "KP-CLAIM-000104",
+      "origin_table": "claim"
+    }
+  ]
+}

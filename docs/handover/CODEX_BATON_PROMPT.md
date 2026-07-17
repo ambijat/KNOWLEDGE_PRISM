@@ -2,6 +2,15 @@
 
 You are taking over the KNOWLEDGE PRISM corpus-ontology project.
 
+For frontend, GUI, UX, product, public-page, report/export, preview, interface
+validation, or user-facing documentation work, first use:
+
+`docs/handover/CODEX_FRONTEND_IDENTITY_AND_PERSONALITY.md`
+
+For the current Obsidian-facing frontend assignment, then use:
+
+`docs/handover/CODEX_OBSIDIAN_FRONTEND_ASSIGNMENT.md`
+
 ## Project location
 
 Repository root after cloning.

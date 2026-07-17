@@ -1,0 +1,16 @@
+organ,status,confidence,fragment_ids,suggested_next_action
+Title,missing,weak,,Add a scholar fragment for Title; keep it labelled scholar_input_not_evidence.
+Background,missing,weak,,Add a scholar fragment for Background; keep it labelled scholar_input_not_evidence.
+Problem,present,medium,frag-7520d26797,Add one corroborating or contrasting scholar fragment before drafting polished text.
+Gap,missing,weak,,Add a scholar fragment for Gap; keep it labelled scholar_input_not_evidence.
+Research Questions,present,weak,frag-7520d26797;frag-9cd61ed0e8,"Clarify the fragment, add source context, or ask the supervisor before drafting."
+Objectives,missing,weak,,Add a scholar fragment for Objectives; keep it labelled scholar_input_not_evidence.
+Scope,missing,weak,,Add a scholar fragment for Scope; keep it labelled scholar_input_not_evidence.
+Methodology,missing,weak,,Add a scholar fragment for Methodology; keep it labelled scholar_input_not_evidence.
+Conceptual Framework,present,weak,frag-7520d26797;frag-9cd61ed0e8,"Clarify the fragment, add source context, or ask the supervisor before drafting."
+Literature Clusters,missing,weak,,Add a scholar fragment for Literature Clusters; keep it labelled scholar_input_not_evidence.
+Evidence Needs,missing,weak,,Add a scholar fragment for Evidence Needs; keep it labelled scholar_input_not_evidence.
+Case / Region / Time Period,present,weak,frag-7520d26797;frag-9cd61ed0e8,"Clarify the fragment, add source context, or ask the supervisor before drafting."
+Chapterisation,missing,weak,,Add a scholar fragment for Chapterisation; keep it labelled scholar_input_not_evidence.
+Supervisor Questions,missing,weak,,Add a scholar fragment for Supervisor Questions; keep it labelled scholar_input_not_evidence.
+Revision Tasks,missing,weak,,Add a scholar fragment for Revision Tasks; keep it labelled scholar_input_not_evidence.

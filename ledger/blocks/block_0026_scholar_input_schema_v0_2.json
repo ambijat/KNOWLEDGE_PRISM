@@ -1,0 +1,24 @@
+{
+  "block_no": 26,
+  "block_id": "block_0026_scholar_input_schema_v0_2",
+  "title": "Scholar-input schema v0.2 persistence + status taxonomy seed + validator extension",
+  "ts": "2026-07-10T11:41:26.311797+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude_backend",
+  "inputs": [
+    "docs/protocol/KNOWLEDGE_PRISM_SCHOLAR_INPUT_SCHEMA_v0.2.md"
+  ],
+  "operations": [
+    "CREATE TABLE scholar_input (schema v0.2, 26 cols, NOT evidence) in build_prism_db.py persistent DDL",
+    "CREATE TABLE scholar_input_status_taxonomy + seed 5 frozen statuses (raw_captured, imported_not_evidence, under_review, approved_to_question, rejected_archived); no approved_to_evidence",
+    "Extend scripts/00b_validate_db_consistency.py with check #6 (scholar-input vocab conformance, exact-5-status set, no approved_to_evidence, no evidence-chain leak, empty-table valid)",
+    "Safe-migrate live DB (DDL+seed applied idempotently; NO rebuild, NO content rows)"
+  ],
+  "outputs": [
+    "db/build_prism_db.py",
+    "scripts/00b_validate_db_consistency.py",
+    "db/knowledge_prism.db (scholar_input + taxonomy tables)"
+  ],
+  "prev_hash": "fe96314ec635fd9fb49009673a550320e715b240ab604c626e9513baa4e69710",
+  "block_hash": "d4fd262c125cd1f0efa0f0561104f30ed1da64db75ed24886cd5c43d7200aae6"
+}

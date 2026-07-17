@@ -1,0 +1,9 @@
+{
+  "receipt_version": "1.0",
+  "proposal_id": "PROP-000001",
+  "decision": "accepted",
+  "decided_by": "synthetic_fixture_reviewer",
+  "decided_ts": "2026-07-16T12:30:00+00:00",
+  "review_message": "[SYNTHETIC] Accepted for further backend consideration; no canonical promotion occurred.",
+  "resulting_record_id": null
+}

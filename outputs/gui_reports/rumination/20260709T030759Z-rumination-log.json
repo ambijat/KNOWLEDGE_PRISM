@@ -1,0 +1,46 @@
+{
+  "record_type": "rumination_log",
+  "status": "scholar_input_not_evidence",
+  "created_at": "2026-07-09T03:07:59.828455+00:00",
+  "safety_note": "Scholar thoughts are seed material, not evidence.",
+  "fragments": [
+    {
+      "fragment_id": "frag-7520d26797",
+      "created_at": "2026-07-09T03:07:59.827979+00:00",
+      "input_type": "problem fragment",
+      "text": "The problem is how Eurasian regional order is framed through security concepts.",
+      "source_note": "self-thought",
+      "confidence": "medium",
+      "tags": [
+        "eurasia",
+        "security"
+      ],
+      "label": "scholar_input_not_evidence",
+      "assigned_organs": [
+        "Problem",
+        "Research Questions",
+        "Conceptual Framework",
+        "Case / Region / Time Period"
+      ],
+      "classification_reason": "input_type=problem fragment; keyword_hits=Problem:problem, Research Questions:how, Conceptual Framework:concept, Case / Region / Time Period:region, Case / Region / Time Period:eurasia; label=scholar_input_not_evidence; assigned_organs=Problem, Research Questions, Conceptual Framework, Case / Region / Time Period"
+    },
+    {
+      "fragment_id": "frag-9cd61ed0e8",
+      "created_at": "2026-07-09T03:07:59.828117+00:00",
+      "input_type": "research question",
+      "text": "How does the conceptual framework shape the case selection for Eurasia?",
+      "source_note": "supervisor",
+      "confidence": "weak",
+      "tags": [
+        "question"
+      ],
+      "label": "scholar_input_not_evidence",
+      "assigned_organs": [
+        "Research Questions",
+        "Conceptual Framework",
+        "Case / Region / Time Period"
+      ],
+      "classification_reason": "input_type=research question; keyword_hits=Research Questions:how, Research Questions:?, Conceptual Framework:concept, Conceptual Framework:framework, Case / Region / Time Period:case, Case / Region / Time Period:eurasia; label=scholar_input_not_evidence; assigned_organs=Research Questions, Conceptual Framework, Case / Region / Time Period"
+    }
+  ]
+}

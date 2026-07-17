@@ -1,0 +1,41 @@
+# Research Question Seed Preview
+
+SCHOLAR INPUT — NOT EVIDENCE
+
+This record may seed a research question or retrieval lens, but it is not a source and cannot directly enter verification_queue.
+
+## Report Type
+research_question_seed_preview
+
+## Banner
+SCHOLAR INPUT — NOT EVIDENCE
+
+## Flow Warning
+This record may seed a research question or retrieval lens, but it is not a source and cannot directly enter verification_queue.
+
+## Seed Preview
+```json
+{
+  "banner": "SCHOLAR INPUT — NOT EVIDENCE",
+  "status": "draft_seed_not_evidence",
+  "possible_research_question": "How should the project investigate this idea: Chapter 3 may need a counter-case that tests whether balance-of-power language still explains Central Asian alignment.?",
+  "possible_query_lens_terms": [
+    "chapter",
+    "counter-case",
+    "tests",
+    "balance-of-power",
+    "language",
+    "explains",
+    "central",
+    "asian",
+    "alignment",
+    "balance",
+    "power",
+    "asia"
+  ],
+  "possible_research_organ": "Evidence_Needs",
+  "possible_supervisor_question": "Ask whether this should become a retrieval lens for opposing accounts.",
+  "warning": "This is a draft seed, not evidence.",
+  "flow_warning": "This record may seed a research question or retrieval lens, but it is not a source and cannot directly enter verification_queue."
+}
+```

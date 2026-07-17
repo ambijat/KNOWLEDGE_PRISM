@@ -1,0 +1,27 @@
+{
+  "block_no": 27,
+  "block_id": "block_0027_scholar_input_importer_and_validator_hardening",
+  "title": "Scholar-input importer + validator hardening (no content rows)",
+  "ts": "2026-07-10T14:57:16.936916+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude_backend",
+  "inputs": [
+    "scripts/06_import_scholar_input.py",
+    "scripts/00b_validate_db_consistency.py",
+    "db/knowledge_prism.db (schema only, no content rows)"
+  ],
+  "operations": [
+    "Add scripts/06_import_scholar_input.py (dry-run default; --commit to write; writes ONLY to scholar_input)",
+    "Canonical GUI-compatible hash: sha256 of newline-joined idea\\nraw_notes\\nvoice_transcript (matches gui/services/scholar_input_schema.py)",
+    "Exact-duplicate policy: re-import of identical canonical content is deduped (duplicate_skipped), never re-inserted",
+    "Transactional safeguards: atomic gap-safe KP-SI ids; mixed valid/invalid batch refuses entire --commit (no partial write)",
+    "Refuse off-schema records (record_type/schema_version/source/draft_organ/empty-idea), approved_to_evidence, and pre-populated governance fields",
+    "Validator hardening: extend 00b check #6 leak scan to verification_queue and ontology_node (all requested applicable downstream tables now covered)"
+  ],
+  "outputs": [
+    "scripts/06_import_scholar_input.py (sha256 bccba0c7a05ccde0dada4c3ec0f368993857bda1414785704f64568e886d0aa1)",
+    "scripts/00b_validate_db_consistency.py (sha256 03a8767857bdb40c34dcd5eaa122bb55c24b10054f16b1edd0899d810c21e0bf)"
+  ],
+  "prev_hash": "d4fd262c125cd1f0efa0f0561104f30ed1da64db75ed24886cd5c43d7200aae6",
+  "block_hash": "8328fda254d16e10b7d4f4c6c08ca44800ca0668970fbd630db04772c2e9e565"
+}

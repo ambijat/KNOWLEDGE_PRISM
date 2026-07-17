@@ -1,0 +1,26 @@
+{
+  "block_no": 28,
+  "block_id": "block_0028_scholar_input_approved_to_question_transition",
+  "title": "Scholar-input governed transition: review, approve-to-question, rejection; research_question destination + provenance; validator check 7",
+  "ts": "2026-07-10T15:19:40.198394+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude_backend",
+  "inputs": [
+    "scholar_input(0 rows)",
+    "scholar_input_status_taxonomy(5)",
+    "scripts/00b_validate_db_consistency.py"
+  ],
+  "operations": [
+    "CREATE TABLE research_question (governed destination; UNIQUE(origin_scholar_id); reciprocal provenance)",
+    "ADD scripts/07_transition_scholar_input.py (start-review | approve-to-question | reject; dry-run default, --commit atomic)",
+    "EXTEND scripts/00b_validate_db_consistency.py with check 7 (9 approved_to_question transition invariants)",
+    "No scholar-input content or research-question text stored in ledger"
+  ],
+  "outputs": [
+    "research_question(0 rows)",
+    "scripts/07_transition_scholar_input.py",
+    "scripts/00b_validate_db_consistency.py(check7)"
+  ],
+  "prev_hash": "8328fda254d16e10b7d4f4c6c08ca44800ca0668970fbd630db04772c2e9e565",
+  "block_hash": "53c1fabb972df64997e99319a7ac79910e3058eac0f40d494f72e56a430b5859"
+}

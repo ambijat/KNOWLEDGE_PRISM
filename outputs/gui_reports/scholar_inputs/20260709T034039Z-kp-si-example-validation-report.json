@@ -1,0 +1,85 @@
+{
+  "report_type": "scholar_input_validation_report",
+  "banner": "SCHOLAR INPUT — NOT EVIDENCE",
+  "flow_warning": "This record may seed a research question or retrieval lens, but it is not a source and cannot directly enter verification_queue.",
+  "record": {
+    "record_type": "scholar_input_not_evidence",
+    "_note": "This record is scholar input, not evidence.",
+    "schema_version": "0.2",
+    "scholar_id": "KP-SI-EXAMPLE",
+    "source": "desktop_manual",
+    "captured_ts": "2026-07-09T09:14:00+05:30",
+    "imported_ts": "2026-07-09T09:14:00+05:30",
+    "idea": "Chapter 3 may need a counter-case that tests whether balance-of-power language still explains Central Asian alignment.",
+    "draft_organ": "Evidence_Needs",
+    "draft_diagnosis": "Possible foil for a chapter argument.",
+    "draft_search_plan": "balance of power, central asia, alignment, hedging",
+    "supervisor_brief": "Ask whether this should become a retrieval lens for opposing accounts.",
+    "raw_notes": "Keep it as a fair strongest-opponent search, not a claim.",
+    "voice_transcript": "",
+    "tags": "counter-case,foil",
+    "confidence": "hunch",
+    "project_title": "Eurasian security imaginaries",
+    "course_or_context": "PhD chapter 3",
+    "status": "imported_not_evidence",
+    "content_sha256": "5490837cce2167efe1e357f62d5fe7e92baa4dcbe0e70c624a0a57dec70b54d9",
+    "became_question": null,
+    "became_queue_id": null,
+    "decided_by": null,
+    "decided_ts": null,
+    "rejection_reason": null,
+    "block_no": null
+  },
+  "validation": [
+    {
+      "level": "valid",
+      "field": "record",
+      "message": "Required v0.2 checks passed."
+    },
+    {
+      "level": "valid",
+      "field": "schema_version",
+      "message": "Value is 0.2."
+    },
+    {
+      "level": "valid",
+      "field": "record_type",
+      "message": "Value is scholar_input_not_evidence."
+    },
+    {
+      "level": "valid",
+      "field": "idea",
+      "message": "Non-empty text present."
+    },
+    {
+      "level": "valid",
+      "field": "source",
+      "message": "Value is allowed: desktop_manual."
+    },
+    {
+      "level": "valid",
+      "field": "status",
+      "message": "Value is allowed: imported_not_evidence."
+    },
+    {
+      "level": "valid",
+      "field": "captured_ts",
+      "message": "Timestamp parses as ISO-8601."
+    },
+    {
+      "level": "valid",
+      "field": "imported_ts",
+      "message": "Timestamp parses as ISO-8601."
+    },
+    {
+      "level": "valid",
+      "field": "draft_organ",
+      "message": "Frozen organ value: Evidence_Needs."
+    },
+    {
+      "level": "valid",
+      "field": "content_sha256",
+      "message": "Hash matches UI canonical content."
+    }
+  ]
+}

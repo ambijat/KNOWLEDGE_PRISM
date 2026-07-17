@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knowledge Prism Interactive Research Console</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --ink: #16201d;
+      --muted: #5f6f6a;
+      --line: #dce6e2;
+      --green: #176b56;
+      --blue: #205f8f;
+      --teal: #11757b;
+      --red: #a53e37;
+      --amber: #9a681e;
+      --soft: #edf7f3;
+      --soft-blue: #eef6fb;
+      --soft-warn: #fff8e9;
+      --shadow: 0 18px 46px rgba(28, 45, 39, .11);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        linear-gradient(90deg, rgba(23, 107, 86, .045) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(32, 95, 143, .045) 1px, transparent 1px),
+        var(--bg);
+      background-size: 32px 32px;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    p, h1, h2, h3 { margin: 0; }
+    button { font: inherit; }
+
+    .shell {
+      max-width: 1460px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--ink);
+      font-weight: 850;
+    }
+
+    .mark {
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--green);
+      border-radius: 7px;
+      background: linear-gradient(135deg, #ffffff, #dff3ec);
+      transform: rotate(45deg);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .nav a:hover { color: var(--green); }
+
+    .hero,
+    .panel,
+    .card,
+    .console-output,
+    .matrix-cell {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .96);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(360px, 1.08fr);
+      gap: 18px;
+      align-items: stretch;
+      padding: 24px;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 860px;
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: clamp(24px, 3.2vw, 36px);
+      line-height: 1.08;
+    }
+
+    h3 {
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    .lead {
+      max-width: 850px;
+      color: #34433f;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .actions,
+    .button-row,
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-width: 0;
+    }
+
+    .button,
+    .tab,
+    .ladder-step,
+    .action-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      max-width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--panel);
+      color: var(--ink);
+      cursor: pointer;
+      padding: 9px 12px;
+      font-weight: 750;
+      text-align: center;
+      white-space: normal;
+    }
+
+    .button.primary,
+    .tab.active,
+    .ladder-step.active {
+      border-color: var(--green);
+      background: var(--green);
+      color: #ffffff;
+    }
+
+    .button:hover,
+    .tab:hover,
+    .ladder-step:hover,
+    .action-button:hover {
+      border-color: var(--green);
+      background: var(--soft);
+      color: var(--green);
+    }
+
+    .button.primary:hover { background: #0f5a47; color: #ffffff; }
+
+    .pipeline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-content: start;
+    }
+
+    .pipe {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fbfefd;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .pipe.warn {
+      border-color: rgba(154, 104, 30, .35);
+      background: var(--soft-warn);
+      color: var(--amber);
+    }
+
+    .section {
+      margin-top: 22px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .panel,
+    .card {
+      padding: 20px;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 16px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fbfefd;
+      padding: 12px;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--green);
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .console-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, .62fr) minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .console-buttons {
+      display: grid;
+      gap: 8px;
+    }
+
+    .console-buttons button {
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    .console-output {
+      min-height: 220px;
+      padding: 18px;
+      box-shadow: none;
+    }
+
+    .console-output h3 {
+      margin-bottom: 8px;
+      color: var(--green);
+    }
+
+    .ladder {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(130px, 1fr));
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .ladder-step {
+      min-height: 82px;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .ladder-step span {
+      font-size: 12px;
+      font-weight: 700;
+      opacity: .78;
+    }
+
+    .notice {
+      border-left: 5px solid var(--green);
+      border-radius: 7px;
+      background: var(--soft);
+      padding: 12px;
+    }
+
+    .notice.warn {
+      border-left-color: var(--amber);
+      background: var(--soft-warn);
+    }
+
+    .notice.danger {
+      border-left-color: var(--red);
+      background: #fff0ee;
+    }
+
+    .switch-panel {
+      display: grid;
+      gap: 12px;
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .status-card {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fbfefd;
+      padding: 13px;
+    }
+
+    .status-card b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--green);
+    }
+
+    .anchor-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .anchor-flow .card {
+      box-shadow: none;
+      min-height: 170px;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: minmax(150px, .55fr) repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .matrix-cell {
+      min-height: 128px;
+      box-shadow: none;
+      padding: 12px;
+    }
+
+    .matrix-cell.axis {
+      display: grid;
+      place-items: center;
+      background: var(--soft-blue);
+      color: var(--blue);
+      font-weight: 850;
+      text-align: center;
+    }
+
+    .matrix-cell.good { border-left: 5px solid var(--green); }
+    .matrix-cell.warn { border-left: 5px solid var(--amber); }
+    .matrix-cell.bad { border-left: 5px solid var(--red); }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(140px, 1fr));
+      gap: 8px;
+      overflow-x: auto;
+    }
+
+    .action-button {
+      min-height: 98px;
+      align-items: flex-start;
+      flex-direction: column;
+      background: #f6f8f7;
+      cursor: not-allowed;
+      color: var(--muted);
+    }
+
+    .action-button b {
+      color: var(--ink);
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      padding: 6px 9px;
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .pill.green { color: var(--green); background: var(--soft); }
+    .pill.warn { color: var(--amber); background: var(--soft-warn); }
+    .pill.red { color: var(--red); background: #fff0ee; }
+
+    .footer {
+      margin-top: 24px;
+      border-top: 1px solid var(--line);
+      padding: 18px 0 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    code {
+      background: #edf3f0;
+      border-radius: 5px;
+      padding: 2px 5px;
+    }
+
+    @media (max-width: 1120px) {
+      .hero,
+      .grid.two,
+      .grid.three,
+      .console-grid,
+      .anchor-flow,
+      .status-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell { padding: 14px; }
+      .nav,
+      .panel-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero,
+      .panel,
+      .card {
+        padding: 16px;
+      }
+
+      h1 { font-size: 40px; }
+      .metric-grid,
+      .matrix {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span>Knowledge Prism</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="interface.html">Research Console</a>
+        <a href="interaction.html">Human Workbench</a>
+        <a href="dashboard.html">Expert Dashboard</a>
+        <a href="case-study-ir.html">IR Pilot Case Study</a>
+        <a href="method.html">Method</a>
+        <a href="index.html#sample-brief">Export / Sample Brief</a>
+      </div>
+    </nav>
+
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <div>
+          <p class="eyebrow">Knowledge Prism Interactive Research Console</p>
+          <h1 id="heroTitle">Learn the project by pressing its buttons.</h1>
+        </div>
+        <p class="lead">This console teaches the epistemology of KNOWLEDGE_PRISM: archive is not evidence, retrieval is not evidence, sampled support is not ontology, and every escalation needs visible human judgment.</p>
+        <div class="actions">
+          <a class="button primary" href="#compass">Start with the Compass</a>
+          <a class="button" href="#anchor">Open Retrieval and Queue</a>
+          <a class="button" href="#actions">See Disabled Actions</a>
+        </div>
+        <p class="small" id="dataStatus">Loading public project counts...</p>
+      </div>
+      <aside class="panel" aria-label="Pipeline logic">
+        <p class="eyebrow">Research physiology</p>
+        <h2 style="margin: 8px 0 14px;">archive -> clue -> queue -> sampling -> evidence -> interpretation -> design map -> verified ontology</h2>
+        <div class="pipeline" aria-label="Project flow">
+          <span class="pipe">archive</span>
+          <span class="pipe warn">clue</span>
+          <span class="pipe warn">queue</span>
+          <span class="pipe">sampling</span>
+          <span class="pipe">evidence</span>
+          <span class="pipe">interpretation</span>
+          <span class="pipe warn">design map</span>
+          <span class="pipe">verified ontology</span>
+        </div>
+        <div class="notice warn" style="margin-top: 14px;">
+          <strong>Console rule</strong>
+          <p class="small">Buttons explain and simulate. They do not mutate the database, evidence grades, dispositions, claims, queue status, boundary status, or ontology.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section panel" id="state" aria-labelledby="stateTitle">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Current project state</p>
+          <h2 id="stateTitle">The live public snapshot, without overclaiming</h2>
+        </div>
+      </div>
+      <div class="metric-grid">
+        <div class="metric"><strong id="metricCorpus">-</strong><span>master corpus rows</span></div>
+        <div class="metric"><strong id="metricPilot">-</strong><span>pilot works tested</span></div>
+        <div class="metric"><strong id="metricSupported">-</strong><span>sample-supported candidates</span></div>
+        <div class="metric"><strong id="metricOntology">0</strong><span>ontology-core rows</span></div>
+      </div>
+    </section>
+
+    <section class="section panel" id="compass" aria-labelledby="compassTitle">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Zone 1</p>
+          <h2 id="compassTitle">Project Compass</h2>
+        </div>
+      </div>
+      <div class="console-grid">
+        <div class="console-buttons" role="group" aria-label="Project compass questions">
+          <button class="button primary" data-compass="project" type="button">What is this project?</button>
+          <button class="button" data-compass="scholar" type="button">What is the scholar's role?</button>
+          <button class="button" data-compass="machine" type="button">What does the machine amplify?</button>
+          <button class="button" data-compass="never" type="button">What must never be automated?</button>
+        </div>
+        <article class="console-output" id="compassOutput" aria-live="polite"></article>
+      </div>
+    </section>
+
+    <section class="section panel" id="ladder" aria-labelledby="ladderTitle">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Zone 2</p>
+          <h2 id="ladderTitle">Evidence Ladder</h2>
+        </div>
+        <p class="small">Each step permits something different. A lower step may guide search, but it cannot impersonate a higher step.</p>
+      </div>
+      <div class="ladder" role="group" aria-label="Evidence ladder">
+        <button class="ladder-step active" data-ladder="corpus" type="button"><b>Corpus item</b><span id="countCorpus">- rows</span></button>
+        <button class="ladder-step" data-ladder="retrieval" type="button"><b>Retrieval clue</b><span>ranked hit</span></button>
+        <button class="ladder-step" data-ladder="queue" type="button"><b>Verification queue</b><span>candidate</span></button>
+        <button class="ladder-step" data-ladder="sampled" type="button"><b>Sampled text support</b><span id="countSampled">- candidates</span></button>
+        <button class="ladder-step" data-ladder="verified" type="button"><b>Concept verified</b><span id="countVerified">0 entries</span></button>
+        <button class="ladder-step" data-ladder="core" type="button"><b>Ontology core</b><span id="countCore">0 entries</span></button>
+      </div>
+      <article class="console-output" id="ladderOutput" style="margin-top: 12px;" aria-live="polite"></article>
+    </section>
+
+    <section class="section grid two" id="ontology" aria-label="Ontology status switch">
+      <article class="panel switch-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Zone 3</p>
+            <h2>Ontology Status Switch</h2>
+          </div>
+        </div>
+        <div class="button-row">
+          <button class="tab active" data-ontology="design" type="button">Design Map</button>
+          <button class="tab" data-ontology="verified" type="button">Verified Ontology</button>
+        </div>
+        <article class="console-output" id="ontologyOutput" aria-live="polite"></article>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">Warning copy</p>
+        <h2>Do not confuse the design map with the verified ontology.</h2>
+        <p class="lead" style="margin-top: 12px;">The design map is useful because it gives the scholar a scaffold. It becomes dangerous only if the interface presents it as a text-verified concept ontology. The current verified ontology-core count is deliberately zero.</p>
+      </article>
+    </section>
+
+    <section class="section panel" id="anchor" aria-labelledby="anchorTitle">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Zone 4</p>
+          <h2 id="anchorTitle">Retrieval and Queue: Anchor Candidate</h2>
+        </div>
+        <span class="pill warn">category -> current example -> future candidates</span>
+      </div>
+
+      <div class="anchor-flow">
+        <article class="card">
+          <p class="eyebrow">Category</p>
+          <h3>Anchor Candidate</h3>
+          <p class="small">A work that appears to organise a major research lens, concept-field, regional imagination, theoretical axis, cartographic frame, or methodological apparatus.</p>
+        </article>
+        <article class="card">
+          <p class="eyebrow">Current example</p>
+          <h3>Dmitri Trenin, The End of Eurasia</h3>
+          <p class="small">Status: <code>queued</code>. Candidate type: <code>anchor_candidate</code>. Evidence status: retrieval clue only. Source: Recoll Kaleidoscope Trial 001.</p>
+        </article>
+        <article class="card">
+          <p class="eyebrow">Future candidates</p>
+          <h3>Future anchor candidates remain open</h3>
+          <p class="small">Other possible anchor candidates may include classic geopolitical, regional-order, theoretical, cartographic, or methodological works such as Mackinder, Ratzel, Spykman, or other corpus-specific discoveries.</p>
+        </article>
+      </div>
+
+      <div class="console-grid" style="margin-top: 14px;">
+        <div class="console-buttons" role="group" aria-label="Anchor candidate explanations">
+          <button class="button primary" data-anchor="what" type="button">What is an anchor candidate?</button>
+          <button class="button" data-anchor="matter" type="button">Why can an anchor candidate matter?</button>
+          <button class="button" data-anchor="notEvidence" type="button">Why is it still not evidence?</button>
+          <button class="button" data-anchor="before" type="button">What must happen before it moves forward?</button>
+          <button class="button" data-anchor="promotion" type="button">What would promotion require?</button>
+        </div>
+        <article class="console-output" id="anchorOutput" aria-live="polite"></article>
+      </div>
+    </section>
+
+    <section class="section panel" id="boundary" aria-labelledby="boundaryTitle">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Zone 5</p>
+          <h2 id="boundaryTitle">Boundary Kinematics</h2>
+        </div>
+      </div>
+      <div class="console-grid">
+        <div class="console-buttons">
+          <button class="button primary" data-boundary="move" type="button">Move on surprise</button>
+          <button class="button" data-boundary="rest" type="button">Rest on confirmation</button>
+          <button class="button" data-boundary="avoid" type="button">Avoid overfitting</button>
+          <button class="button" data-boundary="judge" type="button">Judge freely, never silently</button>
+        </div>
+        <article class="console-output" id="boundaryOutput" aria-live="polite"></article>
+      </div>
+      <div class="notice warn" style="margin-top: 14px;">
+        <strong>Current live example</strong>
+        <p class="small">Boundary proposal: Eurasian security imaginaries and post-Soviet spatial order may need explicit Layer A/AB recognition. Status: <code>proposed_boundary_refinement</code>. It is not adopted doctrine.</p>
+      </div>
+    </section>
+
+    <section class="section panel" id="matrix" aria-labelledby="matrixTitle">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Zone 6</p>
+          <h2 id="matrixTitle">Two-Axis Judgment Matrix</h2>
+        </div>
+      </div>
+      <div class="matrix" aria-label="Two-axis judgment matrix">
+        <div class="matrix-cell axis">Axis 2: project relevance</div>
+        <div class="matrix-cell axis">Low evidence support</div>
+        <div class="matrix-cell axis">Higher evidence support</div>
+        <div class="matrix-cell axis">Low project relevance</div>
+        <div class="matrix-cell bad"><h3>Misfile or noise</h3><p class="small">Practical Exam Format: administrative artifact. It does not become scholarship because a folder suggested relevance.</p></div>
+        <div class="matrix-cell warn"><h3>Accurate but irrelevant</h3><p class="small">Histology: textually accurate, but project-irrelevant. Supported content can still be excluded from the core.</p></div>
+        <div class="matrix-cell axis">High project relevance</div>
+        <div class="matrix-cell warn"><h3>Relevant clue, not evidence</h3><p class="small">Current example: Dmitri Trenin, <em>The End of Eurasia</em>. It is an <code>anchor_candidate</code>, queued only, not sampled.</p></div>
+        <div class="matrix-cell good"><h3>Sample-supported candidates</h3><p class="small">The 11 pilot books are sampled-supported core candidates. They are still not concept-verified or ontology-core.</p></div>
+      </div>
+      <div class="notice warn" style="margin-top: 12px;">
+        <strong>Design map sits outside the matrix as scaffold</strong>
+        <p class="small">The 43-node design map is project-useful but has status <code>design_hypothesis</code>, not verified evidence.</p>
+      </div>
+    </section>
+
+    <section class="section panel" id="actions" aria-labelledby="actionsTitle">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Zone 7</p>
+          <h2 id="actionsTitle">Action Buttons with Disabled States</h2>
+        </div>
+        <span class="pill red">non-mutating public interface</span>
+      </div>
+      <div class="action-grid">
+        <button class="action-button" data-action="Run Recoll" type="button"><b>Run Recoll</b><span>Disabled here. Requires local governed retrieval cycle.</span></button>
+        <button class="action-button" data-action="Add to Queue" type="button"><b>Add to Queue</b><span>Disabled here. Requires logged queue decision.</span></button>
+        <button class="action-button" data-action="Approve Sampling" type="button"><b>Approve Sampling</b><span>Requires scholar or research approval.</span></button>
+        <button class="action-button" data-action="Promote Evidence Grade" type="button"><b>Promote Evidence Grade</b><span>Requires text sampling and rubric verdict.</span></button>
+        <button class="action-button" data-action="Create Functional Interpretation" type="button"><b>Create Functional Interpretation</b><span>Human-led interpretation; must be logged.</span></button>
+        <button class="action-button" data-action="Promote to Ontology Core" type="button"><b>Promote to Ontology Core</b><span>Disabled. Requires full provenance and explicit ruling.</span></button>
+      </div>
+      <article class="console-output" id="actionOutput" style="margin-top: 12px;" aria-live="polite">
+        <h3>Buttons are pedagogic, not operational</h3>
+        <p class="small">Click a disabled action to see what approval or evidence would be required. No button on this page writes to project state.</p>
+      </article>
+    </section>
+
+    <section class="section panel" id="compact" aria-labelledby="compactTitle">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Zone 8</p>
+          <h2 id="compactTitle">Compact State Card</h2>
+        </div>
+      </div>
+      <div class="status-grid">
+        <div class="status-card"><b>Ledger</b><p class="small"><span id="stateLedger">-</span> public blocks. Chain verification: <span id="stateChain">-</span>.</p></div>
+        <div class="status-card"><b>Queue</b><p class="small">Anchor Candidate category exists. Current example remains <code>queued</code> and unsampled.</p></div>
+        <div class="status-card"><b>Evidence</b><p class="small"><span id="stateSupported">-</span> sampled-supported candidates; <span id="stateVerified">0</span> concept-verified entries.</p></div>
+        <div class="status-card"><b>Ontology</b><p class="small">Design map: 43 nodes / 136 edges, status <code>design_hypothesis</code>. Verified ontology-core: <span id="stateCore">0</span>.</p></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Static Research Console. Reads public JSON only. It does not sample texts, run Recoll, mutate the queue, alter evidence grades, change boundary status, or promote ontology.
+    </footer>
+  </main>
+
+  <script>
+    const DATA_BASE = "public/data/";
+    const state = { project: {}, evidence: {} };
+
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+    const fmt = (value) => new Intl.NumberFormat().format(Number(value || 0));
+
+    const compass = {
+      project: {
+        title: "The project is a research exoskeleton",
+        body: "KNOWLEDGE_PRISM turns a corpus into a trustworthy explanatory map. It does not replace the scholar. It amplifies the scholar's own research gestures while preserving provenance."
+      },
+      scholar: {
+        title: "The scholar remains the source of meaning",
+        body: "The scholar holds the question, judges relevance, decides meaning, and writes. The machine can bring candidates to the table, but it does not take the pen."
+      },
+      machine: {
+        title: "The machine amplifies reach, memory, endurance, and integrity",
+        body: "Reach means retrieval across a large corpus. Memory means no note or flag is lost. Endurance means repeated sampling and cross-reference. Integrity means append-only provenance."
+      },
+      never: {
+        title: "Silent promotion must never be automated",
+        body: "The system must not silently promote a clue into evidence, sampled support into concept verification, a design map into verified ontology, or a boundary proposal into doctrine."
+      }
+    };
+
+    const ladder = {
+      corpus: {
+        title: "Corpus item",
+        meaning: "A record exists in the inventory.",
+        permits: "Permits cataloguing, dedupe work, and retrieval targeting.",
+        blocks: "Does not permit scholarly claims.",
+        approval: "Human judgment needed before treating it as relevant."
+      },
+      retrieval: {
+        title: "Retrieval clue",
+        meaning: "A search or Recoll cycle surfaced a candidate.",
+        permits: "Permits queue consideration.",
+        blocks: "Does not prove the text supports a claim.",
+        approval: "Research approval needed before sampling."
+      },
+      queue: {
+        title: "Verification queue",
+        meaning: "A candidate is recorded for governed follow-up.",
+        permits: "Permits traceable sampling planning.",
+        blocks: "Does not assign an evidence grade.",
+        approval: "Supervisor or scholar approval needed before sampling."
+      },
+      sampled: {
+        title: "Sampled text support",
+        meaning: "Text has been sampled under a rubric and supports a provisional role.",
+        permits: "Permits provisional briefs and future concept-verification work.",
+        blocks: "Does not equal concept_verified or ontology_core.",
+        approval: "Human review needed before stronger status."
+      },
+      verified: {
+        title: "Concept verified",
+        meaning: "A concept has passed stronger verification.",
+        permits: "Permits proposal for ontology use.",
+        blocks: "Still needs governed ontology admission.",
+        approval: "Explicit provenance and research ruling required."
+      },
+      core: {
+        title: "Ontology core",
+        meaning: "The strongest admitted concept status.",
+        permits: "Permits verified ontology use.",
+        blocks: "Cannot be reached by retrieval rank or design-map status.",
+        approval: "Explicit scholar/research approval required."
+      }
+    };
+
+    const anchor = {
+      what: {
+        title: "Anchor Candidate",
+        body: "An anchor candidate is a candidate work that appears to organise a major research lens, concept-field, regional imagination, theoretical axis, cartographic frame, or methodological apparatus."
+      },
+      matter: {
+        title: "Why the category matters",
+        body: "An anchor candidate can shape which texts deserve sampling because it may hold together a region, theory, method, or concept-field. That makes it strategically important for the queue, not automatically true."
+      },
+      notEvidence: {
+        title: "Why it is still not evidence",
+        body: "A retrieval system found the work. That is a clue. Evidence exists only when text is sampled under the rubric, a quote or argument is validated, and the result is logged."
+      },
+      before: {
+        title: "Before it can move forward",
+        body: "It needs approval for sampling, a rubric version, target-file hash or canonical copy decision, concept probes, and a validated argument quote. Until then it remains queued."
+      },
+      promotion: {
+        title: "Promotion requirements",
+        body: "Promotion would require sampled text support, human review, evidence-grade decision, provenance block, and later concept verification. It cannot jump from anchor_candidate to ontology_core."
+      }
+    };
+
+    const boundary = {
+      move: {
+        title: "Move on surprise",
+        body: "A boundary moves when a case reveals that the current boundary cannot explain what the scholar is seeing. Surprise is a reason to propose movement, not to silently rewrite doctrine."
+      },
+      rest: {
+        title: "Rest on confirmation",
+        body: "If a case fits the current boundary, the boundary rests. This keeps the project from constantly changing definitions for every new retrieval hit."
+      },
+      avoid: {
+        title: "Avoid overfitting",
+        body: "The project must not redefine itself around the last exciting candidate. A boundary that fits every new clue immediately stops being a useful boundary."
+      },
+      judge: {
+        title: "Judge freely, never silently",
+        body: "Judgment is welcome. Hidden judgment is not. Boundary proposals must be visible, logged, and reversible until the scholar adopts them."
+      }
+    };
+
+    const actionText = {
+      "Run Recoll": "Disabled in the public console. A retrieval cycle must be run locally, logged, and treated as clue generation only.",
+      "Add to Queue": "Disabled here. Queue insertion is a governed state change and must record candidate_type, source_stage, status, rationale, and block.",
+      "Approve Sampling": "Requires scholar or research approval. Approval is separate from queueing.",
+      "Promote Evidence Grade": "Requires text sampling under the verification rubric. Retrieval rank, metadata, and queue status are not enough.",
+      "Create Functional Interpretation": "Functional interpretation is human-led and must remain subordinate to evidence status.",
+      "Promote to Ontology Core": "Disabled. Ontology-core promotion requires full provenance and explicit approval; current count is zero."
+    };
+
+    async function loadJson(name) {
+      const response = await fetch(`${DATA_BASE}${name}.json`, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Could not load ${name}.json`);
+      return response.json();
+    }
+
+    async function boot() {
+      try {
+        state.project = await loadJson("project_status");
+        state.evidence = await loadJson("evidence_dashboard");
+        renderCounts();
+        setText("#dataStatus", "Loaded public project counts. Console remains non-mutating.");
+      } catch (error) {
+        setText("#dataStatus", `Public counts unavailable: ${error.message}. Static explanations remain available.`);
+      }
+      renderCompass("project");
+      renderLadder("corpus");
+      renderOntology("design");
+      renderAnchor("what");
+      renderBoundary("move");
+    }
+
+    function renderCounts() {
+      const p = state.project;
+      const e = state.evidence;
+      setText("#metricCorpus", fmt(p.master_corpus_rows));
+      setText("#metricPilot", fmt(p.pilot_rows));
+      setText("#metricSupported", fmt(e.sampled_text_supported_rows || p.promoted_sample_level_rows));
+      setText("#metricOntology", fmt(p.ontology_core_rows));
+      setText("#countCorpus", `${fmt(p.master_corpus_rows)} rows`);
+      setText("#countSampled", `${fmt(e.sampled_text_supported_rows || p.promoted_sample_level_rows)} candidates`);
+      setText("#countVerified", `${fmt(p.concept_verified_rows)} entries`);
+      setText("#countCore", `${fmt(p.ontology_core_rows)} entries`);
+      setText("#stateLedger", fmt(p.ledger_blocks));
+      setText("#stateChain", p.ledger_chain_verifies ? "verified" : "not verified");
+      setText("#stateSupported", fmt(e.sampled_text_supported_rows || p.promoted_sample_level_rows));
+      setText("#stateVerified", fmt(p.concept_verified_rows));
+      setText("#stateCore", fmt(p.ontology_core_rows));
+    }
+
+    function renderCompass(key) {
+      const item = compass[key];
+      $("#compassOutput").innerHTML = `<h3>${item.title}</h3><p class="lead">${item.body}</p>`;
+      activate("[data-compass]", key);
+    }
+
+    function renderLadder(key) {
+      const item = ladder[key];
+      const counts = currentCountText(key);
+      $("#ladderOutput").innerHTML = `
+        <h3>${item.title}</h3>
+        <div class="status-grid">
+          <div class="status-card"><b>Current count</b><p class="small">${counts}</p></div>
+          <div class="status-card"><b>Meaning</b><p class="small">${item.meaning}</p></div>
+          <div class="status-card"><b>Permits</b><p class="small">${item.permits}</p></div>
+          <div class="status-card"><b>Does not permit</b><p class="small">${item.blocks}</p></div>
+        </div>
+        <div class="notice warn" style="margin-top: 10px;"><strong>Approval needed</strong><p class="small">${item.approval}</p></div>
+      `;
+      activate("[data-ladder]", key);
+    }
+
+    function currentCountText(key) {
+      const p = state.project;
+      const e = state.evidence;
+      const counts = {
+        corpus: `${fmt(p.master_corpus_rows)} master corpus rows.`,
+        retrieval: "Retrieval clues are not fully exported as a count; current live example is one queued Anchor Candidate from Recoll Trial 001.",
+        queue: "Verification queue has one exported live example in the current docs; it remains queued.",
+        sampled: `${fmt(e.sampled_text_supported_rows || p.promoted_sample_level_rows)} sample-supported candidates.`,
+        verified: `${fmt(p.concept_verified_rows)} concept-verified entries.`,
+        core: `${fmt(p.ontology_core_rows)} ontology-core entries.`
+      };
+      return counts[key] || "not exported yet";
+    }
+
+    function renderOntology(key) {
+      const content = {
+        design: `
+          <h3>Design Map</h3>
+          <div class="status-grid">
+            <div class="status-card"><b>Nodes</b><p class="small">43</p></div>
+            <div class="status-card"><b>Edges</b><p class="small">136</p></div>
+            <div class="status-card"><b>Status</b><p class="small"><code>design_hypothesis</code></p></div>
+            <div class="status-card"><b>Use</b><p class="small">Domain scaffold for thinking, not text-verified ontology.</p></div>
+          </div>
+        `,
+        verified: `
+          <h3>Verified Ontology</h3>
+          <div class="status-grid">
+            <div class="status-card"><b>Ontology-core entries</b><p class="small">${fmt(state.project.ontology_core_rows)}</p></div>
+            <div class="status-card"><b>Concept-verified entries</b><p class="small">${fmt(state.project.concept_verified_rows)}</p></div>
+            <div class="status-card"><b>Reason</b><p class="small">The project deliberately keeps this at zero until concepts pass the full evidence ladder.</p></div>
+            <div class="status-card"><b>Rule</b><p class="small">No design node becomes verified merely by appearing useful.</p></div>
+          </div>
+        `
+      };
+      $("#ontologyOutput").innerHTML = content[key];
+      activate("[data-ontology]", key);
+    }
+
+    function renderAnchor(key) {
+      const item = anchor[key];
+      $("#anchorOutput").innerHTML = `
+        <h3>${item.title}</h3>
+        <p class="lead">${item.body}</p>
+        <div class="notice warn" style="margin-top: 12px;">
+          <strong>Current example: Dmitri Trenin, The End of Eurasia</strong>
+          <p class="small">This is one live example of the category, not the category itself. It is queued as <code>anchor_candidate</code>, retrieval clue only, not sampled, not verified, and not ontology-core.</p>
+        </div>
+      `;
+      activate("[data-anchor]", key);
+    }
+
+    function renderBoundary(key) {
+      const item = boundary[key];
+      $("#boundaryOutput").innerHTML = `<h3>${item.title}</h3><p class="lead">${item.body}</p>`;
+      activate("[data-boundary]", key);
+    }
+
+    function activate(selector, key) {
+      $$(selector).forEach((button) => {
+        const active = Object.values(button.dataset).includes(key);
+        button.classList.toggle("active", active);
+        button.classList.toggle("primary", active && button.classList.contains("button"));
+      });
+    }
+
+    function setText(selector, value) {
+      const node = $(selector);
+      if (node) node.textContent = value;
+    }
+
+    $$("[data-compass]").forEach((button) => button.addEventListener("click", () => renderCompass(button.dataset.compass)));
+    $$("[data-ladder]").forEach((button) => button.addEventListener("click", () => renderLadder(button.dataset.ladder)));
+    $$("[data-ontology]").forEach((button) => button.addEventListener("click", () => renderOntology(button.dataset.ontology)));
+    $$("[data-anchor]").forEach((button) => button.addEventListener("click", () => renderAnchor(button.dataset.anchor)));
+    $$("[data-boundary]").forEach((button) => button.addEventListener("click", () => renderBoundary(button.dataset.boundary)));
+    $$("[data-action]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const label = button.dataset.action;
+        $("#actionOutput").innerHTML = `<h3>${label}</h3><p class="lead">${actionText[label]}</p>`;
+      });
+    });
+
+    boot();
+  </script>
+</body>
+</html>

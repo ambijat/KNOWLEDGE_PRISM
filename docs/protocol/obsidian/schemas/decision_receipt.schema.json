@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://knowledge-prism.local/schemas/decision_receipt.schema.json",
+  "title": "Knowledge Prism Proposal Decision Receipt (outbound from KP)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_version",
+    "proposal_id",
+    "decision",
+    "decided_by",
+    "decided_ts",
+    "review_message"
+  ],
+  "properties": {
+    "receipt_version": { "const": "1.0" },
+    "proposal_id": { "type": "string", "pattern": "^PROP-[0-9]{6}$" },
+    "decision": {
+      "type": "string",
+      "enum": ["accepted", "revised", "rejected"]
+    },
+    "decided_by": { "type": "string", "minLength": 1 },
+    "decided_ts": { "type": "string" },
+    "review_message": { "type": "string" },
+    "resulting_record_id": {
+      "description": "Set only when a downstream, separately-sealed canonicalisation produced a record. Never auto-populated by acceptance itself.",
+      "type": ["string", "null"],
+      "pattern": "^(SRC|PAS|CON|ENT|CLM|REL|PROP)-[0-9]{6}$"
+    }
+  }
+}

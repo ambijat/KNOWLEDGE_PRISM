@@ -1,0 +1,14 @@
+{
+  "ack_schema_version": "0.1",
+  "batch_id": "batch-0003",
+  "processed_ts": "2026-07-10T10:05:00+00:00",
+  "acks": [
+    {
+      "client_record_id": "9f1b6a2e-0000-4000-8000-000000000001",
+      "result": "duplicate_skipped",
+      "backend_scholar_id": null,
+      "content_sha256": "cd8efcea37f46999718d9e1ed1c8b57599a635bc15c7c6ef0254871d3eab5a4b",
+      "message": "Exact content already present; no new KP-SI id assigned. (backend_scholar_id null = CONTRACT GAP: importer does not yet echo the existing id.)"
+    }
+  ]
+}

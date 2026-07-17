@@ -223,13 +223,14 @@ visual elegance with scholarly proof.
 
 If you are a visitor, begin in this order:
 
-1. Read this preamble.
-2. Open `index.html` and explore the graph lab.
-3. Read `docs/KNOWLEDGE_PRISM_GUI_BROCHURE.md` to understand how to drive the
+1. Read `FRONT_GATE.md` for the tourist map to the whole museum.
+2. Read this preamble for the official guide to the galleries.
+3. Open `index.html` and explore the graph lab.
+4. Read `docs/KNOWLEDGE_PRISM_GUI_BROCHURE.md` to understand how to drive the
    interface.
-4. Read `PIPELINE.md` to understand the evidence-gated workflow.
-5. Read `ACTION_PLAN.md` to see what should happen next.
-6. Run `python3 db/prism.py boot` if you are taking over the technical work.
+5. Read `PIPELINE.md` to understand the evidence-gated workflow.
+6. Read `ACTION_PLAN.md` to see what should happen next.
+7. Run `python3 db/prism.py boot` if you are taking over the technical work.
 
 This order lets you move from meaning to method, and then from method to
 implementation.

@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://knowledge-prism.local/schemas/projection.schema.json",
+  "title": "Knowledge Prism Projection Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "projection_version",
+    "record_id",
+    "record_type",
+    "title",
+    "status",
+    "source_ids",
+    "relationships",
+    "provenance",
+    "sync"
+  ],
+  "properties": {
+    "projection_version": { "const": "1.0" },
+    "record_id": {
+      "type": "string",
+      "pattern": "^(SRC|PAS|CON|ENT|CLM|REL|PROP)-[0-9]{6}$"
+    },
+    "record_type": {
+      "type": "string",
+      "enum": ["concept", "entity", "source", "claim"]
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "definition": { "type": "string" },
+    "summary": { "type": "string" },
+    "detail": { "type": "string" },
+    "layer": { "type": ["string", "null"] },
+    "evidence_grade": { "type": ["string", "null"] },
+    "status": {
+      "type": "string",
+      "enum": [
+        "raw",
+        "extracted",
+        "proposed",
+        "reviewed",
+        "canonical",
+        "researcher_synthesis",
+        "rejected",
+        "superseded"
+      ]
+    },
+    "source_ids": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^SRC-[0-9]{6}$" }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["relationship_id", "predicate", "target_id", "target_title", "status"],
+        "properties": {
+          "relationship_id": { "type": "string", "pattern": "^REL-[0-9]{6}$" },
+          "predicate": {
+            "type": "string",
+            "enum": [
+              "supports", "contradicts", "defines", "mentions", "causes",
+              "enables", "constrains", "located_in", "part_of", "instrument_of",
+              "associated_with", "precedes", "responds_to", "fuses_with"
+            ]
+          },
+          "target_id": {
+            "type": "string",
+            "pattern": "^(SRC|PAS|CON|ENT|CLM|REL|PROP)-[0-9]{6}$"
+          },
+          "target_title": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": [
+              "raw", "extracted", "proposed", "reviewed", "canonical",
+              "researcher_synthesis", "rejected", "superseded"
+            ]
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewed", "review_date", "block_no", "origin_table"],
+      "properties": {
+        "reviewed": { "type": "boolean" },
+        "review_date": { "type": ["string", "null"] },
+        "block_no": { "type": ["integer", "null"] },
+        "origin_table": { "type": "string" }
+      }
+    },
+    "sync": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["projection_built_ts", "projection_version"],
+      "properties": {
+        "projection_built_ts": { "type": "string" },
+        "projection_version": { "const": "1.0" }
+      }
+    }
+  }
+}

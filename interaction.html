@@ -1,0 +1,1230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knowledge Prism Human Workbench</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --ink: #16201d;
+      --muted: #5f6f6a;
+      --line: #dce6e2;
+      --green: #176b56;
+      --blue: #205f8f;
+      --teal: #11757b;
+      --red: #a53e37;
+      --amber: #9a681e;
+      --soft: #edf7f3;
+      --soft-blue: #eef6fb;
+      --shadow: 0 18px 46px rgba(28, 45, 39, .11);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(23, 107, 86, .045) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(32, 95, 143, .045) 1px, transparent 1px),
+        var(--bg);
+      background-size: 32px 32px;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    p,
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .shell {
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--ink);
+      font-weight: 850;
+    }
+
+    .mark {
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--green);
+      border-radius: 7px;
+      background: linear-gradient(135deg, #ffffff, #dff3ec);
+      transform: rotate(45deg);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .nav a:hover {
+      color: var(--green);
+    }
+
+    .hero,
+    .panel,
+    .io-card,
+    .output-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .96);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr);
+      gap: 18px;
+      align-items: stretch;
+      min-height: 390px;
+      padding: 22px;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(38px, 5.2vw, 68px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: clamp(24px, 3.4vw, 36px);
+      line-height: 1.08;
+    }
+
+    h3 {
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    .lead {
+      max-width: 780px;
+      color: #34433f;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--panel);
+      color: var(--ink);
+      cursor: pointer;
+      padding: 10px 14px;
+      font-weight: 750;
+      max-width: 100%;
+      white-space: normal;
+    }
+
+    .button.primary {
+      border-color: var(--green);
+      background: var(--green);
+      color: #ffffff;
+    }
+
+    .button:hover {
+      border-color: var(--green);
+      background: var(--soft);
+      color: var(--green);
+    }
+
+    .button.primary:hover {
+      background: #0f5a47;
+      color: #ffffff;
+    }
+
+    .snapshot {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fbfefd;
+      padding: 12px;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--green);
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .section {
+      margin-top: 22px;
+    }
+
+    .panel {
+      padding: 22px;
+    }
+
+    .workbench {
+      display: grid;
+      grid-template-columns: minmax(300px, .78fr) minmax(360px, 1fr) minmax(320px, .82fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 16px;
+    }
+
+    .field-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fbfefd;
+      color: var(--ink);
+      padding: 10px 11px;
+    }
+
+    textarea {
+      min-height: 92px;
+      resize: vertical;
+      line-height: 1.45;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .segmented {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 6px;
+    }
+
+    .segmented button {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fbfefd;
+      cursor: pointer;
+      color: var(--muted);
+      padding: 8px;
+      font-weight: 750;
+    }
+
+    .segmented button.active {
+      border-color: var(--green);
+      background: var(--soft);
+      color: var(--green);
+    }
+
+    .notice {
+      border-left: 5px solid var(--green);
+      border-radius: 7px;
+      background: var(--soft);
+      padding: 12px;
+    }
+
+    .notice.warn {
+      border-left-color: var(--amber);
+      background: #fff8e9;
+    }
+
+    .notice.danger {
+      border-left-color: var(--red);
+      background: #fff0ee;
+    }
+
+    .graph-panel {
+      display: grid;
+      gap: 12px;
+    }
+
+    .canvas-wrap {
+      position: relative;
+      min-height: 560px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(23, 107, 86, .065) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(32, 95, 143, .055) 1px, transparent 1px),
+        #fbfefd;
+      background-size: 28px 28px;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 560px;
+    }
+
+    .graph-hud {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      display: grid;
+      gap: 6px;
+      width: min(260px, calc(100% - 24px));
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      padding: 6px 9px;
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .pill.green {
+      color: var(--green);
+      border-color: rgba(23, 107, 86, .35);
+      background: var(--soft);
+    }
+
+    .pill.red {
+      color: var(--red);
+      border-color: rgba(165, 62, 55, .3);
+      background: #fff0ee;
+    }
+
+    .outputs {
+      display: grid;
+      gap: 12px;
+    }
+
+    .output-card {
+      padding: 14px;
+      box-shadow: none;
+    }
+
+    .output-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .decision {
+      display: grid;
+      gap: 8px;
+    }
+
+    .decision-row {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 10px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+    }
+
+    .decision-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .decision-row b {
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    pre {
+      max-height: 320px;
+      margin: 0;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fbfefd;
+      padding: 12px;
+      color: #243530;
+      font-size: 12px;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .queue-list {
+      display: grid;
+      gap: 9px;
+      max-height: 260px;
+      overflow: auto;
+    }
+
+    .queue-item {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #ffffff;
+      padding: 10px;
+    }
+
+    .queue-item strong {
+      display: block;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+
+    .footer {
+      margin-top: 24px;
+      border-top: 1px solid var(--line);
+      padding: 18px 0 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    code {
+      background: #edf3f0;
+      border-radius: 5px;
+      padding: 2px 5px;
+    }
+
+    @media (max-width: 1120px) {
+      .hero,
+      .workbench {
+        grid-template-columns: 1fr;
+      }
+
+      .canvas-wrap {
+        min-height: 460px;
+      }
+
+      canvas {
+        height: 460px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        padding: 14px;
+      }
+
+      .nav,
+      .panel-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .snapshot,
+      .form-row,
+      .segmented {
+        grid-template-columns: 1fr;
+      }
+
+      .hero,
+      .panel {
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .decision-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span>Knowledge Prism</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="interface.html">Research Console</a>
+        <a href="interaction.html">Human Workbench</a>
+        <a href="dashboard.html">Expert Dashboard</a>
+        <a href="case-study-ir.html">IR Pilot Case Study</a>
+        <a href="method.html">Method</a>
+        <a href="index.html#sample-brief">Export / Sample Brief</a>
+      </div>
+    </nav>
+
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <div>
+          <p class="eyebrow">Human input to guarded output</p>
+          <h1 id="heroTitle">Test an idea before the graph is allowed to believe it.</h1>
+        </div>
+        <p class="lead">This workbench lets a human enter a research question, source clue, and claim fragment, then turns it into a review note, action path, graph sketch, and exportable JSON while keeping metadata, sampled evidence, and ontology claims visibly separate.</p>
+        <div class="actions">
+          <a class="button primary" href="#workbench">Start the Workbench</a>
+          <button class="button" id="loadQueueSample" type="button">Load Review Queue Sample</button>
+          <button class="button" id="downloadTop" type="button">Download Output</button>
+        </div>
+        <p class="small" id="dataStatus">Loading public project data...</p>
+      </div>
+      <aside class="panel" aria-label="Current evidence discipline snapshot">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Current discipline</p>
+            <h2>No silent promotion</h2>
+          </div>
+        </div>
+        <div class="snapshot">
+          <div class="metric"><strong id="metricPilot">-</strong><span>pilot works tested</span></div>
+          <div class="metric"><strong id="metricSupported">-</strong><span>sample-supported candidates</span></div>
+          <div class="metric"><strong id="metricOntology">0</strong><span>ontology-core rows</span></div>
+        </div>
+        <div class="notice warn" style="margin-top: 12px;">
+          <strong>Boundary rule</strong>
+          <p class="small">A user draft can become an output note immediately, but it does not become a verified ontology claim without source reading, evidence grade, and review action.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section workbench" id="workbench" aria-label="Human input output workbench">
+      <form class="panel field-grid" id="inputForm">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Input</p>
+            <h2>Human research signal</h2>
+          </div>
+        </div>
+
+        <label>
+          Research question
+          <textarea id="question">How does regional security knowledge about Afghanistan and Central Asia become structured through IR theory, geopolitical mapping, and source evidence?</textarea>
+        </label>
+
+        <label>
+          Source or clue title
+          <input id="sourceTitle" value="New candidate source or field note">
+        </label>
+
+        <label>
+          Claim or observation
+          <textarea id="claimText">This source may connect actor behaviour, territorial imagination, and knowledge-production in the Afghanistan-Central Asia/Eurasia research core.</textarea>
+        </label>
+
+        <div class="form-row">
+          <label>
+            Evidence grade
+            <select id="evidenceGrade">
+              <option value="metadata_only">metadata_only</option>
+              <option value="hypothesis_only_not_scholarly_evidence">hypothesis_only_not_scholarly_evidence</option>
+              <option value="sampled_text_supported_core_candidate" selected>sampled_text_supported_core_candidate</option>
+              <option value="concept_verified">concept_verified</option>
+              <option value="ontology_core">ontology_core</option>
+            </select>
+          </label>
+
+          <label>
+            Layer
+            <select id="layer">
+              <option value="Layer_A_empirical_core">Layer_A_empirical_core</option>
+              <option value="Layer_B_method_theory_core">Layer_B_method_theory_core</option>
+              <option value="Layer_AB_bridge_core" selected>Layer_AB_bridge_core</option>
+              <option value="Peripheral_context">Peripheral_context</option>
+              <option value="Out_of_domain_noise">Out_of_domain_noise</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            Text status
+            <select id="textStatus">
+              <option value="not_read">not_read</option>
+              <option value="sampled_quote_seen" selected>sampled_quote_seen</option>
+              <option value="quote_validated">quote_validated</option>
+              <option value="ocr_required">ocr_required</option>
+            </select>
+          </label>
+
+          <label>
+            Confidence
+            <input id="confidence" min="0" max="1" step="0.01" type="number" value="0.78">
+          </label>
+        </div>
+
+        <label>
+          Functional role
+          <textarea id="functionalRole">Potential bridge role: explains how evidence from a source can illuminate an interaction between empirical region, theory, and knowledge production.</textarea>
+        </label>
+
+        <div>
+          <p class="small" style="margin-bottom: 8px;"><strong>Output mode</strong></p>
+          <div class="segmented" role="group" aria-label="Output mode">
+            <button class="active" data-mode="review" type="button">Review</button>
+            <button data-mode="brief" type="button">Brief</button>
+            <button data-mode="handover" type="button">Handover</button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="button primary" id="generateOutput" type="button">Generate Output</button>
+          <button class="button" id="addToGraph" type="button">Add Draft Node</button>
+          <button class="button" id="resetDraft" type="button">Reset</button>
+        </div>
+      </form>
+
+      <section class="panel graph-panel" aria-labelledby="graphTitle">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Graph simulation</p>
+            <h2 id="graphTitle">Inputs become traceable nodes</h2>
+          </div>
+          <div class="pill-row" aria-label="Legend">
+            <span class="pill green">draft</span>
+            <span class="pill">evidence</span>
+            <span class="pill">layer</span>
+            <span class="pill red">guardrail</span>
+          </div>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="graphCanvas" width="900" height="560" aria-label="Animated input output graph"></canvas>
+          <div class="graph-hud">
+            <div class="notice">
+              <strong id="selectedNode">Draft node selected</strong>
+              <p class="small" id="selectedNodeText">Generate an output or load a queue sample to see how a human input connects to evidence, layer, action, and export.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel outputs" aria-labelledby="outputTitle">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Output</p>
+            <h2 id="outputTitle">Guarded research product</h2>
+          </div>
+        </div>
+
+        <article class="output-card">
+          <h3>Decision</h3>
+          <div class="decision" id="decisionPanel"></div>
+        </article>
+
+        <article class="output-card">
+          <h3>Human-readable note</h3>
+          <p class="small" id="briefText"></p>
+        </article>
+
+        <article class="output-card">
+          <h3>Export payload</h3>
+          <pre id="jsonOutput">{}</pre>
+        </article>
+
+        <div class="actions">
+          <button class="button primary" id="downloadOutput" type="button">Download JSON</button>
+          <button class="button" id="copyOutput" type="button">Copy Text</button>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section panel" aria-labelledby="queueTitle">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Project queue</p>
+          <h2 id="queueTitle">Open items stay visible until the evidence improves</h2>
+        </div>
+      </div>
+      <div class="queue-list" id="queueList"></div>
+    </section>
+
+    <footer class="footer">
+      Static human workbench. It reads only <code>public/data/*.json</code> and exports browser-generated notes. It does not write to the database, ledger, raw corpus, or filesystem.
+    </footer>
+  </main>
+
+  <script>
+    const DATA_BASE = "public/data/";
+    const dataFiles = ["project_status", "review_queue", "functional_roles", "evidence_dashboard"];
+    const state = {
+      mode: "review",
+      data: {},
+      output: {},
+      graph: {
+        nodes: [],
+        links: [],
+        selected: null
+      }
+    };
+
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+    const fmt = (value) => new Intl.NumberFormat().format(Number(value || 0));
+
+    const evidenceRules = {
+      metadata_only: {
+        status: "Inventory clue",
+        permission: "May enter inventory or triage only.",
+        action: "Find text access and sample before using this as scholarship.",
+        guardrail: "Do not treat metadata as a verified claim."
+      },
+      hypothesis_only_not_scholarly_evidence: {
+        status: "Hypothesis only",
+        permission: "May enter review queue as a candidate.",
+        action: "Require targeted source reading and a validated argument quote.",
+        guardrail: "Can guide inquiry, but cannot support ontology use."
+      },
+      sampled_text_supported_core_candidate: {
+        status: "Sample-supported candidate",
+        permission: "May support a provisional brief and future concept verification.",
+        action: "Schedule deeper concept verification before ontology promotion.",
+        guardrail: "Eligible is not final. Keep it out of ontology_core."
+      },
+      concept_verified: {
+        status: "Concept verified",
+        permission: "May be proposed for ontology review.",
+        action: "Check provenance block, source trace, and boundary fit before promotion.",
+        guardrail: "Requires review before final graph use."
+      },
+      ontology_core: {
+        status: "Ontology-core request",
+        permission: "High-risk promotion request.",
+        action: "Block silent promotion unless evidence, block, source, and user ruling are present.",
+        guardrail: "The public snapshot currently has zero ontology-core rows."
+      }
+    };
+
+    async function loadJson(name) {
+      const response = await fetch(`${DATA_BASE}${name}.json`, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Could not load ${name}.json`);
+      return response.json();
+    }
+
+    async function boot() {
+      try {
+        const payloads = await Promise.all(dataFiles.map(loadJson));
+        dataFiles.forEach((name, index) => {
+          state.data[name] = payloads[index];
+        });
+        renderMetrics();
+        renderQueue();
+        seedGraph();
+        buildOutput();
+        $("#dataStatus").textContent = `Loaded ${dataFiles.length} public data files. Workbench is running in browser-only mode.`;
+      } catch (error) {
+        $("#dataStatus").textContent = `Public data failed to load: ${error.message}. The form still works with local draft data.`;
+        seedGraph();
+        buildOutput();
+      }
+      requestAnimationFrame(drawGraph);
+    }
+
+    function renderMetrics() {
+      const status = state.data.project_status || {};
+      const evidence = state.data.evidence_dashboard || {};
+      setText("#metricPilot", fmt(status.pilot_rows));
+      setText("#metricSupported", fmt(evidence.sampled_text_supported_rows || status.promoted_sample_level_rows));
+      setText("#metricOntology", fmt(status.ontology_core_rows));
+    }
+
+    function renderQueue() {
+      const queue = state.data.review_queue || [];
+      const list = $("#queueList");
+      if (!list) return;
+      if (!queue.length) {
+        list.innerHTML = `<div class="queue-item"><strong>No public queue loaded</strong><p class="small">Use the input form to create a draft review note.</p></div>`;
+        return;
+      }
+      list.innerHTML = queue.map((item, index) => `
+        <button class="queue-item" type="button" data-queue-index="${index}">
+          <strong>${escapeHtml(item.title || "Untitled queue item")}</strong>
+          <p class="small">${escapeHtml(item.next_action || item.limitation_or_caution || "Review required.")}</p>
+        </button>
+      `).join("");
+      $$("[data-queue-index]").forEach((button) => {
+        button.addEventListener("click", () => loadQueueItem(Number(button.dataset.queueIndex)));
+      });
+    }
+
+    function seedGraph() {
+      const roles = (state.data.functional_roles || []).slice(0, 5);
+      const width = graphSize().width;
+      const height = graphSize().height;
+      state.graph.nodes = [
+        node("human_input", "Human Input", "draft", width * .22, height * .32, 18),
+        node("evidence_gate", "Evidence Gate", "evidence", width * .48, height * .2, 17),
+        node("layer_boundary", "Layer Boundary", "layer", width * .48, height * .44, 17),
+        node("output_note", "Review Output", "output", width * .75, height * .31, 18),
+        node("guardrail", "No Silent Promotion", "guardrail", width * .64, height * .64, 18)
+      ];
+      state.graph.links = [
+        link("human_input", "evidence_gate"),
+        link("human_input", "layer_boundary"),
+        link("evidence_gate", "output_note"),
+        link("layer_boundary", "output_note"),
+        link("guardrail", "output_note"),
+        link("evidence_gate", "guardrail")
+      ];
+      roles.forEach((role, index) => {
+        const id = `seed_${index}`;
+        state.graph.nodes.push(node(id, compactTitle(role.title), "seed", width * (.22 + index * .1), height * (.78 - (index % 2) * .12), 10));
+        state.graph.links.push(link(id, "evidence_gate"));
+      });
+      state.graph.selected = state.graph.nodes[0];
+      renderSelected();
+    }
+
+    function node(id, label, type, x, y, r) {
+      return {
+        id,
+        label,
+        type,
+        x,
+        y,
+        vx: 0,
+        vy: 0,
+        r
+      };
+    }
+
+    function link(source, target) {
+      return { source, target };
+    }
+
+    function buildOutput() {
+      const input = currentInput();
+      const rule = evidenceRules[input.evidence_grade] || evidenceRules.metadata_only;
+      const promotionBlocked = input.evidence_grade === "ontology_core" || input.evidence_grade === "concept_verified";
+      const textWeak = input.text_status === "not_read" || input.text_status === "ocr_required";
+      const confidenceWeak = Number(input.confidence) < .7;
+      const warnings = [];
+
+      if (promotionBlocked) warnings.push("Ontology promotion needs explicit source trace, block trace, and user ruling.");
+      if (textWeak) warnings.push("Text is not sufficiently readable or sampled for strong claims.");
+      if (confidenceWeak) warnings.push("Confidence is below the project threshold for stronger action.");
+      if (input.layer === "Out_of_domain_noise") warnings.push("Out-of-domain material should be excluded from core outputs.");
+      if (!warnings.length) warnings.push(rule.guardrail);
+
+      const recommendedStatus = decideStatus(input, rule, warnings);
+      const payload = {
+        title: "Knowledge Prism human input-output note",
+        generated_in: "interaction.html",
+        mode: state.mode,
+        input,
+        decision: {
+          status: recommendedStatus,
+          evidence_status: rule.status,
+          allowed_use: rule.permission,
+          required_next_action: rule.action,
+          warnings
+        },
+        outputs: {
+          review_note: makeBrief(input, rule, recommendedStatus, warnings),
+          graph_nodes: ["human_input", "evidence_gate", "layer_boundary", "output_note", "guardrail"],
+          export_kind: "browser_generated_review_json"
+        },
+        non_promotion_statement: "This browser output does not alter the database, ledger, evidence grade, claim table, or ontology."
+      };
+
+      state.output = payload;
+      renderOutput(payload);
+      updateDraftGraph(input, recommendedStatus);
+    }
+
+    function currentInput() {
+      return {
+        research_question: $("#question").value.trim(),
+        source_title: $("#sourceTitle").value.trim(),
+        claim_or_observation: $("#claimText").value.trim(),
+        evidence_grade: $("#evidenceGrade").value,
+        layer: $("#layer").value,
+        text_status: $("#textStatus").value,
+        confidence: Number($("#confidence").value || 0),
+        functional_role: $("#functionalRole").value.trim()
+      };
+    }
+
+    function decideStatus(input, rule, warnings) {
+      if (input.layer === "Out_of_domain_noise") return "exclude_from_core";
+      if (input.text_status === "ocr_required") return "ocr_required_before_review";
+      if (input.evidence_grade === "metadata_only") return "inventory_only";
+      if (input.evidence_grade === "hypothesis_only_not_scholarly_evidence") return "queue_for_sampling";
+      if (input.evidence_grade === "sampled_text_supported_core_candidate") return input.confidence >= .7 ? "provisional_core_candidate" : "review_required";
+      if (input.evidence_grade === "concept_verified") return "requires_governed_ontology_review";
+      if (input.evidence_grade === "ontology_core") return "blocked_until_formal_promotion";
+      return warnings.length ? "review_required" : rule.status;
+    }
+
+    function makeBrief(input, rule, status, warnings) {
+      const base = {
+        review: `Input "${input.source_title}" is classified as ${status}. It can be used as: ${rule.permission} Next action: ${rule.action}`,
+        brief: `For the question "${input.research_question}", this source is a ${rule.status.toLowerCase()} in ${input.layer}. The claim may inform an output brief only with the stated caution: ${warnings[0]}`,
+        handover: `Handover: inspect "${input.source_title}", verify text status "${input.text_status}", preserve evidence grade "${input.evidence_grade}", and do not promote beyond ${status} without provenance.`
+      };
+      return base[state.mode] || base.review;
+    }
+
+    function renderOutput(payload) {
+      $("#decisionPanel").innerHTML = [
+        ["Status", payload.decision.status],
+        ["Evidence", payload.decision.evidence_status],
+        ["Allowed", payload.decision.allowed_use],
+        ["Next", payload.decision.required_next_action],
+        ["Warning", payload.decision.warnings.join(" ")]
+      ].map(([label, value]) => `
+        <div class="decision-row"><b>${label}</b><span class="small">${escapeHtml(value)}</span></div>
+      `).join("");
+      setText("#briefText", payload.outputs.review_note);
+      $("#jsonOutput").textContent = JSON.stringify(payload, null, 2);
+    }
+
+    function updateDraftGraph(input, status) {
+      setNodeLabel("human_input", compactTitle(input.source_title || "Human Input"));
+      setNodeLabel("evidence_gate", input.evidence_grade);
+      setNodeLabel("layer_boundary", input.layer);
+      setNodeLabel("output_note", status);
+      setNodeLabel("guardrail", status.includes("blocked") ? "Promotion Blocked" : "No Silent Promotion");
+      renderSelected();
+    }
+
+    function addDraftNode() {
+      const input = currentInput();
+      const id = `draft_${Date.now()}`;
+      const size = graphSize();
+      state.graph.nodes.push(node(id, compactTitle(input.source_title || "Draft"), "draft", size.width * .2, size.height * .55, 14));
+      state.graph.links.push(link(id, "human_input"));
+      state.graph.links.push(link(id, "output_note"));
+      state.graph.selected = state.graph.nodes.find((item) => item.id === id);
+      renderSelected();
+    }
+
+    function loadQueueItem(index = 0) {
+      const item = (state.data.review_queue || [])[index];
+      if (!item) return;
+      $("#question").value = "What must be checked before this queue item can enter stronger Knowledge Prism outputs?";
+      $("#sourceTitle").value = item.title || "";
+      $("#claimText").value = item.ontology_use || item.reason || "";
+      $("#evidenceGrade").value = item.evidence_grade || "hypothesis_only_not_scholarly_evidence";
+      $("#layer").value = item.layer_tag || "Layer_AB_bridge_core";
+      $("#textStatus").value = item.quote_validation_status === "not_validated" ? "not_read" : "sampled_quote_seen";
+      $("#confidence").value = item.confidence ?? 0.5;
+      $("#functionalRole").value = item.functional_ir_role || "";
+      buildOutput();
+    }
+
+    function setNodeLabel(id, label) {
+      const item = state.graph.nodes.find((candidate) => candidate.id === id);
+      if (item) item.label = compactTitle(label);
+    }
+
+    function drawGraph() {
+      const canvas = $("#graphCanvas");
+      const ctx = canvas.getContext("2d");
+      const size = graphSize();
+      if (canvas.width !== size.width || canvas.height !== size.height) {
+        canvas.width = size.width;
+        canvas.height = size.height;
+      }
+
+      stepGraph(size.width, size.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.lineWidth = 1.3;
+      state.graph.links.forEach((edge) => {
+        const source = state.graph.nodes.find((item) => item.id === edge.source);
+        const target = state.graph.nodes.find((item) => item.id === edge.target);
+        if (!source || !target) return;
+        ctx.strokeStyle = "rgba(32, 95, 143, .22)";
+        ctx.beginPath();
+        ctx.moveTo(source.x, source.y);
+        ctx.lineTo(target.x, target.y);
+        ctx.stroke();
+      });
+
+      state.graph.nodes.forEach((item) => drawNode(ctx, item));
+      requestAnimationFrame(drawGraph);
+    }
+
+    function stepGraph(width, height) {
+      const nodes = state.graph.nodes;
+      for (let i = 0; i < nodes.length; i += 1) {
+        for (let j = i + 1; j < nodes.length; j += 1) {
+          const a = nodes[i];
+          const b = nodes[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const distance = Math.max(28, Math.hypot(dx, dy));
+          const force = 56 / (distance * distance);
+          a.vx += (dx / distance) * force;
+          a.vy += (dy / distance) * force;
+          b.vx -= (dx / distance) * force;
+          b.vy -= (dy / distance) * force;
+        }
+      }
+
+      state.graph.links.forEach((edge) => {
+        const source = nodes.find((item) => item.id === edge.source);
+        const target = nodes.find((item) => item.id === edge.target);
+        if (!source || !target) return;
+        const dx = target.x - source.x;
+        const dy = target.y - source.y;
+        const distance = Math.max(1, Math.hypot(dx, dy));
+        const desired = 145;
+        const force = (distance - desired) * .0009;
+        source.vx += dx * force;
+        source.vy += dy * force;
+        target.vx -= dx * force;
+        target.vy -= dy * force;
+      });
+
+      nodes.forEach((item) => {
+        item.vx += (width / 2 - item.x) * .00035;
+        item.vy += (height / 2 - item.y) * .00035;
+        item.vx *= .88;
+        item.vy *= .88;
+        item.x = clamp(item.x + item.vx, item.r + 8, width - item.r - 8);
+        item.y = clamp(item.y + item.vy, item.r + 8, height - item.r - 8);
+      });
+    }
+
+    function drawNode(ctx, item) {
+      const color = nodeColor(item.type);
+      const selected = state.graph.selected && state.graph.selected.id === item.id;
+      ctx.beginPath();
+      ctx.fillStyle = color.fill;
+      ctx.strokeStyle = selected ? "#16201d" : color.stroke;
+      ctx.lineWidth = selected ? 3 : 1.5;
+      ctx.arc(item.x, item.y, item.r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.font = "12px Inter, system-ui, sans-serif";
+      ctx.fillStyle = "#16201d";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "top";
+      wrapText(ctx, item.label, item.x, item.y + item.r + 6, 120, 15);
+    }
+
+    function nodeColor(type) {
+      const palette = {
+        draft: { fill: "#dff3ec", stroke: "#176b56" },
+        evidence: { fill: "#eef6fb", stroke: "#205f8f" },
+        layer: { fill: "#e7f6f5", stroke: "#11757b" },
+        output: { fill: "#ffffff", stroke: "#176b56" },
+        guardrail: { fill: "#fff0ee", stroke: "#a53e37" },
+        seed: { fill: "#f4f7f5", stroke: "#9badA6" }
+      };
+      return palette[type] || palette.output;
+    }
+
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+      const words = String(text).split(/\s+/);
+      let line = "";
+      let lines = 0;
+      words.forEach((word) => {
+        const test = line ? `${line} ${word}` : word;
+        if (ctx.measureText(test).width > maxWidth && line) {
+          ctx.fillText(line, x, y + lines * lineHeight);
+          line = word;
+          lines += 1;
+        } else {
+          line = test;
+        }
+      });
+      if (line && lines < 3) ctx.fillText(line, x, y + lines * lineHeight);
+    }
+
+    function graphSize() {
+      const wrap = document.querySelector(".canvas-wrap");
+      return {
+        width: Math.max(320, Math.floor(wrap?.clientWidth || 900)),
+        height: Math.max(420, Math.floor($("#graphCanvas")?.clientHeight || 560))
+      };
+    }
+
+    function renderSelected() {
+      const item = state.graph.selected || state.graph.nodes[0];
+      setText("#selectedNode", item ? item.label : "Graph node");
+      setText("#selectedNodeText", item ? `${item.type}: connected to the current input-output review path.` : "");
+    }
+
+    function downloadOutput() {
+      const blob = new Blob([JSON.stringify(state.output, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "knowledge-prism-human-output.json";
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    async function copyOutput() {
+      const text = `${state.output.outputs?.review_note || ""}\n\n${JSON.stringify(state.output, null, 2)}`;
+      try {
+        await navigator.clipboard.writeText(text);
+        setText("#briefText", `${state.output.outputs.review_note} Copied to clipboard.`);
+      } catch {
+        setText("#briefText", `${state.output.outputs.review_note} Clipboard access is unavailable in this browser.`);
+      }
+    }
+
+    function resetDraft() {
+      $("#inputForm").reset();
+      $("#question").value = "How does regional security knowledge about Afghanistan and Central Asia become structured through IR theory, geopolitical mapping, and source evidence?";
+      $("#sourceTitle").value = "New candidate source or field note";
+      $("#claimText").value = "This source may connect actor behaviour, territorial imagination, and knowledge-production in the Afghanistan-Central Asia/Eurasia research core.";
+      $("#functionalRole").value = "Potential bridge role: explains how evidence from a source can illuminate an interaction between empirical region, theory, and knowledge production.";
+      state.mode = "review";
+      $$(".segmented button").forEach((button) => button.classList.toggle("active", button.dataset.mode === "review"));
+      buildOutput();
+    }
+
+    function compactTitle(value) {
+      const text = String(value || "Untitled").replace(/[_-]+/g, " ").trim();
+      return text.length > 54 ? `${text.slice(0, 51)}...` : text;
+    }
+
+    function escapeHtml(value) {
+      return String(value || "").replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    function setText(selector, value) {
+      const node = $(selector);
+      if (node) node.textContent = value;
+    }
+
+    function clamp(value, min, max) {
+      return Math.min(max, Math.max(min, value));
+    }
+
+    $$(".segmented button").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.mode = button.dataset.mode;
+        $$(".segmented button").forEach((item) => item.classList.toggle("active", item === button));
+        buildOutput();
+      });
+    });
+
+    ["question", "sourceTitle", "claimText", "evidenceGrade", "layer", "textStatus", "confidence", "functionalRole"].forEach((id) => {
+      $(`#${id}`).addEventListener("input", buildOutput);
+      $(`#${id}`).addEventListener("change", buildOutput);
+    });
+
+    $("#generateOutput").addEventListener("click", buildOutput);
+    $("#addToGraph").addEventListener("click", addDraftNode);
+    $("#resetDraft").addEventListener("click", resetDraft);
+    $("#downloadOutput").addEventListener("click", downloadOutput);
+    $("#downloadTop").addEventListener("click", downloadOutput);
+    $("#copyOutput").addEventListener("click", copyOutput);
+    $("#loadQueueSample").addEventListener("click", () => loadQueueItem(0));
+    $("#graphCanvas").addEventListener("click", (event) => {
+      const rect = event.currentTarget.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const found = state.graph.nodes.find((item) => Math.hypot(item.x - x, item.y - y) <= item.r + 8);
+      if (found) {
+        state.graph.selected = found;
+        renderSelected();
+      }
+    });
+
+    boot();
+  </script>
+</body>
+</html>

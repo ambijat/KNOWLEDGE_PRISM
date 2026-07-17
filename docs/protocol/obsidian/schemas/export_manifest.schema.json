@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://knowledge-prism.local/schemas/export_manifest.schema.json",
+  "title": "Knowledge Prism Export Manifest",
+  "description": "Index-of-truth for a projection package. Indexes are generated from this file, never by scanning arbitrary researcher notes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "generated_ts",
+    "projection_version",
+    "source_db",
+    "counts",
+    "records",
+    "id_crosswalk"
+  ],
+  "properties": {
+    "manifest_version": { "const": "1.0" },
+    "generated_ts": { "type": "string" },
+    "projection_version": { "const": "1.0" },
+    "source_db": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "head_block_no", "chain_ok"],
+      "properties": {
+        "path": { "type": "string" },
+        "head_block_no": { "type": "integer" },
+        "chain_ok": { "type": "boolean" }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["concept", "entity", "source", "claim", "relationship", "proposal"],
+      "properties": {
+        "concept": { "type": "integer", "minimum": 0 },
+        "entity": { "type": "integer", "minimum": 0 },
+        "source": { "type": "integer", "minimum": 0 },
+        "claim": { "type": "integer", "minimum": 0 },
+        "relationship": { "type": "integer", "minimum": 0 },
+        "proposal": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["record_id", "record_type", "file", "status"],
+        "properties": {
+          "record_id": {
+            "type": "string",
+            "pattern": "^(SRC|PAS|CON|ENT|CLM|REL|PROP)-[0-9]{6}$"
+          },
+          "record_type": {
+            "type": "string",
+            "enum": ["concept", "entity", "source", "claim"]
+          },
+          "file": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": [
+              "raw", "extracted", "proposed", "reviewed", "canonical",
+              "researcher_synthesis", "rejected", "superseded"
+            ]
+          }
+        }
+      }
+    },
+    "id_crosswalk": {
+      "type": "array",
+      "description": "The only place projection IDs and backend-native IDs meet.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["projection_id", "backend_id", "origin_table"],
+        "properties": {
+          "projection_id": {
+            "type": "string",
+            "pattern": "^(SRC|PAS|CON|ENT|CLM|REL|PROP)-[0-9]{6}$"
+          },
+          "backend_id": { "type": "string" },
+          "origin_table": { "type": "string" }
+        }
+      }
+    }
+  }
+}

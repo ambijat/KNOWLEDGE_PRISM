@@ -1,0 +1,32 @@
+{
+  "block_no": 29,
+  "block_id": "block_0029_android_scholar_input_exchange_contract_v0_1",
+  "title": "Android scholar-input exchange contract v0.1 (freeze)",
+  "ts": "2026-07-10T15:46:02.081059+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude",
+  "inputs": [
+    "scripts/06_import_scholar_input.py",
+    "gui/services/scholar_input_schema.py",
+    "scholar_input schema v0.2",
+    "scholar_input_status_taxonomy (5 statuses)"
+  ],
+  "operations": [
+    "Froze Android<->desktop scholar-input exchange contract v0.1 (normative MUST/SHOULD/MAY).",
+    "Ownership boundary: Android is capture-only; ceiling raw_captured; all governance desktop-side.",
+    "Transport v0.1 = JSON file export/import (A); B/C/D future.",
+    "Envelope design: flat JSON object = scholar_input payload + ignored mobile metadata siblings (client_record_id etc.); no backend schema change.",
+    "Fixed values schema_version=0.2, record_type=scholar_input_not_evidence, source=android_app, status=raw_captured.",
+    "Batch semantics: single + array; atomic all-or-nothing refusal; hash-based duplicate skip; no per-record quarantine.",
+    "Duplicate semantics by canonical content hash; documented non-blocking gap (dup ack lacks existing KP-SI id).",
+    "Acknowledgement + error-code + mobile-state + security/privacy contracts specified.",
+    "Validated 3 input fixtures through importer on disposable DB copy; live DB untouched (scholar_input=0)."
+  ],
+  "outputs": [
+    "docs/protocol/KNOWLEDGE_PRISM_ANDROID_SCHOLAR_INPUT_EXCHANGE_v0.1.md",
+    "docs/handover/ANDROID_EXCHANGE_CONTRACT_HANDOVER.md",
+    "docs/protocol/examples/android_exchange_v0.1/ (6 fixtures, content-free)"
+  ],
+  "prev_hash": "53c1fabb972df64997e99319a7ac79910e3058eac0f40d494f72e56a430b5859",
+  "block_hash": "ebf6f1d26364904da4aff3f282a711f76f0002b5fe38f3ec13387b9e2189ab7f"
+}

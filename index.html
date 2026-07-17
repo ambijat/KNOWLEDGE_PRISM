@@ -487,6 +487,8 @@
       <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span>Knowledge Prism</span></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
+        <a href="interface.html">Research Console</a>
+        <a href="interaction.html">Human Workbench</a>
         <a href="dashboard.html">Expert Dashboard</a>
         <a href="case-study-ir.html">IR Pilot Case Study</a>
         <a href="method.html">Method</a>
@@ -508,7 +510,8 @@
           <div class="answer"><b>Trust</b><p class="small">Claims stay tied to source relevance, evidence level, and review status.</p></div>
         </div>
         <div class="actions">
-          <a class="button primary" href="case-study-ir.html">View Live Pilot Demo</a>
+          <a class="button primary" href="interaction.html">Open Human Workbench</a>
+          <a class="button" href="case-study-ir.html">View Live Pilot Demo</a>
           <a class="button" href="method.html">Read the Trust Method</a>
           <a class="button" href="dashboard.html">Open Expert Dashboard</a>
           <button class="button" id="exportBrief" type="button">Export / Sample Brief</button>
@@ -581,7 +584,7 @@
           <p class="eyebrow">Method</p>
           <h2 id="solutionTitle">A research exoskeleton, not an AI replacement.</h2>
         </div>
-        <p class="small">The scholar keeps the question and the final judgment. Knowledge Prism amplifies reach, memory, endurance, and integrity.</p>
+        <p class="small">The scholar keeps the question and the final judgment. The Human Workbench turns source clues into guarded outputs without silently promoting them into verified ontology.</p>
       </div>
       <div class="process" aria-label="Knowledge Prism process">
         <div class="step"><h3>Map the archive</h3><p class="small">Inventory the corpus and expose what is only metadata.</p></div>
@@ -614,6 +617,7 @@
         <p class="eyebrow">Outputs</p>
         <h2>What the user receives</h2>
         <div class="badge-list" style="margin-top: 16px;">
+          <span class="badge">human input workbench</span>
           <span class="badge">corpus inventory</span>
           <span class="badge">evidence dashboard</span>
           <span class="badge">expert review queue</span>
@@ -644,9 +648,13 @@
           <div class="metric"><strong id="devLatest">-</strong><span>latest checkpoint</span></div>
           <div class="metric"><strong>0</strong><span>final graph claims</span></div>
           <div class="metric"><strong>0</strong><span>final accepted concepts</span></div>
-          <div class="metric"><strong>4</strong><span>public pages linked</span></div>
+          <div class="metric"><strong>5</strong><span>public pages linked</span></div>
         </div>
         <div class="dev-list">
+          <article class="dev-item">
+            <strong>Human input becomes guarded output</strong>
+            <p class="small">The Human Workbench accepts a research question, source clue, evidence grade, and functional role, then exports a review note while keeping ontology promotion blocked until provenance is strong.</p>
+          </article>
           <article class="dev-item">
             <strong>Public overview first</strong>
             <p class="small">Visitors begin with the value, then move into the pilot demonstration, method, evidence, and expert machinery only when needed.</p>
@@ -671,7 +679,8 @@
         </div>
       </div>
       <div class="actions">
-        <a class="button primary" href="case-study-ir.html">View Live Pilot Demo</a>
+        <a class="button primary" href="interaction.html">Open Human Workbench</a>
+        <a class="button" href="case-study-ir.html">View Live Pilot Demo</a>
         <a class="button" href="method.html">Read the Method</a>
         <a class="button" href="dashboard.html">Open Expert Dashboard</a>
         <button class="button" id="exportBriefBottom" type="button">Export / Sample Brief</button>
@@ -752,6 +761,7 @@
         problem: "Messy research archives need evidence-backed interpretation, not just search.",
         process: [
           "Map the archive",
+          "Capture human input",
           "Test claims",
           "Grade evidence",
           "Interpret function",
@@ -769,6 +779,7 @@
         development_status: {
           public_ledger_blocks: status.ledger_blocks,
           latest_public_block: (state.ledger_blocks || []).at(-1)?.block_no,
+          human_workbench: "available at interaction.html",
           public_overview: "first",
           advanced_dashboard: "separate",
           private_material: "not served"

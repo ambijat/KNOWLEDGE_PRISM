@@ -1,0 +1,22 @@
+{
+  "projection_version": "1.0",
+  "record_id": "SRC-000002",
+  "record_type": "source",
+  "title": "[SYNTHETIC] Securitization in Regional Security Complexes",
+  "summary": "Synthetic fixture source standing in for a securitization-theory text.",
+  "status": "extracted",
+  "source_ids": [],
+  "layer": "B",
+  "evidence_grade": null,
+  "relationships": [],
+  "provenance": {
+    "reviewed": false,
+    "review_date": null,
+    "block_no": null,
+    "origin_table": "source_registry"
+  },
+  "sync": {
+    "projection_built_ts": "2026-07-16T12:00:00+00:00",
+    "projection_version": "1.0"
+  }
+}

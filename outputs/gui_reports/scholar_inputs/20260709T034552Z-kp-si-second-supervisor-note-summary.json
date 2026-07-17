@@ -1,0 +1,9 @@
+{
+  "report_type": "supervisor_note_summary",
+  "banner": "SCHOLAR INPUT — NOT EVIDENCE",
+  "flow_warning": "This record may seed a research question or retrieval lens, but it is not a source and cannot directly enter verification_queue.",
+  "scholar_id": "KP-SI-SECOND",
+  "supervisor_brief": "Ask whether this should become a retrieval lens for opposing accounts.",
+  "idea": "A second local test idea asks whether map language can seed a retrieval lens for chapter framing.",
+  "status": "under_review"
+}

@@ -1,0 +1,13 @@
+{
+  "proposal_version": "1.0",
+  "record_id": "PROP-000001",
+  "proposal_type": "relationship_proposal",
+  "status": "proposed",
+  "title": "[SYNTHETIC] Securitization constrains Afghanistan policy space",
+  "rationale": "Fixture proposal: researcher hypothesises a constrains-edge for review; must enter the inbox, not canonical state.",
+  "created_by": "researcher",
+  "created_ts": "2026-07-16T12:00:00+00:00",
+  "source_id": "CON-000002",
+  "target_id": "ENT-000001",
+  "predicate": "constrains"
+}

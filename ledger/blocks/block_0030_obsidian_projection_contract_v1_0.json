@@ -1,0 +1,34 @@
+{
+  "block_no": 30,
+  "block_id": "block_0030_obsidian_projection_contract_v1_0",
+  "title": "Obsidian projection contract v1.0 (schemas, validator, synthetic vertical slice)",
+  "ts": "2026-07-16T11:59:35.987463+00:00",
+  "session_id": "7b564c3e-8699-4f40-98e6-07c5c35d7649",
+  "actor": "claude-backend",
+  "inputs": [
+    "docs/protocol/KNOWLEDGE_PRISM_OBSIDIAN_INTEGRATION_CONTRACT_v0.1.md",
+    "docs/handover/CLAUDE_OBSIDIAN_BACKEND_ASSIGNMENT.md",
+    "db/knowledge_prism.db@head=29"
+  ],
+  "operations": [
+    "Authored OBSIDIAN_PROJECTION_CONTRACT_v1.0 (ID policy, status map, closed predicate vocab incl fuses_with, proposal lifecycle, protected-region merge rules)",
+    "Authored 4 JSON schemas: projection, export_manifest, proposal, decision_receipt",
+    "Authored validator scripts/08_validate_obsidian_projection.py (schema+merge; proven to reject bad status/id/predicate/markers)",
+    "Generated SYNTHETIC vertical-slice fixture: 12 records (2 src,3 con,3 ent,4 clm), 5 typed relationships, 1 researcher synthesis, 1 proposed relationship, 1 Canvas; passes validator all-mode",
+    "Authored Codex handoff CODEX_OBSIDIAN_INTEGRATION_HANDOFF.md",
+    "READ-ONLY w.r.t. research state: no writes to ontology/claim/evidence/disposition tables; proposal inbox is files only; no auto-canonicalisation"
+  ],
+  "outputs": [
+    "ONTOLOGY_COMPATIBILITY_ASSESSMENT_v1.0.md:sha256=cb07447f4c9523a3f22f843d0016926d69e412f50ba5ddf1f47760d6d33aafaf",
+    "OBSIDIAN_PROJECTION_CONTRACT_v1.0.md:sha256=9cff7e652884c93ad1a2d0ae2e74207cbe16e971ef5a2d9665c08948487ff619",
+    "projection.schema.json:sha256=9445eef6bd0b2abcf75eacee253f05890bc780b706c826856aa28a18d65d0721",
+    "export_manifest.schema.json:sha256=537af8966792ed8042c793d4219a0ee2209a997474505c96d0ddce3610177d8f",
+    "proposal.schema.json:sha256=67f73a6464bd5fab7acb5a20d8d70e168d26f3de23d7ec67ae0261caabfc1715",
+    "decision_receipt.schema.json:sha256=0fc4ef275ecd6ec080040b4347f27fc2c453d285e4cf8bf14550a981fce5d2ec",
+    "08_validate_obsidian_projection.py:sha256=ed1e67daf4f2cad0cb2b4cd2ebc1e60a8aac43e7ac5a7e64c65c653d7b7dfef0",
+    "CODEX_OBSIDIAN_INTEGRATION_HANDOFF.md:sha256=6f0db1a41ef962418b180627677af6ada5214318dc59324c102a75e0b3693aaa",
+    "export_manifest.json:sha256=a11bf8e919e731469de272aabf91257a24427574a55bcd6666f64b91501f2e63"
+  ],
+  "prev_hash": "ebf6f1d26364904da4aff3f282a711f76f0002b5fe38f3ec13387b9e2189ab7f",
+  "block_hash": "edeb0e25d847c9d959b0b2cc8bfbd3e06e39f0fa9935a44298af08103a8aeb0d"
+}

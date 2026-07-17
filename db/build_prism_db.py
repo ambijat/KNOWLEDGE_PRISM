@@ -104,7 +104,10 @@ CREATE TABLE IF NOT EXISTS ontology_node (
   label        TEXT,
   layer        TEXT,   -- A (empirical) | B (method) | meta
   weight       REAL,
-  detail       TEXT
+  detail       TEXT,
+  provenance_status TEXT  -- design_hypothesis (Stage-1 eigenspace/domain map) | text_verified (block 25).
+                          -- Distinguishes the a-priori design map from a text-verified ontology.
+                          -- text_verified requires an item promoted to ontology_core; 0 so far.
 );
 CREATE TABLE IF NOT EXISTS ontology_edge (
   src TEXT, dst TEXT, rel TEXT, weight REAL
@@ -132,6 +135,7 @@ CREATE TABLE IF NOT EXISTS verdict_disposition (
   quote_verified  INTEGER, -- 1 if quote found verbatim in slice, 0 if not, NULL if none
   decided_by      TEXT,    -- AI | human_review | codex
   layer_tag       TEXT,    -- optional sub-tag e.g. Layer_B_method_theory_core
+  layer_norm      TEXT,    -- controlled: A|B|AB|Peripheral|Out_of_domain|Ambiguous (block 25); prose stays in functional_role
   evidence_grade  TEXT,    -- promotion grade on the evidence ladder (NULL until promoted)
   ts              TEXT,
   block_no        INTEGER
@@ -153,7 +157,8 @@ CREATE TABLE IF NOT EXISTS functional_role (
   ir_function     TEXT,    -- Q1: what IR function the text performs
   contribution    TEXT,    -- Q2: empirical|theoretical|methodological|genealogy|historical|discourse (>=1)
   interaction     TEXT,    -- Q3: state-space|region-security|empire-frontier|identity-order|connectivity|conflict|knowledge-production|actor-behaviour
-  layer_substantive TEXT,  -- Q4: A|B|AB argued in substance
+  layer_substantive TEXT,  -- Q4: A|B|AB argued in substance (free-text rationale, kept verbatim)
+  layer_norm        TEXT,   -- controlled normalisation of layer_substantive (block 25): A|B|AB|Peripheral|Out_of_domain|Ambiguous
   explanatory_contribution TEXT, -- Q5: how it builds explanation for Eurasia/Afghanistan/C.Asia/geopolitics/IR
   evidence_grade  TEXT,    -- annotation only (mirrors verdict_disposition.evidence_grade)
   decided_by      TEXT,
@@ -222,6 +227,61 @@ CREATE TABLE IF NOT EXISTS boundary_proposal (
   ts              TEXT,
   block_no        INTEGER
 );
+CREATE TABLE IF NOT EXISTS scholar_input (
+  -- Researcher's own captured ideas (mobile/desktop). Schema v0.2, FROZEN.
+  -- CARDINAL RULE: a scholar input is NOT evidence. It may seed a research
+  -- question / retrieval lens after explicit approval (status approved_to_question),
+  -- but it may never become a verification_queue document, sampled evidence, a
+  -- claim, a disposition, a functional role, a verified concept, or an ontology
+  -- node. There is deliberately NO approved_to_evidence status. Persistent.
+  scholar_id        TEXT PRIMARY KEY,   -- KP-SI-000001
+  schema_version    TEXT NOT NULL,      -- '0.2'
+  record_type       TEXT NOT NULL,      -- 'scholar_input_not_evidence'
+  source            TEXT NOT NULL,      -- android_app | desktop_manual | desktop_import
+  captured_ts       TEXT NOT NULL,      -- ISO-8601 (device capture time)
+  imported_ts       TEXT,               -- ISO-8601 (desktop import time; null until imported)
+  idea              TEXT NOT NULL,      -- required content
+  draft_organ       TEXT,               -- advisory only; one of frozen organ vocab or null
+  draft_diagnosis   TEXT,               -- advisory
+  draft_search_plan TEXT,               -- draft keywords, NOT a Recoll lens
+  supervisor_brief  TEXT,
+  raw_notes         TEXT,
+  voice_transcript  TEXT,
+  tags              TEXT,
+  confidence        TEXT,               -- researcher's subjective hunch; never an evidence grade
+  project_title     TEXT,
+  course_or_context TEXT,
+  status            TEXT NOT NULL,      -- FK -> scholar_input_status_taxonomy.status
+  content_sha256    TEXT NOT NULL,      -- dedupe/provenance hash of canonical content
+  became_question   TEXT,               -- research-question id seeded, if approved (nullable)
+  became_queue_id   TEXT,               -- verification_queue.queue_id ultimately reached (nullable)
+  decided_by        TEXT,               -- 'user'; backend records, never initiates
+  decided_ts        TEXT,
+  rejection_reason  TEXT,               -- preserved for audit on rejection
+  block_no          INTEGER             -- ledger block recording a promotion/rejection
+);
+CREATE TABLE IF NOT EXISTS scholar_input_status_taxonomy (
+  -- Controlled vocabulary for scholar_input.status (schema v0.2, FROZEN).
+  status      TEXT PRIMARY KEY,
+  meaning     TEXT NOT NULL,
+  added_block INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS research_question (
+  -- Governed destination for a scholar_input approved_to_question (block 28).
+  -- This is the SEED of a research question / retrieval lens. It is NOT retrieval,
+  -- NOT a verification_queue entry, NOT evidence. It only records that a rumination
+  -- was promoted to a formal question, with reciprocal provenance to its origin.
+  question_id       TEXT PRIMARY KEY,      -- KP-RQ-000001 (gap-safe max+1, 6-digit)
+  question_text     TEXT NOT NULL,         -- the approved research-question / retrieval-lens text
+  lens_type         TEXT NOT NULL,         -- 'research_question' | 'retrieval_lens'
+  origin_scholar_id TEXT NOT NULL,         -- REVERSE provenance -> scholar_input.scholar_id
+  status            TEXT NOT NULL,         -- 'approved_seed' (max status at this layer; no retrieval yet)
+  created_by        TEXT NOT NULL,         -- reviewer/actor who approved
+  created_ts        TEXT NOT NULL,
+  block_no          INTEGER,
+  UNIQUE(origin_scholar_id)                -- one scholar_input -> at most one approved question
+);
 """)
 
 # Backfill layer_tag column on pre-existing verdict_disposition tables (idempotent).
@@ -230,6 +290,18 @@ if "layer_tag" not in _cols:
     cur.execute("ALTER TABLE verdict_disposition ADD COLUMN layer_tag TEXT")
 if "evidence_grade" not in _cols:
     cur.execute("ALTER TABLE verdict_disposition ADD COLUMN evidence_grade TEXT")
+if "layer_norm" not in _cols:
+    cur.execute("ALTER TABLE verdict_disposition ADD COLUMN layer_norm TEXT")
+
+# Backfill layer_norm on functional_role + provenance_status on ontology_node (block 25, idempotent).
+_frcols = [c[1] for c in cur.execute("PRAGMA table_info(functional_role)").fetchall()]
+if "layer_norm" not in _frcols:
+    cur.execute("ALTER TABLE functional_role ADD COLUMN layer_norm TEXT")
+_oncols = [c[1] for c in cur.execute("PRAGMA table_info(ontology_node)").fetchall()]
+if "provenance_status" not in _oncols:
+    cur.execute("ALTER TABLE ontology_node ADD COLUMN provenance_status TEXT")
+# Any ontology node lacking a provenance status is the Stage-1 design/hypothesis map, not text-verified.
+cur.execute("UPDATE ontology_node SET provenance_status='design_hypothesis' WHERE provenance_status IS NULL")
 
 # Backfill pre-sampling governance columns on pre-existing verification_queue (block 24, idempotent).
 _vqcols = [c[1] for c in cur.execute("PRAGMA table_info(verification_queue)").fetchall()]
@@ -284,6 +356,26 @@ _TAXONOMY = [
 cur.executemany(
  "INSERT OR IGNORE INTO disposition_taxonomy(disposition,axis1_thesis,axis2_corpus,meaning,added_block) VALUES (?,?,?,?,?)",
  _TAXONOMY)
+
+# Seed scholar_input status controlled vocabulary (schema v0.2 freeze, block 26).
+# INSERT OR IGNORE preserves any live-added rows and their original added_block.
+# NOTE: approved_to_question is the MAXIMUM promotion status at this layer; there
+# is no approved_to_evidence. Scholar input stays OUTSIDE the evidence chain.
+_SI_STATUSES = [
+ ("raw_captured",
+  "Captured on the originating device (mobile/desktop); not yet imported to the desktop store. Not evidence.",26),
+ ("imported_not_evidence",
+  "Landed in the desktop holding store. Present for review; explicitly NOT evidence; not in verification_queue.",26),
+ ("under_review",
+  "Researcher is actively considering it. Still not evidence.",26),
+ ("approved_to_question",
+  "User approved it to SEED a research question / retrieval lens. Maximum promotion status at this layer; NOT direct entry to verification_queue, and there is no approved_to_evidence beyond it.",26),
+ ("rejected_archived",
+  "User rejected it. Preserved archival exclusion for audit; never deleted, never promoted.",26),
+]
+cur.executemany(
+ "INSERT OR IGNORE INTO scholar_input_status_taxonomy(status,meaning,added_block) VALUES (?,?,?)",
+ _SI_STATUSES)
 
 # ---------------------------------------------------------------- DERIVED (rebuilt each run)
 for t in ["master_corpus","zotero_register","bridge_concepts",

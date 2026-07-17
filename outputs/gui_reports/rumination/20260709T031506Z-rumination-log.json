@@ -1,0 +1,45 @@
+{
+  "record_type": "rumination_log",
+  "status": "scholar_input_not_evidence",
+  "created_at": "2026-07-09T03:15:06.270309+00:00",
+  "safety_note": "Scholar thoughts are seed material, not evidence.",
+  "fragments": [
+    {
+      "fragment_id": "frag-da03748eca",
+      "created_at": "2026-07-09T03:15:06.268453+00:00",
+      "input_type": "partial synopsis",
+      "text": "Working title: Eurasian security imagination. The problem is how regional order is framed.",
+      "source_note": "self-thought",
+      "confidence": "medium",
+      "tags": [
+        "eurasia",
+        "security"
+      ],
+      "label": "scholar_input_not_evidence",
+      "assigned_organs": [
+        "Background",
+        "Statement of Problem",
+        "Research Questions",
+        "Title"
+      ],
+      "classification_reason": "input_type=partial synopsis; keyword_hits=Title:title, Title:working title, Statement of Problem:problem, Research Questions:how, Case / Region / Time Period:region, Case / Region / Time Period:eurasia; label=scholar_input_not_evidence; assigned_organs=Background, Statement of Problem, Research Questions, Title"
+    },
+    {
+      "fragment_id": "frag-dd25b7172e",
+      "created_at": "2026-07-09T03:15:06.268566+00:00",
+      "input_type": "methodology hunch",
+      "text": "Use discourse analysis and compare concept clusters across the selected corpus.",
+      "source_note": "supervisor",
+      "confidence": "weak",
+      "tags": [
+        "method"
+      ],
+      "label": "scholar_input_not_evidence",
+      "assigned_organs": [
+        "Methodology",
+        "Conceptual Framework"
+      ],
+      "classification_reason": "input_type=methodology hunch; keyword_hits=Methodology:discourse, Methodology:compare, Methodology:analysis, Conceptual Framework:concept; label=scholar_input_not_evidence; assigned_organs=Methodology, Conceptual Framework"
+    }
+  ]
+}
