@@ -1,0 +1,26 @@
+{
+  "ack_schema_version": "0.1.1",
+  "exchange_contract_version": "0.1.1",
+  "batch_id": "batch-0001",
+  "committed": false,
+  "transaction_result": "DRY_RUN",
+  "files_discovered": 1,
+  "records_discovered": 1,
+  "records_valid": 0,
+  "records_invalid": 0,
+  "records_duplicate": 1,
+  "records_eligible": 0,
+  "records_inserted": 0,
+  "processed_ts": "2026-07-17T00:00:00+00:00",
+  "acks": [
+    {
+      "client_record_id": "9f1b6a2e-0000-4000-8000-000000000001",
+      "result": "duplicate_skipped",
+      "backend_scholar_id": "KP-SI-000001",
+      "content_sha256": "cd8efcea37f46999718d9e1ed1c8b57599a635bc15c7c6ef0254871d3eab5a4b",
+      "message": "exact content already present; existing KP-SI id echoed; no new row",
+      "error_code": "DUPLICATE_CONTENT"
+    }
+  ],
+  "errors": []
+}

@@ -63,13 +63,23 @@ bidirectional sync; embed credentials; introduce cloud services.
 
 **None.** Contract is frozen and Android coding may begin.
 
-Two documented **non-blocking** gaps (backend enhancements, optional):
+Both previously documented ack gaps are **CLOSED in v0.1.1** (acknowledgement
+amendment; see the contract §9, §11, §14, §17 and
+`docs/protocol/examples/android_exchange_v0.1.1/`):
 
-1. Duplicate acknowledgement cannot yet echo the existing `KP-SI` id
-   (importer prints sha only) — one-line importer enhancement, future.
-2. No machine-readable acknowledgement file is emitted yet (stdout report
-   only) — a structured ack-writer is a future desktop task. Android can
-   proceed on the manual/stdout workflow.
+1. Duplicate acknowledgement now **echoes the existing `KP-SI` id** for an exact
+   content-hash duplicate of an already-committed row.
+2. The importer now **emits a machine-readable acknowledgement**:
+   `--output-format json` (JSON only on stdout) or `--ack-file <path>`. The
+   default `--output-format text` report is unchanged and byte-identical to
+   v0.1. Per-record entries use the `acks[]` array with fields
+   `client_record_id, result, backend_scholar_id, content_sha256, message,
+   error_code`; `result ∈ {eligible, imported, duplicate_skipped, invalid,
+   batch_refused, transport_failed}`.
+
+The scholar-input payload schema is **unchanged at 0.2**; existing v0.1 exports
+remain accepted. Android acknowledgement ingestion may now target the emitted
+v0.1.1 structure (still a later task — see below).
 
 ## First permitted Android implementation task
 

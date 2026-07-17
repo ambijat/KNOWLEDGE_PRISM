@@ -1,0 +1,34 @@
+{
+  "ack_schema_version": "0.1.1",
+  "exchange_contract_version": "0.1.1",
+  "batch_id": "batch-0002",
+  "committed": true,
+  "transaction_result": "COMMITTED",
+  "files_discovered": 1,
+  "records_discovered": 2,
+  "records_valid": 2,
+  "records_invalid": 0,
+  "records_duplicate": 0,
+  "records_eligible": 2,
+  "records_inserted": 2,
+  "processed_ts": "2026-07-17T00:00:00+00:00",
+  "acks": [
+    {
+      "client_record_id": "9f1b6a2e-0000-4000-8000-00000000000A",
+      "result": "imported",
+      "backend_scholar_id": "KP-SI-000001",
+      "content_sha256": "0bf83170f7883c7c4bb55210ac5b2eb8f408f3e948af5b58561f9c5a51e416a4",
+      "message": "landed at imported_not_evidence",
+      "error_code": null
+    },
+    {
+      "client_record_id": "9f1b6a2e-0000-4000-8000-00000000000B",
+      "result": "imported",
+      "backend_scholar_id": "KP-SI-000002",
+      "content_sha256": "42e7cdccedf4aa22e3cb2104eeb58a0d065c9782a3c54992c6b248d5bf190173",
+      "message": "landed at imported_not_evidence",
+      "error_code": null
+    }
+  ],
+  "errors": []
+}

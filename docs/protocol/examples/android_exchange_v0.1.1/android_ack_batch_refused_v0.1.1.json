@@ -1,0 +1,39 @@
+{
+  "ack_schema_version": "0.1.1",
+  "exchange_contract_version": "0.1.1",
+  "batch_id": "batch-0001",
+  "committed": false,
+  "transaction_result": "REFUSED_INVALID_IN_BATCH",
+  "files_discovered": 1,
+  "records_discovered": 2,
+  "records_valid": 1,
+  "records_invalid": 1,
+  "records_duplicate": 0,
+  "records_eligible": 1,
+  "records_inserted": 0,
+  "processed_ts": "2026-07-17T00:00:00+00:00",
+  "acks": [
+    {
+      "client_record_id": "9f1b6a2e-0000-4000-8000-000000000001",
+      "result": "batch_refused",
+      "backend_scholar_id": null,
+      "content_sha256": "cd8efcea37f46999718d9e1ed1c8b57599a635bc15c7c6ef0254871d3eab5a4b",
+      "message": "valid, but batch refused (atomic); nothing written",
+      "error_code": null
+    },
+    {
+      "client_record_id": "9f1b6a2e-0000-4000-8000-0000000000FF",
+      "result": "invalid",
+      "backend_scholar_id": null,
+      "content_sha256": null,
+      "message": "governance field 'became_question' must be null on import (got 'KP-RQ-000001')",
+      "error_code": "FORBIDDEN_GOVERNANCE_FIELD"
+    }
+  ],
+  "errors": [
+    {
+      "error_code": "BATCH_ATOMIC_REFUSAL",
+      "message": "batch contains invalid records; nothing was written"
+    }
+  ]
+}

@@ -1,11 +1,22 @@
 # KNOWLEDGE_PRISM — Android ↔ Desktop Scholar-Input Exchange Contract
 
-    exchange_contract_version   = 0.1   (this document)
-    scholar_input_schema_version = 0.2  (frozen backend schema it targets)
+    exchange_contract_version   = 0.1.1  (this document)
+    scholar_input_schema_version = 0.2    (frozen backend schema it targets)
 
-**Status: FROZEN v0.1.** These are two independent version dimensions.
-The exchange contract may evolve without changing the scholar-input schema,
-and vice versa.
+**Status: v0.1.1 (acknowledgement amendment).** These are two independent
+version dimensions. The exchange contract may evolve without changing the
+scholar-input schema, and vice versa.
+
+> **Amendment v0.1.1 (2026-07, supervisor-authorised).** A narrowly scoped
+> acknowledgement revision over the frozen v0.1 base. It changes **only** the
+> acknowledgement contract (§9, §11, §14, §17): (1) a valid record under
+> dry-run now acknowledges `result=eligible` instead of a null result;
+> (2) an exact content-hash duplicate now echoes the existing `KP-SI`
+> identifier in `backend_scholar_id` (closing the v0.1 §9 gap);
+> (3) `exchange_contract_version = ack_schema_version = 0.1.1`. The
+> scholar-input payload schema is **unchanged at 0.2** and existing Android /
+> browser v0.1 exports remain fully accepted. All other sections stand as
+> frozen under v0.1.
 
 This document is **normative**. It uses **MUST / MUST NOT / SHOULD / MAY** in
 the RFC-2119 sense. Sections marked *Implementation example* are illustrative
@@ -374,24 +385,26 @@ Four cases, frozen:
 | edited record, same `client_record_id`, **changed** content | new hash → not a duplicate | `imported` as a **new** record (see §12) |
 | same content, **different** `client_record_id` | same hash → duplicate | `duplicate_skipped` |
 
-Acknowledgement `result` values (frozen, §13):
+Acknowledgement `result` values (§11):
 
-    imported          duplicate_skipped   invalid
-    batch_refused     transport_failed
+    eligible          imported            duplicate_skipped
+    invalid           batch_refused       transport_failed
 
 Rules:
 
 - The client **MUST NOT** interpret `duplicate_skipped` as meaning its local
-  record received a new `KP-SI` identifier. It did not.
-- Acknowledgements **SHOULD** report the already-existing backend `KP-SI`
-  identifier for an exact duplicate so the client can reconcile.
+  record received a **new** `KP-SI` identifier. It did not.
+- **v0.1.1:** for an exact content-hash duplicate of an **already-committed**
+  row, the acknowledgement echoes that row's existing `KP-SI` identifier in
+  `backend_scholar_id`, so the client can reconcile its local draft to the
+  canonical submission. An intra-batch duplicate (whose first copy is only being
+  inserted this run) keeps `backend_scholar_id = null`.
 
-> **BOUNDED CONTRACT GAP (§18, non-blocking):** the current importer's duplicate
-> path prints only the content sha, **not** the existing `KP-SI-######`. So for
-> `duplicate_skipped`, `backend_scholar_id` **will be null in v0.1**. This is a
-> documented gap, not invented behaviour. A one-line importer enhancement
-> (look up `scholar_id` by `content_sha256` and include it in the report) would
-> close it; that enhancement is **out of scope** for this freeze cycle.
+> **§9 gap CLOSED in v0.1.1.** Under v0.1 the importer's duplicate path printed
+> only the content sha, so `backend_scholar_id` was null for `duplicate_skipped`.
+> The v0.1.1 importer looks up `scholar_id` by `content_sha256` and echoes the
+> existing `KP-SI-######`. Duplicate **detection and hashing are unchanged**;
+> only the acknowledgement now carries the existing identifier.
 
 ---
 
@@ -421,36 +434,55 @@ are **future extensions** and are **NOT** part of v0.1. The backend performs
 
 ## 11. Acknowledgement envelope (specification)
 
-> The importer does **not** yet emit a machine-readable acknowledgement file
-> (it prints a human-readable report to stdout). The structure below is a
-> **specification fixture** for the future desktop-side acknowledgement writer
-> and the Android reader. It is frozen as a contract target; producing it is a
-> future desktop task.
+> **v0.1.1:** the importer now **emits** this machine-readable acknowledgement.
+> `--output-format json` writes the batch object to stdout (JSON only);
+> `--ack-file <path>` writes it to a file while the human-readable report stays
+> on stdout. The default `--output-format text` report is unchanged and remains
+> byte-identical to v0.1. Android is the reader.
 
 Acknowledgement object (batch-level with per-record entries):
 
     {
-      "ack_schema_version": "0.1",
+      "ack_schema_version": "0.1.1",
+      "exchange_contract_version": "0.1.1",
       "batch_id": "<export_batch_id or synthesised>",
+      "committed": true | false,
+      "transaction_result": "DRY_RUN | COMMITTED | REFUSED_INVALID_IN_BATCH | NOTHING_TO_COMMIT | ROLLED_BACK",
+      "files_discovered": <int>,
+      "records_discovered": <int>,
+      "records_valid": <int>,
+      "records_invalid": <int>,
+      "records_duplicate": <int>,
+      "records_eligible": <int>,
+      "records_inserted": <int>,
       "processed_ts": "<ISO-8601 UTC>",
       "acks": [
         {
-          "client_record_id": "<uuid from the submitted record>",
-          "result": "imported | duplicate_skipped | invalid | batch_refused | transport_failed",
+          "client_record_id": "<uuid from the submitted record> | null",
+          "result": "eligible | imported | duplicate_skipped | invalid | batch_refused | transport_failed",
           "backend_scholar_id": "KP-SI-###### | null",
           "content_sha256": "<hex> | null",
-          "message": "<short human-readable, no private content, no SQL, no paths>"
+          "message": "<short human-readable, no private content, no SQL, no paths>",
+          "error_code": "<frozen §15 code> | null"
         }
-      ]
+      ],
+      "errors": [ { "error_code": "<code>", "message": "<...>" } ]
     }
 
 Field nullability & rules:
 
-- `backend_scholar_id` — non-null only for `result=imported`; **null** for
-  `duplicate_skipped` in v0.1 (§9 gap), `invalid`, `batch_refused`,
-  `transport_failed`.
-- `content_sha256` — present for `imported` and `duplicate_skipped`; null for
-  `invalid`/`batch_refused`/`transport_failed`.
+- `result=eligible` — a **valid** record under **dry-run**: it would be inserted
+  on `--commit`. Batch-level `transaction_result=DRY_RUN` and `committed=false`
+  remain the authoritative "nothing was written" signal.
+- `backend_scholar_id` — non-null for `result=imported` (the newly assigned
+  `KP-SI`) and, **in v0.1.1**, for `duplicate_skipped` against an
+  already-committed row (the existing `KP-SI`); **null** for `eligible`,
+  `invalid`, `batch_refused`, `transport_failed`, and for an intra-batch
+  duplicate.
+- `content_sha256` — present for `eligible`, `imported` and `duplicate_skipped`;
+  null for `invalid`/`batch_refused`/`transport_failed`.
+- `error_code` — an **additive** machine-readable field carrying a frozen §15
+  code on failure, `null` on success. A strict five-field reader may ignore it.
 - Acknowledgements are **both** batch-level (the wrapper) **and** record-level
   (each `acks[]` entry). Android matches an entry to a local draft **only** via
   `client_record_id`.
@@ -526,8 +558,15 @@ acknowledgement carrying it.
 
 Frozen:
 
-    exchange_contract_version    = 0.1
+    exchange_contract_version    = 0.1.1
+    ack_schema_version           = 0.1.1
     scholar_input_schema_version = 0.2   (these are independent dimensions)
+
+A v0.1.1 acknowledgement is **backward compatible** with a v0.1 reader that
+consumes only the five frozen per-record fields: the additive `eligible` result
+appears only for dry-run previews, and `error_code` / the extra wrapper counters
+may be ignored. An export declaring `exchange_contract_version = "0.1"` is
+accepted unchanged.
 
 ---
 
@@ -612,14 +651,30 @@ disposable DB copy, 2026-07-10):
 | `android_batch_valid_v0.1.json` | dry-run valid (2 records); commit → both imported atomically |
 | `android_invalid_forbidden_field_v0.1.json` | invalid (`became_question` supplied); commit **REFUSED** rc=2 |
 
-Acknowledgement fixtures (specification only — importer does not yet emit this
-structure):
+Acknowledgement fixtures (v0.1 — specification only, retained for history):
 
 | Fixture | Note |
 |---|---|
 | `android_ack_imported_v0.1.json` | `result=imported`, backend id present |
-| `android_ack_duplicate_v0.1.json` | `result=duplicate_skipped`, `backend_scholar_id=null` (documents the §9 gap) |
+| `android_ack_duplicate_v0.1.json` | `result=duplicate_skipped`, `backend_scholar_id=null` (documents the original §9 gap) |
 | `android_ack_invalid_v0.1.json` | `result=invalid`, `FORBIDDEN_GOVERNANCE_FIELD` |
+
+Acknowledgement fixtures (v0.1.1 — **emitted** by the importer, captured on a
+disposable DB copy). Location: `docs/protocol/examples/android_exchange_v0.1.1/`:
+
+| Fixture | Note |
+|---|---|
+| `android_ack_eligible_v0.1.1.json` | valid batch, dry-run → `result=eligible`, `backend_scholar_id=null`, `error_code=null`, `transaction_result=DRY_RUN`, no row written |
+| `android_ack_imported_v0.1.1.json` | `--commit` → `result=imported`, `KP-SI` assigned |
+| `android_ack_duplicate_v0.1.1.json` | exact duplicate → `result=duplicate_skipped`, existing `KP-SI` echoed in `backend_scholar_id`, `error_code=DUPLICATE_CONTENT` |
+| `android_ack_invalid_v0.1.1.json` | `result=invalid`, `error_code=FORBIDDEN_GOVERNANCE_FIELD` |
+| `android_ack_batch_refused_v0.1.1.json` | mixed valid+invalid, `--commit` → `REFUSED_INVALID_IN_BATCH`, rc=2, nothing written |
+| `android_ack_unmatched_client_v0.1.1.json` | record without `client_record_id` → `client_record_id=null`, still processed |
+
+The single/batch/invalid **input** fixtures are reused from
+`android_exchange_v0.1/`; the derived-case inputs (mixed batch, missing
+`client_record_id`) are constructed in-memory by the fixture generator and the
+test harness on disposable copies, so no separate input files are persisted.
 
 Fixtures contain **no** real scholar content.
 
