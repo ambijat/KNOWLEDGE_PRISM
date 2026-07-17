@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Scholar Capture Contract Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div>
+      <p class="eyebrow">Knowledge Prism · Android contract v0.1</p>
+      <h1>Scholar Capture Contract Lab</h1>
+      <p class="subtitle">An offline browser acceptance harness. Drafts stay in this browser until you explicitly export one.</p>
+    </div>
+    <div class="contract-badge" aria-label="Contract status">
+      <span>capture ceiling</span>
+      <strong>raw_captured</strong>
+      <small>never evidence</small>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <aside class="inbox" aria-label="Draft Inbox">
+      <div class="panel-heading">
+        <div><p class="eyebrow">Local workspace</p><h2>Draft Inbox</h2></div>
+        <button id="new-draft" class="primary" type="button">New draft</button>
+      </div>
+      <label class="search-label" for="search">Search drafts</label>
+      <input id="search" type="search" placeholder="Idea, tag, project, context…">
+      <div class="filter-row">
+        <label>Organ<select id="organ-filter"><option value="">All organs</option></select></label>
+        <label>Confidence<select id="confidence-filter"><option value="">All levels</option><option>low</option><option>medium</option><option>high</option></select></label>
+      </div>
+      <p id="draft-count" class="result-count" aria-live="polite"></p>
+      <div id="draft-list" class="draft-list"></div>
+      <div id="empty-inbox" class="empty-state" hidden>No drafts match this view.</div>
+      <button id="reset-data" class="danger ghost full" type="button">Reset browser data</button>
+    </aside>
+
+    <section class="editor" aria-label="Draft editor">
+      <div id="welcome" class="welcome">
+        <p class="eyebrow">Acceptance surface</p>
+        <h2>Capture locally. Export deliberately.</h2>
+        <p>Create a draft to test the frozen scholar-input exchange contract without touching the desktop database, research state, or governance workflow.</p>
+      </div>
+
+      <form id="draft-form" hidden novalidate>
+        <div class="editor-heading">
+          <div>
+            <p class="eyebrow">Draft editor</p>
+            <h2 id="editor-title">Untitled draft</h2>
+            <p id="record-id" class="record-id"></p>
+          </div>
+          <span id="local-state" class="state-pill">draft_local</span>
+        </div>
+
+        <div id="save-status" class="save-status" aria-live="polite"></div>
+        <label class="field wide required">Idea
+          <textarea name="idea" rows="4" placeholder="What should later research investigate?" required></textarea>
+          <span class="error" data-error="idea"></span>
+        </label>
+
+        <div class="field-grid">
+          <label class="field">Draft organ<select name="draft_organ"></select><span class="error" data-error="draft_organ"></span></label>
+          <label class="field">Confidence<select name="confidence"><option value="">Not set</option><option>low</option><option>medium</option><option>high</option></select><span class="error" data-error="confidence"></span></label>
+          <label class="field">Project title<input name="project_title" type="text"></label>
+          <label class="field">Course or context<input name="course_or_context" type="text"></label>
+          <label class="field wide">Tags <small>semicolon-separated</small><input name="tags" type="text" placeholder="buffer-state;security;ontology"></label>
+          <label class="field">Captured time<input name="captured_ts" type="text" readonly><span class="error" data-error="captured_ts"></span></label>
+          <label class="field">Device alias <small>non-identifying</small><input name="device_alias" type="text" placeholder="fieldnote-tablet"></label>
+        </div>
+
+        <details open><summary>Research shaping fields</summary>
+          <div class="field-grid textareas">
+            <label class="field">Draft diagnosis<textarea name="draft_diagnosis" rows="3"></textarea></label>
+            <label class="field">Draft search plan<textarea name="draft_search_plan" rows="3"></textarea></label>
+            <label class="field wide">Supervisor brief<textarea name="supervisor_brief" rows="3"></textarea></label>
+          </div>
+        </details>
+        <details><summary>Sensitive source material</summary>
+          <p class="sensitive-note">These fields participate in the canonical hash and remain in local browser storage until reset.</p>
+          <div class="field-grid textareas">
+            <label class="field">Raw notes<textarea name="raw_notes" rows="5"></textarea></label>
+            <label class="field">Voice transcript<textarea name="voice_transcript" rows="5"></textarea></label>
+          </div>
+        </details>
+
+        <div class="hash-card"><span>Advisory canonical SHA-256</span><code id="canonical-hash">—</code><small>idea + LF + raw_notes + LF + voice_transcript · NFC · UTF-8</small></div>
+        <div class="fixed-contract">
+          <span><small>schema_version</small><b>0.2</b></span>
+          <span><small>record_type</small><b>scholar_input_not_evidence</b></span>
+          <span><small>source</small><b>android_app</b></span>
+          <span><small>export status</small><b>raw_captured</b></span>
+        </div>
+
+        <div class="action-bar">
+          <button id="delete-draft" class="danger ghost" type="button">Delete draft</button>
+          <div><button id="save-draft" type="submit">Save locally</button><button id="export-draft" class="primary" type="button">Export single-record JSON</button></div>
+        </div>
+        <p class="plaintext-warning"><strong>Plaintext warning:</strong> the exported JSON contains your notes in clear text. Delete the export after successful desktop import.</p>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

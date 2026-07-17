@@ -1,0 +1,12 @@
+{
+  "name": "knowledge-prism-scholar-capture-harness",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/core.test.mjs && node tests/browser.test.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.54.1"
+  }
+}
