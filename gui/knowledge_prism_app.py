@@ -23,6 +23,7 @@ from gui.services import (  # noqa: E402
     concept_fit,
     draft_diagnosis,
     draft_intake,
+    observatory,
     project_state,
     query_lens,
     report_writer,
@@ -46,6 +47,27 @@ OUTPUT_TYPES = [
 
 LAYER_OPTIONS = ["A", "B", "AB", "Peripheral", "Ambiguous"]
 REPORT_FORMATS = ["markdown", "json", "csv"]
+
+TAB_NAMES = [
+    "Idea Capture",
+    "Research Organ Builder",
+    "Draft Diagnosis",
+    "Concept & Ontology Fit",
+    "Literature Search Plan",
+    "Supervisor Brief",
+    "Scholar Input Inbox",
+    "Research Input",
+    "Query Lens",
+    "Retrieval Console",
+    "Verification Queue",
+    "Sampling Workbench",
+    "Evidence Review",
+    "Functional Interpretation",
+    "Ontology Status",
+    "Reports and Exports",
+    "Knowledge Observatory",
+    "Project State",
+]
 
 
 class KnowledgePrismApp:
@@ -87,6 +109,7 @@ class KnowledgePrismApp:
         self.notebook = ttk.Notebook(root)
         self.notebook.pack(fill="both", expand=True, padx=10, pady=(0, 10))
         self._build_tabs()
+        self.refresh_observatory_status()
         self.refresh_project_state()
 
     def _build_header(self) -> None:
@@ -111,25 +134,7 @@ class KnowledgePrismApp:
 
     def _build_tabs(self) -> None:
         self.tabs: dict[str, ttk.Frame] = {}
-        for name in [
-            "Idea Capture",
-            "Research Organ Builder",
-            "Draft Diagnosis",
-            "Concept & Ontology Fit",
-            "Literature Search Plan",
-            "Supervisor Brief",
-            "Scholar Input Inbox",
-            "Research Input",
-            "Query Lens",
-            "Retrieval Console",
-            "Verification Queue",
-            "Sampling Workbench",
-            "Evidence Review",
-            "Functional Interpretation",
-            "Ontology Status",
-            "Reports and Exports",
-            "Project State",
-        ]:
+        for name in TAB_NAMES:
             tab = ttk.Frame(self.notebook, padding=12)
             self.tabs[name] = tab
             self.notebook.add(tab, text=name)
@@ -150,6 +155,7 @@ class KnowledgePrismApp:
         self._tab_functional_interpretation()
         self._tab_ontology()
         self._tab_reports()
+        self._tab_observatory()
         self._tab_project_state()
 
     def _tab_idea_capture(self) -> None:
@@ -697,6 +703,52 @@ class KnowledgePrismApp:
         ttk.Button(controls, text="Refresh State", command=self.refresh_project_state).pack(side="left", padx=(0, 8))
         ttk.Button(controls, text="Export Project State", command=self.export_project_state).pack(side="left")
         tab.rowconfigure(0, weight=1)
+        tab.columnconfigure(0, weight=1)
+
+    def _tab_observatory(self) -> None:
+        tab = self.tabs["Knowledge Observatory"]
+        ttk.Label(tab, text="Knowledge Observatory", font=("TkDefaultFont", 14, "bold")).grid(
+            row=0, column=0, sticky="w"
+        )
+        self.observatory_warning = ttk.Label(
+            tab,
+            text=observatory.AUTHORITY_WARNING,
+            foreground="#9b1c1c",
+            wraplength=1120,
+            justify="left",
+        )
+        self.observatory_warning.grid(row=1, column=0, sticky="ew", pady=(5, 3))
+        self.observatory_synthetic_warning = ttk.Label(
+            tab,
+            text=observatory.SYNTHETIC_WARNING,
+            foreground="#9b1c1c",
+            font=("TkDefaultFont", 10, "bold"),
+        )
+        self.observatory_synthetic_warning.grid(row=2, column=0, sticky="w", pady=(0, 8))
+        self.observatory_status_box = ScrolledText(tab, height=20, wrap="word")
+        self.observatory_status_box.grid(row=3, column=0, sticky="nsew")
+        controls = ttk.Frame(tab)
+        controls.grid(row=4, column=0, sticky="ew", pady=(10, 4))
+        ttk.Button(controls, text="Refresh Status", command=self.refresh_observatory_status).pack(
+            side="left", padx=(0, 8)
+        )
+        ttk.Button(controls, text="Validate Projection", command=self.validate_observatory_projection).pack(
+            side="left", padx=(0, 8)
+        )
+        ttk.Button(controls, text="Open Vault Folder", command=self.open_observatory_vault).pack(
+            side="left", padx=(0, 8)
+        )
+        self.observatory_regenerate_button = ttk.Button(
+            controls, text="Regenerate Observatory", state="disabled"
+        )
+        self.observatory_regenerate_button.pack(side="left", padx=(0, 8))
+        self.observatory_obsidian_button = ttk.Button(controls, text="Open in Obsidian", state="disabled")
+        self.observatory_obsidian_button.pack(side="left")
+        ttk.Label(tab, text=observatory.REGENERATION_DISABLED_REASON).grid(row=5, column=0, sticky="w")
+        ttk.Label(tab, text=observatory.OBSIDIAN_DISABLED_REASON).grid(row=6, column=0, sticky="w")
+        self.observatory_action_status = ttk.Label(tab, text="Read-only status gateway.")
+        self.observatory_action_status.grid(row=7, column=0, sticky="w", pady=(8, 0))
+        tab.rowconfigure(3, weight=1)
         tab.columnconfigure(0, weight=1)
 
     def import_fragment_file(self) -> None:
@@ -1486,6 +1538,26 @@ class KnowledgePrismApp:
         ]
         self.state_box.delete("1.0", "end")
         self.state_box.insert("1.0", "\n".join(lines))
+
+    def refresh_observatory_status(self) -> None:
+        snapshot = observatory.inspect_projection()
+        self._set_text(self.observatory_status_box, observatory.display_text(snapshot))
+        self.observatory_action_status.config(text=f"Status refreshed: {snapshot.status}")
+
+    def validate_observatory_projection(self) -> None:
+        snapshot = observatory.inspect_projection()
+        self._set_text(self.observatory_status_box, observatory.display_text(snapshot))
+        if snapshot.validation_ok:
+            message = f"Validation passed. Projection status: {snapshot.status}."
+        else:
+            message = f"{snapshot.status}: {snapshot.message}"
+        self.observatory_action_status.config(text=message)
+
+    def open_observatory_vault(self) -> None:
+        opened, message = observatory.open_vault_folder()
+        self.observatory_action_status.config(text=message)
+        if not opened:
+            messagebox.showerror("Vault folder not opened", message)
 
     def refresh_queue(self) -> None:
         self._fill_tree(self.queue_tree, project_state.verification_queue())
