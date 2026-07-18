@@ -1,6 +1,6 @@
 # Scholar Capture browser acceptance harness
 
-This self-contained browser UI exercises the frozen Android Scholar Capture exchange contract v0.1 without calling a backend or touching the Knowledge Prism database. Drafts persist only in browser `localStorage`; single-record export happens only after an explicit click.
+This self-contained browser UI exercises the frozen Android Scholar Capture exchange contract and acknowledgement contract v0.1.1 without calling a backend or touching the Knowledge Prism database. Drafts and acknowledgement presentation state persist only in browser `localStorage`; export and acknowledgement import happen only after explicit user actions.
 
 ## Launch locally
 
@@ -24,7 +24,7 @@ npm install
 npm test
 ```
 
-The suite checks the exact fixed fields and 16-organ vocabulary, canonical SHA-256 parity, reference-fixture compatibility, validation, search/filter logic, real-browser refresh persistence, single-record download, deletion, and browser-data reset.
+The suite checks the exact fixed fields and 16-organ vocabulary, canonical SHA-256 parity, capture/export compatibility, all six canonical v0.1.1 acknowledgement fixtures, malformed and unsupported-file refusal, matching, conflicts, replacement confirmation and history, unmatched records, content preservation, refresh persistence, responsive layout, and browser-data reset.
 
 ## Disposable desktop-import dry run
 
@@ -43,4 +43,4 @@ Remove that explicitly created temporary directory when finished. Never use `--c
 
 ## Contract boundary
 
-The harness exports `schema_version=0.2`, `record_type=scholar_input_not_evidence`, `source=android_app`, and `status=raw_captured`. It never supplies backend IDs, canonical hashes, governance fields, acknowledgement handling, approval controls, network sync, evidence operations, ontology operations, or ledger operations.
+The harness exports `schema_version=0.2`, `record_type=scholar_input_not_evidence`, `source=android_app`, and `status=raw_captured`. It can read a desktop-generated acknowledgement v0.1.1 and store its result, backend ID, hash, message, error code, batch metadata, and replacement history as browser-local presentation state. It never assigns backend IDs, changes captured content from an acknowledgement, offers approval controls, performs network sync, or touches evidence, research-state, ontology, or ledger operations.

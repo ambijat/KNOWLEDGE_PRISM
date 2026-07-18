@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:,">
   <title>Scholar Capture Contract Lab</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -25,7 +26,11 @@
     <aside class="inbox" aria-label="Draft Inbox">
       <div class="panel-heading">
         <div><p class="eyebrow">Local workspace</p><h2>Draft Inbox</h2></div>
-        <button id="new-draft" class="primary" type="button">New draft</button>
+        <div class="inbox-actions">
+          <button id="import-ack" type="button">Import acknowledgement</button>
+          <input id="ack-file" type="file" accept="application/json,.json" hidden>
+          <button id="new-draft" class="primary" type="button">New draft</button>
+        </div>
       </div>
       <label class="search-label" for="search">Search drafts</label>
       <input id="search" type="search" placeholder="Idea, tag, project, context…">
@@ -40,6 +45,14 @@
     </aside>
 
     <section class="editor" aria-label="Draft editor">
+      <p class="no-evidence-warning"><strong>Boundary:</strong> Imported by the desktop importer does not mean approved as a research question or accepted as evidence.</p>
+      <section id="ack-panel" class="ack-panel" aria-live="polite" hidden>
+        <div class="panel-heading"><div><p class="eyebrow">Desktop response</p><h2>Acknowledgement summary</h2></div><span id="ack-batch" class="record-id"></span></div>
+        <p id="ack-error" class="ack-error" hidden></p>
+        <div id="ack-counts" class="ack-counts"></div>
+        <div id="ack-conflicts"></div>
+        <div id="ack-unmatched"></div>
+      </section>
       <div id="welcome" class="welcome">
         <p class="eyebrow">Acceptance surface</p>
         <h2>Capture locally. Export deliberately.</h2>
@@ -57,6 +70,15 @@
         </div>
 
         <div id="save-status" class="save-status" aria-live="polite"></div>
+        <section id="draft-ack" class="draft-ack" hidden>
+          <div><span>Acknowledgement</span><strong id="draft-ack-result"></strong></div>
+          <dl>
+            <div id="draft-backend-row"><dt>Backend KP-SI</dt><dd id="draft-backend-id"></dd></div>
+            <div id="draft-ack-error-row"><dt>Error code</dt><dd id="draft-ack-error-code"></dd></div>
+            <div><dt>Batch</dt><dd id="draft-ack-batch"></dd></div>
+            <div><dt>Message</dt><dd id="draft-ack-message"></dd></div>
+          </dl>
+        </section>
         <label class="field wide required">Idea
           <textarea name="idea" rows="4" placeholder="What should later research investigate?" required></textarea>
           <span class="error" data-error="idea"></span>

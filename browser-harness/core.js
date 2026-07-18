@@ -22,6 +22,22 @@ export const CONTENT_FIELDS = Object.freeze([
   "confidence", "project_title", "course_or_context", "device_alias",
 ]);
 
+export const ACK_SCHEMA_VERSION = "0.1.1";
+
+export const ACK_RESULT_STATES = Object.freeze({
+  eligible: "eligible_acknowledged",
+  imported: "imported_acknowledged",
+  duplicate_skipped: "duplicate_acknowledged",
+  invalid: "invalid_acknowledged",
+  batch_refused: "batch_refused_acknowledged",
+  transport_failed: "transport_failed_acknowledged",
+});
+
+const ACK_RECORD_FIELDS = Object.freeze([
+  "client_record_id", "result", "backend_scholar_id", "content_sha256",
+  "message", "error_code",
+]);
+
 export const emptyContent = () => ({
   idea: "",
   draft_organ: "Unassigned",
@@ -97,4 +113,134 @@ export function matchesDraft(draft, query, organ, confidence) {
 
 export function humanOrgan(token) {
   return token.replaceAll("_", " ");
+}
+
+function acknowledgementError(message) {
+  const error = new Error(message);
+  error.name = "AcknowledgementValidationError";
+  return error;
+}
+
+function nullableString(value) {
+  return value === null || typeof value === "string";
+}
+
+export function validateAcknowledgement(batch) {
+  if (!batch || typeof batch !== "object" || Array.isArray(batch)) {
+    throw acknowledgementError("Acknowledgement must be a JSON object.");
+  }
+  if (batch.ack_schema_version !== ACK_SCHEMA_VERSION) {
+    throw acknowledgementError(`Unsupported acknowledgement version: ${String(batch.ack_schema_version ?? "missing")}. Expected ${ACK_SCHEMA_VERSION}.`);
+  }
+  if (!Array.isArray(batch.acks)) {
+    throw acknowledgementError("Malformed acknowledgement: acks must be an array.");
+  }
+  batch.acks.forEach((ack, index) => {
+    if (!ack || typeof ack !== "object" || Array.isArray(ack)) {
+      throw acknowledgementError(`Malformed acknowledgement record ${index + 1}: expected an object.`);
+    }
+    for (const field of ACK_RECORD_FIELDS) {
+      if (!Object.hasOwn(ack, field)) {
+        throw acknowledgementError(`Malformed acknowledgement record ${index + 1}: missing ${field}.`);
+      }
+    }
+    if (!Object.hasOwn(ACK_RESULT_STATES, ack.result)) {
+      throw acknowledgementError(`Malformed acknowledgement record ${index + 1}: unsupported result ${String(ack.result)}.`);
+    }
+    for (const field of ["client_record_id", "backend_scholar_id", "content_sha256", "message", "error_code"]) {
+      if (!nullableString(ack[field])) {
+        throw acknowledgementError(`Malformed acknowledgement record ${index + 1}: ${field} must be a string or null.`);
+      }
+    }
+  });
+  return batch;
+}
+
+export function parseAcknowledgementText(text) {
+  let parsed;
+  try {
+    parsed = JSON.parse(text);
+  } catch {
+    throw acknowledgementError("Malformed acknowledgement JSON. No drafts were changed.");
+  }
+  return validateAcknowledgement(parsed);
+}
+
+function incomingFields(batch, ack) {
+  return {
+    last_ack_result: ack.result,
+    backend_scholar_id: ack.backend_scholar_id,
+    backend_content_sha256: ack.content_sha256,
+    acknowledgement_message: ack.message,
+    acknowledgement_error_code: ack.error_code,
+    acknowledgement_batch_id: batch.batch_id ?? null,
+    acknowledgement_contract_version: batch.exchange_contract_version ?? null,
+  };
+}
+
+export function sameAcknowledgement(draft, batch, ack) {
+  return Object.entries(incomingFields(batch, ack))
+    .every(([field, value]) => (draft[field] ?? null) === value);
+}
+
+export function planAcknowledgementImport(batch, drafts) {
+  validateAcknowledgement(batch);
+  const byClientId = new Map();
+  for (const draft of drafts) byClientId.set(draft.client_record_id, draft);
+  const groups = new Map();
+  const unmatched = [];
+  for (const ack of batch.acks) {
+    if (!ack.client_record_id || !byClientId.has(ack.client_record_id)) {
+      unmatched.push(ack);
+      continue;
+    }
+    const group = groups.get(ack.client_record_id) ?? [];
+    group.push(ack);
+    groups.set(ack.client_record_id, group);
+  }
+  const matches = [...groups].map(([clientRecordId, acknowledgements]) => {
+    const draft = byClientId.get(clientRecordId);
+    const incoming = acknowledgements.at(-1);
+    return {
+      clientRecordId,
+      draft,
+      incoming,
+      acknowledgements,
+      conflict: acknowledgements.length > 1,
+      replacement: Boolean(draft.last_ack_result) && !sameAcknowledgement(draft, batch, incoming),
+      unchanged: sameAcknowledgement(draft, batch, incoming),
+    };
+  });
+  return {
+    batch,
+    matches,
+    unmatched,
+    summary: {
+      matched: matches.length,
+      unmatched: unmatched.length,
+      invalid: batch.acks.filter((ack) => ack.result === "invalid").length,
+      unchanged: matches.filter((match) => match.unchanged).length,
+    },
+  };
+}
+
+export function applyAcknowledgement(draft, batch, ack, acknowledgedTs = new Date().toISOString()) {
+  validateAcknowledgement(batch);
+  if (sameAcknowledgement(draft, batch, ack)) return draft;
+  const next = {
+    ...draft,
+    ...incomingFields(batch, ack),
+    acknowledged_ts: acknowledgedTs,
+    local_state: ACK_RESULT_STATES[ack.result],
+  };
+  if (draft.last_ack_result) {
+    const previous = {
+      ...Object.fromEntries(Object.keys(incomingFields(batch, ack)).map((field) => [field, draft[field] ?? null])),
+      acknowledged_ts: draft.acknowledged_ts ?? null,
+      replaced_ts: acknowledgedTs,
+    };
+    next.acknowledgement_history = [...(draft.acknowledgement_history ?? []), previous];
+    next.acknowledgement_replaced_ts = acknowledgedTs;
+  }
+  return next;
 }
